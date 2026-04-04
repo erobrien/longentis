@@ -25,57 +25,57 @@ const Header = () => {
     setMobileOpen(false);
   }, [location]);
 
-  const isDarkPage = location.pathname === "/" || location.pathname === "/about";
-
   return (
     <>
       <motion.header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-background/95 backdrop-blur-md shadow-sm"
-            : isDarkPage
-              ? "bg-transparent"
-              : "bg-background/95 backdrop-blur-md"
-        }`}
+        className="fixed inset-x-0 top-0 z-[310] flex w-full flex-col items-center px-6 lg:px-12 max-md:pt-3 max-md:pb-3 md:pt-8 md:pb-4"
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <Link to="/" className="flex flex-col">
-            <span className={`font-heading text-xl font-bold ${scrolled || !isDarkPage ? "text-navy-900" : "text-cream-200"}`}>
-              Longentis
-            </span>
-            <span className={`font-mono-label text-[10px] uppercase tracking-[0.12em] ${scrolled || !isDarkPage ? "text-muted-foreground" : "text-cream-200/60"}`}>
-              by Men's Wellness Centers
-            </span>
-          </Link>
-
-          <nav className="hidden items-center gap-8 md:flex">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={`font-heading text-[13.5px] font-semibold transition-colors hover:opacity-70 relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all hover:after:w-full ${
-                  scrolled || !isDarkPage ? "text-navy-700" : "text-cream-200"
-                } ${location.pathname === link.href ? "after:w-full" : ""}`}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-4">
-            <Link
-              to="/get-started"
-              className="hidden rounded-xl bg-cta px-5 py-2.5 font-heading text-sm font-semibold text-cta-foreground transition-all hover:shadow-lg hover:brightness-110 active:scale-[0.98] md:inline-block"
-            >
-              Get Started
+        <div className="mx-auto w-full max-w-[1600px] justify-center max-md:px-0 px-4 sm:px-5 lg:px-8 flex flex-col items-center">
+          <div
+            className={`max-w-[1240px] relative flex w-full items-center justify-between rounded-[14px] border px-4 py-2 lg:px-5 transition-all duration-300 ${
+              scrolled
+                ? "border-[rgba(255,255,255,0.35)] bg-[rgba(255,255,255,0.55)] backdrop-blur-[28px] backdrop-saturate-[1.4] shadow-[0_12px_32px_rgba(0,0,0,0.12)]"
+                : "border-[rgba(255,255,255,0.35)] bg-[rgba(255,255,255,0.55)] backdrop-blur-[28px] backdrop-saturate-[1.4] shadow-[0_12px_32px_rgba(0,0,0,0.12)]"
+            }`}
+          >
+            <Link to="/" className="flex flex-col">
+              <span className="font-heading text-xl font-bold tracking-tight text-[#0B1029]">
+                Longentis
+              </span>
+              <span className="font-mono-label text-[9px] tracking-[0.14em] uppercase text-[#1B2B4B]/40">
+                by Men's Wellness Centers
+              </span>
             </Link>
-            <button
-              onClick={() => setMobileOpen(true)}
-              className={`md:hidden ${scrolled || !isDarkPage ? "text-navy-900" : "text-cream-200"}`}
-              aria-label="Open menu"
-            >
-              <Menu className="h-6 w-6" />
-            </button>
+
+            <nav className="hidden items-center gap-8 md:flex">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className={`relative text-[13.5px] font-semibold font-heading text-[#1B2B4B] transition-colors duration-200 after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-[#E8670A] after:transition-[width] after:duration-200 after:w-0 hover:after:w-full ${
+                    location.pathname === link.href ? "after:w-full" : ""
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+
+            <div className="flex items-center gap-4">
+              <Link
+                to="/get-started"
+                className="hidden md:inline-flex items-center rounded-xl border border-white/[0.11] bg-[#1B2B4B] px-[18px] py-[10px] text-[11px] font-bold uppercase tracking-[0.09em] text-[#FAFAF7] shadow-[inset_0_1px_0_rgba(255,255,255,0.11),inset_0_-1px_0_rgba(0,0,0,0.22),0_0_0_1px_rgba(27,43,75,0.55),0_4px_14px_rgba(27,43,75,0.38)] hover:bg-[#162340] transition-all duration-200 active:scale-[0.98] font-heading"
+              >
+                Get Started
+              </Link>
+              <button
+                onClick={() => setMobileOpen(true)}
+                className="md:hidden text-[#0B1029]"
+                aria-label="Open menu"
+              >
+                <Menu className="h-6 w-6" />
+              </button>
+            </div>
           </div>
         </div>
       </motion.header>
@@ -86,16 +86,16 @@ const Header = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-navy-950 flex flex-col"
+            className="fixed inset-0 z-[400] bg-[#06081a] flex flex-col"
           >
             <div className="flex items-center justify-between px-6 py-4">
               <Link to="/" className="flex flex-col">
-                <span className="font-heading text-xl font-bold text-cream-200">Longentis</span>
-                <span className="font-mono-label text-[10px] uppercase tracking-[0.12em] text-cream-200/60">
+                <span className="font-heading text-xl font-bold text-[#E8E2D9]">Longentis</span>
+                <span className="font-mono-label text-[9px] uppercase tracking-[0.14em] text-[#E8E2D9]/40">
                   by Men's Wellness Centers
                 </span>
               </Link>
-              <button onClick={() => setMobileOpen(false)} className="text-cream-200" aria-label="Close menu">
+              <button onClick={() => setMobileOpen(false)} className="text-[#E8E2D9]" aria-label="Close menu">
                 <X className="h-6 w-6" />
               </button>
             </div>
@@ -109,7 +109,7 @@ const Header = () => {
                 >
                   <Link
                     to={link.href}
-                    className="font-heading text-2xl font-semibold text-cream-200 hover:text-cta transition-colors"
+                    className="font-heading text-2xl font-semibold text-[#E8E2D9] hover:text-[#E8670A] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -118,7 +118,7 @@ const Header = () => {
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
                 <Link
                   to="/get-started"
-                  className="mt-4 rounded-xl bg-cta px-8 py-3 font-heading text-lg font-semibold text-cta-foreground"
+                  className="mt-4 rounded-xl bg-[#1B2B4B] px-8 py-3 font-heading text-lg font-semibold text-[#FAFAF7]"
                 >
                   Get Started
                 </Link>
