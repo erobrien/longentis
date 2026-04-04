@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import SectionLabel from "@/components/SectionLabel";
 import ScrollReveal from "@/components/ScrollReveal";
 import StatCounter from "@/components/StatCounter";
 import USMap from "@/components/USMap";
@@ -22,52 +21,48 @@ const Coverage = () => {
     <>
       <Header />
       <main>
-        {/* Hero */}
-        <section className="bg-background pt-32 pb-20">
-          <div className="mx-auto max-w-7xl px-6">
+        <section className="bg-[#FAFAF7] pt-36 pb-20">
+          <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
             <motion.h1
               initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
-              className="font-heading text-4xl font-bold text-foreground md:text-5xl lg:text-6xl max-w-3xl"
+              className="font-display text-[clamp(32px,4vw,64px)] leading-[1.1] tracking-[-0.02em] text-[#0B1029] max-w-3xl"
             >
-              Telehealth in every state. <span className="font-display italic text-cta">Centers in Virginia.</span>
+              Telehealth in every state. <em className="italic text-[#E8670A]">Centers in Virginia.</em>
             </motion.h1>
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-              className="font-body mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+              className="font-body mt-6 max-w-2xl text-[15px] leading-[1.7] text-[#555] font-light">
               Our telehealth platform serves men nationwide. Our Virginia centers offer same-day, in-person care.
             </motion.p>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} className="mt-8 flex flex-wrap gap-3">
               {["50 States", "3 VA Centers", "10,000+ Patients"].map((s) => (
-                <span key={s} className="rounded-full border border-border px-4 py-2 font-mono-label text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">{s}</span>
+                <span key={s} className="rounded-lg border border-gray-200 px-4 py-2 font-mono-label text-[10px] tracking-[0.14em] uppercase text-[#243656]">{s}</span>
               ))}
             </motion.div>
           </div>
         </section>
 
-        {/* Map + Clinics */}
-        <section className="bg-cream-100 py-24">
-          <div className="mx-auto max-w-7xl px-6">
+        <section className="bg-[#FAFAF7] py-24">
+          <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
             <ScrollReveal>
-              <SectionLabel text="Coverage Map" />
-              <h2 className="font-heading mt-3 text-3xl font-bold text-foreground md:text-4xl">Explore our coverage</h2>
+              <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5" style={{ background: "rgba(27,43,75,0.10)", border: "1px solid rgba(27,43,75,0.20)" }}>
+                <span className="font-mono-label text-[10px] tracking-[0.22em] uppercase text-[#243656]">Coverage Map</span>
+              </div>
+              <h2 className="font-display mt-6 text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-[#0B1029]">Explore our coverage</h2>
             </ScrollReveal>
             <div className="mt-12 grid gap-12 lg:grid-cols-[1fr_2fr]">
-              {/* State list sidebar */}
               <div className="space-y-3 max-h-96 overflow-y-auto pr-4">
                 {clinics.map((c, i) => (
                   <button
                     key={c.name}
                     onClick={() => setSelectedState("VA")}
-                    className={`w-full text-left rounded-lg border p-4 transition-all ${
-                      selectedState === "VA" ? "border-cta bg-cta/5" : "border-border bg-background hover:border-cta/30"
-                    }`}
+                    className="w-full text-left rounded-2xl border border-gray-100 bg-white p-4 shadow-sm hover:shadow-md transition-all"
                   >
-                    <span className="font-mono-label text-xs text-cta">{`0${i + 1}`}</span>
-                    <h3 className="font-heading text-sm font-semibold text-foreground mt-1">{c.name}</h3>
-                    <p className="font-body text-xs text-muted-foreground mt-1">{c.desc}</p>
+                    <span className="font-mono-label text-[10px] tracking-[0.22em] uppercase text-[#243656]">{`0${i + 1}`}</span>
+                    <h3 className="font-heading text-[15px] font-semibold text-[#0B1029] mt-1">{c.name}</h3>
+                    <p className="font-body text-[11px] text-[#555] font-light mt-1">{c.desc}</p>
                   </button>
                 ))}
               </div>
-              {/* Map */}
               <USMap selectedState={selectedState} onStateSelect={setSelectedState} />
             </div>
 
@@ -77,19 +72,18 @@ const Coverage = () => {
               <StatCounter end={10000} suffix="+" label="Patients" />
             </div>
 
-            {/* Clinic cards */}
-            <div className="mt-16 grid gap-6 md:grid-cols-3">
+            <div className="mt-16 grid gap-4 md:grid-cols-3">
               {clinics.map((c, i) => (
                 <ScrollReveal key={c.name} delay={i * 0.1}>
-                  <div className="rounded-lg border border-border bg-background p-6 h-full">
-                    <span className="font-mono-label text-xs font-medium text-cta">{`0${i + 1}`}</span>
-                    <h3 className="font-heading mt-2 text-lg font-semibold text-foreground">Men's Wellness Centers — {c.name}</h3>
-                    <p className="font-body mt-2 text-sm text-muted-foreground">{c.desc}</p>
+                  <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm h-full">
+                    <span className="font-mono-label text-[10px] tracking-[0.22em] uppercase text-[#243656]">{`0${i + 1}`}</span>
+                    <h3 className="font-heading mt-2 text-[15px] font-semibold text-[#0B1029]">Men's Wellness Centers — {c.name}</h3>
+                    <p className="font-body mt-2 text-[13px] text-[#555] font-light">{c.desc}</p>
                     <div className="mt-4 space-y-2">
-                      <p className="font-body flex items-center gap-2 text-sm text-muted-foreground"><MapPin className="h-3.5 w-3.5" />{c.address}</p>
-                      <a href={`tel:${c.phone.replace(/\D/g, "")}`} className="font-body flex items-center gap-2 text-sm text-muted-foreground hover:text-cta transition-colors"><Phone className="h-3.5 w-3.5" />{c.phone}</a>
+                      <p className="font-body flex items-center gap-2 text-[13px] text-[#555] font-light"><MapPin className="h-3.5 w-3.5" />{c.address}</p>
+                      <a href={`tel:${c.phone.replace(/\D/g, "")}`} className="font-body flex items-center gap-2 text-[13px] text-[#555] font-light hover:text-[#E8670A] transition-colors"><Phone className="h-3.5 w-3.5" />{c.phone}</a>
                     </div>
-                    <Link to="/get-started" className="mt-4 inline-flex items-center gap-1 font-heading text-sm font-semibold text-cta hover:underline">
+                    <Link to="/get-started" className="mt-4 inline-flex items-center gap-1 font-heading text-sm font-semibold text-[#E8670A] hover:underline">
                       Visit Center <ArrowRight className="h-4 w-4" />
                     </Link>
                   </div>
@@ -99,13 +93,12 @@ const Coverage = () => {
           </div>
         </section>
 
-        {/* Telehealth Banner */}
-        <section className="bg-navy-950 noise-overlay py-16">
-          <div className="relative z-10 mx-auto max-w-7xl px-6 text-center">
-            <h2 className="font-heading text-2xl font-bold text-cream-200 md:text-3xl">
+        <section className="bg-[#06081a] noise-overlay py-16">
+          <div className="relative z-10 mx-auto max-w-[1600px] px-6 lg:px-12 text-center">
+            <h2 className="font-display text-[clamp(24px,3vw,40px)] leading-[1.15] tracking-[-0.02em] text-[#E8E2D9]">
               Not near a Virginia center? Start a telehealth visit from anywhere in the US.
             </h2>
-            <Link to="/get-started" className="mt-8 inline-flex items-center gap-2 rounded-xl bg-cta px-6 py-3 font-heading text-sm font-semibold text-cta-foreground hover:brightness-110 active:scale-[0.98] transition-all">
+            <Link to="/get-started" className="mt-8 inline-flex items-center gap-2.5 rounded-lg bg-[#1B2B4B] px-6 py-3 font-heading text-[11.5px] font-bold uppercase tracking-[0.09em] text-[#FAFAF7] border border-white/[0.11] hover:bg-[#162340] active:scale-[0.98] transition-all">
               Start Telehealth Visit <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

@@ -19,7 +19,6 @@ const GetStarted = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic
   };
 
   return (
@@ -27,51 +26,60 @@ const GetStarted = () => {
       <Header />
       <main className="min-h-screen grid lg:grid-cols-[2fr_3fr]">
         {/* Left — Dark info panel */}
-        <div className="relative bg-navy-950 noise-overlay px-8 py-32 lg:px-12 lg:py-40 flex flex-col justify-center">
+        <div className="relative bg-[#06081a] noise-overlay px-8 py-32 lg:px-12 lg:py-40 flex flex-col justify-center">
           <div className="relative z-10">
             <motion.h1
               initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
-              className="font-heading text-3xl font-bold text-cream-200 md:text-4xl"
+              className="font-display text-[clamp(28px,3vw,48px)] leading-[1.1] tracking-[-0.02em] text-[#E8E2D9]"
             >
               Let's find out what's going on.
             </motion.h1>
 
             <div className="mt-12">
-              <p className="font-mono-label text-xs font-medium uppercase tracking-[0.15em] text-cta mb-6">What to expect</p>
+              <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 mb-6" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.10)" }}>
+                <span className="font-mono-label text-[10px] tracking-[0.22em] uppercase text-[#C5CDE0]/70">What to expect</span>
+              </div>
               {[
                 "Free consultation — zero obligation",
                 "Lab kit shipped to your door",
                 "Your dedicated provider, every visit",
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 mb-4">
-                  <span className="font-mono-label text-xs font-medium text-cta mt-1">{`0${i + 1}`}</span>
-                  <p className="font-body text-base text-cream-200/80">{step}</p>
+                  <span className="font-mono-label text-[10px] bg-white/10 px-2 py-1 rounded text-[#C5CDE0]/80 border border-white/10">{`0${i + 1}`}</span>
+                  <p className="font-body text-[15px] text-[#E8E2D9]/70 font-light">{step}</p>
                 </div>
               ))}
             </div>
 
             {/* Testimonial */}
-            <div className="mt-12 rounded-lg border border-white/[0.08] bg-white/[0.03] p-6">
+            <div
+              className="mt-12 rounded-2xl p-6"
+              style={{
+                background: "rgba(255,255,255,0.06)",
+                border: "1px solid rgba(255,255,255,0.10)",
+                backdropFilter: "blur(12px)",
+              }}
+            >
               <div className="flex gap-1 mb-3">
-                {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-cta text-cta" />)}
+                {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-[#E8670A] text-[#E8670A]" />)}
               </div>
-              <p className="font-body text-sm italic text-cream-200/80">"They answered all my questions, even the stupid ones."</p>
-              <p className="font-heading mt-3 text-xs font-semibold text-cream-200">Adam C. <span className="text-cream-200/50">— Google Review</span></p>
+              <p className="font-display text-[15px] italic text-[#E8E2D9]/80 leading-[1.55]">"They answered all my questions, even the stupid ones."</p>
+              <p className="font-heading mt-3 text-sm font-semibold text-[#E8E2D9]">Adam C. <span className="font-mono-label text-[9px] tracking-[0.14em] uppercase text-white/35">— Google Review</span></p>
             </div>
 
-            <a href="tel:8663444955" className="mt-8 inline-flex items-center gap-2 text-cream-200/70 hover:text-cream-200 transition-colors">
+            <a href="tel:8663444955" className="mt-8 inline-flex items-center gap-2 text-[#E8E2D9]/50 hover:text-[#E8E2D9] transition-colors">
               <Phone className="h-4 w-4" />
-              <span className="font-body text-sm">(866) 344-4955</span>
+              <span className="font-body text-sm font-light">(866) 344-4955</span>
             </a>
           </div>
         </div>
 
         {/* Right — Form */}
-        <div className="bg-background px-8 py-20 lg:px-16 lg:py-40 flex items-center">
+        <div className="bg-[#FAFAF7] px-8 py-20 lg:px-16 lg:py-40 flex items-center">
           <div className="w-full max-w-lg mx-auto">
             <motion.h2
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-              className="font-heading text-2xl font-bold text-foreground md:text-3xl"
+              className="font-display text-[clamp(24px,3vw,40px)] leading-[1.15] tracking-[-0.02em] text-[#0B1029]"
             >
               Start your free visit
             </motion.h2>
@@ -82,24 +90,24 @@ const GetStarted = () => {
                 { name: "phone" as const, label: "Phone", type: "tel" },
               ].map(({ name, label, type }) => (
                 <div key={name}>
-                  <label className="font-heading text-sm font-medium text-foreground">{label} *</label>
+                  <label className="font-heading text-[13px] font-semibold text-[#0B1029]">{label} *</label>
                   <input
                     type={type}
                     required
                     value={formData[name]}
                     onChange={(e) => setFormData({ ...formData, [name]: e.target.value })}
-                    className="mt-1.5 w-full rounded-lg border border-border bg-background px-4 py-3 font-body text-sm text-foreground outline-none focus:border-cta focus:ring-1 focus:ring-cta transition-colors"
+                    className="mt-1.5 w-full rounded-lg border border-gray-200 bg-white px-4 py-3 font-body text-sm text-[#0B1029] font-light outline-none focus:border-[#1B2B4B] focus:ring-1 focus:ring-[#1B2B4B] transition-colors"
                   />
                 </div>
               ))}
 
               <div>
-                <label className="font-heading text-sm font-medium text-foreground">State *</label>
+                <label className="font-heading text-[13px] font-semibold text-[#0B1029]">State *</label>
                 <select
                   required
                   value={formData.state}
                   onChange={(e) => setFormData({ ...formData, state: e.target.value })}
-                  className="mt-1.5 w-full rounded-lg border border-border bg-background px-4 py-3 font-body text-sm text-foreground outline-none focus:border-cta focus:ring-1 focus:ring-cta transition-colors"
+                  className="mt-1.5 w-full rounded-lg border border-gray-200 bg-white px-4 py-3 font-body text-sm text-[#0B1029] font-light outline-none focus:border-[#1B2B4B] focus:ring-1 focus:ring-[#1B2B4B] transition-colors"
                 >
                   <option value="">Select your state</option>
                   {states.map((s) => <option key={s} value={s}>{s}</option>)}
@@ -107,12 +115,12 @@ const GetStarted = () => {
               </div>
 
               <div>
-                <label className="font-heading text-sm font-medium text-foreground">What brings you in? *</label>
+                <label className="font-heading text-[13px] font-semibold text-[#0B1029]">What brings you in? *</label>
                 <select
                   required
                   value={formData.concern}
                   onChange={(e) => setFormData({ ...formData, concern: e.target.value })}
-                  className="mt-1.5 w-full rounded-lg border border-border bg-background px-4 py-3 font-body text-sm text-foreground outline-none focus:border-cta focus:ring-1 focus:ring-cta transition-colors"
+                  className="mt-1.5 w-full rounded-lg border border-gray-200 bg-white px-4 py-3 font-body text-sm text-[#0B1029] font-light outline-none focus:border-[#1B2B4B] focus:ring-1 focus:ring-[#1B2B4B] transition-colors"
                 >
                   <option value="">Select a concern</option>
                   {concerns.map((c) => <option key={c} value={c}>{c}</option>)}
@@ -120,18 +128,18 @@ const GetStarted = () => {
               </div>
 
               <div>
-                <label className="font-heading text-sm font-medium text-foreground">Message <span className="text-muted-foreground">(optional)</span></label>
+                <label className="font-heading text-[13px] font-semibold text-[#0B1029]">Message <span className="text-[#555]">(optional)</span></label>
                 <textarea
                   rows={4}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="mt-1.5 w-full rounded-lg border border-border bg-background px-4 py-3 font-body text-sm text-foreground outline-none focus:border-cta focus:ring-1 focus:ring-cta transition-colors resize-none"
+                  className="mt-1.5 w-full rounded-lg border border-gray-200 bg-white px-4 py-3 font-body text-sm text-[#0B1029] font-light outline-none focus:border-[#1B2B4B] focus:ring-1 focus:ring-[#1B2B4B] transition-colors resize-none"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full rounded-xl bg-cta py-4 font-heading text-base font-semibold text-cta-foreground transition-all hover:shadow-lg hover:brightness-110 active:scale-[0.98]"
+                className="w-full rounded-lg bg-[#1B2B4B] py-4 font-heading text-[11.5px] font-bold uppercase tracking-[0.09em] text-[#FAFAF7] transition-all hover:bg-[#162340] active:scale-[0.98] border border-white/[0.11] shadow-[inset_0_1px_0_rgba(255,255,255,0.11),inset_0_-1px_0_rgba(0,0,0,0.22),0_0_0_1px_rgba(27,43,75,0.55),0_4px_14px_rgba(27,43,75,0.38)]"
               >
                 Book My Free Visit
               </button>
