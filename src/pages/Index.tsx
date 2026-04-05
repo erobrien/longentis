@@ -473,7 +473,7 @@ const FinalCTA = () => (
         <ScrollReveal delay={0.1}>
           <div className="hidden lg:flex flex-col items-end text-right">
             <Diamond size="xl" className="text-white/[0.15]" />
-            <p className="font-mono text-[11px] text-white/35 mt-3 tracking-[0.1em] uppercase">Est. 2015 · Virginia</p>
+            <p className="font-sans text-[12px] text-white/40 mt-3 tracking-wide uppercase">Est. 2015 · Virginia</p>
           </div>
         </ScrollReveal>
       </div>
