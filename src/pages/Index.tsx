@@ -134,12 +134,7 @@ const Hero = () => (
           className={`flex-1 lg:flex-none flex flex-col items-center lg:items-end px-2 lg:px-0 py-2 lg:py-5 ${i > 0 ? "border-l lg:border-l-0 lg:border-t border-white/[0.15]" : ""}`}
         >
           <p
-            className="font-sans font-extrabold leading-none tracking-[-0.03em] text-[20px] lg:text-[clamp(28px,2.8vw,40px)]"
-            style={{
-              background: "linear-gradient(160deg, rgba(210,218,238,0.92) 0%, #1B2B4B 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
+            className="font-sans font-extrabold leading-none tracking-[-0.03em] text-[20px] lg:text-[clamp(28px,2.8vw,40px)] text-[#D2DAEE]"
           >
             {val}
           </p>
