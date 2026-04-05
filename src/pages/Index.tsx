@@ -30,13 +30,13 @@ const heroCards = [
     title: "Testosterone Replacement Therapy",
     img: fitMan,
     bgClass: "bg-navy-950",
-    href: "/treatments",
+    href: "/treatments/trt",
   },
   {
     title: "Erectile Dysfunction",
     img: coupleJog,
     bgClass: "bg-navy-800",
-    href: "/treatments",
+    href: "/treatments/ed",
   },
   {
     title: "Peptides",
@@ -48,7 +48,7 @@ const heroCards = [
     title: "Weight Loss",
     img: trackCrouch,
     bgClass: "bg-navy-700",
-    href: "/treatments",
+    href: "/treatments/weight-loss",
   },
   {
     title: "Get Started",
