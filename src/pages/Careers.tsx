@@ -66,7 +66,7 @@ const Careers = () => (
           <ScrollReveal>
             <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 bg-white/[0.06] border border-white/[0.1]">
               <Diamond size="xs" />
-              <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-cream-200/70">Why Longentis</span>
+              <span className="font-sans text-[11px] font-semibold tracking-wide uppercase text-cream-200/70">Why Longentis</span>
             </div>
             <h2 className="font-lora mt-6 text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-cream-200">What you can expect</h2>
           </ScrollReveal>
@@ -75,8 +75,8 @@ const Careers = () => (
               <ScrollReveal key={c.title} delay={i * 0.1}>
                 <div className="rounded-2xl p-6 h-full bg-white/[0.04] border border-white/[0.08]">
                   <Diamond size="sm" className="text-cta/60 mb-3" />
-                  <h3 className="font-sans text-[15px] font-semibold text-cream-200">{c.title}</h3>
-                  <p className="font-space mt-2 text-[13px] text-cream-200/60">{c.desc}</p>
+                  <h3 className="font-sans text-[16px] font-semibold text-cream-200">{c.title}</h3>
+                  <p className="font-space mt-2 text-[14px] leading-[1.6] text-cream-200/65">{c.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -89,7 +89,7 @@ const Careers = () => (
           <ScrollReveal>
             <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 bg-navy-900/[0.06] border border-navy-900/[0.12]">
               <Diamond size="xs" />
-              <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-navy-700">Roles</span>
+              <span className="font-sans text-[11px] font-semibold tracking-wide uppercase text-navy-600">Roles</span>
             </div>
             <h2 className="font-lora mt-6 text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-navy-900">Current openings</h2>
           </ScrollReveal>
@@ -101,8 +101,8 @@ const Careers = () => (
                   <ul className="space-y-3">
                     {d.roles.map((r) => (
                       <li key={r} className="flex items-center justify-between rounded-2xl border border-navy-900/[0.06] bg-white p-4">
-                        <span className="font-space text-[13px] text-navy-900">{r}</span>
-                        <span className="font-sans text-[13px] font-semibold text-cta cursor-pointer hover:underline">Apply →</span>
+                        <span className="font-space text-[14px] text-navy-900">{r}</span>
+                        <span className="font-sans text-[14px] font-semibold text-cta cursor-pointer hover:underline">Apply →</span>
                       </li>
                     ))}
                   </ul>
@@ -110,7 +110,7 @@ const Careers = () => (
               </AccordionItem>
             ))}
           </Accordion>
-          <p className="font-space mt-8 text-[13px] text-navy-600">Prefer a general intro? <a href="mailto:info@longentis.com" className="text-cta hover:underline">Contact us.</a></p>
+          <p className="font-space mt-8 text-[14px] text-navy-600">Prefer a general intro? <a href="mailto:info@longentis.com" className="text-cta hover:underline">Contact us.</a></p>
         </div>
       </section>
     </main>
