@@ -6,8 +6,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Treatments from "./pages/Treatments";
-import Coverage from "./pages/Coverage";
-import ForProviders from "./pages/ForProviders";
 import Careers from "./pages/Careers";
 import GetStarted from "./pages/GetStarted";
 import Press from "./pages/Press";
