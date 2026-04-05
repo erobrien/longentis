@@ -18,11 +18,6 @@ const Footer = () => (
               border: "1px solid rgba(27,43,75,0.18)",
             }}
           >
-            {/* Radial glow */}
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{ background: "radial-gradient(ellipse at center top, rgba(27,43,75,0.14) 0%, transparent 70%)" }}
-            />
             <div className="relative z-10 flex flex-col items-center">
               <h2 className="font-sans font-extrabold text-[clamp(28px,3.5vw,48px)] leading-[1.1] tracking-[-0.03em] text-[#E8E2D9]">
                 Ready to see what telehealth<br />looks like for you?
