@@ -120,8 +120,8 @@ const Hero = () => (
         className="hidden lg:block font-space font-light text-[14px] lg:text-[17px] leading-[1.6] lg:leading-[1.7] tracking-[0.01em] max-w-[600px]"
         style={{ color: "rgba(197,205,224,0.65)" }}
       >
-        <span className="hidden lg:inline">TRT, ED treatment, and physician-supervised weight loss — backed by 10,000+ patients and a decade of Men's Wellness Centers clinical experience. Now via telehealth in all 50 states.</span>
-        <span className="lg:hidden">TRT, ED treatment & weight loss — physician-supervised telehealth in all 50 states.</span>
+        <span className="hidden lg:inline">TRT, ED treatment & weight loss — 10,000+ patients. Now via telehealth in all 50 states.</span>
+        <span className="lg:hidden">TRT, ED & weight loss — telehealth in all 50 states.</span>
       </motion.p>
 
       {/* CTA */}
