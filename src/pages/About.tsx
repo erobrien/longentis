@@ -50,9 +50,10 @@ const timeline = [
 
 const About = () => (
   <>
-    <Header />
-    <main>
-      {/* Hero */}
+      <SEOHead title="About Us" description="Since 2015, Longentis has treated 10,000+ men across all 50 states. Learn about our mission, team, and clinical approach to men's health." path="/about" />
+      <Header />
+      <Breadcrumbs />
+      <main id="main-content">
       <section className="relative bg-navy-950 noise-overlay pt-36 pb-20 overflow-hidden">
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 mb-6 bg-white/[0.06] border border-white/[0.1]">

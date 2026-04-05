@@ -29,8 +29,10 @@ const comprehensiveCare = [
 
 const Treatments = () => (
   <>
+    <SEOHead title="Treatments" description="TRT, ED treatment, and medical weight loss — physician-supervised protocols backed by real lab panels and dedicated providers." path="/treatments" />
     <Header />
-    <main>
+    <Breadcrumbs />
+    <main id="main-content">
       {/* Hero */}
       <section className="bg-cream-100 pt-36 pb-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">

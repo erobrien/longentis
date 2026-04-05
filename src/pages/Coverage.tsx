@@ -35,8 +35,10 @@ const Coverage = () => {
 
   return (
     <>
+      <SEOHead title="Coverage" description="Longentis telehealth is available in all 50 states. In-person care at 3 Virginia centers — Richmond, Newport News, Virginia Beach." path="/coverage" />
       <Header />
-      <main>
+      <Breadcrumbs />
+      <main id="main-content">
         {/* Hero */}
         <section className="bg-cream-100 pt-36 pb-20">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
