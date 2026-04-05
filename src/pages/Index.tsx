@@ -124,18 +124,18 @@ const Hero = () => (
       >
         <Link
           to="/get-started"
-          className="inline-flex items-center gap-2.5 font-sans text-[11.5px] font-bold uppercase tracking-[0.09em] text-[#FAFAF7] active:scale-[0.98] transition-all"
+          className="inline-flex items-center gap-2.5 font-sans text-[11.5px] font-bold uppercase tracking-[0.09em] text-[#FAFAF7] active:scale-[0.98] transition-all hover:brightness-110"
           style={{
-            borderRadius: 8,
-            padding: "13px 16px 13px 22px",
-            background: "#1B2B4B",
-            border: "1px solid rgba(255,255,255,0.11)",
-            boxShadow: "inset 0 1px rgba(255,255,255,0.11), inset 0 -1px rgba(0,0,0,0.22), 0 0 0 1px rgba(27,43,75,0.55), 0 4px 14px rgba(27,43,75,0.38), 0 12px 40px rgba(0,0,0,0.38)",
+            borderRadius: 10,
+            padding: "14px 18px 14px 24px",
+            background: "linear-gradient(135deg, #E8670A 0%, #D45A00 100%)",
+            border: "1px solid rgba(255,255,255,0.18)",
+            boxShadow: "inset 0 1px rgba(255,255,255,0.22), inset 0 -1px rgba(0,0,0,0.15), 0 0 0 1px rgba(232,103,10,0.50), 0 4px 14px rgba(232,103,10,0.35), 0 12px 40px rgba(0,0,0,0.30)",
           }}
         >
           Start Your Free Visit
-          <span className="flex items-center justify-center w-[26px] h-[26px] rounded-[5px] bg-[rgba(232,103,10,0.16)]">
-            <ArrowRight className="h-3.5 w-3.5 text-[#E8670A]" />
+          <span className="flex items-center justify-center w-[26px] h-[26px] rounded-[6px] bg-white/20">
+            <ArrowRight className="h-3.5 w-3.5 text-white" />
           </span>
         </Link>
       </motion.div>
@@ -224,9 +224,17 @@ const HealthAssessment = () => (
       <div className="mt-12 grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-3 lg:grid-cols-3 lg:gap-4">
         {assessmentCards.map((card, i) => (
           <ScrollReveal key={card.title} delay={i * 0.04}>
-            <div className="flex w-full flex-row items-center rounded-2xl border border-[#1B2B4B]/[0.08] bg-white py-2 pr-4 pl-2 shadow-[0_2px_12px_rgba(11,16,41,0.04)] hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(11,16,41,0.08)] transition-all">
-              <div className="relative size-10 shrink-0 overflow-hidden rounded-lg bg-[#0B1029]/[0.04] md:size-12 flex items-center justify-center">
-                <card.icon className="h-5 w-5 text-[#1B2B4B]" strokeWidth={1.5} />
+            <div
+              className="flex w-full flex-row items-center rounded-2xl py-3 pr-5 pl-3 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(11,16,41,0.12)] transition-all duration-300"
+              style={{
+                background: "linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(232,237,245,0.6) 100%)",
+                backdropFilter: "blur(12px) saturate(1.3)",
+                border: "1px solid rgba(27,43,75,0.08)",
+                boxShadow: "0 2px 16px rgba(11,16,41,0.05), inset 0 1px 0 rgba(255,255,255,0.7)",
+              }}
+            >
+              <div className="relative size-11 shrink-0 overflow-hidden rounded-xl md:size-13 flex items-center justify-center" style={{ background: "linear-gradient(135deg, #0B1029 0%, #1B2B4B 100%)" }}>
+                <card.icon className="h-5 w-5 text-[#C5CDE0]" strokeWidth={1.5} />
               </div>
               <div className="ml-3">
                 <h3 className="font-sans text-sm leading-none font-semibold text-gray-900 md:text-[15px]">{card.title}</h3>
@@ -421,7 +429,9 @@ const OurApproach = () => (
 
 /* ─── COVERAGE MAP ─── */
 const CoverageMap = () => (
-  <section className="bg-[#FAFAF7] py-24">
+  <section className="bg-[#FAFAF7] py-24 relative">
+    {/* Gradient bleed from dark Our Approach section above */}
+    <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#06081a]/[0.06] to-transparent pointer-events-none" />
     <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
       <ScrollReveal>
         <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5" style={{ background: "rgba(27,43,75,0.10)", border: "1px solid rgba(27,43,75,0.20)" }}>
@@ -441,7 +451,15 @@ const CoverageMap = () => (
       <ScrollReveal delay={0.2}>
         <USMap className="mt-12 max-w-3xl mx-auto" selectedState="VA" />
       </ScrollReveal>
-      <div className="mt-12 flex flex-wrap justify-center gap-12">
+      <div
+        className="mt-12 flex flex-wrap justify-center gap-12 rounded-2xl px-10 py-8 mx-auto max-w-2xl"
+        style={{
+          background: "linear-gradient(135deg, rgba(11,16,41,0.04) 0%, rgba(27,43,75,0.08) 100%)",
+          backdropFilter: "blur(12px)",
+          border: "1px solid rgba(27,43,75,0.10)",
+          boxShadow: "inset 0 1px 0 rgba(255,255,255,0.5)",
+        }}
+      >
         <StatCounter end={50} label="States" />
         <StatCounter end={3} label="VA Centers" />
         <StatCounter end={10000} suffix="+" label="Patients" />
@@ -454,7 +472,15 @@ const CoverageMap = () => (
           { name: "Virginia Beach, VA", phone: "(757) 215-3006", desc: "Virginia Beach location for same-day care." },
         ].map((c, i) => (
           <ScrollReveal key={c.name} delay={i * 0.1}>
-            <div className="rounded-2xl border border-[#1B2B4B]/[0.08] bg-white p-6 shadow-[0_2px_16px_rgba(11,16,41,0.05)] hover:shadow-[0_6px_24px_rgba(11,16,41,0.10)] transition-shadow">
+            <div
+              className="rounded-2xl p-6 hover:-translate-y-1 transition-all duration-300"
+              style={{
+                background: "linear-gradient(145deg, rgba(255,255,255,0.95) 0%, rgba(232,237,245,0.5) 100%)",
+                backdropFilter: "blur(16px) saturate(1.4)",
+                border: "1px solid rgba(27,43,75,0.10)",
+                boxShadow: "0 4px 24px rgba(11,16,41,0.06), inset 0 1px 0 rgba(255,255,255,0.8)",
+              }}
+            >
               <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#243656]">{`0${i + 1}`}</span>
               <h3 className="font-sans mt-2 text-lg font-semibold text-[#0B1029]">Men's Wellness Centers — {c.name}</h3>
               <p className="font-space mt-2 text-[13px] text-[#555] font-light">{c.desc}</p>
@@ -490,8 +516,8 @@ const Testimonials = () => (
       {/* Bento grid — desktop */}
       <div className="mt-12 hidden lg:grid gap-4" style={{ gridTemplateColumns: "1fr 1.3fr 1fr", gridTemplateRows: "190px 280px 200px" }}>
         {/* Stat card 1 */}
-        <div className="rounded-3xl p-6 flex flex-col justify-between" style={{ background: "#ffffff", border: "1px solid rgba(27,43,75,0.12)", boxShadow: "0 2px 24px rgba(27,43,75,0.06)" }}>
-          <p className="font-sans font-extrabold text-[clamp(40px,3.5vw,52px)] leading-none tracking-[-0.04em] text-[#06081a]">10,000+</p>
+        <div className="rounded-3xl p-6 flex flex-col justify-between" style={{ background: "linear-gradient(145deg, #ffffff 0%, #E8EDF5 100%)", border: "1px solid rgba(27,43,75,0.10)", boxShadow: "0 4px 30px rgba(11,16,41,0.08), inset 0 1px 0 rgba(255,255,255,0.9)" }}>
+          <p className="font-sans font-extrabold text-[clamp(40px,3.5vw,52px)] leading-none tracking-[-0.04em]" style={{ background: "linear-gradient(160deg, #06081a 0%, #1B2B4B 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>10,000+</p>
           <p className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#243656]">Patients Treated</p>
         </div>
 
@@ -514,10 +540,10 @@ const Testimonials = () => (
           </div>
         </div>
 
-        {/* Stat card 2 */}
-        <div className="rounded-3xl p-6 flex flex-col justify-between" style={{ background: "#ffffff", border: "1px solid rgba(27,43,75,0.12)", boxShadow: "0 2px 24px rgba(27,43,75,0.06)" }}>
-          <p className="font-sans font-extrabold text-[clamp(40px,3.5vw,52px)] leading-none tracking-[-0.04em] text-[#06081a]">4.9</p>
-          <p className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#243656]">Google Rating</p>
+        {/* Stat card 2 — navy gradient */}
+        <div className="rounded-3xl p-6 flex flex-col justify-between" style={{ background: "linear-gradient(145deg, #1B2B4B 0%, #06081a 100%)", border: "1px solid rgba(197,205,224,0.10)", boxShadow: "0 4px 30px rgba(0,0,0,0.20)" }}>
+          <p className="font-sans font-extrabold text-[clamp(40px,3.5vw,52px)] leading-none tracking-[-0.04em] text-[#E8670A]">4.9</p>
+          <p className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#C5CDE0]/50">Google Rating</p>
         </div>
 
         {/* Quote card 2 */}
@@ -542,9 +568,9 @@ const Testimonials = () => (
           </div>
         </div>
 
-        {/* Stat card 3 */}
-        <div className="rounded-3xl p-6 flex flex-col justify-between" style={{ background: "#ffffff", border: "1px solid rgba(27,43,75,0.12)", boxShadow: "0 2px 24px rgba(27,43,75,0.06)" }}>
-          <p className="font-sans font-extrabold text-[clamp(40px,3.5vw,52px)] leading-none tracking-[-0.04em] text-[#06081a]">2015</p>
+        {/* Stat card 3 — gradient */}
+        <div className="rounded-3xl p-6 flex flex-col justify-between" style={{ background: "linear-gradient(145deg, #ffffff 0%, #E8EDF5 100%)", border: "1px solid rgba(27,43,75,0.10)", boxShadow: "0 4px 30px rgba(11,16,41,0.08), inset 0 1px 0 rgba(255,255,255,0.9)" }}>
+          <p className="font-sans font-extrabold text-[clamp(40px,3.5vw,52px)] leading-none tracking-[-0.04em]" style={{ background: "linear-gradient(160deg, #06081a 0%, #1B2B4B 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>2015</p>
           <p className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#243656]">Established</p>
         </div>
       </div>
@@ -604,7 +630,7 @@ const PressSection = () => {
         <div
           ref={emblaRef}
           className="mt-12 overflow-hidden"
-          style={{}}
+          style={{ maskImage: "linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%)", WebkitMaskImage: "linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%)" }}
         >
           <div className="flex gap-4">
             {pressArticles.map((a, i) => (
@@ -614,8 +640,10 @@ const PressSection = () => {
                 style={{
                   width: 280,
                   height: activeIndex === i ? 420 : 260,
-                  background: "#111938",
-                  opacity: activeIndex === i ? 1 : 0.25,
+                  background: `linear-gradient(145deg, ${activeIndex === i ? "#1B2B4B" : "#111938"} 0%, #06081a 100%)`,
+                  opacity: activeIndex === i ? 1 : 0.35,
+                  border: activeIndex === i ? "1px solid rgba(197,205,224,0.12)" : "1px solid rgba(197,205,224,0.04)",
+                  boxShadow: activeIndex === i ? "0 8px 40px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.05)" : "none",
                 }}
                 onMouseEnter={() => setActiveIndex(i)}
               >
