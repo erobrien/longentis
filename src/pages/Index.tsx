@@ -61,10 +61,10 @@ const heroCards = [
   },
 ];
 
-const HeroCard = ({ title, img, bg, href, className }: { title: string; img: string; bg: string; href: string; className?: string }) => (
+const HeroCard = ({ title, img, bg, href, className, isAccent }: { title: string; img: string; bg: string; href: string; className?: string; isAccent?: boolean }) => (
   <Link
     to={href}
-    className={`group relative overflow-hidden rounded-2xl ${bg} flex flex-col justify-between p-6 lg:p-8 ${className ?? ""}`}
+    className={`group relative overflow-hidden rounded-2xl ${bg} flex flex-col justify-between p-6 lg:p-8 border border-white/[0.06] ${className ?? ""}`}
   >
     {/* Title — top left */}
     <h3 className="relative z-10 font-sans font-semibold text-white text-lg lg:text-2xl max-w-[200px] leading-tight">
@@ -73,21 +73,18 @@ const HeroCard = ({ title, img, bg, href, className }: { title: string; img: str
 
     {/* Black pill button — bottom left */}
     <div className="relative z-10 mt-auto pt-4">
-      <span className="inline-flex items-center gap-2 rounded-full bg-black/80 px-4 py-2.5 text-white font-sans text-xs font-semibold uppercase tracking-wider transition-all group-hover:bg-black group-hover:scale-105">
+      <span className={`inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-white font-sans text-xs font-semibold uppercase tracking-wider transition-all group-hover:scale-105 ${isAccent ? "bg-white/20 group-hover:bg-white/30" : "bg-black/70 group-hover:bg-black/90"}`}>
         Start now
         <ArrowRight className="h-3.5 w-3.5" />
       </span>
     </div>
 
-    {/* Foreground photo — bottom right */}
+    {/* Foreground photo — bottom right, smaller */}
     <img
       src={img}
       alt={title}
-      className="absolute bottom-0 right-0 h-[85%] w-[60%] object-cover object-center rounded-tl-2xl opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+      className="absolute bottom-0 right-0 h-[60%] w-[40%] object-cover object-center rounded-tl-2xl opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500"
     />
-
-    {/* Subtle overlay for text legibility */}
-    <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent z-[1]" />
   </Link>
 );
 
