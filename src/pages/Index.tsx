@@ -460,7 +460,7 @@ const FinalCTA = () => (
           <h2 className="font-sans font-bold text-white text-[clamp(30px,4vw,48px)] leading-[1.08] tracking-[-0.03em]">
             Your health<br/>shouldn't wait.
           </h2>
-          <p className="font-space text-[15px] text-white/50 mt-4 max-w-md">
+          <p className="font-space text-[15px] text-white/55 mt-4 max-w-md">
             Start with a free assessment. Your dedicated provider is ready.
           </p>
           <Link
