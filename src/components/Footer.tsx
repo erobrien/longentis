@@ -14,7 +14,7 @@ const Footer = () => (
           <div
             className="rounded-2xl px-8 py-16 sm:px-12 sm:py-20 flex flex-col items-center text-center overflow-hidden relative"
             style={{
-              background: "linear-gradient(180deg, rgba(27,43,75,0.10) 0%, rgba(27,43,75,0.03) 100%)",
+              background: "rgba(27,43,75,0.07)",
               border: "1px solid rgba(27,43,75,0.18)",
             }}
           >
