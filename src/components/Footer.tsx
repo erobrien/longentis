@@ -99,7 +99,7 @@ const Footer = () => (
         </div>
 
         <div className="mt-12 pt-6 flex flex-wrap items-center justify-between gap-4" style={{
-          backgroundImage: "repeating-linear-gradient(to right, rgba(255,255,255,0.12) 0px, rgba(255,255,255,0.12) 4px, transparent 4px, transparent 10px)",
+          backgroundImage: "none",
           backgroundSize: "100% 1px",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "top",

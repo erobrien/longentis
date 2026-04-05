@@ -325,9 +325,9 @@ const OurApproach = () => (
         {/* Card with diagonal stripe borders */}
         <div className="relative rounded-2xl overflow-hidden" style={{ background: "#E8EDF5" }}>
           {/* Left stripe border */}
-          <div className="absolute left-0 top-0 bottom-0 w-2" style={{ backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(27,43,75,0.13) 5px, rgba(27,43,75,0.13) 6px)" }} />
+          <div className="absolute left-0 top-0 bottom-0 w-2" style={{ background: "rgba(27,43,75,0.13)" }} />
           {/* Right stripe border */}
-          <div className="absolute right-0 top-0 bottom-0 w-2" style={{ backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(27,43,75,0.13) 5px, rgba(27,43,75,0.13) 6px)" }} />
+          <div className="absolute right-0 top-0 bottom-0 w-2" style={{ background: "rgba(27,43,75,0.13)" }} />
 
           <Tabs defaultValue="providers" className="relative z-10 px-6 py-6 lg:px-16 lg:py-10">
             <TabsList className="bg-transparent border-0 p-0 h-auto flex flex-wrap gap-2 mb-8">
