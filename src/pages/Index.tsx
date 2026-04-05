@@ -505,8 +505,8 @@ const Index = () => (
       <WhyLongentis />
       <SocialProof />
       <EditorialBreak />
-      <Coverage />
-      <Press />
+      <CoverageSection />
+      <PressSection />
       <FinalCTA />
     </main>
     <Footer />
