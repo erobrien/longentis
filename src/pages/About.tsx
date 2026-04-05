@@ -108,7 +108,7 @@ const About = () => (
                 <ScrollReveal key={t.year} delay={i * 0.06}>
                   <div className="flex gap-6 items-start">
                     <div className="relative z-10 size-10 rounded-full bg-navy-950 flex items-center justify-center shrink-0">
-                      <span className="font-mono text-[10px] tracking-[0.1em] text-cta font-bold">{t.year.slice(2)}</span>
+                      <span className="font-sans text-[11px] font-bold tracking-wide text-cta">{t.year.slice(2)}</span>
                     </div>
                     <div className="rounded-2xl p-5 bg-white border border-navy-900/[0.06] flex-1">
                       <p className="font-mono text-[10px] tracking-[0.16em] uppercase text-navy-700/50 mb-1">{t.year}</p>
