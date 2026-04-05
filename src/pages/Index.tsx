@@ -40,13 +40,15 @@ const Hero = () => (
         playsInline
         preload="metadata"
         className="absolute inset-0 w-full h-full object-cover"
+        style={{ playbackRate: 0.6 } as any}
+        ref={(el) => { if (el) el.playbackRate = 0.6; }}
       />
       {/* Left gradient overlay */}
       <div
         className="absolute inset-0"
         style={{
           zIndex: 2,
-          background: "linear-gradient(90deg, #06081ae6 0%, #06081a73 35%, #06081a26 55%, #06081a1a 100%)",
+          background: "linear-gradient(90deg, #06081aee 0%, #06081a99 35%, #06081a55 55%, #06081a40 100%)",
         }}
       />
       {/* Bottom gradient overlay */}
@@ -55,7 +57,7 @@ const Hero = () => (
         style={{
           zIndex: 2,
           height: "40%",
-          background: "linear-gradient(transparent 0%, #06081ab3 100%)",
+          background: "linear-gradient(transparent 0%, #06081acc 100%)",
         }}
       />
       {/* Noise texture */}
