@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, ClipboardCheck, TestTube, Video, Truck, Star, Shield, Heart, Scale, Activity, Thermometer, RefreshCw, Pill, Beaker } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -11,6 +12,8 @@ import StatCounter from "@/components/StatCounter";
 import USMap from "@/components/USMap";
 import TrustBar from "@/components/TrustBar";
 import SectionHeader from "@/components/SectionHeader";
+import SEOHead from "@/components/SEOHead";
+import { initScrollTracking } from "@/lib/analytics";
 
 /* ─── ASSET IMPORTS ─── */
 import heroImg from "@/assets/iStock-1097768100-3.jpg";
