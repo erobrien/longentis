@@ -7,6 +7,11 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import StatCounter from "@/components/StatCounter";
+import SectionHeader from "@/components/SectionHeader";
+
+import consultation from "@/assets/iStock-2187145642-1-5.jpg";
+import fitMan from "@/assets/iStock-518621045.jpg";
+import trackSitting from "@/assets/iStock-864444970-1-7.jpg";
 
 const values = [
   { title: "Integrity in Practice", desc: "We uphold high standards by proactively solving problems and keeping care evidence-based. Patients should feel the quality of our decisions before they ever see the process behind them." },
@@ -19,18 +24,26 @@ const values = [
 
 const teamTabs = [
   { id: "leadership", label: "Leadership Team", members: [
-    { name: "Executive Director", title: "Operations & Growth", bio: "Leading Longentis growth strategy and operational excellence across all 50 states." },
-    { name: "Clinical Director", title: "Medical Oversight", bio: "Overseeing all clinical protocols and provider standards nationwide." },
-    { name: "Technology Lead", title: "Platform & Engineering", bio: "Building the telehealth infrastructure that powers every patient interaction." },
+    { name: "Executive Director", title: "Operations & Growth", bio: "Leading Longentis growth strategy and operational excellence across all 50 states.", img: consultation },
+    { name: "Clinical Director", title: "Medical Oversight", bio: "Overseeing all clinical protocols and provider standards nationwide.", img: fitMan },
+    { name: "Technology Lead", title: "Platform & Engineering", bio: "Building the telehealth infrastructure that powers every patient interaction.", img: trackSitting },
   ]},
   { id: "medical", label: "Medical Providers", members: [
-    { name: "Lead Physician", title: "Men's Health Specialist", bio: "Board-certified with 10+ years in hormone therapy and men's health." },
-    { name: "Clinical NP", title: "Nurse Practitioner", bio: "Specialized in TRT protocols and metabolic health management." },
+    { name: "Lead Physician", title: "Men's Health Specialist", bio: "Board-certified with 10+ years in hormone therapy and men's health.", img: consultation },
+    { name: "Clinical NP", title: "Nurse Practitioner", bio: "Specialized in TRT protocols and metabolic health management.", img: fitMan },
   ]},
   { id: "advisory", label: "Advisory Board", members: [
-    { name: "Medical Advisor", title: "Endocrinology", bio: "Research background in hormone optimization and metabolic health." },
-    { name: "Strategy Advisor", title: "Healthcare Operations", bio: "Experienced in scaling telehealth platforms nationally." },
+    { name: "Medical Advisor", title: "Endocrinology", bio: "Research background in hormone optimization and metabolic health.", img: trackSitting },
+    { name: "Strategy Advisor", title: "Healthcare Operations", bio: "Experienced in scaling telehealth platforms nationally.", img: consultation },
   ]},
+];
+
+const timeline = [
+  { year: "2015", title: "Men's Wellness Centers Founded", desc: "First Virginia clinic opens in Richmond, focused on TRT and men's health." },
+  { year: "2018", title: "Multi-Location Expansion", desc: "Newport News and Virginia Beach centers open. 3,000+ patients treated." },
+  { year: "2022", title: "Telehealth Launch", desc: "Expanding beyond Virginia — telehealth services begin across the East Coast." },
+  { year: "2024", title: "Nationwide Coverage", desc: "Licensed in all 50 states. Longentis brand launches as the digital arm of MWC." },
+  { year: "2026", title: "10,000+ Patients", desc: "LegitScript certified. 12+ providers. Setting the standard in men's telehealth." },
 ];
 
 const About = () => (
@@ -38,170 +51,227 @@ const About = () => (
     <Header />
     <main>
       {/* Hero */}
-      <section className="relative bg-[#06081a] noise-overlay py-40 overflow-hidden">
-        <div className="relative z-10 mx-auto max-w-[1600px] px-6 lg:px-12 text-center">
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 mb-6" style={{ background: "rgba(27,43,75,0.30)", border: "1px solid rgba(255,255,255,0.10)" }}>
-            <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#C5CDE0]/70">Our Story</span>
+      <section className="relative bg-navy-950 noise-overlay pt-36 pb-20 overflow-hidden">
+        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 mb-6 bg-white/[0.06] border border-white/[0.1]">
+            <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-cream-200/50">Our Story</span>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.7 }}
-            className="font-lora text-[clamp(32px,5vw,72px)] leading-[1.1] tracking-[-0.02em] text-[#E8E2D9] max-w-4xl mx-auto"
+            className="font-sans font-bold text-[clamp(32px,5vw,72px)] leading-[1.05] tracking-[-0.03em] text-cream-100 max-w-4xl mx-auto"
           >
-            Since 2015. 10,000 men. <em className="italic text-[#E8670A]">We know what works.</em>
+            Since 2015. 10,000 men.{" "}
+            <em className="font-lora italic text-cta" style={{ fontStyle: "italic" }}>We know what works.</em>
           </motion.h1>
-          <div className="absolute inset-0 pointer-events-none">
-            {[
-              "top-20 left-[10%] w-20 h-20",
-              "top-32 right-[12%] w-24 h-24",
-              "bottom-20 left-[20%] w-16 h-16",
-              "bottom-16 right-[18%] w-20 h-20",
-            ].map((pos, i) => (
-              <div key={i} className={`absolute ${pos} rounded-full bg-[#1B2B4B] opacity-40`} />
-            ))}
-          </div>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
+            className="font-space text-cream-200/45 text-[16px] max-w-2xl mx-auto mt-5 leading-relaxed"
+          >
+            What started as a single Virginia clinic is now a nationwide men's health platform — same providers, same protocols, higher standard.
+          </motion.p>
         </div>
       </section>
 
-      {/* Driven by Purpose */}
-      <section className="bg-[#FAFAF7] py-24">
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-12 grid gap-12 lg:grid-cols-2 items-center">
+      {/* Driven by Purpose — with actual image */}
+      <section className="bg-cream-100 py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 grid gap-12 lg:grid-cols-2 items-center">
           <ScrollReveal>
-            <h2 className="font-lora text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-[#0B1029]">Driven by Purpose</h2>
-            <p className="font-space mt-6 text-[15px] leading-[1.7] text-[#555] font-light">
+            <SectionHeader badge="Our Purpose" title="Driven by Purpose" />
+            <p className="font-space mt-6 text-[15px] leading-[1.7] text-navy-700/55">
               Longentis is building the telehealth model for men's health at scale: same dedicated providers, clearer standards, and a better experience for patients everywhere.
+            </p>
+            <p className="font-space mt-4 text-[15px] leading-[1.7] text-navy-700/55">
+              The gap between how men feel and what their doctor calls "normal" is where we operate. We started in Virginia. Now we're in all 50 states — bringing the same clinical discipline to telehealth that made our in-person centers work.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
-            <div className="rounded-lg bg-[#1B2B4B] h-80" />
+            <div className="rounded-2xl overflow-hidden h-80 relative">
+              <img src={consultation} alt="Longentis provider consultation" className="absolute inset-0 w-full h-full object-cover" />
+            </div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Timeline */}
+      <section className="bg-cream-200 py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <SectionHeader
+            badge="Our Journey"
+            title={<>From one Virginia clinic to <em className="font-lora italic text-cta" style={{ fontStyle: "italic" }}>all 50 states.</em></>}
+          />
+          <div className="mt-14 relative">
+            {/* Vertical line */}
+            <div className="absolute left-[19px] top-0 bottom-0 w-[2px] bg-navy-900/[0.08] hidden md:block" />
+            <div className="space-y-8">
+              {timeline.map((t, i) => (
+                <ScrollReveal key={t.year} delay={i * 0.06}>
+                  <div className="flex gap-6 items-start">
+                    <div className="relative z-10 size-10 rounded-full bg-navy-950 flex items-center justify-center shrink-0">
+                      <span className="font-mono text-[10px] tracking-[0.1em] text-cta font-bold">{t.year.slice(2)}</span>
+                    </div>
+                    <div className="rounded-2xl p-5 bg-white border border-navy-900/[0.06] flex-1">
+                      <p className="font-mono text-[10px] tracking-[0.16em] uppercase text-navy-700/35 mb-1">{t.year}</p>
+                      <h3 className="font-sans font-semibold text-[16px] text-navy-900">{t.title}</h3>
+                      <p className="font-space text-[13px] leading-[1.6] text-navy-700/50 mt-1">{t.desc}</p>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Mission & Vision */}
       <section className="grid lg:grid-cols-2">
-        <div className="bg-[#06081a] noise-overlay p-12 lg:p-20">
+        <div className="bg-navy-950 noise-overlay p-12 lg:p-20 relative">
           <div className="relative z-10">
-            <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.10)" }}>
-              <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#C5CDE0]/70">Our Mission</span>
+            <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 bg-white/[0.06] border border-white/[0.1]">
+              <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-cream-200/50">Our Mission</span>
             </div>
-            <h3 className="font-sans mt-6 text-xl font-semibold text-[#E8E2D9] uppercase tracking-wide">Advance Men's Health</h3>
-            <p className="font-space mt-3 text-[15px] leading-[1.7] text-[#E8E2D9]/60 font-light">
+            <h3 className="font-sans mt-6 text-xl font-semibold text-cream-100 uppercase tracking-wide">Advance Men's Health</h3>
+            <p className="font-space mt-3 text-[15px] leading-[1.7] text-cream-200/50">
               Our mission is to advance healthier, stronger, more confident lives by making men's health care more accessible, more precise, and more actionable for every patient we serve.
             </p>
-            <h3 className="font-sans mt-10 text-xl font-semibold text-[#E8E2D9] uppercase tracking-wide">Build the Platform</h3>
-            <p className="font-space mt-3 text-[15px] leading-[1.7] text-[#E8E2D9]/60 font-light">
+            <h3 className="font-sans mt-10 text-xl font-semibold text-cream-100 uppercase tracking-wide">Build the Platform</h3>
+            <p className="font-space mt-3 text-[15px] leading-[1.7] text-cream-200/50">
               We do that by equipping providers with advanced protocols, real lab data, dedicated patient panels, and the telehealth infrastructure needed to deliver modern care at a higher standard — in all 50 states.
             </p>
           </div>
         </div>
-        <div className="bg-[#E8EDF5] p-12 lg:p-20">
-          <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5" style={{ background: "rgba(27,43,75,0.10)", border: "1px solid rgba(27,43,75,0.20)" }}>
-            <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#243656]">Our Vision</span>
+        <div className="bg-cream-200 p-12 lg:p-20">
+          <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 bg-navy-900/[0.06] border border-navy-900/[0.12]">
+            <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-navy-600">Our Vision</span>
           </div>
-          <h3 className="font-sans mt-6 text-xl font-semibold text-[#0B1029] uppercase tracking-wide">Set the Standard</h3>
-          <p className="font-space mt-3 text-[15px] leading-[1.7] text-[#555] font-light">
+          <h3 className="font-sans mt-6 text-xl font-semibold text-navy-900 uppercase tracking-wide">Set the Standard</h3>
+          <p className="font-space mt-3 text-[15px] leading-[1.7] text-navy-700/55">
             Our vision is to set the standard as the trusted, go-to provider of men's health care and to help define what physician-led telehealth looks like at scale.
           </p>
-          <h3 className="font-sans mt-10 text-xl font-semibold text-[#0B1029] uppercase tracking-wide">Lead What Comes Next</h3>
-          <p className="font-space mt-3 text-[15px] leading-[1.7] text-[#555] font-light">
+          <h3 className="font-sans mt-10 text-xl font-semibold text-navy-900 uppercase tracking-wide">Lead What Comes Next</h3>
+          <p className="font-space mt-3 text-[15px] leading-[1.7] text-navy-700/55">
             We see where men's health is headed and we intend to be at the forefront: expanding access to real treatment, removing geographic barriers, and helping more men take control of their health for longer.
           </p>
         </div>
       </section>
 
-      {/* How We Work */}
-      <section className="bg-[#FAFAF7] py-24">
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
-          <ScrollReveal>
-            <h2 className="font-lora text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-[#0B1029]">How We Work</h2>
-            <p className="font-space mt-4 text-[15px] leading-[1.7] text-[#555] font-light max-w-2xl">
-              The principles that shape Longentis — from clinical decisions to how we communicate with patients.
-            </p>
-          </ScrollReveal>
+      {/* Values */}
+      <section className="bg-cream-100 py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <SectionHeader badge="Our Values" title="How We Work" description="The principles that shape Longentis — from clinical decisions to how we communicate with patients." />
           <Accordion type="single" collapsible className="mt-12 max-w-3xl">
             {values.map((v, i) => (
-              <AccordionItem key={i} value={`v-${i}`} className="border-b border-dashed border-[#C5CDE0]/70">
-                <AccordionTrigger className="font-sans text-lg font-semibold text-[#0B1029]">{v.title}</AccordionTrigger>
-                <AccordionContent><p className="font-space text-[15px] leading-[1.7] text-[#555] font-light">{v.desc}</p></AccordionContent>
+              <AccordionItem key={i} value={`v-${i}`} className="border-b border-navy-900/[0.08]">
+                <AccordionTrigger className="font-sans text-lg font-semibold text-navy-900">{v.title}</AccordionTrigger>
+                <AccordionContent><p className="font-space text-[15px] leading-[1.7] text-navy-700/55">{v.desc}</p></AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
         </div>
       </section>
 
-      {/* Scale Stats */}
-      <section className="bg-[#E8EDF5] py-24">
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-12 text-center">
+      {/* Stats */}
+      <section className="bg-cream-200 py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <h2 className="font-lora text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-[#0B1029]">Our platform is built for scale.</h2>
-            <p className="font-space mt-4 text-[15px] leading-[1.7] text-[#555] font-light max-w-2xl mx-auto">
-              10,000+ patients. 3 Virginia centers. Now all 50 states. Longentis is leading the charge in men's health telehealth.
+            <h2 className="font-sans font-bold text-[clamp(28px,3.8vw,52px)] leading-[1.12] tracking-[-0.02em] text-navy-900">Built for scale.</h2>
+            <p className="font-space mt-4 text-[15px] leading-[1.7] text-navy-700/55 max-w-2xl mx-auto">
+              10,000+ patients. 3 Virginia centers. Now all 50 states.
             </p>
-            <Link to="/get-started" className="mt-8 inline-flex items-center gap-2.5 rounded-lg bg-[#1B2B4B] px-6 py-3 font-sans text-[11.5px] font-bold uppercase tracking-[0.09em] text-[#FAFAF7] border border-white/[0.11] hover:bg-[#162340] active:scale-[0.98] transition-all">
+            <Link to="/get-started" className="mt-8 inline-flex items-center gap-2.5 rounded-full bg-cta px-8 py-4 font-sans text-[15px] font-semibold text-white hover:bg-cta/90 transition-colors active:scale-[0.98]">
               Get Started <ArrowRight className="h-4 w-4" />
             </Link>
           </ScrollReveal>
           <div className="mt-16 flex flex-wrap justify-center gap-12">
             <StatCounter end={10000} suffix="+" label="Patients Treated" />
-            <StatCounter end={2015} label="Since" prefix="" />
-            <StatCounter end={50} label="State Coverage" suffix="-State" />
+            <StatCounter end={12} suffix="+" label="Providers" />
+            <StatCounter end={50} label="States" />
           </div>
         </div>
       </section>
 
-      {/* MWC Partnership */}
-      <section className="bg-[#FAFAF7] py-24">
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-12 grid gap-12 lg:grid-cols-2 items-center">
+      {/* MWC Origin Story */}
+      <section className="bg-cream-100 py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 grid gap-12 lg:grid-cols-2 items-center">
           <ScrollReveal>
-            <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5" style={{ background: "rgba(27,43,75,0.10)", border: "1px solid rgba(27,43,75,0.20)" }}>
-              <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#243656]">Powered By</span>
-            </div>
-            <h2 className="font-lora mt-6 text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-[#0B1029] italic">Built on Men's Wellness Centers.</h2>
-            <p className="font-space mt-6 text-[15px] leading-[1.7] text-[#555] font-light">
+            <SectionHeader
+              badge="Powered By"
+              title={<>Built on Men's Wellness <em className="font-lora italic text-cta" style={{ fontStyle: "italic" }}>Centers.</em></>}
+            />
+            <p className="font-space mt-6 text-[15px] leading-[1.7] text-navy-700/55">
               Longentis isn't a telehealth startup. It's the digital arm of Men's Wellness Centers — a LegitScript-certified men's health practice that's been treating men in Virginia since 2015. Same ownership. Same providers. Same protocols.
             </p>
-            <ul className="font-space mt-6 space-y-3 text-[15px] text-[#555] font-light">
-              {["Proven clinical model since 2015", "3 Virginia centers with same-day care", "LegitScript certified, state-licensed providers"].map((b) => (
-                <li key={b} className="flex items-start gap-2"><span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#E8670A] shrink-0" />{b}</li>
+            <ul className="font-space mt-6 space-y-3 text-[15px] text-navy-700/55">
+              {["Proven clinical model since 2015", "3 Virginia centers with same-day care", "LegitScript certified, state-licensed providers", "12+ dedicated men's health specialists"].map((b) => (
+                <li key={b} className="flex items-start gap-2"><span className="mt-2 h-1.5 w-1.5 rounded-full bg-cta shrink-0" />{b}</li>
               ))}
             </ul>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
-            <div className="rounded-lg bg-[#1B2B4B] h-80" />
+            <div className="rounded-2xl overflow-hidden h-80 relative">
+              <img src={fitMan} alt="Men's Wellness Centers" className="absolute inset-0 w-full h-full object-cover" />
+            </div>
           </ScrollReveal>
         </div>
       </section>
 
       {/* Team */}
-      <section className="bg-[#E8EDF5] py-24">
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
-          <ScrollReveal>
-            <h2 className="font-lora text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-[#0B1029]">United by a Shared Goal</h2>
-            <p className="font-space mt-4 text-[15px] leading-[1.7] text-[#555] font-light max-w-2xl">
-              Across leadership and clinical teams, Longentis brings together operators and physicians working to redefine men's health telehealth at a national level.
-            </p>
-          </ScrollReveal>
+      <section className="bg-cream-200 py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <SectionHeader
+            badge="Our Team"
+            title="United by a Shared Goal"
+            description="Across leadership and clinical teams, Longentis brings together operators and physicians working to redefine men's health telehealth."
+          />
           <Tabs defaultValue="leadership" className="mt-12">
             <TabsList className="bg-transparent border-0 p-0 h-auto flex flex-wrap gap-2 mb-8">
               {teamTabs.map((t) => (
-                <TabsTrigger key={t.id} value={t.id} className="font-mono text-[10px] tracking-[0.1em] uppercase px-4 py-2.5 rounded-md data-[state=active]:bg-white/70 data-[state=active]:backdrop-blur-[10px] data-[state=active]:border data-[state=active]:border-[rgba(27,43,75,0.25)] data-[state=inactive]:bg-white/30 data-[state=inactive]:border data-[state=inactive]:border-[rgba(27,43,75,0.15)]">{t.label}</TabsTrigger>
+                <TabsTrigger key={t.id} value={t.id} className="font-mono text-[10px] tracking-[0.1em] uppercase px-4 py-2.5 rounded-md data-[state=active]:bg-white/80 data-[state=active]:border data-[state=active]:border-navy-900/[0.15] data-[state=active]:shadow-sm data-[state=inactive]:bg-navy-900/[0.04] data-[state=inactive]:border data-[state=inactive]:border-navy-900/[0.06]">{t.label}</TabsTrigger>
               ))}
             </TabsList>
             {teamTabs.map((t) => (
               <TabsContent key={t.id} value={t.id}>
-                <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                   {t.members.map((m) => (
-                    <motion.div key={m.name} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
-                      <div className="h-48 rounded-lg bg-[#1B2B4B] mb-4" />
-                      <h3 className="font-sans text-lg font-semibold text-[#0B1029]">{m.name}</h3>
-                      <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-[#243656] mt-1">{m.title}</p>
-                      <p className="font-space mt-3 text-[13px] text-[#555] font-light">{m.bio}</p>
+                    <motion.div key={m.name} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="rounded-2xl border border-navy-900/[0.06] bg-white p-6">
+                      <div className="h-48 rounded-lg overflow-hidden relative mb-4">
+                        <img src={m.img} alt={m.name} className="absolute inset-0 w-full h-full object-cover" />
+                      </div>
+                      <h3 className="font-sans text-lg font-semibold text-navy-900">{m.name}</h3>
+                      <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-navy-600 mt-1">{m.title}</p>
+                      <p className="font-space mt-3 text-[13px] text-navy-700/50">{m.bio}</p>
                     </motion.div>
                   ))}
                 </div>
               </TabsContent>
             ))}
           </Tabs>
+        </div>
+      </section>
+
+      {/* Clinical Credentials */}
+      <section className="bg-navy-950 noise-overlay py-24 relative">
+        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
+          <SectionHeader
+            badge="Credentials"
+            badgeVariant="dark"
+            title={<>Clinical standards you can <em className="font-lora italic text-cta" style={{ fontStyle: "italic" }}>verify.</em></>}
+            align="center"
+          />
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { label: "LegitScript Certified", desc: "Verified pharmacy and healthcare compliance." },
+              { label: "HIPAA Compliant", desc: "End-to-end encrypted patient data." },
+              { label: "State-Licensed Providers", desc: "Every provider licensed in the state they serve." },
+              { label: "FDA-Approved Protocols", desc: "Only evidence-based, FDA-approved medications." },
+            ].map((c, i) => (
+              <ScrollReveal key={c.label} delay={i * 0.06}>
+                <div className="rounded-2xl p-6 bg-white/[0.04] border border-white/[0.08] text-center h-full">
+                  <h3 className="font-sans font-semibold text-[15px] text-cream-100">{c.label}</h3>
+                  <p className="font-space text-[13px] text-cream-200/40 mt-2">{c.desc}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
     </main>
