@@ -9,14 +9,10 @@ import StatCounter from "@/components/StatCounter";
 import USMap from "@/components/USMap";
 
 /* ─── ASSET IMPORTS ─── */
-import heroImg from "@/assets/iStock-1097768100-3.jpg";
-import coupleJog from "@/assets/iStock-1081494342-1-4.jpg";
 import fitMan from "@/assets/iStock-518621045.jpg";
-import consultation from "@/assets/iStock-2187145642-1-5.jpg";
+import coupleJog from "@/assets/iStock-1081494342-1-4.jpg";
 import trackCrouch from "@/assets/iStock-2177439750-1-8.jpg";
-import trackEarbuds from "@/assets/iStock-859864388-6.jpg";
 import boardwalkJog from "@/assets/iStock-1097324074-10.jpg";
-import beachWalk from "@/assets/iStock-2170822818-12.jpg";
 
 /* ═══════════════════════════════════════════
    SECTION 1 — HERO
