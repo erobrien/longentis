@@ -494,7 +494,7 @@ const Testimonials = () => (
 
         {/* Quote card 2 */}
         <div className="rounded-3xl overflow-hidden relative" style={{ background: "#111938" }}>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#06081a] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-[#06081a]/30" />
           <div className="relative z-10 h-full flex flex-col justify-end p-6">
             <p className="font-lora text-[15px] italic leading-[1.55] text-[#E8E2D9]/90">
               "Great experience. They answered all my questions, even the stupid ones."
