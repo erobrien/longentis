@@ -58,9 +58,9 @@ const tiers = [
   {
     name: "Custom",
     tagline: "Concierge medicine. Built around you.",
-    price: "From $6,700",
+    price: "From $699",
     annualPrice: null,
-    period: "/year",
+    period: "/month",
     annualNote: "Custom-built after clinical consultation",
     popular: false,
     isCustom: true,
