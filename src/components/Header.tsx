@@ -38,12 +38,18 @@ const Header = () => {
                 : "border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.04)] backdrop-blur-[4px] shadow-none"
             }`}
           >
-            <Link to="/">
-              <img
-                src={scrolled ? "/longentis-logo.svg" : "/longentis-logo-light.svg"}
-                alt="Longentis"
-                className="h-[36px] w-auto transition-opacity duration-500"
-              />
+            <Link to="/" className="flex items-center gap-2.5 shrink-0">
+              {/* Star mark */}
+              <svg width="28" height="28" viewBox="0 0 48 48" fill="none" className="shrink-0">
+                <path d="M24 0c0 6.6-2.7 12.6-7 17-4.4 4.3-10.4 7-17 7v-8c8.8 0 16-7.2 16-16h8z" fill="#E8670A"/>
+                <path d="M48 0h-8c0 8.8-7.2 16-16 16v8c6.6 0 12.6-2.7 17-7 4.3-4.4 7-10.4 7-17z" fill="#E8670A"/>
+                <path d="M24 48c0-6.6 2.7-12.6 7-17 4.4-4.3 10.4-7 17-7v8c-8.8 0-16 7.2-16 16h-8z" fill="#E8670A"/>
+                <path d="M0 48h8c0-8.8 7.2-16 16-16v-8c-6.6 0-12.6 2.7-17 7-4.3 4.4-7 10.4-7 17z" fill="#E8670A"/>
+              </svg>
+              {/* Wordmark */}
+              <span className={`font-logo text-[22px] font-normal uppercase tracking-[0.1em] leading-none transition-colors duration-500 ${scrolled ? "text-[#0B1029]" : "text-[#FAFAF7]"}`}>
+                Longentis
+              </span>
             </Link>
 
             <nav className="hidden items-center gap-8 md:flex">
@@ -88,11 +94,14 @@ const Header = () => {
             className="fixed inset-0 z-[400] bg-[#06081a] flex flex-col"
           >
             <div className="flex items-center justify-between px-6 py-4">
-              <Link to="/">
-                <img src="/longentis-logo-light.svg" alt="Longentis" className="h-[36px] w-auto" />
-                <span className="hidden font-mono text-[7px] uppercase tracking-[0.2em] text-[#E8E2D9]/30">
-                  by Men's Wellness Centers
-                </span>
+              <Link to="/" className="flex items-center gap-2.5">
+                <svg width="28" height="28" viewBox="0 0 48 48" fill="none">
+                  <path d="M24 0c0 6.6-2.7 12.6-7 17-4.4 4.3-10.4 7-17 7v-8c8.8 0 16-7.2 16-16h8z" fill="#E8670A"/>
+                  <path d="M48 0h-8c0 8.8-7.2 16-16 16v8c6.6 0 12.6-2.7 17-7 4.3-4.4 7-10.4 7-17z" fill="#E8670A"/>
+                  <path d="M24 48c0-6.6 2.7-12.6 7-17 4.4-4.3 10.4-7 17-7v8c-8.8 0-16 7.2-16 16h-8z" fill="#E8670A"/>
+                  <path d="M0 48h8c0-8.8 7.2-16 16-16v-8c-6.6 0-12.6 2.7-17 7-4.3 4.4-7 10.4-7 17z" fill="#E8670A"/>
+                </svg>
+                <span className="font-logo text-[22px] font-normal uppercase tracking-[0.1em] leading-none text-[#E8E2D9]">Longentis</span>
               </Link>
               <button onClick={() => setMobileOpen(false)} className="text-[#E8E2D9]" aria-label="Close menu">
                 <X className="h-6 w-6" />
