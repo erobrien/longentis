@@ -437,7 +437,7 @@ const PressSection = () => (
           {pressArticles.map((a) => (
             <div key={a.title} className="py-4 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 sm:gap-4 group cursor-pointer">
               <div className="flex items-baseline gap-4">
-                <span className="font-sans font-bold text-[11px] text-navy-400 uppercase tracking-[0.06em] shrink-0 sm:w-[180px]">{a.source}</span>
+                <span className="font-sans font-bold text-[12px] text-navy-400 uppercase tracking-wide shrink-0 sm:w-[180px]">{a.source}</span>
                 <span className="font-sans font-semibold text-[15px] text-navy-900 group-hover:text-cta transition-colors">{a.title}</span>
               </div>
               <ArrowRight className="h-3.5 w-3.5 text-navy-300 group-hover:text-cta transition-colors shrink-0" />
