@@ -474,7 +474,7 @@ const Testimonials = () => (
             alt=""
             className="absolute inset-0 w-full h-full object-cover opacity-40"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#06081a] via-[#06081a]/50 to-transparent" />
+          <div className="absolute inset-0 bg-[#06081a]/60" />
           <div className="relative z-10 h-full flex flex-col justify-end p-8">
             <p className="font-lora text-[17px] italic leading-[1.55] text-[#E8E2D9]/90">
               "I want to express my appreciation. Their support and commitment have been outstanding — they've empowered us to take things to the next level."
