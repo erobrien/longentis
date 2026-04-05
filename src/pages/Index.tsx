@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, ClipboardCheck, TestTube, Video, Truck, Star, Shield, Heart, Scale, Activity, ChevronRight } from "lucide-react";
+import { ArrowRight, ClipboardCheck, TestTube, Video, Truck, Star, Shield, Heart, Scale, Activity, ChevronRight, Stethoscope, Globe, UserCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
