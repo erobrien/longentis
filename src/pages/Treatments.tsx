@@ -102,7 +102,7 @@ const Treatments = () => (
                   </div>
                   <div>
                     <h3 className="font-sans text-[15px] font-semibold text-navy-900">{s.title}</h3>
-                    <p className="font-space text-[13px] leading-snug text-navy-700/65 mt-1">{s.desc}</p>
+                    <p className="font-space text-[14px] leading-snug text-navy-700/70 mt-1">{s.desc}</p>
                   </div>
                 </div>
               </ScrollReveal>

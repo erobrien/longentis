@@ -147,10 +147,10 @@ const Coverage = () => {
                     <div className="p-6 flex-1 flex flex-col">
                       <Diamond size="sm" className="text-cta/60 mb-2" />
                       <h3 className="font-sans text-[16px] font-semibold text-navy-900">Men's Wellness Centers — {c.name}</h3>
-                      <p className="font-space mt-2 text-[13px] text-navy-700/65 flex-1">{c.desc}</p>
+                      <p className="font-space mt-2 text-[14px] text-navy-700/70 flex-1">{c.desc}</p>
                       <div className="mt-4 space-y-2">
-                        <p className="font-space flex items-center gap-2 text-[13px] text-navy-700/65"><MapPin className="h-3.5 w-3.5 shrink-0" />{c.address}</p>
-                        <a href={`tel:${c.phone.replace(/\D/g, "")}`} className="font-space flex items-center gap-2 text-[13px] text-navy-700/65 hover:text-cta transition-colors"><Phone className="h-3.5 w-3.5 shrink-0" />{c.phone}</a>
+                        <p className="font-space flex items-center gap-2 text-[14px] text-navy-700/70"><MapPin className="h-3.5 w-3.5 shrink-0" />{c.address}</p>
+                        <a href={`tel:${c.phone.replace(/\D/g, "")}`} className="font-space flex items-center gap-2 text-[14px] text-navy-700/70 hover:text-cta transition-colors"><Phone className="h-3.5 w-3.5 shrink-0" />{c.phone}</a>
                       </div>
                       <Link to="/get-started" className="mt-4 inline-flex items-center gap-1 font-sans text-sm font-semibold text-cta hover:underline">
                         Visit Center <ArrowRight className="h-4 w-4" />

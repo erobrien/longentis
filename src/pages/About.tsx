@@ -273,7 +273,7 @@ const About = () => (
                 <div className="rounded-2xl p-6 bg-white/[0.04] border border-white/[0.08] text-center h-full">
                   <Diamond size="md" className="text-cta/60 mb-3" />
                   <h3 className="font-sans font-semibold text-[15px] text-cream-100">{c.label}</h3>
-                  <p className="font-space text-[13px] text-cream-200/60 mt-2">{c.desc}</p>
+                  <p className="font-space text-[14px] text-cream-200/65 mt-2">{c.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
