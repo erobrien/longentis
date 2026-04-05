@@ -147,7 +147,7 @@ const Hero = () => (
           ].map((label) => (
             <div key={label} className="flex items-center gap-2">
               <Diamond size="xs" className="text-cta" />
-              <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-navy-500">{label}</span>
+              <span className="font-sans text-[11px] font-medium tracking-wide uppercase text-navy-500">{label}</span>
             </div>
           ))}
         </div>
