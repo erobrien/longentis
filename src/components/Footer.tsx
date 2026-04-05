@@ -62,8 +62,8 @@ const Footer = () => (
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           <div>
-            <p className="font-sans text-lg font-bold text-[#E8E2D9]">Longentis</p>
-            <p className="font-mono mt-1 text-[9px] uppercase tracking-[0.14em] text-[#E8E2D9]/40">by Men's Wellness Centers</p>
+            <p className="font-logo text-[28px] font-extrabold tracking-[-0.03em] leading-none text-[#E8E2D9]">Longentis</p>
+            <p className="font-mono mt-1.5 text-[8px] uppercase tracking-[0.16em] text-[#E8E2D9]/35">by Men's Wellness Centers</p>
             <p className="font-space mt-4 text-sm leading-relaxed text-[#E8E2D9]/35 font-light">Clinic-grade men's health, delivered.</p>
           </div>
           <div>
