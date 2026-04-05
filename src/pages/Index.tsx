@@ -236,7 +236,7 @@ const WhyLongentis = () => (
               <Diamond size="sm" className="text-cta" />
               {item.title}
             </h3>
-            <p className="font-space text-[14px] leading-[1.65] text-navy-500 mt-3 max-w-md">
+            <p className="font-space text-[15px] leading-[1.65] text-navy-600 mt-3 max-w-md">
               {item.desc}
             </p>
           </ScrollReveal>
