@@ -24,21 +24,12 @@ const Hero = () => (
         loading="eager"
       />
       <div className="absolute inset-0 bg-[#06081a]/40" />
-      {/* Left gradient overlay */}
+      {/* Left overlay */}
       <div
         className="absolute inset-0"
         style={{
           zIndex: 2,
-          background: "linear-gradient(90deg, #06081ae6 0%, #06081a73 35%, #06081a26 55%, #06081a1a 100%)",
-        }}
-      />
-      {/* Bottom gradient overlay */}
-      <div
-        className="absolute bottom-0 left-0 right-0"
-        style={{
-          zIndex: 2,
-          height: "30%",
-          background: "linear-gradient(transparent 0%, #06081ab3 100%)",
+          background: "rgba(6,8,26,0.55)",
         }}
       />
       {/* Noise texture */}
