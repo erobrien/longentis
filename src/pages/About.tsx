@@ -132,7 +132,7 @@ const About = () => (
               <span className="font-sans text-[11px] font-semibold tracking-wide uppercase text-cream-200/65">Our Mission</span>
             </div>
             <h3 className="font-sans mt-6 text-xl font-semibold text-cream-100 uppercase tracking-wide">Advance Men's Health</h3>
-            <p className="font-space mt-3 text-[15px] leading-[1.7] text-cream-200/60">
+            <p className="font-space mt-3 text-[15px] leading-[1.7] text-cream-200/65">
               Our mission is to advance healthier, stronger, more confident lives by making men's health care more accessible, more precise, and more actionable for every patient we serve.
             </p>
             <h3 className="font-sans mt-10 text-xl font-semibold text-cream-100 uppercase tracking-wide">Build the Platform</h3>
