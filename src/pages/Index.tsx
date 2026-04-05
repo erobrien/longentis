@@ -29,7 +29,7 @@ import beachWalk from "@/assets/iStock-2170822818-12.jpg";      // Two men beach
 const Hero = () => (
   <section className="hero-section relative w-full overflow-hidden" style={{ height: "100dvh", minHeight: 640, background: "#FAFAF7" }}>
     {/* Video frame with rounded corners — image fills the frame */}
-    <div className="video-frame absolute overflow-hidden" style={{ zIndex: 1, borderRadius: 16, inset: "12px clamp(16px, 11.5vw, 168px) 80px" }}>
+    <div className="video-frame absolute overflow-hidden" style={{ zIndex: 1, borderRadius: 16, inset: "12px 12px 80px" }}>
       <video
         src="/mwc_hero_montage.mp4"
         
