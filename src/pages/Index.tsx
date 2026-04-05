@@ -33,7 +33,7 @@ const Hero = () => (
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="font-sans font-bold text-navy-900 text-[clamp(44px,5.8vw,76px)] leading-[1.02] tracking-[-0.035em]">
+          <h1 className="font-sans font-bold text-navy-900 text-[clamp(36px,4.5vw,56px)] leading-[1.06] tracking-[-0.03em]">
             Men's Longevity,{" "}
             <span className="text-navy-400">Delivered.</span>
           </h1>
