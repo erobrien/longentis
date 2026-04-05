@@ -39,9 +39,11 @@ const Header = () => {
             }`}
           >
             <Link to="/">
-              <span className={`font-logo text-[32px] font-normal uppercase tracking-[0.08em] leading-none transition-colors duration-500 ${scrolled ? "text-[#0B1029]" : "text-[#FAFAF7]"}`}>
-                Longentis
-              </span>
+              <img
+                src={scrolled ? "/longentis-logo.svg" : "/longentis-logo-light.svg"}
+                alt="Longentis"
+                className="h-[36px] w-auto transition-opacity duration-500"
+              />
             </Link>
 
             <nav className="hidden items-center gap-8 md:flex">
@@ -86,8 +88,8 @@ const Header = () => {
             className="fixed inset-0 z-[400] bg-[#06081a] flex flex-col"
           >
             <div className="flex items-center justify-between px-6 py-4">
-              <Link to="/" className="flex flex-col">
-                <span className="font-logo text-[32px] font-normal uppercase tracking-[0.08em] text-[#E8E2D9]">Longentis</span>
+              <Link to="/">
+                <img src="/longentis-logo-light.svg" alt="Longentis" className="h-[36px] w-auto" />
                 <span className="hidden font-mono text-[7px] uppercase tracking-[0.2em] text-[#E8E2D9]/30">
                   by Men's Wellness Centers
                 </span>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 60" fill="none">
+  <!-- Star/pinwheel mark — orange -->
+  <g transform="translate(0, 6)">
+    <path d="M24 0c0 6.6-2.7 12.6-7 17-4.4 4.3-10.4 7-17 7v-8c8.8 0 16-7.2 16-16h8z" fill="#E8670A"/>
+    <path d="M48 0h-8c0 8.8-7.2 16-16 16v8c6.6 0 12.6-2.7 17-7 4.3-4.4 7-10.4 7-17z" fill="#E8670A"/>
+    <path d="M24 48c0-6.6 2.7-12.6 7-17 4.4-4.3 10.4-7 17-7v8c-8.8 0-16 7.2-16 16h-8z" fill="#E8670A"/>
+    <path d="M0 48h8c0-8.8 7.2-16 16-16v-8c-6.6 0-12.6 2.7-17 7-4.3 4.4-7 10.4-7 17z" fill="#E8670A"/>
+  </g>
+  <!-- LONGENTIS text -->
+  <text x="62" y="45" font-family="'Bebas Neue', 'Inter Tight', Arial, sans-serif" font-size="52" font-weight="400" letter-spacing="4" fill="#0B1029">LONGENTIS</text>
+</svg>

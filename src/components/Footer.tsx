@@ -62,7 +62,7 @@ const Footer = () => (
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           <div>
-            <p className="font-logo text-[36px] font-normal uppercase tracking-[0.08em] leading-none text-[#E8E2D9]">Longentis</p>
+            <img src="/longentis-logo-light.svg" alt="Longentis" className="h-[32px] w-auto opacity-80" />
             <p className="font-space mt-4 text-sm leading-relaxed text-[#E8E2D9]/35 font-light">Clinic-grade men's health, delivered.</p>
           </div>
           <div>
