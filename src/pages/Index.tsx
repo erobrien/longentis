@@ -394,9 +394,9 @@ const CoverageSection = () => (
                 <div className="flex items-baseline justify-between py-3 border-b border-navy-900/[0.05]">
                   <div>
                     <span className="font-sans font-semibold text-[15px] text-navy-900">{loc.name}, VA</span>
-                    <span className="font-space text-[13px] text-navy-400 ml-3">{loc.desc}</span>
+                    <span className="font-space text-[14px] text-navy-500 ml-3">{loc.desc}</span>
                   </div>
-                  <span className="font-mono text-[12px] text-navy-400">{loc.phone}</span>
+                  <span className="font-space text-[13px] text-navy-400">{loc.phone}</span>
                 </div>
               </ScrollReveal>
             ))}
