@@ -248,63 +248,107 @@ const HealthAssessment = () => (
   </section>
 );
 
-/* ─── EDITORIAL COLLAGE ─── */
+/* ─── EDITORIAL COLLAGE — Full 8-col Agentis-style grid ─── */
+const GridImg = ({ src, alt, style }: { src: string; alt: string; style: React.CSSProperties }) => (
+  <div className="rounded-lg overflow-hidden relative" style={style}>
+    <img src={src} alt={alt} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+  </div>
+);
+
 const EditorialStatement = () => (
-  <section className="bg-[#F5F1EB] py-24 overflow-hidden">
-    <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
-      {/* Desktop: 8-col grid */}
-      <div className="hidden lg:grid grid-cols-8 gap-3 pt-[100px] pb-0" style={{ gridTemplateRows: "repeat(5, 148px)" }}>
-        <div className="rounded-lg overflow-hidden relative" style={{ gridColumn: "1/3", gridRow: "1/3" }}>
-          <img src={coupleJog} alt="Couple jogging at sunset" className="absolute inset-0 w-full h-full object-cover" />
-        </div>
-        <div className="rounded-lg overflow-hidden relative" style={{ gridColumn: "1/2", gridRow: "3/5" }}>
-          <img src={consultation} alt="Man in health consultation" className="absolute inset-0 w-full h-full object-cover" />
-        </div>
-        <div className="rounded-lg overflow-hidden relative" style={{ gridColumn: "2/3", gridRow: "3/4" }}>
-          <img src={trackEarbuds} alt="Man with earbuds on track" className="absolute inset-0 w-full h-full object-cover" />
-        </div>
-        {/* Center text overlay */}
-        <div className="flex flex-col justify-center px-8" style={{ gridColumn: "3/7", gridRow: "2/5" }}>
+  <section className="bg-[#F5F1EB] overflow-hidden">
+    <div className="mx-auto max-w-[1600px] px-4 lg:px-6">
+      {/* Desktop: 8-col, 7-row dense grid matching Agentis density */}
+      <div className="hidden lg:grid grid-cols-8 gap-2.5 pt-10 pb-0" style={{ gridTemplateRows: "repeat(7, 120px)" }}>
+        {/* Row 1 — full width images */}
+        <GridImg src={coupleJog}    alt="" style={{ gridColumn: "1/2", gridRow: "1/2" }} />
+        <GridImg src={consultation} alt="" style={{ gridColumn: "2/3", gridRow: "1/2" }} />
+        <GridImg src={trackCrouch}  alt="" style={{ gridColumn: "3/4", gridRow: "1/2" }} />
+        <GridImg src={oceanRunner}  alt="" style={{ gridColumn: "4/5", gridRow: "1/2" }} />
+        <GridImg src={fitMan}       alt="" style={{ gridColumn: "5/6", gridRow: "1/2" }} />
+        <GridImg src={boardwalkJog} alt="" style={{ gridColumn: "6/7", gridRow: "1/2" }} />
+        <GridImg src={trackEarbuds} alt="" style={{ gridColumn: "7/8", gridRow: "1/2" }} />
+        <GridImg src={jogCloseup}   alt="" style={{ gridColumn: "8/9", gridRow: "1/2" }} />
+
+        {/* Row 2-3 — left side images */}
+        <GridImg src={trackSitting}  alt="" style={{ gridColumn: "1/2", gridRow: "2/4" }} />
+        <GridImg src={beachWalk}     alt="" style={{ gridColumn: "2/3", gridRow: "2/3" }} />
+
+        {/* Row 2-3 — right side images */}
+        <GridImg src={coupleJog}     alt="" style={{ gridColumn: "7/8", gridRow: "2/3" }} />
+        <GridImg src={consultation}  alt="" style={{ gridColumn: "8/9", gridRow: "2/4" }} />
+
+        {/* Row 3 — fill edges */}
+        <GridImg src={oceanRunner}   alt="" style={{ gridColumn: "2/3", gridRow: "3/4" }} />
+        <GridImg src={boardwalkJog}  alt="" style={{ gridColumn: "7/8", gridRow: "3/5" }} />
+
+        {/* CENTER TEXT — spans cols 3-7, rows 2-6 */}
+        <div className="flex flex-col items-center justify-center text-center px-10 z-10" style={{ gridColumn: "3/7", gridRow: "2/6" }}>
           <ScrollReveal>
-            <h2 className="font-lora text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-[#0B1029]">
+            <h2 className="font-lora text-[clamp(30px,3.4vw,50px)] leading-[1.15] tracking-[-0.015em] text-[#0B1029] mb-6">
               Extending what's possible in men's health.
             </h2>
-            <p className="font-space mt-6 text-[15px] leading-[1.7] text-[#555] font-light max-w-lg">
+            <p className="font-space font-light text-[15px] leading-[1.7] text-[#666] max-w-[480px] mb-8">
               The gap between how men feel and what their doctor calls 'normal' is where we operate. Longentis connects you with dedicated men's health providers, real lab panels, and treatment protocols built on a decade of clinical data — not a questionnaire and a subscription.
             </p>
-            <Link to="/about" className="mt-6 inline-flex items-center gap-1 font-sans text-sm font-semibold text-[#E8670A] hover:underline">
-              About Longentis <ArrowRight className="h-4 w-4" />
+            <Link
+              to="/about"
+              className="inline-flex items-center gap-2.5 border border-[#243656]/40 px-6 py-3 rounded-lg group transition-all duration-200 hover:border-[#243656] hover:bg-[#243656]/[0.06]"
+            >
+              <span className="font-sans font-semibold text-[11px] tracking-[0.08em] uppercase text-[#243656]">About Longentis</span>
+              <ArrowRight className="h-3.5 w-3.5 text-[#243656] group-hover:translate-x-0.5 transition-transform" />
             </Link>
           </ScrollReveal>
         </div>
-        <div className="rounded-lg overflow-hidden relative" style={{ gridColumn: "7/9", gridRow: "1/3" }}>
-          <img src={oceanRunner} alt="Man running by ocean" className="absolute inset-0 w-full h-full object-cover" />
-        </div>
-        <div className="rounded-lg overflow-hidden relative" style={{ gridColumn: "7/8", gridRow: "3/5" }}>
-          <img src={fitMan} alt="Fit man outdoors" className="absolute inset-0 w-full h-full object-cover" />
-        </div>
-        <div className="rounded-lg overflow-hidden relative" style={{ gridColumn: "8/9", gridRow: "3/6" }}>
-          <img src={boardwalkJog} alt="Two men jogging" className="absolute inset-0 w-full h-full object-cover" />
-        </div>
+
+        {/* Row 4-5 — left side */}
+        <GridImg src={fitMan}        alt="" style={{ gridColumn: "1/2", gridRow: "4/6" }} />
+        <GridImg src={trackCrouch}   alt="" style={{ gridColumn: "2/3", gridRow: "4/5" }} />
+
+        {/* Row 4-5 — right side */}
+        <GridImg src={trackEarbuds}  alt="" style={{ gridColumn: "8/9", gridRow: "4/6" }} />
+
+        {/* Row 5 — edges */}
+        <GridImg src={jogCloseup}    alt="" style={{ gridColumn: "2/3", gridRow: "5/6" }} />
+
+        {/* Row 6-7 — bottom full width */}
+        <GridImg src={beachWalk}     alt="" style={{ gridColumn: "1/2", gridRow: "6/7" }} />
+        <GridImg src={trackSitting}  alt="" style={{ gridColumn: "2/3", gridRow: "6/7" }} />
+        <GridImg src={coupleJog}     alt="" style={{ gridColumn: "3/4", gridRow: "6/7" }} />
+        <GridImg src={oceanRunner}   alt="" style={{ gridColumn: "4/5", gridRow: "6/7" }} />
+        <GridImg src={consultation}  alt="" style={{ gridColumn: "5/6", gridRow: "6/7" }} />
+        <GridImg src={fitMan}        alt="" style={{ gridColumn: "6/7", gridRow: "6/7" }} />
+        <GridImg src={boardwalkJog}  alt="" style={{ gridColumn: "7/8", gridRow: "6/7" }} />
+        <GridImg src={trackCrouch}   alt="" style={{ gridColumn: "8/9", gridRow: "6/7" }} />
+
+        {/* Row 7 — extra bottom row for density */}
+        <GridImg src={jogCloseup}    alt="" style={{ gridColumn: "1/2", gridRow: "7/8" }} />
+        <GridImg src={trackEarbuds}  alt="" style={{ gridColumn: "2/3", gridRow: "7/8" }} />
+        <GridImg src={beachWalk}     alt="" style={{ gridColumn: "3/5", gridRow: "7/8" }} />
+        <GridImg src={oceanRunner}   alt="" style={{ gridColumn: "5/6", gridRow: "7/8" }} />
+        <GridImg src={coupleJog}     alt="" style={{ gridColumn: "6/7", gridRow: "7/8" }} />
+        <GridImg src={trackSitting}  alt="" style={{ gridColumn: "7/8", gridRow: "7/8" }} />
+        <GridImg src={consultation}  alt="" style={{ gridColumn: "8/9", gridRow: "7/8" }} />
       </div>
-      {/* Mobile fallback */}
-      <div className="lg:hidden">
-        <div className="grid grid-cols-4 gap-2 mb-8">
-          {[coupleJog, oceanRunner, trackEarbuds, fitMan].map((src, i) => (
-            <div key={i} className="rounded-lg overflow-hidden h-24 relative">
-              <img src={src} alt="" className="absolute inset-0 w-full h-full object-cover" />
+
+      {/* Mobile fallback — 4-col strip + text */}
+      <div className="lg:hidden py-16">
+        <div className="grid grid-cols-4 gap-2 mb-10">
+          {[coupleJog, oceanRunner, trackEarbuds, fitMan, consultation, boardwalkJog, trackCrouch, beachWalk].map((src, i) => (
+            <div key={i} className="rounded-lg overflow-hidden h-20 relative">
+              <img src={src} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
             </div>
           ))}
         </div>
         <ScrollReveal>
-          <h2 className="font-lora text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-[#0B1029]">
+          <h2 className="font-lora text-[clamp(28px,7vw,42px)] leading-[1.15] tracking-[-0.015em] text-[#0B1029] mb-5">
             Extending what's possible in men's health.
           </h2>
-          <p className="font-space mt-4 text-[15px] leading-[1.7] text-[#555] font-light">
+          <p className="font-space font-light text-[15px] leading-[1.7] text-[#555]">
             The gap between how men feel and what their doctor calls 'normal' is where we operate. Longentis connects you with dedicated men's health providers, real lab panels, and treatment protocols built on a decade of clinical data.
           </p>
-          <Link to="/about" className="mt-6 inline-flex items-center gap-1 font-sans text-sm font-semibold text-[#E8670A] hover:underline">
-            About Longentis <ArrowRight className="h-4 w-4" />
+          <Link to="/about" className="mt-6 inline-flex items-center gap-2 border border-[#243656]/40 px-5 py-2.5 rounded-lg font-sans font-semibold text-[11px] tracking-[0.08em] uppercase text-[#243656]">
+            About Longentis <ArrowRight className="h-3.5 w-3.5" />
           </Link>
         </ScrollReveal>
       </div>
