@@ -86,32 +86,32 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 400;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter Tight', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
   }
 }
 
 @layer utilities {
   .font-display {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
   }
   .font-lora {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Lora', serif;
   }
   .font-sans {
-    font-family: 'Inter Tight', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
   }
   .font-mono {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
   }
   .font-space {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
   }
   .font-body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
   }
   .font-logo {
     font-family: 'Bebas Neue', sans-serif;
