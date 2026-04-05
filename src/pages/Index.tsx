@@ -64,7 +64,7 @@ const Hero = () => (
     {/* Hero content — bottom left */}
     <motion.div
       className="absolute flex flex-col items-start gap-5 max-w-[740px] px-6 lg:px-0"
-      style={{ zIndex: 20, top: "50%", transform: "translateY(-50%)", left: "clamp(56px, 13vw, 200px)" }}
+      style={{ zIndex: 20, top: "55%", transform: "translateY(-50%)", left: "clamp(56px, 13vw, 200px)" }}
       initial="hidden"
       animate="visible"
       variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.2 } } }}
