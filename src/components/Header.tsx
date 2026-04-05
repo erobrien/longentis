@@ -4,11 +4,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, User } from "lucide-react";
 
 const navLinks = [
-  { label: "Testosterone", href: "/treatments" },
-  { label: "Sexual Health", href: "/treatments" },
-  { label: "Weight Loss", href: "/treatments" },
+  { label: "Testosterone", href: "/treatments/trt" },
+  { label: "Sexual Health", href: "/treatments/ed" },
+  { label: "Weight Loss", href: "/treatments/weight-loss" },
   { label: "How It Works", href: "/about" },
-  { label: "Treatments", href: "/treatments" },
+  { label: "Pricing", href: "/pricing" },
 ];
 
 const Header = () => {

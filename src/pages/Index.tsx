@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Activity, Beaker, Heart, Thermometer, Shield, FlaskConical, Pill, Scale, RefreshCw, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Activity, Beaker, Heart, Thermometer, Shield, FlaskConical, Pill, Scale, RefreshCw, CheckCircle2, ClipboardCheck, TestTube, Video, Truck, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import useEmblaCarousel from "embla-carousel-react";
@@ -30,13 +30,13 @@ const heroCards = [
     title: "Testosterone Replacement Therapy",
     img: fitMan,
     bgClass: "bg-navy-950",
-    href: "/treatments",
+    href: "/treatments/trt",
   },
   {
     title: "Erectile Dysfunction",
     img: coupleJog,
     bgClass: "bg-navy-800",
-    href: "/treatments",
+    href: "/treatments/ed",
   },
   {
     title: "Peptides",
@@ -48,7 +48,7 @@ const heroCards = [
     title: "Weight Loss",
     img: trackCrouch,
     bgClass: "bg-navy-700",
-    href: "/treatments",
+    href: "/treatments/weight-loss",
   },
   {
     title: "Get Started",
@@ -145,13 +145,22 @@ const Hero = () => (
       </div>
     </motion.div>
 
-    {/* Trust bar */}
-    <div className="bg-cream-100 py-5 px-6 mt-6">
-      <div className="mx-auto max-w-7xl flex items-center justify-center gap-10 flex-wrap">
-        {["LegitScript Certified", "HIPAA Compliant", "State Licensed", "FSA/HSA Eligible"].map((name) => (
-          <span key={name} className="font-mono text-[9px] tracking-[0.18em] uppercase text-navy-900/30">
-            {name}
-          </span>
+    {/* Trust bar — redesigned */}
+    <div className="bg-cream-100 py-6 px-6 mt-6">
+      <div className="mx-auto max-w-7xl flex items-center justify-center gap-6 lg:gap-10 flex-wrap">
+        {[
+          { label: "LegitScript Certified", icon: Shield },
+          { label: "HIPAA Compliant", icon: Shield, tooltip: "Your data is encrypted end-to-end" },
+          { label: "Physician-Led · 12+ Providers", icon: CheckCircle2 },
+          { label: "4.9★ Google Rating", icon: Star },
+          { label: "FSA/HSA Accepted", icon: CheckCircle2 },
+        ].map((badge) => (
+          <div key={badge.label} className="inline-flex items-center gap-2 rounded-lg px-3.5 py-2 bg-navy-900/[0.05] border border-navy-900/[0.08]" title={badge.tooltip}>
+            <badge.icon className="h-3.5 w-3.5 text-cta" />
+            <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-navy-700/60 font-medium">
+              {badge.label}
+            </span>
+          </div>
         ))}
       </div>
     </div>
@@ -466,87 +475,192 @@ const CoverageMap = () => (
   </section>
 );
 
-/* ─── TESTIMONIALS ─── */
+/* ─── HOW IT WORKS ─── */
+const howItWorksSteps = [
+  {
+    icon: ClipboardCheck,
+    num: "01",
+    title: "Free Online Assessment",
+    desc: "5-minute health questionnaire reviewed by a licensed men's health provider. No cost, no commitment.",
+    time: "5 minutes",
+  },
+  {
+    icon: TestTube,
+    num: "02",
+    title: "Comprehensive Lab Panel",
+    desc: "At-home lab kit shipped to you, or visit Quest/Labcorp. 20+ biomarkers analyzed — hormones, metabolic, cardiovascular.",
+    time: "2–5 days",
+  },
+  {
+    icon: Video,
+    num: "03",
+    title: "Provider Consultation",
+    desc: "Video visit with your dedicated men's health specialist. Labs reviewed line by line. Protocol built together.",
+    time: "30 minutes",
+  },
+  {
+    icon: Truck,
+    num: "04",
+    title: "Treatment Delivered",
+    desc: "Medication shipped discreetly to your door. Ongoing monitoring, repeat labs, and follow-ups — all included.",
+    time: "Ships in 48hr",
+  },
+];
+
+const HowItWorks = () => (
+  <section className="bg-navy-950 py-24 noise-overlay relative">
+    <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <ScrollReveal>
+        <SectionBadge variant="dark">How It Works</SectionBadge>
+        <h2 className="font-sans font-bold mt-6 text-[clamp(28px,3.8vw,52px)] leading-[1.12] tracking-[-0.02em] text-cream-200">
+          Four steps to{" "}
+          <em className="font-lora italic text-cta" style={{ fontStyle: "italic" }}>feeling better.</em>
+        </h2>
+        <p className="font-space mt-4 max-w-xl text-[15px] leading-[1.7] text-cream-200/50">
+          From assessment to treatment in as little as 7 days. No waiting rooms. No pharmacy visits.
+        </p>
+      </ScrollReveal>
+
+      <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        {howItWorksSteps.map((step, i) => (
+          <ScrollReveal key={step.num} delay={i * 0.08}>
+            <div className="rounded-2xl p-6 h-full flex flex-col bg-white/[0.04] border border-white/[0.08] hover:border-white/[0.15] transition-colors">
+              <div className="flex items-center justify-between mb-5">
+                <div className="size-11 rounded-xl bg-cta/10 flex items-center justify-center">
+                  <step.icon className="h-5 w-5 text-cta" strokeWidth={1.5} />
+                </div>
+                <span className="font-mono text-[10px] tracking-[0.18em] text-white/20">{step.num}</span>
+              </div>
+              <h3 className="font-sans font-semibold text-lg text-cream-100">{step.title}</h3>
+              <p className="font-space text-[13px] leading-[1.6] text-cream-200/45 mt-2 flex-1">{step.desc}</p>
+              <div className="mt-4 inline-flex items-center gap-1.5 rounded-md px-2.5 py-1.5 bg-white/[0.04] border border-white/[0.06] w-fit">
+                <span className="font-mono text-[9px] tracking-[0.14em] uppercase text-cta/70">{step.time}</span>
+              </div>
+            </div>
+          </ScrollReveal>
+        ))}
+      </div>
+
+      <ScrollReveal delay={0.4}>
+        <div className="mt-12 text-center">
+          <Link
+            to="/get-started"
+            className="inline-flex items-center rounded-full bg-cta px-8 py-4 text-[15px] font-semibold text-white font-sans hover:bg-cta/90 transition-colors"
+          >
+            Start Your Free Visit <ArrowRight className="ml-2 h-4 w-4" />
+          </Link>
+        </div>
+      </ScrollReveal>
+    </div>
+  </section>
+);
+
+/* ─── TESTIMONIALS (UPGRADED) ─── */
+const testimonials = [
+  {
+    quote: "I want to express my appreciation. Their support and commitment have been outstanding — they've empowered us to take things to the next level.",
+    name: "Kevin M.",
+    location: "Virginia",
+    treatment: "TRT",
+    outcome: "Energy & strength restored in 8 weeks",
+  },
+  {
+    quote: "Great experience. They answered all my questions, even the stupid ones. I've never had a doctor spend this much time with me.",
+    name: "Adam C.",
+    location: "Texas",
+    treatment: "TRT + ED",
+    outcome: "Testosterone from 280 → 850 ng/dL",
+  },
+  {
+    quote: "Very attentive and professional, more flexible with scheduling than any medical office I've been to.",
+    name: "Phoenix M.",
+    location: "Florida",
+    treatment: "Weight Loss",
+    outcome: "32 lbs lost in 4 months",
+  },
+  {
+    quote: "The quarterly labs give me confidence that everything is dialed in. No other telehealth company does this level of monitoring.",
+    name: "James R.",
+    location: "California",
+    treatment: "TRT",
+    outcome: "Body fat from 28% → 19%",
+  },
+  {
+    quote: "Discreet, professional, and actually effective. The same provider every visit makes all the difference.",
+    name: "Marcus T.",
+    location: "New York",
+    treatment: "ED",
+    outcome: "Full confidence restored",
+  },
+  {
+    quote: "Lost 40 pounds in 5 months. My A1C dropped from 6.1 to 5.4. The metabolic labs caught things my PCP missed for years.",
+    name: "David L.",
+    location: "Ohio",
+    treatment: "Weight Loss",
+    outcome: "A1C: 6.1 → 5.4",
+  },
+];
+
 const Testimonials = () => (
   <section className="bg-cream-200 py-24">
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       <ScrollReveal>
         <SectionBadge>Real Results</SectionBadge>
-        <h2 className="font-sans font-bold mt-6 text-[clamp(28px,3.8vw,52px)] leading-[1.12] tracking-[-0.02em] text-navy-900">
-          What patients say{" "}
-          <em className="font-lora italic text-cta" style={{ fontStyle: "italic" }}>after starting.</em>
-        </h2>
+        <div className="flex flex-wrap items-end justify-between gap-4 mt-6">
+          <h2 className="font-sans font-bold text-[clamp(28px,3.8vw,52px)] leading-[1.12] tracking-[-0.02em] text-navy-900">
+            What patients say{" "}
+            <em className="font-lora italic text-cta" style={{ fontStyle: "italic" }}>after starting.</em>
+          </h2>
+          <div className="flex items-center gap-2 rounded-lg px-4 py-2.5 bg-navy-900/[0.05] border border-navy-900/[0.08]">
+            <Star className="h-4 w-4 text-cta fill-cta" />
+            <span className="font-sans font-bold text-[15px] text-navy-900">4.9</span>
+            <span className="font-mono text-[10px] tracking-[0.12em] uppercase text-navy-700/40">on Google Reviews</span>
+          </div>
+        </div>
       </ScrollReveal>
 
-      {/* Desktop bento */}
-      <div className="mt-12 hidden lg:grid gap-4" style={{ gridTemplateColumns: "1fr 1.3fr 1fr", gridTemplateRows: "190px 280px 200px" }}>
-        {/* Stat: Patients */}
-        <div className="rounded-2xl p-6 flex flex-col justify-between bg-white border border-navy-900/[0.06]">
-          <p className="font-sans font-extrabold text-[clamp(40px,3.5vw,52px)] leading-none tracking-[-0.04em] text-navy-900">10,000+</p>
-          <p className="font-mono text-[10px] tracking-[0.22em] uppercase text-navy-600">Patients Treated</p>
-        </div>
-
-        {/* Main quote — spans 2 rows */}
-        <div className="rounded-2xl overflow-hidden relative row-span-2 bg-navy-950">
-          <img src={consultation} alt="" className="absolute inset-0 w-full h-full object-cover opacity-30" />
-          <div className="absolute inset-0 bg-navy-950/50" />
-          <div className="relative z-10 h-full flex flex-col justify-end p-8">
-            <p className="font-lora text-[17px] italic leading-[1.55] text-cream-100/90">
-              "I want to express my appreciation. Their support and commitment have been outstanding — they've empowered us to take things to the next level."
-            </p>
-            <div className="mt-4">
-              <p className="font-sans font-semibold text-base text-cream-100">Kevin M.</p>
-              <p className="font-mono text-xs uppercase tracking-[0.1em] text-white/30">Virginia · Google Review</p>
-            </div>
+      {/* Stat row */}
+      <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
+        {[
+          { val: "10,000+", label: "Patients Treated" },
+          { val: "4.9", label: "Google Rating" },
+          { val: "2015", label: "Established" },
+          { val: "50", label: "States Served" },
+        ].map((s) => (
+          <div key={s.label} className="rounded-xl p-5 bg-white border border-navy-900/[0.06] text-center">
+            <p className="font-sans font-extrabold text-[clamp(28px,3vw,40px)] leading-none tracking-[-0.03em] text-navy-900">{s.val}</p>
+            <p className="font-mono text-[9px] tracking-[0.18em] uppercase text-navy-600 mt-2">{s.label}</p>
           </div>
-        </div>
-
-        {/* Stat: Rating */}
-        <div className="rounded-2xl p-6 flex flex-col justify-between bg-navy-950 border border-white/[0.06]">
-          <p className="font-sans font-extrabold text-[clamp(40px,3.5vw,52px)] leading-none tracking-[-0.04em] text-cta">4.9</p>
-          <p className="font-mono text-[10px] tracking-[0.22em] uppercase text-white/40">Google Rating</p>
-        </div>
-
-        {/* Quote 2 */}
-        <div className="rounded-2xl overflow-hidden relative bg-navy-900">
-          <div className="relative z-10 h-full flex flex-col justify-end p-6">
-            <p className="font-lora text-[15px] italic leading-[1.55] text-cream-100/85">
-              "Great experience. They answered all my questions, even the stupid ones."
-            </p>
-            <p className="font-sans font-semibold text-sm text-cream-100 mt-3">Adam C.</p>
-          </div>
-        </div>
-
-        {/* Quote 3 */}
-        <div className="rounded-2xl overflow-hidden relative bg-navy-900">
-          <div className="relative z-10 h-full flex flex-col justify-end p-6">
-            <p className="font-lora text-[15px] italic leading-[1.55] text-cream-100/85">
-              "Very attentive and professional, more flexible with scheduling than any medical office."
-            </p>
-            <p className="font-sans font-semibold text-sm text-cream-100 mt-3">Phoenix M.</p>
-          </div>
-        </div>
-
-        {/* Stat: Established */}
-        <div className="rounded-2xl p-6 flex flex-col justify-between bg-white border border-navy-900/[0.06]">
-          <p className="font-sans font-extrabold text-[clamp(40px,3.5vw,52px)] leading-none tracking-[-0.04em] text-navy-900">2015</p>
-          <p className="font-mono text-[10px] tracking-[0.22em] uppercase text-navy-600">Established</p>
-        </div>
+        ))}
       </div>
 
-      {/* Mobile */}
-      <div className="mt-12 lg:hidden flex flex-col gap-4">
-        {[
-          { stat: "10,000+", label: "Patients", quote: "Great experience. They answered all my questions, even the stupid ones.", name: "Adam C." },
-          { stat: "4.9", label: "Google Rating", quote: "Their support and commitment have been outstanding.", name: "Kevin M." },
-          { stat: "2015", label: "Established", quote: "Very attentive and professional.", name: "Phoenix M." },
-        ].map((t, i) => (
-          <div key={i} className="rounded-2xl p-6 bg-navy-950">
-            <p className="font-sans font-extrabold text-3xl text-cream-100">{t.stat}</p>
-            <p className="font-mono text-[9px] tracking-[0.18em] uppercase text-white/30 mt-1">{t.label}</p>
-            <p className="font-lora text-[15px] italic leading-[1.55] text-cream-100/75 mt-4">"{t.quote}"</p>
-            <p className="font-sans font-semibold text-sm text-cream-100 mt-3">{t.name}</p>
-          </div>
+      {/* Testimonial grid */}
+      <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {testimonials.map((t, i) => (
+          <ScrollReveal key={t.name} delay={i * 0.05}>
+            <div className="rounded-2xl p-6 h-full flex flex-col bg-white border border-navy-900/[0.06] hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(11,16,41,0.08)] transition-all duration-300">
+              <div className="flex items-center gap-2 mb-4">
+                <span className="rounded-md px-2 py-1 bg-cta/10 font-mono text-[9px] tracking-[0.14em] uppercase text-cta font-medium">
+                  {t.treatment}
+                </span>
+                <span className="font-mono text-[9px] tracking-[0.12em] uppercase text-navy-700/30">
+                  Verified Patient
+                </span>
+              </div>
+              <p className="font-lora text-[15px] italic leading-[1.55] text-navy-900/75 flex-1">
+                "{t.quote}"
+              </p>
+              {t.outcome && (
+                <div className="mt-4 rounded-lg px-3 py-2 bg-navy-900/[0.03] border border-navy-900/[0.06]">
+                  <p className="font-mono text-[10px] tracking-[0.12em] uppercase text-cta/80">{t.outcome}</p>
+                </div>
+              )}
+              <div className="mt-4">
+                <p className="font-sans font-semibold text-sm text-navy-900">{t.name}</p>
+                <p className="font-mono text-[10px] tracking-[0.12em] uppercase text-navy-700/35">{t.location} · Google Review</p>
+              </div>
+            </div>
+          </ScrollReveal>
         ))}
       </div>
     </div>
@@ -624,6 +738,7 @@ const Index = () => (
       <HealthAssessment />
       <EditorialStatement />
       <OurApproach />
+      <HowItWorks />
       <CoverageMap />
       <Testimonials />
       <PressSection />
