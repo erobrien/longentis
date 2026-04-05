@@ -136,7 +136,7 @@ const About = () => (
               Our mission is to advance healthier, stronger, more confident lives by making men's health care more accessible, more precise, and more actionable for every patient we serve.
             </p>
             <h3 className="font-sans mt-10 text-xl font-semibold text-cream-100 uppercase tracking-wide">Build the Platform</h3>
-            <p className="font-space mt-3 text-[15px] leading-[1.7] text-cream-200/60">
+            <p className="font-space mt-3 text-[15px] leading-[1.7] text-cream-200/65">
               We do that by equipping providers with advanced protocols, real lab data, dedicated patient panels, and the telehealth infrastructure needed to deliver modern care at a higher standard — in all 50 states.
             </p>
           </div>
