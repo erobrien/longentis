@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { AnimatePresence } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import Diamond from "@/components/Diamond";
 
 type Category = "All" | "News" | "Partnerships" | "Press";
 
@@ -27,12 +29,14 @@ const Press = () => {
     <>
       <Header />
       <main>
-        <section className="bg-[#FAFAF7] pt-36 pb-12">
-          <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
-            <p className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#243656]">Longentis / Press</p>
+        <section className="bg-cream-50 pt-36 pb-12">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <p className="font-mono text-[10px] tracking-[0.22em] uppercase text-navy-700 inline-flex items-center gap-1.5">
+              <Diamond size="xs" /> Longentis / Press
+            </p>
             <motion.h1
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-              className="font-lora mt-4 text-[clamp(32px,4vw,64px)] leading-[1.1] tracking-[-0.02em] text-[#0B1029]"
+              className="font-lora mt-4 text-[clamp(32px,4vw,64px)] leading-[1.1] tracking-[-0.02em] text-navy-900"
             >
               Media & Press
             </motion.h1>
@@ -40,22 +44,22 @@ const Press = () => {
         </section>
 
         {featured && (
-          <section className="bg-[#FAFAF7] pb-16">
-            <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
+          <section className="bg-cream-50 pb-16">
+            <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <ScrollReveal>
-                <div className="rounded-2xl border border-gray-100 bg-white overflow-hidden grid lg:grid-cols-2 shadow-sm">
-                  <div className="h-64 bg-[#1B2B4B] lg:h-auto" />
+                <div className="rounded-2xl border border-navy-900/[0.06] bg-white overflow-hidden grid lg:grid-cols-2">
+                  <div className="h-64 bg-navy-700 lg:h-auto" />
                   <div className="p-8 lg:p-12">
                     <span className="inline-flex items-center gap-2 text-xs">
-                      <span className="h-2 w-2 rounded-full bg-[#E8670A]" />
-                      <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-[#E8670A]">Featured</span>
+                      <Diamond size="xs" />
+                      <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-cta">Featured</span>
                     </span>
-                    <p className="font-mono mt-4 text-[10px] tracking-[0.22em] uppercase text-[#243656]">{featured.year}</p>
-                    <h2 className="font-sans mt-2 text-2xl font-bold text-[#0B1029] md:text-3xl">{featured.title}</h2>
-                    <p className="font-space mt-4 text-[15px] leading-[1.7] text-[#555] font-light">
+                    <p className="font-mono mt-4 text-[10px] tracking-[0.22em] uppercase text-navy-700">{featured.year}</p>
+                    <h2 className="font-sans mt-2 text-2xl font-bold text-navy-900 md:text-3xl">{featured.title}</h2>
+                    <p className="font-space mt-4 text-[15px] leading-[1.7] text-navy-600">
                       Men's Wellness Centers announces the launch of Longentis, its national telehealth platform bringing clinic-grade men's health to all 50 states.
                     </p>
-                    <span className="mt-6 inline-flex items-center gap-1 font-sans text-sm font-semibold text-[#E8670A] cursor-pointer hover:underline">
+                    <span className="mt-6 inline-flex items-center gap-1 font-sans text-sm font-semibold text-cta cursor-pointer hover:underline">
                       Read Full Story <ArrowRight className="h-4 w-4" />
                     </span>
                   </div>
@@ -65,8 +69,8 @@ const Press = () => {
           </section>
         )}
 
-        <section className="bg-[#FAFAF7] py-24">
-          <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
+        <section className="bg-cream-50 py-24">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="flex flex-wrap gap-2 mb-12">
               {filters.map((f) => (
                 <button
@@ -74,8 +78,8 @@ const Press = () => {
                   onClick={() => setActive(f)}
                   className={`rounded-md px-4 py-2 font-mono text-[10px] tracking-[0.1em] uppercase transition-all ${
                     active === f
-                      ? "bg-[#0B1029] text-[#FAFAF7]"
-                      : "bg-white/70 text-[#243656] border border-[rgba(27,43,75,0.15)] hover:border-[rgba(27,43,75,0.30)]"
+                      ? "bg-navy-950 text-cream-100"
+                      : "bg-white/70 text-navy-700 border border-navy-900/[0.08] hover:border-navy-900/[0.15]"
                   }`}
                 >
                   {f}
@@ -98,17 +102,17 @@ const Press = () => {
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.05 }}
-                    className="rounded-2xl border border-gray-100 bg-white overflow-hidden group shadow-sm"
+                    className="rounded-2xl border border-navy-900/[0.06] bg-white overflow-hidden group"
                   >
-                    <div className="h-44 bg-[#1B2B4B]" />
+                    <div className="h-44 bg-navy-700" />
                     <div className="p-5">
                       <div className="flex items-center gap-2">
-                        <span className="font-mono text-[8px] tracking-[0.16em] uppercase text-[#E8670A]">{a.cat}</span>
-                        <span className="font-mono text-[8px] tracking-[0.16em] uppercase text-[#C5CDE0]/50">· {a.year}</span>
+                        <span className="font-mono text-[8px] tracking-[0.16em] uppercase text-cta">{a.cat}</span>
+                        <span className="font-mono text-[8px] tracking-[0.16em] uppercase text-navy-400">· {a.year}</span>
                       </div>
-                      <h3 className="font-sans mt-2 text-[15px] font-semibold text-[#0B1029] group-hover:text-[#E8670A] transition-colors leading-[1.4]">{a.title}</h3>
-                      <p className="font-space mt-1 text-[11px] text-[#555] font-light">{a.source}</p>
-                      <span className="mt-3 inline-flex items-center gap-1 font-mono text-[8px] tracking-[0.16em] uppercase text-[#243656]">
+                      <h3 className="font-sans mt-2 text-[15px] font-semibold text-navy-900 group-hover:text-cta transition-colors leading-[1.4]">{a.title}</h3>
+                      <p className="font-space mt-1 text-[11px] text-navy-600">{a.source}</p>
+                      <span className="mt-3 inline-flex items-center gap-1 font-mono text-[8px] tracking-[0.16em] uppercase text-navy-700">
                         Read article <ArrowRight className="h-2.5 w-2.5" />
                       </span>
                     </div>
