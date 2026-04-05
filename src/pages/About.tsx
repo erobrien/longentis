@@ -129,7 +129,7 @@ const About = () => (
           <div className="relative z-10">
             <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 bg-white/[0.06] border border-white/[0.1]">
               <Diamond size="xs" />
-              <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-cream-200/60">Our Mission</span>
+              <span className="font-sans text-[11px] font-semibold tracking-wide uppercase text-cream-200/65">Our Mission</span>
             </div>
             <h3 className="font-sans mt-6 text-xl font-semibold text-cream-100 uppercase tracking-wide">Advance Men's Health</h3>
             <p className="font-space mt-3 text-[15px] leading-[1.7] text-cream-200/60">
