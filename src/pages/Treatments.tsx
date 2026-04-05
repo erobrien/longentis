@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeader from "@/components/SectionHeader";
+import Diamond from "@/components/Diamond";
 
 import fitMan from "@/assets/iStock-518621045.jpg";
 import coupleJog from "@/assets/iStock-1081494342-1-4.jpg";
@@ -39,13 +40,13 @@ const Treatments = () => (
             Three conditions. One dedicated{" "}
             <em className="font-lora italic text-cta" style={{ fontStyle: "italic" }}>practice.</em>
           </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="font-space mt-6 max-w-2xl text-[15px] leading-[1.7] text-navy-700/55">
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="font-space mt-6 max-w-2xl text-[15px] leading-[1.7] text-navy-700/70">
             From first assessment through every follow-up, Longentis delivers a coordinated clinical program — real labs, evidence-based protocols, and physician-led oversight across TRT, ED, and weight loss.
           </motion.p>
         </div>
       </section>
 
-      {/* Primary treatments — hero cards */}
+      {/* Primary treatments */}
       <section className="bg-cream-100 pb-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid gap-5 md:grid-cols-3">
@@ -55,11 +56,9 @@ const Treatments = () => (
                   <img src={t.img} alt={t.title} className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-50 group-hover:scale-[1.03] transition-all duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/60 to-transparent" />
                   <div className="relative z-10 h-full flex flex-col justify-end p-6 lg:p-8">
-                    <div className="size-11 rounded-xl bg-white/[0.08] border border-white/[0.1] flex items-center justify-center mb-4">
-                      <t.icon className="h-5 w-5 text-cta" strokeWidth={1.5} />
-                    </div>
+                    <Diamond size="md" className="text-cta/60 mb-4" />
                     <h3 className="font-sans font-bold text-[22px] text-cream-100 mb-2">{t.title}</h3>
-                    <p className="font-space text-[14px] leading-[1.6] text-cream-200/50 mb-5">{t.desc}</p>
+                    <p className="font-space text-[14px] leading-[1.6] text-cream-200/60 mb-5">{t.desc}</p>
                     <span className="inline-flex items-center gap-2 rounded-full bg-cta px-6 py-3 font-sans text-[13px] font-semibold text-white w-fit group-hover:bg-cta/90 transition-colors">
                       Learn More <ArrowRight className="h-4 w-4" />
                     </span>
@@ -77,7 +76,7 @@ const Treatments = () => (
           <h2 className="font-sans font-bold text-[clamp(24px,3vw,40px)] leading-[1.15] tracking-[-0.02em] text-cream-100">
             Not sure which treatment?
           </h2>
-          <p className="font-space mt-3 text-[15px] text-cream-200/45 max-w-lg mx-auto">
+          <p className="font-space mt-3 text-[15px] text-cream-200/60 max-w-lg mx-auto">
             Take our 2-minute assessment and we'll point you in the right direction.
           </p>
           <Link to="/get-started" className="mt-8 inline-flex items-center gap-2.5 rounded-full bg-cta px-8 py-4 font-sans text-[15px] font-semibold text-white hover:bg-cta/90 transition-colors active:scale-[0.98]">
@@ -103,7 +102,7 @@ const Treatments = () => (
                   </div>
                   <div>
                     <h3 className="font-sans text-[15px] font-semibold text-navy-900">{s.title}</h3>
-                    <p className="font-space text-[13px] leading-snug text-navy-700/50 mt-1">{s.desc}</p>
+                    <p className="font-space text-[13px] leading-snug text-navy-700/65 mt-1">{s.desc}</p>
                   </div>
                 </div>
               </ScrollReveal>

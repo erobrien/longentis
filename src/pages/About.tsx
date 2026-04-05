@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import StatCounter from "@/components/StatCounter";
 import SectionHeader from "@/components/SectionHeader";
+import Diamond from "@/components/Diamond";
 
 import consultation from "@/assets/iStock-2187145642-1-5.jpg";
 import fitMan from "@/assets/iStock-518621045.jpg";
@@ -54,7 +55,8 @@ const About = () => (
       <section className="relative bg-navy-950 noise-overlay pt-36 pb-20 overflow-hidden">
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 mb-6 bg-white/[0.06] border border-white/[0.1]">
-            <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-cream-200/50">Our Story</span>
+            <Diamond size="xs" />
+            <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-cream-200/60">Our Story</span>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.7 }}
@@ -65,22 +67,22 @@ const About = () => (
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-            className="font-space text-cream-200/45 text-[16px] max-w-2xl mx-auto mt-5 leading-relaxed"
+            className="font-space text-cream-200/60 text-[16px] max-w-2xl mx-auto mt-5 leading-relaxed"
           >
             What started as a single Virginia clinic is now a nationwide men's health platform — same providers, same protocols, higher standard.
           </motion.p>
         </div>
       </section>
 
-      {/* Driven by Purpose — with actual image */}
+      {/* Driven by Purpose */}
       <section className="bg-cream-100 py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 grid gap-12 lg:grid-cols-2 items-center">
           <ScrollReveal>
             <SectionHeader badge="Our Purpose" title="Driven by Purpose" />
-            <p className="font-space mt-6 text-[15px] leading-[1.7] text-navy-700/55">
+            <p className="font-space mt-6 text-[15px] leading-[1.7] text-navy-700/70">
               Longentis is building the telehealth model for men's health at scale: same dedicated providers, clearer standards, and a better experience for patients everywhere.
             </p>
-            <p className="font-space mt-4 text-[15px] leading-[1.7] text-navy-700/55">
+            <p className="font-space mt-4 text-[15px] leading-[1.7] text-navy-700/70">
               The gap between how men feel and what their doctor calls "normal" is where we operate. We started in Virginia. Now we're in all 50 states — bringing the same clinical discipline to telehealth that made our in-person centers work.
             </p>
           </ScrollReveal>
@@ -100,7 +102,6 @@ const About = () => (
             title={<>From one Virginia clinic to <em className="font-lora italic text-cta" style={{ fontStyle: "italic" }}>all 50 states.</em></>}
           />
           <div className="mt-14 relative">
-            {/* Vertical line */}
             <div className="absolute left-[19px] top-0 bottom-0 w-[2px] bg-navy-900/[0.08] hidden md:block" />
             <div className="space-y-8">
               {timeline.map((t, i) => (
@@ -110,9 +111,9 @@ const About = () => (
                       <span className="font-mono text-[10px] tracking-[0.1em] text-cta font-bold">{t.year.slice(2)}</span>
                     </div>
                     <div className="rounded-2xl p-5 bg-white border border-navy-900/[0.06] flex-1">
-                      <p className="font-mono text-[10px] tracking-[0.16em] uppercase text-navy-700/35 mb-1">{t.year}</p>
+                      <p className="font-mono text-[10px] tracking-[0.16em] uppercase text-navy-700/50 mb-1">{t.year}</p>
                       <h3 className="font-sans font-semibold text-[16px] text-navy-900">{t.title}</h3>
-                      <p className="font-space text-[13px] leading-[1.6] text-navy-700/50 mt-1">{t.desc}</p>
+                      <p className="font-space text-[13px] leading-[1.6] text-navy-700/65 mt-1">{t.desc}</p>
                     </div>
                   </div>
                 </ScrollReveal>
@@ -127,28 +128,30 @@ const About = () => (
         <div className="bg-navy-950 noise-overlay p-12 lg:p-20 relative">
           <div className="relative z-10">
             <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 bg-white/[0.06] border border-white/[0.1]">
-              <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-cream-200/50">Our Mission</span>
+              <Diamond size="xs" />
+              <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-cream-200/60">Our Mission</span>
             </div>
             <h3 className="font-sans mt-6 text-xl font-semibold text-cream-100 uppercase tracking-wide">Advance Men's Health</h3>
-            <p className="font-space mt-3 text-[15px] leading-[1.7] text-cream-200/50">
+            <p className="font-space mt-3 text-[15px] leading-[1.7] text-cream-200/60">
               Our mission is to advance healthier, stronger, more confident lives by making men's health care more accessible, more precise, and more actionable for every patient we serve.
             </p>
             <h3 className="font-sans mt-10 text-xl font-semibold text-cream-100 uppercase tracking-wide">Build the Platform</h3>
-            <p className="font-space mt-3 text-[15px] leading-[1.7] text-cream-200/50">
+            <p className="font-space mt-3 text-[15px] leading-[1.7] text-cream-200/60">
               We do that by equipping providers with advanced protocols, real lab data, dedicated patient panels, and the telehealth infrastructure needed to deliver modern care at a higher standard — in all 50 states.
             </p>
           </div>
         </div>
         <div className="bg-cream-200 p-12 lg:p-20">
           <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 bg-navy-900/[0.06] border border-navy-900/[0.12]">
+            <Diamond size="xs" />
             <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-navy-600">Our Vision</span>
           </div>
           <h3 className="font-sans mt-6 text-xl font-semibold text-navy-900 uppercase tracking-wide">Set the Standard</h3>
-          <p className="font-space mt-3 text-[15px] leading-[1.7] text-navy-700/55">
+          <p className="font-space mt-3 text-[15px] leading-[1.7] text-navy-700/70">
             Our vision is to set the standard as the trusted, go-to provider of men's health care and to help define what physician-led telehealth looks like at scale.
           </p>
           <h3 className="font-sans mt-10 text-xl font-semibold text-navy-900 uppercase tracking-wide">Lead What Comes Next</h3>
-          <p className="font-space mt-3 text-[15px] leading-[1.7] text-navy-700/55">
+          <p className="font-space mt-3 text-[15px] leading-[1.7] text-navy-700/70">
             We see where men's health is headed and we intend to be at the forefront: expanding access to real treatment, removing geographic barriers, and helping more men take control of their health for longer.
           </p>
         </div>
@@ -161,8 +164,10 @@ const About = () => (
           <Accordion type="single" collapsible className="mt-12 max-w-3xl">
             {values.map((v, i) => (
               <AccordionItem key={i} value={`v-${i}`} className="border-b border-navy-900/[0.08]">
-                <AccordionTrigger className="font-sans text-lg font-semibold text-navy-900">{v.title}</AccordionTrigger>
-                <AccordionContent><p className="font-space text-[15px] leading-[1.7] text-navy-700/55">{v.desc}</p></AccordionContent>
+                <AccordionTrigger className="font-sans text-lg font-semibold text-navy-900">
+                  <span className="inline-flex items-center gap-2"><Diamond size="xs" />{v.title}</span>
+                </AccordionTrigger>
+                <AccordionContent><p className="font-space text-[15px] leading-[1.7] text-navy-700/70">{v.desc}</p></AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
@@ -174,7 +179,7 @@ const About = () => (
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <ScrollReveal>
             <h2 className="font-sans font-bold text-[clamp(28px,3.8vw,52px)] leading-[1.12] tracking-[-0.02em] text-navy-900">Built for scale.</h2>
-            <p className="font-space mt-4 text-[15px] leading-[1.7] text-navy-700/55 max-w-2xl mx-auto">
+            <p className="font-space mt-4 text-[15px] leading-[1.7] text-navy-700/70 max-w-2xl mx-auto">
               10,000+ patients. 3 Virginia centers. Now all 50 states.
             </p>
             <Link to="/get-started" className="mt-8 inline-flex items-center gap-2.5 rounded-full bg-cta px-8 py-4 font-sans text-[15px] font-semibold text-white hover:bg-cta/90 transition-colors active:scale-[0.98]">
@@ -197,12 +202,12 @@ const About = () => (
               badge="Powered By"
               title={<>Built on Men's Wellness <em className="font-lora italic text-cta" style={{ fontStyle: "italic" }}>Centers.</em></>}
             />
-            <p className="font-space mt-6 text-[15px] leading-[1.7] text-navy-700/55">
+            <p className="font-space mt-6 text-[15px] leading-[1.7] text-navy-700/70">
               Longentis isn't a telehealth startup. It's the digital arm of Men's Wellness Centers — a LegitScript-certified men's health practice that's been treating men in Virginia since 2015. Same ownership. Same providers. Same protocols.
             </p>
-            <ul className="font-space mt-6 space-y-3 text-[15px] text-navy-700/55">
+            <ul className="font-space mt-6 space-y-3 text-[15px] text-navy-700/70">
               {["Proven clinical model since 2015", "3 Virginia centers with same-day care", "LegitScript certified, state-licensed providers", "12+ dedicated men's health specialists"].map((b) => (
-                <li key={b} className="flex items-start gap-2"><span className="mt-2 h-1.5 w-1.5 rounded-full bg-cta shrink-0" />{b}</li>
+                <li key={b} className="flex items-start gap-2"><Diamond size="xs" className="mt-1.5 shrink-0" />{b}</li>
               ))}
             </ul>
           </ScrollReveal>
@@ -238,7 +243,7 @@ const About = () => (
                       </div>
                       <h3 className="font-sans text-lg font-semibold text-navy-900">{m.name}</h3>
                       <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-navy-600 mt-1">{m.title}</p>
-                      <p className="font-space mt-3 text-[13px] text-navy-700/50">{m.bio}</p>
+                      <p className="font-space mt-3 text-[13px] text-navy-700/65">{m.bio}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -266,8 +271,9 @@ const About = () => (
             ].map((c, i) => (
               <ScrollReveal key={c.label} delay={i * 0.06}>
                 <div className="rounded-2xl p-6 bg-white/[0.04] border border-white/[0.08] text-center h-full">
+                  <Diamond size="md" className="text-cta/60 mb-3" />
                   <h3 className="font-sans font-semibold text-[15px] text-cream-100">{c.label}</h3>
-                  <p className="font-space text-[13px] text-cream-200/40 mt-2">{c.desc}</p>
+                  <p className="font-space text-[13px] text-cream-200/60 mt-2">{c.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
