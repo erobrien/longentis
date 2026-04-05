@@ -110,9 +110,9 @@ const Coverage = () => {
 
                 {selectedState && (
                   <div className="rounded-2xl p-5 bg-white border border-navy-900/[0.06]">
-                    <p className="font-mono text-[10px] tracking-[0.16em] uppercase text-navy-600 mb-1">Selected</p>
+                    <p className="font-sans text-[11px] font-medium tracking-wide uppercase text-navy-600 mb-1">Selected</p>
                     <h3 className="font-sans font-semibold text-[16px] text-navy-900">{selectedState}</h3>
-                    <p className="font-space text-[13px] text-navy-700/65 mt-1">
+                    <p className="font-space text-[14px] text-navy-700/70 mt-1">
                       {isVA ? "In-person & telehealth available" : "Telehealth available"}
                     </p>
                     <Link to="/get-started" className="mt-3 inline-flex items-center gap-1 font-sans text-[13px] font-semibold text-cta hover:underline">
