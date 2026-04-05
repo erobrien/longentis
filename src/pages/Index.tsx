@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Activity, Beaker, Heart, Thermometer, Shield, FlaskConical, Pill, Scale, RefreshCw, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Activity, Beaker, Heart, Thermometer, Shield, FlaskConical, Pill, Scale, RefreshCw, CheckCircle2, ClipboardCheck, TestTube, Video, Truck, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import useEmblaCarousel from "embla-carousel-react";
