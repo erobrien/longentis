@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, User } from "lucide-react";
 
 const navLinks = [
-  { label: "About", href: "/about" },
+  { label: "Testosterone", href: "/treatments" },
+  { label: "Sexual Health", href: "/treatments" },
+  { label: "Weight Loss", href: "/treatments" },
+  { label: "How It Works", href: "/about" },
   { label: "Treatments", href: "/treatments" },
 ];
 
@@ -26,59 +29,67 @@ const Header = () => {
   return (
     <>
       <motion.header
-        className="fixed inset-x-0 top-0 z-[310] flex w-full flex-col items-center px-6 lg:px-12 max-md:pt-3 max-md:pb-3 md:pt-8 md:pb-4"
+        className={`fixed inset-x-0 top-0 z-[310] transition-all duration-300 ${
+          scrolled
+            ? "bg-[#06081a]/95 backdrop-blur-md shadow-[0_1px_0_rgba(255,255,255,0.06)]"
+            : "bg-transparent"
+        }`}
       >
-        <div className="mx-auto w-full max-w-[1600px] justify-center max-md:px-0 px-4 sm:px-5 lg:px-8 flex flex-col items-center">
-          <div
-            className={`max-w-[1240px] relative flex w-full items-center justify-between rounded-[14px] border px-4 py-2 lg:px-5 transition-all duration-500 ${
-              scrolled
-                ? "border-[rgba(255,255,255,0.35)] bg-[rgba(255,255,255,0.55)] backdrop-blur-[28px] backdrop-saturate-[1.4] shadow-[0_12px_32px_rgba(0,0,0,0.12)]"
-                : "border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.04)] backdrop-blur-[4px] shadow-none"
-            }`}
-          >
-            <Link to="/" className="flex items-center gap-2 shrink-0">
-              <span className="text-[#E8670A] text-[24px] leading-none" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>✦</span>
-              <span
-                className={`text-[20px] uppercase leading-none tracking-[0.12em] transition-colors duration-500 ${scrolled ? "text-[#0B1029]" : "text-[#FAFAF7]"}`}
-                style={{ fontFamily: "'Bebas Neue', 'Inter Tight', sans-serif", fontWeight: 400 }}
-              >
-                Longentis
-              </span>
-            </Link>
+        <div className="mx-auto max-w-[1400px] flex items-center justify-between px-6 lg:px-10 h-[64px]">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2 shrink-0">
+            <span className="text-[#E8670A] text-[22px] leading-none" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>✦</span>
+            <span
+              className="text-[19px] uppercase leading-none tracking-[0.12em] text-[#FAFAF7]"
+              style={{ fontFamily: "'Bebas Neue', 'Inter Tight', sans-serif", fontWeight: 400 }}
+            >
+              Longentis
+            </span>
+          </Link>
 
-            <nav className="hidden items-center gap-8 md:flex">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className={`relative text-[13.5px] font-semibold font-sans transition-colors duration-500 after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-[#E8670A] after:transition-[width] after:duration-200 after:w-0 hover:after:w-full ${
-                    location.pathname === link.href ? "after:w-full" : ""
-                  } ${scrolled ? "text-[#1B2B4B]" : "text-[#FAFAF7]"}`}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-
-            <div className="flex items-center gap-4">
+          {/* Desktop nav — flat links like ro.co */}
+          <nav className="hidden lg:flex items-center gap-1">
+            {navLinks.map((link) => (
               <Link
-                to="/get-started"
-                className="hidden md:inline-flex items-center rounded-xl border border-white/[0.11] bg-[#1B2B4B] px-[18px] py-[10px] text-[11px] font-bold uppercase tracking-[0.09em] text-[#FAFAF7] shadow-[inset_0_1px_0_rgba(255,255,255,0.11),inset_0_-1px_0_rgba(0,0,0,0.22),0_0_0_1px_rgba(27,43,75,0.55),0_4px_14px_rgba(27,43,75,0.38)] hover:bg-[#162340] transition-all duration-200 active:scale-[0.98] font-sans"
+                key={link.label}
+                to={link.href}
+                className={`px-4 py-2 text-[14px] font-medium font-sans transition-colors duration-200 rounded-md hover:bg-white/[0.06] ${
+                  location.pathname === link.href
+                    ? "text-[#FAFAF7]"
+                    : "text-[#FAFAF7]/60"
+                }`}
               >
-                Get Started
+                {link.label}
               </Link>
-              <button
-                onClick={() => setMobileOpen(true)}
-                className={`md:hidden transition-colors duration-500 ${scrolled ? "text-[#0B1029]" : "text-[#FAFAF7]"}`}
-                aria-label="Open menu"
-              >
-                <Menu className="h-6 w-6" />
-              </button>
-            </div>
+            ))}
+          </nav>
+
+          {/* Right side */}
+          <div className="flex items-center gap-3">
+            <Link
+              to="/get-started"
+              className="hidden md:inline-flex items-center rounded-full bg-[#E8670A] px-5 py-2 text-[13px] font-semibold text-white font-sans hover:bg-[#D05A00] transition-colors duration-200 active:scale-[0.98]"
+            >
+              Get Started
+            </Link>
+            <button
+              className="hidden md:flex items-center justify-center w-9 h-9 rounded-full border border-white/10 text-[#FAFAF7]/60 hover:text-[#FAFAF7] hover:border-white/20 transition-colors"
+              aria-label="Account"
+            >
+              <User className="h-4 w-4" />
+            </button>
+            <button
+              onClick={() => setMobileOpen(true)}
+              className="lg:hidden text-[#FAFAF7]/80"
+              aria-label="Open menu"
+            >
+              <Menu className="h-6 w-6" />
+            </button>
           </div>
         </div>
       </motion.header>
 
+      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -87,35 +98,35 @@ const Header = () => {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[400] bg-[#06081a] flex flex-col"
           >
-            <div className="flex items-center justify-between px-6 py-4">
+            <div className="flex items-center justify-between px-6 h-[64px]">
               <Link to="/" className="flex items-center gap-2">
-                <span className="text-[#E8670A] text-[24px] leading-none" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>✦</span>
-                <span className="text-[20px] uppercase leading-none tracking-[0.12em] text-[#E8E2D9]" style={{ fontFamily: "'Bebas Neue', 'Inter Tight', sans-serif", fontWeight: 400 }}>Longentis</span>
+                <span className="text-[#E8670A] text-[22px] leading-none" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>✦</span>
+                <span className="text-[19px] uppercase leading-none tracking-[0.12em] text-[#FAFAF7]" style={{ fontFamily: "'Bebas Neue', 'Inter Tight', sans-serif", fontWeight: 400 }}>Longentis</span>
               </Link>
-              <button onClick={() => setMobileOpen(false)} className="text-[#E8E2D9]" aria-label="Close menu">
+              <button onClick={() => setMobileOpen(false)} className="text-[#FAFAF7]/80" aria-label="Close menu">
                 <X className="h-6 w-6" />
               </button>
             </div>
-            <nav className="flex flex-1 flex-col items-center justify-center gap-8">
+            <nav className="flex flex-1 flex-col px-6 pt-8 gap-1">
               {navLinks.map((link, i) => (
                 <motion.div
-                  key={link.href}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1 }}
+                  key={link.label}
+                  initial={{ opacity: 0, x: -12 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.05 }}
                 >
                   <Link
                     to={link.href}
-                    className="font-sans text-2xl font-semibold text-[#E8E2D9] hover:text-[#E8670A] transition-colors"
+                    className="block py-3 font-sans text-[18px] font-medium text-[#FAFAF7]/70 hover:text-[#FAFAF7] border-b border-white/[0.06] transition-colors"
                   >
                     {link.label}
                   </Link>
                 </motion.div>
               ))}
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
+              <motion.div initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }}>
                 <Link
                   to="/get-started"
-                  className="mt-4 rounded-xl bg-[#1B2B4B] px-8 py-3 font-sans text-lg font-semibold text-[#FAFAF7]"
+                  className="mt-6 inline-flex items-center justify-center w-full rounded-full bg-[#E8670A] px-6 py-3 font-sans text-[15px] font-semibold text-white hover:bg-[#D05A00] transition-colors"
                 >
                   Get Started
                 </Link>
