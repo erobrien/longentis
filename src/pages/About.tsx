@@ -242,8 +242,8 @@ const About = () => (
                         <img src={m.img} alt={m.name} className="absolute inset-0 w-full h-full object-cover" />
                       </div>
                       <h3 className="font-sans text-lg font-semibold text-navy-900">{m.name}</h3>
-                      <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-navy-600 mt-1">{m.title}</p>
-                      <p className="font-space mt-3 text-[13px] text-navy-700/65">{m.bio}</p>
+                      <p className="font-sans text-[11px] font-medium tracking-wide uppercase text-navy-600 mt-1">{m.title}</p>
+                      <p className="font-space mt-3 text-[14px] text-navy-700/70">{m.bio}</p>
                     </motion.div>
                   ))}
                 </div>
