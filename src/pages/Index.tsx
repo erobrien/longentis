@@ -29,8 +29,8 @@ import beachWalk from "@/assets/iStock-2170822818-12.jpg";      // Two men beach
 const Hero = () => (
   <section className="hero-section relative w-full overflow-hidden" style={{ height: "100dvh", minHeight: 640, background: "#FAFAF7" }}>
     {/* Video frame with rounded corners — image fills the frame */}
-    <div className="video-frame absolute overflow-hidden" style={{ zIndex: 1, borderRadius: 16, inset: "12px 4px 60px lg:12px 12px 80px".split(" ").length ? undefined : undefined }} className="video-frame absolute overflow-hidden rounded-2xl" style={{ zIndex: 1, inset: "0px 0px 52px" }}>
-      <style>{`@media (min-width: 1024px) { .video-frame { inset: 12px 12px 80px !important; border-radius: 16px !important; } }`}</style>
+    <div className="video-frame absolute overflow-hidden rounded-none lg:rounded-2xl" style={{ zIndex: 1, inset: "0px 0px 52px" }}>
+      <style>{`@media (min-width: 1024px) { .video-frame { inset: 12px 12px 80px !important; } }`}</style>
       <video
         src="/mwc_hero_montage.mp4"
         
