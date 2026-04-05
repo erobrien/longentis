@@ -31,59 +31,60 @@ const heroCards = [
   {
     title: "Testosterone Replacement Therapy",
     img: fitMan,
-    bg: "bg-navy-dark",
+    bgColor: "hsl(var(--navy-950))",
     href: "/treatments",
   },
   {
     title: "Erectile Dysfunction",
     img: coupleJog,
-    bg: "bg-navy-primary",
+    bgColor: "hsl(var(--navy-800))",
     href: "/treatments",
   },
   {
     title: "Peptides",
     img: oceanRunner,
-    bg: "bg-navy-accent",
+    bgColor: "hsl(var(--navy-900))",
     href: "/treatments",
   },
   {
     title: "Weight Loss",
     img: trackCrouch,
-    bg: "bg-navy-deepest",
+    bgColor: "hsl(var(--navy-700))",
     href: "/treatments",
   },
   {
     title: "Get Started",
     img: heroImg,
-    bg: "bg-cta",
+    bgColor: "#E8670A",
     href: "/get-started",
     isAccent: true,
   },
 ];
 
-const HeroCard = ({ title, img, bg, href, className, isAccent }: { title: string; img: string; bg: string; href: string; className?: string; isAccent?: boolean }) => (
+const HeroCard = ({ title, img, bgColor, href, className, isAccent }: { title: string; img: string; bgColor: string; href: string; className?: string; isAccent?: boolean }) => (
   <Link
     to={href}
-    className={`group relative overflow-hidden rounded-2xl ${bg} flex flex-col justify-between p-6 lg:p-8 border border-white/[0.06] ${className ?? ""}`}
+    className={`group relative overflow-hidden rounded-2xl flex flex-col justify-between p-6 lg:p-8 ${className ?? ""}`}
+    style={{ backgroundColor: bgColor }}
   >
     {/* Title — top left */}
-    <h3 className="relative z-10 font-sans font-semibold text-white text-lg lg:text-2xl max-w-[200px] leading-tight">
+    <h3 className="relative z-10 font-sans font-semibold text-white text-lg lg:text-2xl max-w-[220px] leading-tight drop-shadow-md">
       {title}
     </h3>
 
     {/* Black pill button — bottom left */}
     <div className="relative z-10 mt-auto pt-4">
-      <span className={`inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-white font-sans text-xs font-semibold uppercase tracking-wider transition-all group-hover:scale-105 ${isAccent ? "bg-white/20 group-hover:bg-white/30" : "bg-black/70 group-hover:bg-black/90"}`}>
+      <span className={`inline-flex items-center gap-2 rounded-full px-5 py-3 text-white font-sans text-[11px] font-bold uppercase tracking-[0.08em] transition-all group-hover:scale-105 ${isAccent ? "bg-white/20 backdrop-blur-sm group-hover:bg-white/30" : "bg-black/80 group-hover:bg-black"}`}>
         Start now
         <ArrowRight className="h-3.5 w-3.5" />
       </span>
     </div>
 
-    {/* Foreground photo — bottom right, smaller */}
+    {/* Foreground photo — bottom right, contained */}
     <img
       src={img}
       alt={title}
-      className="absolute bottom-0 right-0 h-[60%] w-[40%] object-cover object-center rounded-tl-2xl opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500"
+      className="absolute bottom-0 right-0 h-[70%] w-[45%] object-cover object-top rounded-tl-2xl opacity-70 group-hover:opacity-90 group-hover:scale-[1.03] transition-all duration-500"
     />
   </Link>
 );
