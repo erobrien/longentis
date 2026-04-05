@@ -24,7 +24,7 @@ import beachWalk from "@/assets/iStock-2170822818-12.jpg";
    trust bullets inline. Cream background, not dark.
    ═══════════════════════════════════════════ */
 const Hero = () => (
-  <section className="relative bg-cream-100 pt-36 lg:pt-44 pb-0 overflow-hidden">
+  <section className="relative bg-cream-100 pt-28 lg:pt-32 pb-0 overflow-hidden">
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       {/* Headline row */}
       <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 items-end">
