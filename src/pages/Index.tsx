@@ -57,6 +57,7 @@ const heroCards = [
     img: heroImg,
     bg: "bg-cta",
     href: "/get-started",
+    isAccent: true,
   },
 ];
 
