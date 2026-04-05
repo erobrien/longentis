@@ -55,7 +55,7 @@ const heroCards = [
   {
     title: "Get Started",
     img: heroImg,
-    bgColor: "hsl(var(--cta-orange))",
+    bgColor: "#E8670A",
     href: "/get-started",
     isAccent: true,
   },
