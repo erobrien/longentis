@@ -37,7 +37,7 @@ const GetStarted = () => {
             </motion.h1>
 
             <div className="mt-12">
-              <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 mb-6 bg-white/[0.06] border border-white/[0.1]">
+              <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 mb-6 bg-white/[0.06] border border-white/[0.12]">
                 <Diamond size="xs" />
                 <span className="font-sans text-[11px] font-semibold tracking-wide uppercase text-cream-200/70">What to expect</span>
               </div>
@@ -48,21 +48,21 @@ const GetStarted = () => {
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 mb-4">
                   <Diamond size="sm" className="text-cta/80 mt-0.5 shrink-0" />
-                  <p className="font-space text-[15px] text-cream-200/75">{step}</p>
+                  <p className="font-space text-[15px] text-cream-200/80">{step}</p>
                 </div>
               ))}
             </div>
 
             {/* Testimonial */}
-            <div className="mt-12 rounded-2xl p-6 bg-white/[0.06] border border-white/[0.1]">
+            <div className="mt-12 rounded-2xl p-6 bg-white/[0.06] border border-white/[0.12]">
               <div className="flex gap-1 mb-3">
                 {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-cta text-cta" />)}
               </div>
-              <p className="font-lora text-[15px] italic text-cream-200/85 leading-[1.55]">"They answered all my questions, even the stupid ones."</p>
-              <p className="font-sans mt-3 text-sm font-semibold text-cream-200">Adam C. <span className="font-sans text-[11px] text-white/55">— Google Review</span></p>
+              <p className="font-lora text-[15px] italic text-cream-200/90 leading-[1.55]">"They answered all my questions, even the stupid ones."</p>
+              <p className="font-sans mt-3 text-sm font-semibold text-cream-200">Adam C. <span className="font-sans text-[11px] text-white/60">— Google Review</span></p>
             </div>
 
-            <a href="tel:8663444955" className="mt-8 inline-flex items-center gap-2 text-cream-200/65 hover:text-cream-200 transition-colors">
+            <a href="tel:8663444955" className="mt-8 inline-flex items-center gap-2 text-cream-200/70 hover:text-cream-200 transition-colors">
               <Phone className="h-4 w-4" />
               <span className="font-space text-sm">(866) 344-4955</span>
             </a>
@@ -91,7 +91,7 @@ const GetStarted = () => {
                     required
                     value={formData[name]}
                     onChange={(e) => setFormData({ ...formData, [name]: e.target.value })}
-                    className="mt-1.5 w-full rounded-lg border border-navy-900/[0.08] bg-white px-4 py-3 font-space text-sm text-navy-900 outline-none focus:border-cta/40 focus:ring-1 focus:ring-cta/30 transition-colors"
+                    className="mt-1.5 w-full rounded-lg border border-navy-900/[0.10] bg-white px-4 py-3 font-space text-sm text-navy-900 outline-none focus:border-cta/40 focus:ring-1 focus:ring-cta/30 transition-colors shadow-card"
                   />
                 </div>
               ))}
@@ -102,7 +102,7 @@ const GetStarted = () => {
                   required
                   value={formData.state}
                   onChange={(e) => setFormData({ ...formData, state: e.target.value })}
-                  className="mt-1.5 w-full rounded-lg border border-navy-900/[0.08] bg-white px-4 py-3 font-space text-sm text-navy-900 outline-none focus:border-cta/40 focus:ring-1 focus:ring-cta/30 transition-colors"
+                  className="mt-1.5 w-full rounded-lg border border-navy-900/[0.10] bg-white px-4 py-3 font-space text-sm text-navy-900 outline-none focus:border-cta/40 focus:ring-1 focus:ring-cta/30 transition-colors shadow-card"
                 >
                   <option value="">Select your state</option>
                   {states.map((s) => <option key={s} value={s}>{s}</option>)}
@@ -115,7 +115,7 @@ const GetStarted = () => {
                   required
                   value={formData.concern}
                   onChange={(e) => setFormData({ ...formData, concern: e.target.value })}
-                  className="mt-1.5 w-full rounded-lg border border-navy-900/[0.08] bg-white px-4 py-3 font-space text-sm text-navy-900 outline-none focus:border-cta/40 focus:ring-1 focus:ring-cta/30 transition-colors"
+                  className="mt-1.5 w-full rounded-lg border border-navy-900/[0.10] bg-white px-4 py-3 font-space text-sm text-navy-900 outline-none focus:border-cta/40 focus:ring-1 focus:ring-cta/30 transition-colors shadow-card"
                 >
                   <option value="">Select a concern</option>
                   {concerns.map((c) => <option key={c} value={c}>{c}</option>)}
@@ -128,7 +128,7 @@ const GetStarted = () => {
                   rows={4}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="mt-1.5 w-full rounded-lg border border-navy-900/[0.08] bg-white px-4 py-3 font-space text-sm text-navy-900 outline-none focus:border-cta/40 focus:ring-1 focus:ring-cta/30 transition-colors resize-none"
+                  className="mt-1.5 w-full rounded-lg border border-navy-900/[0.10] bg-white px-4 py-3 font-space text-sm text-navy-900 outline-none focus:border-cta/40 focus:ring-1 focus:ring-cta/30 transition-colors resize-none shadow-card"
                 />
               </div>
 

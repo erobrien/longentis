@@ -30,7 +30,7 @@ const Resources = () => {
     <>
       <Header />
       <main>
-        <section className="relative w-full pt-32 lg:pt-40 pb-16 bg-cream-100">
+        <section className="relative w-full pt-32 lg:pt-40 pb-16 bg-cream-50">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               <h1 className="font-sans font-bold text-[clamp(32px,5vw,64px)] leading-[1.08] tracking-[-0.03em] text-navy-900">
@@ -51,7 +51,7 @@ const Resources = () => {
                   className={`rounded-lg px-4 py-2.5 font-sans text-[12px] font-medium tracking-wide uppercase transition-all inline-flex items-center gap-1.5 ${
                     activeFilter === f
                       ? "bg-navy-950 text-cream-100"
-                      : "bg-navy-900/[0.04] border border-navy-900/[0.08] text-navy-600 hover:bg-navy-900/[0.08]"
+                      : "bg-white border border-navy-900/[0.10] text-navy-600 hover:bg-white/80"
                   }`}
                 >
                   <Diamond size="xs" className={activeFilter === f ? "text-cta" : "text-cta/40"} />
@@ -62,14 +62,14 @@ const Resources = () => {
           </div>
         </section>
 
-        <section className="bg-cream-100 pb-24">
+        <section className="bg-cream-100 pb-24 pt-4">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {filtered.map((article, i) => (
                 <ScrollReveal key={article.title} delay={i * 0.04}>
-                  <div className="group rounded-2xl p-6 h-full flex flex-col bg-white border border-navy-900/[0.06] hover:border-navy-900/[0.15] hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(11,16,41,0.08)] transition-all duration-300">
+                  <div className="group rounded-2xl p-6 h-full flex flex-col bg-white border border-navy-900/[0.10] shadow-card hover:border-navy-900/[0.15] hover:-translate-y-1 hover:shadow-card-hover transition-all duration-300">
                     <div className="flex items-center gap-3 mb-4">
-                      <span className="rounded-md px-2.5 py-1 bg-navy-900/[0.06] font-sans text-[11px] font-medium tracking-wide uppercase text-navy-600 inline-flex items-center gap-1">
+                      <span className="rounded-md px-2.5 py-1 bg-cream-100 font-sans text-[11px] font-medium tracking-wide uppercase text-navy-600 inline-flex items-center gap-1">
                         <Diamond size="xs" className="text-cta/60" />
                         {article.category}
                       </span>
@@ -100,7 +100,7 @@ const Resources = () => {
         <section className="bg-navy-950 py-16 noise-overlay">
           <div className="mx-auto max-w-3xl px-6 lg:px-8 text-center">
             <h2 className="font-sans font-bold text-2xl text-cream-200">Ready to take the next step?</h2>
-            <p className="font-space mt-3 text-[15px] text-cream-200/65">
+            <p className="font-space mt-3 text-[15px] text-cream-200/70">
               Free online assessment. No commitment. Your dedicated provider reviews your health profile and orders labs.
             </p>
             <Link

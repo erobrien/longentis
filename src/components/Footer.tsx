@@ -6,14 +6,14 @@ import Diamond from "./Diamond";
 const Footer = () => (
   <footer className="text-cream-200">
     {/* Pre-footer CTA */}
-    <section className="relative overflow-hidden bg-navy-950 noise-overlay">
+    <section className="relative overflow-hidden bg-navy-900 noise-overlay">
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 py-24">
         <ScrollReveal>
-          <div className="rounded-2xl px-8 py-16 sm:px-12 sm:py-20 flex flex-col items-center text-center bg-white/[0.03] border border-white/[0.08]">
+          <div className="rounded-2xl px-8 py-16 sm:px-12 sm:py-20 flex flex-col items-center text-center bg-white/[0.06] border border-white/[0.12]">
             <h2 className="font-sans font-bold text-[clamp(28px,3.5vw,48px)] leading-[1.1] tracking-[-0.03em] text-cream-100">
               Your health shouldn't wait.
             </h2>
-            <p className="font-space text-[15px] leading-[1.7] text-cream-200/65 mt-4 max-w-lg">
+            <p className="font-space text-[15px] leading-[1.7] text-cream-200/70 mt-4 max-w-lg">
               One conversation. No pressure. See how Longentis brings clinic-grade men's health to your door.
             </p>
             <Link
@@ -27,7 +27,7 @@ const Footer = () => (
               {["10,000+ Patients", "Since 2015", "LegitScript Certified", "All 50 States"].map((s, i) => (
                 <span key={s} className="inline-flex items-center gap-3">
                   {i > 0 && <Diamond size="xs" className="text-cream-200/35" />}
-                  <span className="font-sans text-[11px] font-medium tracking-wide uppercase text-cream-200/55">{s}</span>
+                  <span className="font-sans text-[11px] font-medium tracking-wide uppercase text-cream-200/60">{s}</span>
                 </span>
               ))}
             </div>
@@ -38,28 +38,28 @@ const Footer = () => (
 
     {/* Footer links */}
     <div className="bg-navy-950 noise-overlay relative">
-      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 pt-16 pb-8 border-t border-white/[0.06]">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 pt-16 pb-8 border-t border-white/[0.08]">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           <div>
             <div className="flex items-center gap-2">
               <Diamond size="md" />
               <span className="text-[18px] uppercase leading-none tracking-[0.12em] text-cream-200/70" style={{ fontFamily: "'Bebas Neue', 'Inter Tight', sans-serif", fontWeight: 400 }}>Longentis</span>
             </div>
-            <p className="font-space mt-4 text-sm leading-relaxed text-cream-200/55">Clinic-grade men's health, delivered.</p>
+            <p className="font-space mt-4 text-sm leading-relaxed text-cream-200/60">Clinic-grade men's health, delivered.</p>
           </div>
           <div>
-            <p className="font-sans text-[11px] font-semibold tracking-wide uppercase text-cream-200/45 mb-4">Treatments</p>
+            <p className="font-sans text-[11px] font-semibold tracking-wide uppercase text-cream-200/50 mb-4">Treatments</p>
             {[
               ["TRT", "/treatments/trt"],
               ["ED Treatment", "/treatments/ed"],
               ["Weight Loss", "/treatments/weight-loss"],
               ["All Treatments", "/treatments"],
             ].map(([label, href]) => (
-              <Link key={label} to={href} className="font-sans block py-1.5 text-sm font-medium text-cream-200/55 hover:text-cream-200/85 transition-colors duration-200">{label}</Link>
+              <Link key={label} to={href} className="font-sans block py-1.5 text-sm font-medium text-cream-200/60 hover:text-cream-200/90 transition-colors duration-200">{label}</Link>
             ))}
           </div>
           <div>
-            <p className="font-sans text-[11px] font-semibold tracking-wide uppercase text-cream-200/45 mb-4">Company</p>
+            <p className="font-sans text-[11px] font-semibold tracking-wide uppercase text-cream-200/50 mb-4">Company</p>
             {[
               ["About", "/about"],
               ["Pricing", "/pricing"],
@@ -68,18 +68,18 @@ const Footer = () => (
               ["Coverage", "/coverage"],
               ["Careers", "/careers"],
             ].map(([label, href]) => (
-              <Link key={label} to={href} className="font-sans block py-1.5 text-sm font-medium text-cream-200/55 hover:text-cream-200/85 transition-colors duration-200">{label}</Link>
+              <Link key={label} to={href} className="font-sans block py-1.5 text-sm font-medium text-cream-200/60 hover:text-cream-200/90 transition-colors duration-200">{label}</Link>
             ))}
           </div>
           <div>
-            <p className="font-sans text-[11px] font-semibold tracking-wide uppercase text-cream-200/45 mb-4">Contact</p>
-            <a href="tel:8663444955" className="font-sans flex items-center gap-2 py-1.5 text-sm font-medium text-cream-200/55 hover:text-cream-200/85 transition-colors duration-200">
+            <p className="font-sans text-[11px] font-semibold tracking-wide uppercase text-cream-200/50 mb-4">Contact</p>
+            <a href="tel:8663444955" className="font-sans flex items-center gap-2 py-1.5 text-sm font-medium text-cream-200/60 hover:text-cream-200/90 transition-colors duration-200">
               <Phone className="h-3.5 w-3.5" /> (866) 344-4955
             </a>
-            <p className="font-sans flex items-center gap-2 py-1.5 text-sm font-medium text-cream-200/55">
+            <p className="font-sans flex items-center gap-2 py-1.5 text-sm font-medium text-cream-200/60">
               <MapPin className="h-3.5 w-3.5" /> Richmond, VA
             </p>
-            <a href="mailto:info@longentis.com" className="font-sans flex items-center gap-2 py-1.5 text-sm font-medium text-cream-200/55 hover:text-cream-200/85 transition-colors duration-200">
+            <a href="mailto:info@longentis.com" className="font-sans flex items-center gap-2 py-1.5 text-sm font-medium text-cream-200/60 hover:text-cream-200/90 transition-colors duration-200">
               <Mail className="h-3.5 w-3.5" /> info@longentis.com
             </a>
             <Link
@@ -91,11 +91,11 @@ const Footer = () => (
           </div>
         </div>
 
-        <div className="mt-12 pt-6 flex flex-wrap items-center justify-between gap-4 border-t border-white/[0.06]">
-          <p className="font-sans text-[11px] text-cream-200/45">© 2026 Longentis, a Men's Wellness Centers brand. All rights reserved.</p>
+        <div className="mt-12 pt-6 flex flex-wrap items-center justify-between gap-4 border-t border-white/[0.08]">
+          <p className="font-sans text-[11px] text-cream-200/50">© 2026 Longentis, a Men's Wellness Centers brand. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="#" className="font-sans text-[11px] text-cream-200/45 hover:text-cream-200/70 transition-colors">Privacy</a>
-            <a href="#" className="font-sans text-[11px] text-cream-200/45 hover:text-cream-200/70 transition-colors">Terms</a>
+            <a href="#" className="font-sans text-[11px] text-cream-200/50 hover:text-cream-200/75 transition-colors">Privacy</a>
+            <a href="#" className="font-sans text-[11px] text-cream-200/50 hover:text-cream-200/75 transition-colors">Terms</a>
           </div>
         </div>
       </div>

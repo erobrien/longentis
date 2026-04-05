@@ -138,7 +138,7 @@ const Pricing = () => (
     <Header />
     <main>
       {/* Hero */}
-      <section className="relative w-full pt-32 lg:pt-40 pb-16 bg-cream-100">
+      <section className="relative w-full pt-32 lg:pt-40 pb-16 bg-cream-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <h1 className="font-sans font-bold text-[clamp(32px,5vw,64px)] leading-[1.08] tracking-[-0.03em] text-navy-900">
@@ -148,7 +148,7 @@ const Pricing = () => (
             <p className="font-space mt-4 max-w-2xl text-[16px] leading-[1.7] text-navy-700/80">
               Real physicians. Real labs. Real medication. Every plan includes everything — no hidden fees, no surprise billing. Choose the depth of care that fits your goals.
             </p>
-            <div className="mt-6 inline-flex items-center gap-2 rounded-lg px-4 py-2.5 bg-navy-900/[0.06] border border-navy-900/[0.10]">
+            <div className="mt-6 inline-flex items-center gap-2 rounded-lg px-4 py-2.5 bg-navy-900/[0.06] border border-navy-900/[0.12]">
               <Diamond size="sm" />
               <span className="font-sans text-[12px] font-medium tracking-wide uppercase text-navy-600">FSA / HSA Accepted</span>
             </div>
@@ -157,7 +157,7 @@ const Pricing = () => (
       </section>
 
       {/* Tier Cards */}
-      <section className="bg-cream-100 pb-20">
+      <section className="bg-cream-100 pb-20 pt-4">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid gap-6 md:grid-cols-3">
             {tiers.map((tier, i) => {
@@ -170,8 +170,8 @@ const Pricing = () => (
                       isDark
                         ? "bg-navy-950 border-2 border-cta/30"
                         : isCustom
-                        ? "bg-cta/[0.03] border border-cta/[0.12]"
-                        : "bg-white border border-navy-900/[0.08]"
+                        ? "bg-white border-2 border-cta/20 shadow-card"
+                        : "bg-white border border-navy-900/[0.10] shadow-card"
                     }`}
                   >
                     {tier.popular && (
@@ -184,7 +184,7 @@ const Pricing = () => (
                     <h3 className={`font-sans font-bold text-xl ${isDark ? "text-cream-100" : "text-navy-900"}`}>
                       {tier.name}
                     </h3>
-                    <p className={`font-space text-[14px] leading-[1.5] mt-1 ${isDark ? "text-cream-200/65" : "text-navy-700/75"}`}>
+                    <p className={`font-space text-[14px] leading-[1.5] mt-1 ${isDark ? "text-cream-200/70" : "text-navy-700/75"}`}>
                       {tier.tagline}
                     </p>
 
@@ -193,17 +193,17 @@ const Pricing = () => (
                       <span className={`font-sans font-extrabold text-[42px] leading-none tracking-[-0.03em] ${isDark ? "text-cta" : "text-navy-900"}`}>
                         {tier.price}
                       </span>
-                      <span className={`font-space text-[15px] ${isDark ? "text-cream-200/60" : "text-navy-700/60"}`}>
+                      <span className={`font-space text-[15px] ${isDark ? "text-cream-200/65" : "text-navy-700/60"}`}>
                         {tier.period}
                       </span>
                     </div>
                     {tier.annualPrice && (
-                      <p className={`font-space text-[13px] mt-1.5 ${isDark ? "text-cream-200/55" : "text-navy-700/65"}`}>
+                      <p className={`font-space text-[13px] mt-1.5 ${isDark ? "text-cream-200/60" : "text-navy-700/65"}`}>
                         or {tier.annualPrice}/mo billed annually
                       </p>
                     )}
                     {!tier.annualPrice && (
-                      <p className={`font-space text-[13px] mt-1.5 ${isDark ? "text-cream-200/55" : "text-navy-700/65"}`}>
+                      <p className={`font-space text-[13px] mt-1.5 ${isDark ? "text-cream-200/60" : "text-navy-700/65"}`}>
                         {tier.annualNote}
                       </p>
                     )}
@@ -254,30 +254,30 @@ const Pricing = () => (
               Compare{" "}
               <em className="font-lora italic text-cta" style={{ fontStyle: "italic" }}>every plan.</em>
             </h2>
-            <p className="font-space mt-3 text-[15px] text-cream-200/65 text-center max-w-xl mx-auto">
+            <p className="font-space mt-3 text-[15px] text-cream-200/70 text-center max-w-xl mx-auto">
               Every tier includes labs, medication, provider consultations, and shipping. Here's what changes as you move up.
             </p>
           </ScrollReveal>
 
-          <div className="mt-12 rounded-2xl overflow-x-auto border border-white/[0.08]">
+          <div className="mt-12 rounded-2xl overflow-x-auto border border-white/[0.10] bg-white/[0.03]">
             <div className="min-w-[560px]">
               {/* Header */}
-              <div className="grid grid-cols-4 bg-white/[0.04] px-4 sm:px-6 py-4 border-b border-white/[0.06]">
+              <div className="grid grid-cols-4 bg-white/[0.06] px-4 sm:px-6 py-4 border-b border-white/[0.08]">
                 <span />
-                <span className="font-sans text-[11px] font-semibold tracking-wide uppercase text-cream-200/55 text-center">Starter</span>
+                <span className="font-sans text-[11px] font-semibold tracking-wide uppercase text-cream-200/60 text-center">Starter</span>
                 <span className="font-sans text-[11px] font-semibold tracking-wide uppercase text-cta text-center">Advanced</span>
-                <span className="font-sans text-[11px] font-semibold tracking-wide uppercase text-cream-200/55 text-center">Custom</span>
+                <span className="font-sans text-[11px] font-semibold tracking-wide uppercase text-cream-200/60 text-center">Custom</span>
               </div>
               {/* Rows */}
               {comparisonRows.map((row, i) => (
                 <div
                   key={row.feature}
-                  className={`grid grid-cols-4 px-4 sm:px-6 py-3.5 ${i < comparisonRows.length - 1 ? "border-b border-white/[0.04]" : ""}`}
+                  className={`grid grid-cols-4 px-4 sm:px-6 py-3.5 ${i < comparisonRows.length - 1 ? "border-b border-white/[0.06]" : ""}`}
                 >
-                  <span className="font-space text-[14px] text-cream-200/75">{row.feature}</span>
-                  <span className="font-space text-[14px] text-cream-200/65 text-center"><CellValue value={row.starter} /></span>
+                  <span className="font-space text-[14px] text-cream-200/80">{row.feature}</span>
+                  <span className="font-space text-[14px] text-cream-200/70 text-center"><CellValue value={row.starter} /></span>
                   <span className="font-sans font-semibold text-[14px] text-cta text-center"><CellValue value={row.advanced} /></span>
-                  <span className="font-space text-[14px] text-cream-200/65 text-center"><CellValue value={row.custom} /></span>
+                  <span className="font-space text-[14px] text-cream-200/70 text-center"><CellValue value={row.custom} /></span>
                 </div>
               ))}
             </div>
@@ -286,7 +286,7 @@ const Pricing = () => (
       </section>
 
       {/* Positioning */}
-      <section className="bg-cream-100 py-20">
+      <section className="bg-cream-50 py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <ScrollReveal>
             <h2 className="font-sans font-bold text-[clamp(26px,3vw,42px)] leading-[1.12] tracking-[-0.02em] text-navy-900 text-center">
@@ -297,7 +297,7 @@ const Pricing = () => (
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {positioning.map((pos, i) => (
               <ScrollReveal key={pos.tier} delay={i * 0.08}>
-                <div className="rounded-2xl bg-white border border-navy-900/[0.08] p-7 h-full flex flex-col">
+                <div className="rounded-2xl bg-white border border-navy-900/[0.10] shadow-card p-7 h-full flex flex-col">
                   <div className="flex items-center gap-2 mb-1">
                     <Diamond size="xs" />
                     <span className="font-sans font-bold text-[16px] text-navy-900">{pos.tier}</span>
@@ -316,23 +316,23 @@ const Pricing = () => (
       </section>
 
       {/* Annual Savings */}
-      <section className="bg-navy-950 py-14 noise-overlay">
+      <section className="bg-navy-900 py-14 noise-overlay">
         <div className="mx-auto max-w-3xl px-6 lg:px-8 text-center">
           <ScrollReveal>
             <Diamond size="lg" className="text-cta/40" />
             <h2 className="font-sans font-bold text-2xl text-cream-200 mt-3">Save 10% with annual billing.</h2>
             <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10">
               <div>
-                <p className="font-sans font-extrabold text-[28px] text-cream-200">$269<span className="text-[16px] font-normal text-cream-200/55">/mo</span></p>
-                <p className="font-sans text-[11px] font-medium tracking-wide uppercase text-cream-200/50 mt-1">Starter Annual</p>
+                <p className="font-sans font-extrabold text-[28px] text-cream-200">$269<span className="text-[16px] font-normal text-cream-200/60">/mo</span></p>
+                <p className="font-sans text-[11px] font-medium tracking-wide uppercase text-cream-200/55 mt-1">Starter Annual</p>
               </div>
               <div>
                 <p className="font-sans font-extrabold text-[28px] text-cta">$499<span className="text-[16px] font-normal text-cta/60">/mo</span></p>
-                <p className="font-sans text-[11px] font-medium tracking-wide uppercase text-cream-200/50 mt-1">Advanced Annual</p>
+                <p className="font-sans text-[11px] font-medium tracking-wide uppercase text-cream-200/55 mt-1">Advanced Annual</p>
               </div>
               <div>
                 <p className="font-sans font-extrabold text-[28px] text-cream-200">Custom</p>
-                <p className="font-sans text-[11px] font-medium tracking-wide uppercase text-cream-200/50 mt-1">Billed Annually</p>
+                <p className="font-sans text-[11px] font-medium tracking-wide uppercase text-cream-200/55 mt-1">Billed Annually</p>
               </div>
             </div>
           </ScrollReveal>

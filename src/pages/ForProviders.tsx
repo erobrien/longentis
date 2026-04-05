@@ -55,13 +55,13 @@ const ForProviders = () => (
               Apply Now <ArrowRight className="h-4 w-4" />
             </Link>
             {["Established panels", "Clinical autonomy", "Full support"].map((s) => (
-              <span key={s} className="rounded-lg border border-navy-900/[0.08] px-4 py-2 font-sans text-[12px] font-medium tracking-wide uppercase text-navy-600">{s}</span>
+              <span key={s} className="rounded-lg border border-navy-900/[0.10] bg-white px-4 py-2 font-sans text-[12px] font-medium tracking-wide uppercase text-navy-600 shadow-card">{s}</span>
             ))}
           </motion.div>
         </div>
       </section>
 
-      <section className="bg-cream-200 py-24">
+      <section className="bg-cream-100 py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <ScrollReveal>
             <h2 className="font-lora text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-navy-900">Be part of the leading men's health telehealth network.</h2>
@@ -72,7 +72,7 @@ const ForProviders = () => (
         </div>
       </section>
 
-      <section className="bg-cream-50 py-24">
+      <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 grid gap-12 lg:grid-cols-[1fr_1fr]">
           <ScrollReveal>
             <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 bg-navy-900/[0.06] border border-navy-900/[0.12]">
@@ -84,7 +84,7 @@ const ForProviders = () => (
           <div className="space-y-4">
             {whyItems.map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 0.1}>
-                <div className="rounded-2xl border border-navy-900/[0.06] bg-white p-6">
+                <div className="rounded-2xl border border-navy-900/[0.10] bg-cream-50 shadow-card p-6">
                   <Diamond size="sm" className="text-cta/60 mb-2" />
                   <h3 className="font-sans text-[16px] font-semibold text-navy-900">{item.title}</h3>
                   <p className="font-space mt-2 text-[14px] leading-[1.6] text-navy-600">{item.desc}</p>
@@ -98,7 +98,7 @@ const ForProviders = () => (
       <section className="bg-navy-950 noise-overlay py-24">
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
           <ScrollReveal>
-            <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 bg-white/[0.06] border border-white/[0.1]">
+            <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 bg-white/[0.06] border border-white/[0.12]">
               <Diamond size="xs" />
               <span className="font-sans text-[11px] font-semibold tracking-wide uppercase text-cream-200/70">Platform Scale</span>
             </div>
@@ -107,10 +107,10 @@ const ForProviders = () => (
           <div className="mt-12 grid gap-4 sm:grid-cols-2">
             {scaleCards.map((c, i) => (
               <ScrollReveal key={c.title} delay={i * 0.1}>
-                <div className="rounded-2xl p-6 h-full bg-white/[0.04] border border-white/[0.08]">
+                <div className="rounded-2xl p-6 h-full bg-white/[0.06] border border-white/[0.12]">
                   <Diamond size="sm" className="text-cta/60 mb-3" />
                   <h3 className="font-sans text-[16px] font-semibold text-cream-200">{c.title}</h3>
-                  <p className="font-space mt-2 text-[14px] leading-[1.6] text-cream-200/65">{c.desc}</p>
+                  <p className="font-space mt-2 text-[14px] leading-[1.6] text-cream-200/70">{c.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -133,7 +133,7 @@ const ForProviders = () => (
         </div>
       </section>
 
-      <section className="bg-cream-200 py-24">
+      <section className="bg-cream-100 py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <ScrollReveal>
             <h2 className="font-lora text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-navy-900">Provider benefits</h2>
@@ -141,7 +141,7 @@ const ForProviders = () => (
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {benefits.map((b, i) => (
               <ScrollReveal key={b.title} delay={i * 0.1}>
-                <div className="rounded-2xl border border-navy-900/[0.06] bg-white p-6 text-center h-full">
+                <div className="rounded-2xl border border-navy-900/[0.10] bg-white shadow-card p-6 text-center h-full">
                   <Diamond size="md" className="text-cta/50 mb-3 mx-auto" />
                   <h3 className="font-sans text-[16px] font-semibold text-navy-900">{b.title}</h3>
                   <p className="font-space mt-2 text-[14px] leading-[1.6] text-navy-600">{b.desc}</p>
@@ -152,7 +152,7 @@ const ForProviders = () => (
         </div>
       </section>
 
-      <section className="bg-cream-50 py-24">
+      <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <ScrollReveal>
             <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 bg-navy-900/[0.06] border border-navy-900/[0.12]">

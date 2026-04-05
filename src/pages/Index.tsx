@@ -19,7 +19,7 @@ import boardwalkJog from "@/assets/iStock-1097324074-10.jpg";
    SECTION 1 — HERO
    ═══════════════════════════════════════════ */
 const Hero = () => (
-  <section className="relative bg-cream-100 pt-28 lg:pt-32 pb-0 overflow-hidden">
+  <section className="relative bg-cream-50 pt-28 lg:pt-32 pb-0 overflow-hidden">
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       {/* Headline row */}
       <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 items-end">
@@ -135,8 +135,8 @@ const Hero = () => (
       </div>
     </div>
 
-    {/* Trust strip — ✦ diamonds instead of icons */}
-    <div className="mt-10 border-t border-navy-900/[0.06] bg-cream-50">
+    {/* Trust strip */}
+    <div className="mt-10 border-t border-navy-900/[0.08] bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 py-5 flex items-center justify-between flex-wrap gap-y-3 gap-x-6">
         <div className="flex items-center gap-6 flex-wrap">
           {[
@@ -171,7 +171,7 @@ const steps = [
 ];
 
 const HowItWorks = () => (
-  <section className="bg-white py-20 lg:py-24">
+  <section className="bg-cream-100 py-20 lg:py-24">
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       <ScrollReveal>
         <h2 className="font-sans font-bold text-navy-900 text-[clamp(26px,3vw,38px)] leading-[1.12] tracking-[-0.02em] max-w-lg">
@@ -182,7 +182,7 @@ const HowItWorks = () => (
       <div className="mt-14 grid gap-0 lg:grid-cols-4">
         {steps.map((step, i) => (
           <ScrollReveal key={step.title} delay={i * 0.06}>
-            <div className={`py-6 lg:py-0 lg:pr-8 ${i > 0 ? "border-t lg:border-t-0 lg:border-l border-navy-900/[0.06] lg:pl-8" : ""}`}>
+            <div className={`py-6 lg:py-0 lg:pr-8 ${i > 0 ? "border-t lg:border-t-0 lg:border-l border-navy-900/[0.08] lg:pl-8" : ""}`}>
               <Diamond size="md" className="text-cta/80" />
               <h3 className="font-sans font-semibold text-[15px] text-navy-900 mt-3">{step.title}</h3>
               <p className="font-space text-[14px] leading-[1.65] text-navy-500 mt-2">{step.desc}</p>
@@ -209,7 +209,7 @@ const HowItWorks = () => (
    SECTION 3 — WHY LONGENTIS
    ═══════════════════════════════════════════ */
 const WhyLongentis = () => (
-  <section className="bg-cream-100 py-20 lg:py-24">
+  <section className="bg-white py-20 lg:py-24">
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       {/* Pull-quote lead */}
       <ScrollReveal>
@@ -288,17 +288,17 @@ const SocialProof = () => (
       <div className="grid gap-4 lg:grid-cols-3">
         {/* Featured — spans 2 cols */}
         <ScrollReveal className="lg:col-span-2">
-          <div className="rounded-2xl p-8 lg:p-10 bg-white/[0.04] border border-white/[0.06] h-full flex flex-col justify-between">
+          <div className="rounded-2xl p-8 lg:p-10 bg-white/[0.06] border border-white/[0.12] h-full flex flex-col justify-between">
             <div>
               <Diamond size="lg" className="text-cta/40 mb-3 block" />
-              <p className="font-lora italic text-[clamp(18px,2.2vw,24px)] leading-[1.45] text-white/80">
+              <p className="font-lora italic text-[clamp(18px,2.2vw,24px)] leading-[1.45] text-white/85">
                 {testimonials[2].quote}
               </p>
             </div>
             <div className="mt-8 flex items-end justify-between flex-wrap gap-4">
               <div>
                 <p className="font-sans font-semibold text-[14px] text-white">{testimonials[2].name}</p>
-                <p className="font-space text-[12px] text-white/50 mt-0.5">{testimonials[2].location}</p>
+                <p className="font-space text-[12px] text-white/55 mt-0.5">{testimonials[2].location}</p>
               </div>
               <p className="font-mono text-[22px] font-bold text-cta tracking-tight">{testimonials[2].metric}</p>
             </div>
@@ -309,11 +309,11 @@ const SocialProof = () => (
         <div className="flex flex-col gap-4">
           {[testimonials[1], testimonials[4]].map((t, i) => (
             <ScrollReveal key={t.name} delay={i * 0.06}>
-              <div className="rounded-2xl p-6 bg-white/[0.03] border border-white/[0.05] h-full">
+              <div className="rounded-2xl p-6 bg-white/[0.06] border border-white/[0.12] h-full">
                 <Diamond size="sm" className="text-cta/30 mb-2 block" />
-                <p className="font-space text-[14px] leading-[1.6] text-white/65">{t.quote}</p>
+                <p className="font-space text-[14px] leading-[1.6] text-white/70">{t.quote}</p>
                 <div className="mt-5 flex items-center justify-between">
-                  <p className="font-sans font-medium text-[13px] text-white/70">{t.name} · {t.location}</p>
+                  <p className="font-sans font-medium text-[13px] text-white/75">{t.name} · {t.location}</p>
                   <span className="font-sans text-[11px] font-medium text-cta/90">{t.treatment}</span>
                 </div>
               </div>
@@ -324,10 +324,10 @@ const SocialProof = () => (
         {/* Bottom row */}
         {[testimonials[0], testimonials[3], testimonials[5]].map((t, i) => (
           <ScrollReveal key={t.name} delay={i * 0.04}>
-            <div className="rounded-xl p-5 bg-white/[0.02] border border-white/[0.04]">
+            <div className="rounded-xl p-5 bg-white/[0.06] border border-white/[0.12]">
               <Diamond size="xs" className="text-cta/30 mb-1.5 block" />
-              <p className="font-space text-[14px] leading-[1.6] text-white/55">{t.quote}</p>
-              <p className="font-sans font-medium text-[13px] text-white/65 mt-4">{t.name} · <span className="text-white/45">{t.location}</span></p>
+              <p className="font-space text-[14px] leading-[1.6] text-white/65">{t.quote}</p>
+              <p className="font-sans font-medium text-[13px] text-white/70 mt-4">{t.name} · <span className="text-white/50">{t.location}</span></p>
             </div>
           </ScrollReveal>
         ))}
@@ -340,7 +340,7 @@ const SocialProof = () => (
    SECTION 5 — EDITORIAL BREAK
    ═══════════════════════════════════════════ */
 const EditorialBreak = () => (
-  <section className="relative overflow-hidden bg-cream-100">
+  <section className="relative overflow-hidden bg-cream-50">
     <div className="grid lg:grid-cols-2">
       <div className="relative h-[300px] lg:h-auto lg:min-h-[420px]">
         <img src={boardwalkJog} alt="Active lifestyle" className="absolute inset-0 w-full h-full object-cover" />
@@ -372,7 +372,7 @@ const locations = [
 ];
 
 const CoverageSection = () => (
-  <section className="bg-white py-20 lg:py-24">
+  <section className="bg-cream-100 py-20 lg:py-24">
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 items-start">
         <div>
@@ -391,7 +391,7 @@ const CoverageSection = () => (
           <div className="mt-10 space-y-3">
             {locations.map((loc) => (
               <ScrollReveal key={loc.name}>
-                <div className="flex items-baseline justify-between py-3 border-b border-navy-900/[0.05]">
+                <div className="flex items-baseline justify-between py-3 border-b border-navy-900/[0.08]">
                   <div>
                     <span className="font-sans font-semibold text-[15px] text-navy-900">{loc.name}, VA</span>
                     <span className="font-space text-[14px] text-navy-500 ml-3">{loc.desc}</span>
@@ -429,11 +429,11 @@ const pressArticles = [
 ];
 
 const PressSection = () => (
-  <section className="bg-cream-100 py-16 lg:py-20">
+  <section className="bg-cream-50 py-16 lg:py-20">
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       <ScrollReveal>
         <p className="font-space text-[14px] text-navy-400 mb-6">As seen in</p>
-        <div className="space-y-0 divide-y divide-navy-900/[0.06]">
+        <div className="space-y-0 divide-y divide-navy-900/[0.08]">
           {pressArticles.map((a) => (
             <div key={a.title} className="py-4 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 sm:gap-4 group cursor-pointer">
               <div className="flex items-baseline gap-4">
@@ -453,14 +453,14 @@ const PressSection = () => (
    SECTION 8 — FINAL CTA
    ═══════════════════════════════════════════ */
 const FinalCTA = () => (
-  <section className="bg-navy-950 py-20 lg:py-28">
+  <section className="bg-navy-900 py-20 lg:py-28">
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       <div className="grid lg:grid-cols-[1.4fr_0.6fr] gap-10 items-end">
         <ScrollReveal>
           <h2 className="font-sans font-bold text-white text-[clamp(30px,4vw,48px)] leading-[1.08] tracking-[-0.03em]">
             Your health<br/>shouldn't wait.
           </h2>
-          <p className="font-space text-[15px] text-white/55 mt-4 max-w-md">
+          <p className="font-space text-[15px] text-white/60 mt-4 max-w-md">
             Start with a free assessment. Your dedicated provider is ready.
           </p>
           <Link
@@ -473,7 +473,7 @@ const FinalCTA = () => (
         <ScrollReveal delay={0.1}>
           <div className="hidden lg:flex flex-col items-end text-right">
             <Diamond size="xl" className="text-white/[0.15]" />
-            <p className="font-sans text-[12px] text-white/40 mt-3 tracking-wide uppercase">Est. 2015 · Virginia</p>
+            <p className="font-sans text-[12px] text-white/45 mt-3 tracking-wide uppercase">Est. 2015 · Virginia</p>
           </div>
         </ScrollReveal>
       </div>

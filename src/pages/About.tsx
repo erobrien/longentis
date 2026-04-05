@@ -54,9 +54,9 @@ const About = () => (
       {/* Hero */}
       <section className="relative bg-navy-950 noise-overlay pt-36 pb-20 overflow-hidden">
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 mb-6 bg-white/[0.06] border border-white/[0.1]">
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 mb-6 bg-white/[0.06] border border-white/[0.12]">
             <Diamond size="xs" />
-            <span className="font-sans text-[11px] font-semibold tracking-wide uppercase text-cream-200/65">Our Story</span>
+            <span className="font-sans text-[11px] font-semibold tracking-wide uppercase text-cream-200/70">Our Story</span>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.7 }}
@@ -67,7 +67,7 @@ const About = () => (
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-            className="font-space text-cream-200/65 text-[16px] max-w-2xl mx-auto mt-5 leading-relaxed"
+            className="font-space text-cream-200/70 text-[16px] max-w-2xl mx-auto mt-5 leading-relaxed"
           >
             What started as a single Virginia clinic is now a nationwide men's health platform — same providers, same protocols, higher standard.
           </motion.p>
@@ -75,7 +75,7 @@ const About = () => (
       </section>
 
       {/* Driven by Purpose */}
-      <section className="bg-cream-100 py-24">
+      <section className="bg-cream-50 py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 grid gap-12 lg:grid-cols-2 items-center">
           <ScrollReveal>
             <SectionHeader badge="Our Purpose" title="Driven by Purpose" />
@@ -95,14 +95,14 @@ const About = () => (
       </section>
 
       {/* Timeline */}
-      <section className="bg-cream-200 py-24">
+      <section className="bg-cream-100 py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionHeader
             badge="Our Journey"
             title={<>From one Virginia clinic to <em className="font-lora italic text-cta" style={{ fontStyle: "italic" }}>all 50 states.</em></>}
           />
           <div className="mt-14 relative">
-            <div className="absolute left-[19px] top-0 bottom-0 w-[2px] bg-navy-900/[0.08] hidden md:block" />
+            <div className="absolute left-[19px] top-0 bottom-0 w-[2px] bg-navy-900/[0.10] hidden md:block" />
             <div className="space-y-8">
               {timeline.map((t, i) => (
                 <ScrollReveal key={t.year} delay={i * 0.06}>
@@ -110,7 +110,7 @@ const About = () => (
                     <div className="relative z-10 size-10 rounded-full bg-navy-950 flex items-center justify-center shrink-0">
                       <span className="font-sans text-[11px] font-bold tracking-wide text-cta">{t.year.slice(2)}</span>
                     </div>
-                    <div className="rounded-2xl p-5 bg-white border border-navy-900/[0.06] flex-1">
+                    <div className="rounded-2xl p-5 bg-white border border-navy-900/[0.10] shadow-card flex-1">
                       <p className="font-sans text-[11px] font-medium tracking-wide uppercase text-navy-500 mb-1">{t.year}</p>
                       <h3 className="font-sans font-semibold text-[16px] text-navy-900">{t.title}</h3>
                       <p className="font-space text-[14px] leading-[1.6] text-navy-700/70 mt-1">{t.desc}</p>
@@ -127,16 +127,16 @@ const About = () => (
       <section className="grid lg:grid-cols-2">
         <div className="bg-navy-950 noise-overlay p-12 lg:p-20 relative">
           <div className="relative z-10">
-            <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 bg-white/[0.06] border border-white/[0.1]">
+            <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 bg-white/[0.06] border border-white/[0.12]">
               <Diamond size="xs" />
-              <span className="font-sans text-[11px] font-semibold tracking-wide uppercase text-cream-200/65">Our Mission</span>
+              <span className="font-sans text-[11px] font-semibold tracking-wide uppercase text-cream-200/70">Our Mission</span>
             </div>
             <h3 className="font-sans mt-6 text-xl font-semibold text-cream-100 uppercase tracking-wide">Advance Men's Health</h3>
-            <p className="font-space mt-3 text-[15px] leading-[1.7] text-cream-200/65">
+            <p className="font-space mt-3 text-[15px] leading-[1.7] text-cream-200/70">
               Our mission is to advance healthier, stronger, more confident lives by making men's health care more accessible, more precise, and more actionable for every patient we serve.
             </p>
             <h3 className="font-sans mt-10 text-xl font-semibold text-cream-100 uppercase tracking-wide">Build the Platform</h3>
-            <p className="font-space mt-3 text-[15px] leading-[1.7] text-cream-200/65">
+            <p className="font-space mt-3 text-[15px] leading-[1.7] text-cream-200/70">
               We do that by equipping providers with advanced protocols, real lab data, dedicated patient panels, and the telehealth infrastructure needed to deliver modern care at a higher standard — in all 50 states.
             </p>
           </div>
@@ -158,12 +158,12 @@ const About = () => (
       </section>
 
       {/* Values */}
-      <section className="bg-cream-100 py-24">
+      <section className="bg-cream-50 py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionHeader badge="Our Values" title="How We Work" description="The principles that shape Longentis — from clinical decisions to how we communicate with patients." />
           <Accordion type="single" collapsible className="mt-12 max-w-3xl">
             {values.map((v, i) => (
-              <AccordionItem key={i} value={`v-${i}`} className="border-b border-navy-900/[0.08]">
+              <AccordionItem key={i} value={`v-${i}`} className="border-b border-navy-900/[0.10]">
                 <AccordionTrigger className="font-sans text-lg font-semibold text-navy-900">
                   <span className="inline-flex items-center gap-2"><Diamond size="xs" />{v.title}</span>
                 </AccordionTrigger>
@@ -175,7 +175,7 @@ const About = () => (
       </section>
 
       {/* Stats */}
-      <section className="bg-cream-200 py-24">
+      <section className="bg-cream-100 py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <ScrollReveal>
             <h2 className="font-sans font-bold text-[clamp(28px,3.8vw,52px)] leading-[1.12] tracking-[-0.02em] text-navy-900">Built for scale.</h2>
@@ -195,7 +195,7 @@ const About = () => (
       </section>
 
       {/* MWC Origin Story */}
-      <section className="bg-cream-100 py-24">
+      <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 grid gap-12 lg:grid-cols-2 items-center">
           <ScrollReveal>
             <SectionHeader
@@ -220,7 +220,7 @@ const About = () => (
       </section>
 
       {/* Team */}
-      <section className="bg-cream-200 py-24">
+      <section className="bg-cream-100 py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionHeader
             badge="Our Team"
@@ -230,14 +230,14 @@ const About = () => (
           <Tabs defaultValue="leadership" className="mt-12">
             <TabsList className="bg-transparent border-0 p-0 h-auto flex flex-wrap gap-2 mb-8">
               {teamTabs.map((t) => (
-                <TabsTrigger key={t.id} value={t.id} className="font-sans text-[11px] font-semibold tracking-wide uppercase px-4 py-2.5 rounded-md data-[state=active]:bg-white/80 data-[state=active]:border data-[state=active]:border-navy-900/[0.15] data-[state=active]:shadow-sm data-[state=inactive]:bg-navy-900/[0.04] data-[state=inactive]:border data-[state=inactive]:border-navy-900/[0.06]">{t.label}</TabsTrigger>
+                <TabsTrigger key={t.id} value={t.id} className="font-sans text-[11px] font-semibold tracking-wide uppercase px-4 py-2.5 rounded-md data-[state=active]:bg-white data-[state=active]:border data-[state=active]:border-navy-900/[0.15] data-[state=active]:shadow-sm data-[state=inactive]:bg-navy-900/[0.04] data-[state=inactive]:border data-[state=inactive]:border-navy-900/[0.08]">{t.label}</TabsTrigger>
               ))}
             </TabsList>
             {teamTabs.map((t) => (
               <TabsContent key={t.id} value={t.id}>
                 <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                   {t.members.map((m) => (
-                    <motion.div key={m.name} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="rounded-2xl border border-navy-900/[0.06] bg-white p-6">
+                    <motion.div key={m.name} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="rounded-2xl border border-navy-900/[0.10] bg-white shadow-card p-6">
                       <div className="h-48 rounded-lg overflow-hidden relative mb-4">
                         <img src={m.img} alt={m.name} className="absolute inset-0 w-full h-full object-cover" />
                       </div>
@@ -270,10 +270,10 @@ const About = () => (
               { label: "FDA-Approved Protocols", desc: "Only evidence-based, FDA-approved medications." },
             ].map((c, i) => (
               <ScrollReveal key={c.label} delay={i * 0.06}>
-                <div className="rounded-2xl p-6 bg-white/[0.04] border border-white/[0.08] text-center h-full">
+                <div className="rounded-2xl p-6 bg-white/[0.06] border border-white/[0.12] text-center h-full">
                   <Diamond size="md" className="text-cta/60 mb-3" />
                   <h3 className="font-sans font-semibold text-[15px] text-cream-100">{c.label}</h3>
-                  <p className="font-space text-[14px] text-cream-200/65 mt-2">{c.desc}</p>
+                  <p className="font-space text-[14px] text-cream-200/70 mt-2">{c.desc}</p>
                 </div>
               </ScrollReveal>
             ))}

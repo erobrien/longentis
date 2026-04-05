@@ -47,7 +47,7 @@ const Press = () => {
           <section className="bg-cream-50 pb-16">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <ScrollReveal>
-                <div className="rounded-2xl border border-navy-900/[0.06] bg-white overflow-hidden grid lg:grid-cols-2">
+                <div className="rounded-2xl border border-navy-900/[0.10] bg-white shadow-card overflow-hidden grid lg:grid-cols-2">
                   <div className="h-64 bg-navy-700 lg:h-auto" />
                   <div className="p-8 lg:p-12">
                     <span className="inline-flex items-center gap-2 text-xs">
@@ -69,7 +69,7 @@ const Press = () => {
           </section>
         )}
 
-        <section className="bg-cream-50 py-24">
+        <section className="bg-cream-100 py-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="flex flex-wrap gap-2 mb-12">
               {filters.map((f) => (
@@ -79,7 +79,7 @@ const Press = () => {
                   className={`rounded-md px-4 py-2 font-sans text-[12px] font-medium tracking-wide uppercase transition-all ${
                     active === f
                       ? "bg-navy-950 text-cream-100"
-                      : "bg-white/70 text-navy-700 border border-navy-900/[0.08] hover:border-navy-900/[0.15]"
+                      : "bg-white text-navy-700 border border-navy-900/[0.10] hover:border-navy-900/[0.15]"
                   }`}
                 >
                   {f}
@@ -102,7 +102,7 @@ const Press = () => {
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.05 }}
-                    className="rounded-2xl border border-navy-900/[0.06] bg-white overflow-hidden group"
+                    className="rounded-2xl border border-navy-900/[0.10] bg-white shadow-card overflow-hidden group"
                   >
                     <div className="h-44 bg-navy-700" />
                     <div className="p-5">

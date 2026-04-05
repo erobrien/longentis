@@ -44,20 +44,20 @@ const TreatmentTemplate = ({ data }: { data: TreatmentData }) => (
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <span className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 bg-white/[0.06] border border-white/[0.12]">
               <Diamond size="xs" />
-              <span className="font-sans text-[11px] font-semibold tracking-wide uppercase text-white/65">{data.heroLabel}</span>
+              <span className="font-sans text-[11px] font-semibold tracking-wide uppercase text-white/70">{data.heroLabel}</span>
             </span>
             <h1 className="font-sans font-bold mt-6 text-[clamp(32px,5vw,64px)] leading-[1.08] tracking-[-0.03em] text-cream-100">
               {data.heroTitle}{" "}
               <em className="font-lora italic text-cta" style={{ fontStyle: "italic" }}>{data.heroTitleAccent}</em>
             </h1>
-            <p className="font-space mt-5 max-w-2xl text-[16px] leading-[1.7] text-cream-200/70">
+            <p className="font-space mt-5 max-w-2xl text-[16px] leading-[1.7] text-cream-200/75">
               {data.heroDescription}
             </p>
             <div className="mt-8 flex flex-wrap gap-8">
               {data.heroStats.map((s) => (
                 <div key={s.label}>
                   <p className="font-sans text-2xl font-bold text-cream-100">{s.value}</p>
-                  <p className="font-sans text-[11px] font-medium tracking-wide uppercase text-white/55">{s.label}</p>
+                  <p className="font-sans text-[11px] font-medium tracking-wide uppercase text-white/60">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -68,7 +68,7 @@ const TreatmentTemplate = ({ data }: { data: TreatmentData }) => (
               >
                 Start Your Free Visit <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
-              <span className="font-sans text-[13px] text-white/50 px-4">
+              <span className="font-sans text-[13px] text-white/55 px-4">
                 {data.price} · {data.priceNote}
               </span>
             </div>
@@ -77,7 +77,7 @@ const TreatmentTemplate = ({ data }: { data: TreatmentData }) => (
       </section>
 
       {/* Condition Education */}
-      <section className="bg-cream-100 py-20">
+      <section className="bg-cream-50 py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16">
             <ScrollReveal>
@@ -92,7 +92,7 @@ const TreatmentTemplate = ({ data }: { data: TreatmentData }) => (
               <h3 className="font-sans font-semibold text-lg text-navy-900 mb-4">Common Symptoms</h3>
               <div className="grid grid-cols-2 gap-3">
                 {data.symptoms.map((s) => (
-                  <div key={s} className="flex items-start gap-2.5 rounded-xl p-3 bg-white/80 border border-navy-900/[0.06]">
+                  <div key={s} className="flex items-start gap-2.5 rounded-xl p-3 bg-white border border-navy-900/[0.10] shadow-card">
                     <Diamond size="xs" className="mt-0.5 shrink-0" />
                     <span className="font-space text-[14px] text-navy-700/80">{s}</span>
                   </div>
@@ -111,17 +111,17 @@ const TreatmentTemplate = ({ data }: { data: TreatmentData }) => (
               {data.approachTitle}{" "}
               <em className="font-lora italic text-cta" style={{ fontStyle: "italic" }}>{data.approachAccent}</em>
             </h2>
-            <p className="font-space mt-4 max-w-2xl text-[15px] leading-[1.7] text-cream-200/65">
+            <p className="font-space mt-4 max-w-2xl text-[15px] leading-[1.7] text-cream-200/70">
               {data.approachDescription}
             </p>
           </ScrollReveal>
           <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {data.approachPoints.map((p, i) => (
               <ScrollReveal key={p.title} delay={i * 0.06}>
-                <div className="rounded-2xl p-6 bg-white/[0.04] border border-white/[0.08] hover:border-white/[0.15] transition-colors h-full">
+                <div className="rounded-2xl p-6 bg-white/[0.06] border border-white/[0.12] hover:border-white/[0.18] transition-colors h-full">
                   <Diamond size="sm" className="text-cta/80" />
                   <h3 className="font-sans font-semibold text-lg text-cream-100 mt-3">{p.title}</h3>
-                  <p className="font-space text-[14px] leading-[1.6] text-cream-200/65 mt-2">{p.desc}</p>
+                  <p className="font-space text-[14px] leading-[1.6] text-cream-200/70 mt-2">{p.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -140,7 +140,7 @@ const TreatmentTemplate = ({ data }: { data: TreatmentData }) => (
           </ScrollReveal>
           <div className="mt-8 flex flex-wrap gap-2">
             {data.labPanelItems.map((item) => (
-              <span key={item} className="inline-flex items-center gap-1.5 rounded-lg px-4 py-2.5 bg-white border border-navy-900/[0.08] font-space text-[14px] text-navy-700/80">
+              <span key={item} className="inline-flex items-center gap-1.5 rounded-lg px-4 py-2.5 bg-white border border-navy-900/[0.10] shadow-card font-space text-[14px] text-navy-700/80">
                 <Diamond size="xs" className="text-cta/50" />
                 {item}
               </span>
@@ -150,7 +150,7 @@ const TreatmentTemplate = ({ data }: { data: TreatmentData }) => (
       </section>
 
       {/* FAQ */}
-      <section className="bg-cream-200 py-20">
+      <section className="bg-cream-50 py-20">
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <ScrollReveal>
             <h2 className="font-sans font-bold text-[clamp(26px,3vw,42px)] leading-[1.12] tracking-[-0.02em] text-navy-900 mb-8">
@@ -159,7 +159,7 @@ const TreatmentTemplate = ({ data }: { data: TreatmentData }) => (
           </ScrollReveal>
           <Accordion type="single" collapsible className="space-y-2">
             {data.faqs.map((faq, i) => (
-              <AccordionItem key={i} value={`faq-${i}`} className="rounded-xl border border-navy-900/[0.08] bg-white/80 px-5 overflow-hidden">
+              <AccordionItem key={i} value={`faq-${i}`} className="rounded-xl border border-navy-900/[0.10] bg-white shadow-card px-5 overflow-hidden">
                 <AccordionTrigger className="font-sans text-[15px] font-semibold text-navy-900 hover:no-underline py-5">
                   {faq.q}
                 </AccordionTrigger>
@@ -181,7 +181,7 @@ const TreatmentTemplate = ({ data }: { data: TreatmentData }) => (
               {data.ctaTitle}{" "}
               <em className="font-lora italic text-cta" style={{ fontStyle: "italic" }}>{data.ctaAccent}</em>
             </h2>
-            <p className="font-space mt-4 text-[15px] leading-[1.7] text-cream-200/65">{data.ctaDescription}</p>
+            <p className="font-space mt-4 text-[15px] leading-[1.7] text-cream-200/70">{data.ctaDescription}</p>
             <Link
               to="/get-started"
               className="mt-8 inline-flex items-center rounded-full bg-cta px-8 py-4 text-[15px] font-semibold text-white font-sans hover:bg-cta/90 transition-colors"
@@ -201,7 +201,7 @@ const TreatmentTemplate = ({ data }: { data: TreatmentData }) => (
               <Link
                 key={rt.href}
                 to={rt.href}
-                className="group rounded-2xl p-6 bg-white border border-navy-900/[0.06] hover:border-navy-900/[0.15] hover:-translate-y-1 transition-all duration-300"
+                className="group rounded-2xl p-6 bg-white border border-navy-900/[0.10] shadow-card hover:border-navy-900/[0.15] hover:-translate-y-1 hover:shadow-card-hover transition-all duration-300"
               >
                 <h4 className="font-sans font-semibold text-lg text-navy-900 group-hover:text-cta transition-colors inline-flex items-center gap-2">
                   <Diamond size="xs" />

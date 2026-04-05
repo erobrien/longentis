@@ -31,7 +31,7 @@ const Treatments = () => (
     <Header />
     <main>
       {/* Hero */}
-      <section className="bg-cream-100 pt-36 pb-20">
+      <section className="bg-cream-50 pt-36 pb-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.h1
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
@@ -47,7 +47,7 @@ const Treatments = () => (
       </section>
 
       {/* Primary treatments */}
-      <section className="bg-cream-100 pb-24">
+      <section className="bg-cream-100 pb-24 pt-4">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid gap-5 md:grid-cols-3">
             {primaryTreatments.map((t, i) => (
@@ -58,7 +58,7 @@ const Treatments = () => (
                   <div className="relative z-10 h-full flex flex-col justify-end p-6 lg:p-8">
                     <Diamond size="md" className="text-cta/60 mb-4" />
                     <h3 className="font-sans font-bold text-[22px] text-cream-100 mb-2">{t.title}</h3>
-                    <p className="font-space text-[14px] leading-[1.6] text-cream-200/65 mb-5">{t.desc}</p>
+                    <p className="font-space text-[14px] leading-[1.6] text-cream-200/70 mb-5">{t.desc}</p>
                     <span className="inline-flex items-center gap-2 rounded-full bg-cta px-6 py-3 font-sans text-[13px] font-semibold text-white w-fit group-hover:bg-cta/90 transition-colors">
                       Learn More <ArrowRight className="h-4 w-4" />
                     </span>
@@ -76,7 +76,7 @@ const Treatments = () => (
           <h2 className="font-sans font-bold text-[clamp(24px,3vw,40px)] leading-[1.15] tracking-[-0.02em] text-cream-100">
             Not sure which treatment?
           </h2>
-          <p className="font-space mt-3 text-[15px] text-cream-200/60 max-w-lg mx-auto">
+          <p className="font-space mt-3 text-[15px] text-cream-200/65 max-w-lg mx-auto">
             Take our 2-minute assessment and we'll point you in the right direction.
           </p>
           <Link to="/get-started" className="mt-8 inline-flex items-center gap-2.5 rounded-full bg-cta px-8 py-4 font-sans text-[15px] font-semibold text-white hover:bg-cta/90 transition-colors active:scale-[0.98]">
@@ -86,7 +86,7 @@ const Treatments = () => (
       </section>
 
       {/* Comprehensive care */}
-      <section className="bg-cream-100 py-24">
+      <section className="bg-cream-50 py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionHeader
             badge="Comprehensive Care"
@@ -96,7 +96,7 @@ const Treatments = () => (
           <div className="mt-12 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
             {comprehensiveCare.map((s, i) => (
               <ScrollReveal key={s.title} delay={i * 0.04}>
-                <div className="flex gap-4 items-start rounded-2xl p-5 bg-white border border-navy-900/[0.06] hover:-translate-y-0.5 transition-transform h-full">
+                <div className="flex gap-4 items-start rounded-2xl p-5 bg-white border border-navy-900/[0.10] shadow-card hover:-translate-y-0.5 transition-transform h-full">
                   <div className="size-11 shrink-0 rounded-xl bg-navy-950 flex items-center justify-center">
                     <s.icon className="h-5 w-5 text-cream-200" strokeWidth={1.5} />
                   </div>
