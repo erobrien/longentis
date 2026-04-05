@@ -7,7 +7,7 @@ const Footer = () => (
     {/* Pre-footer CTA */}
     <section
       className="relative overflow-hidden"
-      style={{ background: "linear-gradient(180deg, rgba(27,43,75,0.18) 0%, #0B1029 14%, #06081a 35%)" }}
+      style={{ background: "#0B1029" }}
     >
       <div className="mx-auto max-w-[1600px] px-6 lg:px-12 py-24">
         <ScrollReveal>
