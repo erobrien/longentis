@@ -102,10 +102,10 @@ const Coverage = () => {
                   <p className="font-space text-[14px] text-navy-700/75">Available at our 3 Virginia centers. Same-day labs, walk-ins welcome.</p>
                 </div>
                 <div className="rounded-2xl p-5 bg-navy-900/[0.04] border border-navy-900/[0.06]">
-                  <p className="font-mono text-[10px] tracking-[0.16em] uppercase text-navy-600 mb-2 inline-flex items-center gap-1.5">
+                  <p className="font-sans text-[11px] font-semibold tracking-wide uppercase text-navy-600 mb-2 inline-flex items-center gap-1.5">
                     <Diamond size="xs" /> Telehealth
                   </p>
-                  <p className="font-space text-[13px] text-navy-700/70">Available in all 50 states. Video visits with your dedicated provider. Labs via at-home kit or Quest/Labcorp.</p>
+                  <p className="font-space text-[14px] text-navy-700/75">Available in all 50 states. Video visits with your dedicated provider. Labs via at-home kit or Quest/Labcorp.</p>
                 </div>
 
                 {selectedState && (
