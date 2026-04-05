@@ -144,7 +144,7 @@ const About = () => (
         <div className="bg-cream-200 p-12 lg:p-20">
           <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 bg-navy-900/[0.06] border border-navy-900/[0.12]">
             <Diamond size="xs" />
-            <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-navy-600">Our Vision</span>
+            <span className="font-sans text-[11px] font-semibold tracking-wide uppercase text-navy-600">Our Vision</span>
           </div>
           <h3 className="font-sans mt-6 text-xl font-semibold text-navy-900 uppercase tracking-wide">Set the Standard</h3>
           <p className="font-space mt-3 text-[15px] leading-[1.7] text-navy-700/70">
