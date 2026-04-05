@@ -76,7 +76,7 @@ const Footer = () => (
           </div>
           <div>
             <p className="font-mono text-[9px] tracking-[0.16em] uppercase text-[#243656]/60 mb-4">Company</p>
-            {[["About", "/about"], ["Coverage", "/coverage"], ["For Providers", "/for-providers"], ["Careers", "/careers"], ["Press", "/press"]].map(([label, href]) => (
+            {[["About", "/about"], ["Careers", "/careers"], ["Press", "/press"]].map(([label, href]) => (
               <Link key={label} to={href} className="font-sans block py-1.5 text-sm font-medium text-[#E8E2D9]/35 hover:text-[#E8E2D9]/70 transition-colors duration-200">{label}</Link>
             ))}
           </div>
