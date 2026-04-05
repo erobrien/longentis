@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import ScrollReveal from "@/components/ScrollReveal";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import SEOHead from "@/components/SEOHead";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const categories = [
   {
@@ -82,8 +84,23 @@ const FAQ = () => {
 
   return (
     <>
+      <SEOHead
+        title="FAQ"
+        description="Common questions about Longentis — getting started, labs, treatments, billing, and privacy. Find answers about TRT, ED treatment, and weight loss."
+        path="/faq"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": categories.flatMap(c => c.faqs.map(f => ({
+            "@type": "Question",
+            "name": f.q,
+            "acceptedAnswer": { "@type": "Answer", "text": f.a }
+          })))
+        }}
+      />
       <Header />
-      <main>
+      <Breadcrumbs />
+      <main id="main-content">
         <section className="relative w-full pt-32 lg:pt-40 pb-16 bg-cream-100">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>

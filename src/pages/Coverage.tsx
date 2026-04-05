@@ -8,6 +8,8 @@ import ScrollReveal from "@/components/ScrollReveal";
 import StatCounter from "@/components/StatCounter";
 import USMap from "@/components/USMap";
 import SectionHeader from "@/components/SectionHeader";
+import SEOHead from "@/components/SEOHead";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 import consultation from "@/assets/iStock-2187145642-1-5.jpg";
 import trackSitting from "@/assets/iStock-864444970-1-7.jpg";
@@ -33,8 +35,10 @@ const Coverage = () => {
 
   return (
     <>
+      <SEOHead title="Coverage" description="Longentis telehealth is available in all 50 states. In-person care at 3 Virginia centers — Richmond, Newport News, Virginia Beach." path="/coverage" />
       <Header />
-      <main>
+      <Breadcrumbs />
+      <main id="main-content">
         {/* Hero */}
         <section className="bg-cream-100 pt-36 pb-20">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
