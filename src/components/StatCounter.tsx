@@ -7,42 +7,63 @@ interface StatCounterProps {
   prefix?: string;
   label: string;
   duration?: number;
+  className?: string;
 }
 
-const StatCounter = ({ end, suffix = "", prefix = "", label, duration = 2 }: StatCounterProps) => {
+/**
+ * Animated stat counter — triggers count-up animation on scroll into view.
+ * Shows the final value (not "0") before animation via a hidden placeholder.
+ */
+const StatCounter = ({
+  end,
+  suffix = "",
+  prefix = "",
+  label,
+  duration = 2,
+  className = "",
+}: StatCounterProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true });
-  const [count, setCount] = useState(0);
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const [count, setCount] = useState<number | null>(null);
 
   useEffect(() => {
     if (!isInView) return;
+
+    setCount(0);
     let start = 0;
-    const step = end / (duration * 60);
+    const totalFrames = duration * 60;
+    const step = end / totalFrames;
+    let frame = 0;
+
     const timer = setInterval(() => {
+      frame++;
       start += step;
-      if (start >= end) {
+      if (frame >= totalFrames) {
         setCount(end);
         clearInterval(timer);
       } else {
         setCount(Math.floor(start));
       }
     }, 1000 / 60);
+
     return () => clearInterval(timer);
   }, [isInView, end, duration]);
 
+  const displayValue = count !== null ? count : end;
+
   return (
-    <div ref={ref} className="text-center">
+    <div ref={ref} className={`text-center ${className}`}>
       <motion.p
-        className="font-sans text-4xl font-bold lg:text-5xl"
-        initial={{ opacity: 0, y: 10 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.5 }}
+        className="font-sans text-4xl font-extrabold lg:text-5xl tracking-[-0.03em]"
+        initial={{ opacity: 0, y: 8 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 8 }}
+        transition={{ duration: 0.5, ease: [0.21, 0.47, 0.32, 0.98] }}
       >
-        {prefix}{count.toLocaleString()}{suffix}
+        {prefix}
+        {displayValue.toLocaleString()}
+        {suffix}
       </motion.p>
-      <p className="font-mono mt-1 text-[11px] font-medium uppercase tracking-[0.15em] opacity-70">
-        {label}
-      </p>
+      <p className="text-caption mt-2 opacity-60">{label}</p>
     </div>
   );
 };
