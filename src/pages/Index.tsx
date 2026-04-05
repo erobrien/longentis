@@ -115,7 +115,7 @@ const Hero = () => (
       <motion.p
         variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
         transition={{ duration: 0.7 }}
-        className="font-space font-light text-[14px] lg:text-[17px] leading-[1.6] lg:leading-[1.7] tracking-[0.01em] max-w-[600px]"
+        className="hidden lg:block font-space font-light text-[14px] lg:text-[17px] leading-[1.6] lg:leading-[1.7] tracking-[0.01em] max-w-[600px]"
         style={{ color: "rgba(197,205,224,0.65)" }}
       >
         <span className="hidden lg:inline">TRT, ED treatment, and physician-supervised weight loss — backed by 10,000+ patients and a decade of Men's Wellness Centers clinical experience. Now via telehealth in all 50 states.</span>
