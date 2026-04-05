@@ -109,7 +109,7 @@ const Hero = () => (
         className="font-sans font-semibold leading-[1.05] tracking-[-0.032em] text-[#FAFAF7] text-[32px] lg:text-[clamp(42px,5vw,72px)]"
         style={{ textShadow: "0 2px 30px rgba(0,0,0,0.4)" }}
       >
-        Private Wellness, built for the{" "}
+        Private wellness, for the{" "}
         <em className="font-lora italic text-[#E8670A] not-italic" style={{ fontStyle: "italic" }}>discerning gent.</em>
       </motion.h1>
 
