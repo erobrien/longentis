@@ -62,14 +62,9 @@ const Footer = () => (
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           <div>
-            <div className="flex items-center gap-2.5">
-              <svg width="24" height="24" viewBox="0 0 48 48" fill="none">
-                <path d="M24 0c0 6.6-2.7 12.6-7 17-4.4 4.3-10.4 7-17 7v-8c8.8 0 16-7.2 16-16h8z" fill="#E8670A"/>
-                <path d="M48 0h-8c0 8.8-7.2 16-16 16v8c6.6 0 12.6-2.7 17-7 4.3-4.4 7-10.4 7-17z" fill="#E8670A"/>
-                <path d="M24 48c0-6.6 2.7-12.6 7-17 4.4-4.3 10.4-7 17-7v8c-8.8 0-16 7.2-16 16h-8z" fill="#E8670A"/>
-                <path d="M0 48h8c0-8.8 7.2-16 16-16v-8c-6.6 0-12.6 2.7-17 7-4.3 4.4-7 10.4-7 17z" fill="#E8670A"/>
-              </svg>
-              <span className="font-logo text-[20px] font-normal uppercase tracking-[0.1em] leading-none text-[#E8E2D9]/80">Longentis</span>
+            <div className="flex items-center gap-2">
+              <span className="text-[#E8670A] text-[22px] leading-none" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>✦</span>
+              <span className="text-[18px] uppercase leading-none tracking-[0.12em] text-[#E8E2D9]/80" style={{ fontFamily: "'Bebas Neue', 'Inter Tight', sans-serif", fontWeight: 400 }}>Longentis</span>
             </div>
             <p className="font-space mt-4 text-sm leading-relaxed text-[#E8E2D9]/35 font-light">Clinic-grade men's health, delivered.</p>
           </div>
