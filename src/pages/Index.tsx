@@ -311,7 +311,7 @@ const SocialProof = () => (
             <ScrollReveal key={t.name} delay={i * 0.06}>
               <div className="rounded-2xl p-6 bg-white/[0.03] border border-white/[0.05] h-full">
                 <Diamond size="sm" className="text-cta/30 mb-2 block" />
-                <p className="font-space text-[14px] leading-[1.6] text-white/60">{t.quote}</p>
+                <p className="font-space text-[14px] leading-[1.6] text-white/65">{t.quote}</p>
                 <div className="mt-5 flex items-center justify-between">
                   <p className="font-sans font-medium text-[13px] text-white/70">{t.name} · {t.location}</p>
                   <span className="font-mono text-[10px] text-cta/80">{t.treatment}</span>
