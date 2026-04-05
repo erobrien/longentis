@@ -70,7 +70,7 @@ const Hero = () => (
       animate="visible"
       variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.2 } } }}
     >
-      <style>{`@media (min-width: 1024px) { .hero-content-pos { top: 55% !important; transform: translateY(-50%) !important; bottom: auto !important; left: clamp(56px, 13vw, 200px) !important; right: auto !important; } }`}</style>
+      <style>{`@media (min-width: 1024px) { .hero-content-pos { top: 55% !important; left: clamp(56px, 13vw, 200px) !important; right: auto !important; } }`}</style>
 
       {/* Announcement pill — hidden on mobile */}
       <motion.div
