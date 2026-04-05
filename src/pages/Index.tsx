@@ -483,21 +483,33 @@ const CoverageMap = () => (
 /* ═══════════════════════════════════════════
    PAGE COMPOSITION
    ═══════════════════════════════════════════ */
-const Index = () => (
-  <>
-    <Header />
-    <main>
-      <Hero />
-      <HowItWorks />
-      <TreatmentsOverview />
-      <WhyLongentis />
-      <SocialProof />
-      <PressSection />
-      <CoverageMap />
-    </main>
-    <Footer />
-    <MobileBottomBar />
-  </>
-);
+const Index = () => {
+  useEffect(() => {
+    const cleanup = initScrollTracking();
+    return cleanup;
+  }, []);
+
+  return (
+    <>
+      <SEOHead
+        title="Clinic-Grade Men's Health, Delivered"
+        description="TRT, ED treatment, and physician-supervised weight loss — backed by 10,000+ patients and a decade of clinical experience. Telehealth in all 50 states."
+        path="/"
+      />
+      <Header />
+      <main id="main-content">
+        <Hero />
+        <HowItWorks />
+        <TreatmentsOverview />
+        <WhyLongentis />
+        <SocialProof />
+        <PressSection />
+        <CoverageMap />
+      </main>
+      <Footer />
+      <MobileBottomBar />
+    </>
+  );
+};
 
 export default Index;
