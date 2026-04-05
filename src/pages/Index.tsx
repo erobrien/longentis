@@ -29,7 +29,8 @@ import beachWalk from "@/assets/iStock-2170822818-12.jpg";      // Two men beach
 const Hero = () => (
   <section className="hero-section relative w-full overflow-hidden" style={{ height: "100dvh", minHeight: 640, background: "#FAFAF7" }}>
     {/* Video frame with rounded corners — image fills the frame */}
-    <div className="video-frame absolute overflow-hidden" style={{ zIndex: 1, borderRadius: 16, inset: "12px 12px 80px" }}>
+    <div className="video-frame absolute overflow-hidden rounded-none lg:rounded-2xl" style={{ zIndex: 1, inset: "0px 0px 52px" }}>
+      <style>{`@media (min-width: 1024px) { .video-frame { inset: 12px 12px 80px !important; } }`}</style>
       <video
         src="/mwc_hero_montage.mp4"
         
@@ -53,7 +54,7 @@ const Hero = () => (
         className="absolute bottom-0 left-0 right-0"
         style={{
           zIndex: 2,
-          height: "30%",
+          height: "40%",
           background: "linear-gradient(transparent 0%, #06081ab3 100%)",
         }}
       />
@@ -61,18 +62,21 @@ const Hero = () => (
       <div className="noise-overlay absolute inset-0" style={{ zIndex: 3 }} />
     </div>
 
-    {/* Hero content — bottom left */}
+    {/* Hero content */}
     <motion.div
-      className="absolute flex flex-col items-start gap-5 max-w-[740px] px-6 lg:px-0"
-      style={{ zIndex: 20, top: "55%", transform: "translateY(-50%)", left: "clamp(56px, 13vw, 200px)" }}
+      className="hero-content-pos absolute flex flex-col items-start gap-3 lg:gap-5 px-5 lg:px-0 max-w-[740px]"
+      style={{ zIndex: 20, bottom: "72px", left: "20px", right: "20px" }}
       initial="hidden"
       animate="visible"
       variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.2 } } }}
     >
-      {/* Announcement pill */}
+      <style>{`@media (min-width: 1024px) { .hero-content-pos { top: 55% !important; transform: translateY(-50%) !important; bottom: auto !important; left: clamp(56px, 13vw, 200px) !important; right: auto !important; } }`}</style>
+
+      {/* Announcement pill — hidden on mobile */}
       <motion.div
         variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
         transition={{ duration: 0.6 }}
+        className="hidden lg:block"
       >
         <span
           className="inline-flex items-center gap-2.5"
@@ -100,21 +104,22 @@ const Hero = () => (
       <motion.h1
         variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
         transition={{ duration: 0.7 }}
-        className="font-sans font-semibold leading-[1.05] tracking-[-0.032em] text-[#FAFAF7]"
-        style={{ fontSize: "clamp(42px, 5vw, 72px)", textShadow: "0 2px 30px rgba(0,0,0,0.4)" }}
+        className="font-sans font-semibold leading-[1.05] tracking-[-0.032em] text-[#FAFAF7] text-[32px] lg:text-[clamp(42px,5vw,72px)]"
+        style={{ textShadow: "0 2px 30px rgba(0,0,0,0.4)" }}
       >
         Clinic-grade men's health,{" "}
         <em className="font-lora italic text-[#E8670A] not-italic" style={{ fontStyle: "italic" }}>delivered.</em>
       </motion.h1>
 
-      {/* Subtitle */}
+      {/* Subtitle — shortened on mobile */}
       <motion.p
         variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
         transition={{ duration: 0.7 }}
-        className="font-space font-light text-[17px] leading-[1.7] tracking-[0.01em] max-w-[600px]"
+        className="font-space font-light text-[14px] lg:text-[17px] leading-[1.6] lg:leading-[1.7] tracking-[0.01em] max-w-[600px]"
         style={{ color: "rgba(197,205,224,0.65)" }}
       >
-        TRT, ED treatment, and physician-supervised weight loss — backed by 10,000+ patients and a decade of Men's Wellness Centers clinical experience. Now via telehealth in all 50 states.
+        <span className="hidden lg:inline">TRT, ED treatment, and physician-supervised weight loss — backed by 10,000+ patients and a decade of Men's Wellness Centers clinical experience. Now via telehealth in all 50 states.</span>
+        <span className="lg:hidden">TRT, ED treatment & weight loss — physician-supervised telehealth in all 50 states.</span>
       </motion.p>
 
       {/* CTA */}
@@ -141,9 +146,9 @@ const Hero = () => (
       </motion.div>
     </motion.div>
 
-    {/* Metrics — bottom right on desktop, bottom horizontal on mobile */}
+    {/* Metrics — hidden on mobile, right column on desktop */}
     <motion.div
-      className="metrics-stack absolute flex flex-row lg:flex-col z-20 bottom-[24px] left-6 right-6 lg:top-[45%] lg:-translate-y-1/2 lg:bottom-auto lg:right-[clamp(56px,13vw,200px)] lg:left-auto lg:w-[168px]"
+      className="metrics-stack absolute hidden lg:flex flex-col z-20 lg:top-[45%] lg:-translate-y-1/2 lg:right-[clamp(56px,13vw,200px)] lg:w-[168px]"
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, delay: 0.8 }}
@@ -156,10 +161,10 @@ const Hero = () => (
       ].map(([val, label], i) => (
         <div
           key={label}
-          className={`flex-1 lg:flex-none flex flex-col items-center lg:items-end px-2 lg:px-0 py-2 lg:py-5 ${i > 0 ? "border-l lg:border-l-0 lg:border-t border-white/[0.15]" : ""}`}
+          className={`flex flex-col items-end py-5 ${i > 0 ? "border-t border-white/[0.15]" : ""}`}
         >
           <p
-            className="font-sans font-extrabold leading-none tracking-[-0.03em] text-[20px] lg:text-[clamp(28px,2.8vw,40px)]"
+            className="font-sans font-extrabold leading-none tracking-[-0.03em] text-[clamp(28px,2.8vw,40px)]"
             style={{
               background: "linear-gradient(160deg, rgba(210,218,238,0.92) 0%, #1B2B4B 100%)",
               WebkitBackgroundClip: "text",
@@ -168,7 +173,7 @@ const Hero = () => (
           >
             {val}
           </p>
-          <p className="font-mono text-[8px] lg:text-[9.5px] uppercase tracking-[0.13em] text-center lg:text-right mt-1" style={{ color: "rgba(255,255,255,0.5)" }}>
+          <p className="font-mono text-[9.5px] uppercase tracking-[0.13em] text-right mt-1" style={{ color: "rgba(255,255,255,0.5)" }}>
             {label}
           </p>
         </div>
