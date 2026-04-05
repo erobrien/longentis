@@ -230,7 +230,7 @@ const About = () => (
           <Tabs defaultValue="leadership" className="mt-12">
             <TabsList className="bg-transparent border-0 p-0 h-auto flex flex-wrap gap-2 mb-8">
               {teamTabs.map((t) => (
-                <TabsTrigger key={t.id} value={t.id} className="font-mono text-[10px] tracking-[0.1em] uppercase px-4 py-2.5 rounded-md data-[state=active]:bg-white/80 data-[state=active]:border data-[state=active]:border-navy-900/[0.15] data-[state=active]:shadow-sm data-[state=inactive]:bg-navy-900/[0.04] data-[state=inactive]:border data-[state=inactive]:border-navy-900/[0.06]">{t.label}</TabsTrigger>
+                <TabsTrigger key={t.id} value={t.id} className="font-sans text-[11px] font-semibold tracking-wide uppercase px-4 py-2.5 rounded-md data-[state=active]:bg-white/80 data-[state=active]:border data-[state=active]:border-navy-900/[0.15] data-[state=active]:shadow-sm data-[state=inactive]:bg-navy-900/[0.04] data-[state=inactive]:border data-[state=inactive]:border-navy-900/[0.06]">{t.label}</TabsTrigger>
               ))}
             </TabsList>
             {teamTabs.map((t) => (
