@@ -12,24 +12,45 @@ import ScrollReveal from "@/components/ScrollReveal";
 import StatCounter from "@/components/StatCounter";
 import USMap from "@/components/USMap";
 
+/* ─── ASSET IMPORTS ─── */
+import heroImg from "@/assets/iStock-1097768100-3.jpg";        // Man at railing, sunset — HERO
+import coupleJog from "@/assets/iStock-1081494342-1-4.jpg";     // Couple jogging sunset — collage
+import oceanRunner from "@/assets/iStock-948010824-2.jpg";      // Man running by ocean — collage
+import fitMan from "@/assets/iStock-518621045.jpg";             // Older fit man, earbuds — collage
+import consultation from "@/assets/iStock-2187145642-1-5.jpg";  // Man in consultation — collage + testimonial
+import trackSitting from "@/assets/iStock-864444970-1-7.jpg";   // Man on track, phone — collage
+import trackCrouch from "@/assets/iStock-2177439750-1-8.jpg";   // Man crouching, headphones — tab image
+import trackEarbuds from "@/assets/iStock-859864388-6.jpg";     // Man on track, earbuds — tab image
+import boardwalkJog from "@/assets/iStock-1097324074-10.jpg";   // Two men jogging boardwalk — collage
+import jogCloseup from "@/assets/iStock-1097324174-11.jpg";     // Two men jogging close-up — press
+import beachWalk from "@/assets/iStock-2170822818-12.jpg";      // Two men beach — coverage
+
 /* ─── HERO ─── */
 const Hero = () => (
   <section className="hero-section relative w-full overflow-hidden" style={{ height: "100dvh", minHeight: 640, background: "#FAFAF7" }}>
     {/* Video frame with rounded corners — image fills the frame */}
     <div className="video-frame absolute overflow-hidden" style={{ zIndex: 1, borderRadius: 16, inset: "16px 0 80px" }}>
       <img
-        src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1920&q=80&auto=format&fit=crop"
-        alt=""
+        src={heroImg}
+        alt="Man stretching at sunset"
         className="absolute inset-0 w-full h-full object-cover"
         loading="eager"
       />
-      <div className="absolute inset-0 bg-[#06081a]/40" />
-      {/* Left overlay */}
+      {/* Left gradient overlay */}
       <div
         className="absolute inset-0"
         style={{
           zIndex: 2,
-          background: "rgba(6,8,26,0.55)",
+          background: "linear-gradient(90deg, #06081ae6 0%, #06081a73 35%, #06081a26 55%, #06081a1a 100%)",
+        }}
+      />
+      {/* Bottom gradient overlay */}
+      <div
+        className="absolute bottom-0 left-0 right-0"
+        style={{
+          zIndex: 2,
+          height: "30%",
+          background: "linear-gradient(transparent 0%, #06081ab3 100%)",
         }}
       />
       {/* Noise texture */}
@@ -134,7 +155,12 @@ const Hero = () => (
           className={`flex-1 lg:flex-none flex flex-col items-center lg:items-end px-2 lg:px-0 py-2 lg:py-5 ${i > 0 ? "border-l lg:border-l-0 lg:border-t border-white/[0.15]" : ""}`}
         >
           <p
-            className="font-sans font-extrabold leading-none tracking-[-0.03em] text-[20px] lg:text-[clamp(28px,2.8vw,40px)] text-[#D2DAEE]"
+            className="font-sans font-extrabold leading-none tracking-[-0.03em] text-[20px] lg:text-[clamp(28px,2.8vw,40px)]"
+            style={{
+              background: "linear-gradient(160deg, rgba(210,218,238,0.92) 0%, #1B2B4B 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
           >
             {val}
           </p>
@@ -215,13 +241,13 @@ const EditorialStatement = () => (
       {/* Desktop: 8-col grid */}
       <div className="hidden lg:grid grid-cols-8 gap-3 pt-[100px] pb-0" style={{ gridTemplateRows: "repeat(5, 148px)" }}>
         <div className="rounded-lg overflow-hidden relative" style={{ gridColumn: "1/3", gridRow: "1/3" }}>
-          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=75&auto=format&fit=crop" alt="" className="absolute inset-0 w-full h-full object-cover" />
+          <img src={coupleJog} alt="Couple jogging at sunset" className="absolute inset-0 w-full h-full object-cover" />
         </div>
         <div className="rounded-lg overflow-hidden relative" style={{ gridColumn: "1/2", gridRow: "3/5" }}>
-          <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400&q=75&auto=format&fit=crop" alt="" className="absolute inset-0 w-full h-full object-cover" />
+          <img src={consultation} alt="Man in health consultation" className="absolute inset-0 w-full h-full object-cover" />
         </div>
         <div className="rounded-lg overflow-hidden relative" style={{ gridColumn: "2/3", gridRow: "3/4" }}>
-          <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=400&q=75&auto=format&fit=crop" alt="" className="absolute inset-0 w-full h-full object-cover" />
+          <img src={trackEarbuds} alt="Man with earbuds on track" className="absolute inset-0 w-full h-full object-cover" />
         </div>
         {/* Center text overlay */}
         <div className="flex flex-col justify-center px-8" style={{ gridColumn: "3/7", gridRow: "2/5" }}>
@@ -238,24 +264,19 @@ const EditorialStatement = () => (
           </ScrollReveal>
         </div>
         <div className="rounded-lg overflow-hidden relative" style={{ gridColumn: "7/9", gridRow: "1/3" }}>
-          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=75&auto=format&fit=crop" alt="" className="absolute inset-0 w-full h-full object-cover" />
+          <img src={oceanRunner} alt="Man running by ocean" className="absolute inset-0 w-full h-full object-cover" />
         </div>
         <div className="rounded-lg overflow-hidden relative" style={{ gridColumn: "7/8", gridRow: "3/5" }}>
-          <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&q=75&auto=format&fit=crop" alt="" className="absolute inset-0 w-full h-full object-cover" />
+          <img src={fitMan} alt="Fit man outdoors" className="absolute inset-0 w-full h-full object-cover" />
         </div>
         <div className="rounded-lg overflow-hidden relative" style={{ gridColumn: "8/9", gridRow: "3/6" }}>
-          <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400&q=75&auto=format&fit=crop" alt="" className="absolute inset-0 w-full h-full object-cover" />
+          <img src={boardwalkJog} alt="Two men jogging" className="absolute inset-0 w-full h-full object-cover" />
         </div>
       </div>
       {/* Mobile fallback */}
       <div className="lg:hidden">
         <div className="grid grid-cols-4 gap-2 mb-8">
-          {[
-            "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=300&q=75&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&q=75&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=300&q=75&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=300&q=75&auto=format&fit=crop",
-          ].map((src, i) => (
+          {[coupleJog, oceanRunner, trackEarbuds, fitMan].map((src, i) => (
             <div key={i} className="rounded-lg overflow-hidden h-24 relative">
               <img src={src} alt="" className="absolute inset-0 w-full h-full object-cover" />
             </div>
@@ -366,7 +387,8 @@ const OurApproach = () => (
                       ))}
                     </div>
                   </div>
-                  <div className="rounded-lg bg-[#1B2B4B] h-72 lg:h-auto relative overflow-hidden">
+                  <div className="rounded-lg h-72 lg:h-auto relative overflow-hidden">
+                    <img src={trackCrouch} alt="Active man with headphones" className="absolute inset-0 w-full h-full object-cover" />
                     {/* Glass stat overlays */}
                     <div
                       className="absolute bottom-4 left-4 rounded-lg px-4 py-3"
@@ -470,7 +492,7 @@ const Testimonials = () => (
         {/* Main quote card — spans 2 rows */}
         <div className="rounded-3xl overflow-hidden relative row-span-2" style={{ background: "#06081a" }}>
           <img
-            src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=75&auto=format&fit=crop"
+            src={consultation}
             alt=""
             className="absolute inset-0 w-full h-full object-cover opacity-40"
           />
