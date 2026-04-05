@@ -25,168 +25,125 @@ import boardwalkJog from "@/assets/iStock-1097324074-10.jpg";   // Two men joggi
 import jogCloseup from "@/assets/iStock-1097324174-11.jpg";     // Two men jogging close-up — press
 import beachWalk from "@/assets/iStock-2170822818-12.jpg";      // Two men beach — coverage
 
-/* ─── HERO ─── */
-const Hero = () => (
-  <section className="hero-section relative w-full overflow-hidden" style={{ height: "100dvh", minHeight: 640, background: "#FAFAF7" }}>
-    {/* Video frame with rounded corners — image fills the frame */}
-    <div className="video-frame absolute overflow-hidden rounded-none lg:rounded-2xl" style={{ zIndex: 1, inset: "0px 0px 52px" }}>
-      <style>{`@media (min-width: 1024px) { .video-frame { inset: 12px 12px 80px !important; } }`}</style>
-      <video
-        src="/mwc_hero_montage.mp4"
-        
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ playbackRate: 0.6 } as any}
-        ref={(el) => { if (el) el.playbackRate = 0.6; }}
-      />
-      {/* Left gradient overlay */}
-      <div
-        className="absolute inset-0"
-        style={{
-          zIndex: 2,
-          background: "linear-gradient(90deg, #06081aee 0%, #06081a99 35%, #06081a55 55%, #06081a40 100%)",
-        }}
-      />
-      {/* Bottom gradient overlay */}
-      <div
-        className="absolute bottom-0 left-0 right-0"
-        style={{
-          zIndex: 2,
-          height: "40%",
-          background: "linear-gradient(transparent 0%, #06081acc 100%)",
-        }}
-      />
-      {/* Noise texture */}
-      <div className="noise-overlay absolute inset-0" style={{ zIndex: 3 }} />
+/* ─── HERO BLOCK MENU ─── */
+
+const heroCards = [
+  {
+    title: "Testosterone Replacement Therapy",
+    img: fitMan,
+    bg: "bg-navy-dark",
+    href: "/treatments",
+  },
+  {
+    title: "Erectile Dysfunction",
+    img: coupleJog,
+    bg: "bg-navy-primary",
+    href: "/treatments",
+  },
+  {
+    title: "Peptides",
+    img: oceanRunner,
+    bg: "bg-navy-accent",
+    href: "/treatments",
+  },
+  {
+    title: "Weight Loss",
+    img: trackCrouch,
+    bg: "bg-navy-deepest",
+    href: "/treatments",
+  },
+  {
+    title: "Get Started",
+    img: heroImg,
+    bg: "bg-cta",
+    href: "/get-started",
+  },
+];
+
+const HeroCard = ({ title, img, bg, href, className }: { title: string; img: string; bg: string; href: string; className?: string }) => (
+  <Link
+    to={href}
+    className={`group relative overflow-hidden rounded-2xl ${bg} flex flex-col justify-between p-6 lg:p-8 ${className ?? ""}`}
+  >
+    {/* Title — top left */}
+    <h3 className="relative z-10 font-sans font-semibold text-white text-lg lg:text-2xl max-w-[200px] leading-tight">
+      {title}
+    </h3>
+
+    {/* Black pill button — bottom left */}
+    <div className="relative z-10 mt-auto pt-4">
+      <span className="inline-flex items-center gap-2 rounded-full bg-black/80 px-4 py-2.5 text-white font-sans text-xs font-semibold uppercase tracking-wider transition-all group-hover:bg-black group-hover:scale-105">
+        Start now
+        <ArrowRight className="h-3.5 w-3.5" />
+      </span>
     </div>
 
-    {/* Hero content */}
-    <motion.div
-      className="hero-content-pos absolute flex flex-col items-start gap-3 lg:gap-5 px-5 lg:px-0 max-w-[740px]"
-      style={{ zIndex: 20, top: "50%", transform: "translateY(-50%)", left: "20px", right: "20px" }}
-      initial="hidden"
-      animate="visible"
-      variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.2 } } }}
-    >
-      <style>{`@media (min-width: 1024px) { .hero-content-pos { top: 55% !important; left: clamp(56px, 13vw, 200px) !important; right: auto !important; } }`}</style>
+    {/* Foreground photo — bottom right */}
+    <img
+      src={img}
+      alt={title}
+      className="absolute bottom-0 right-0 h-[85%] w-[60%] object-cover object-center rounded-tl-2xl opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+    />
 
-      {/* Announcement pill — hidden on mobile */}
-      <motion.div
-        variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-        transition={{ duration: 0.6 }}
-        className="hidden lg:block"
-      >
-        <span
-          className="inline-flex items-center gap-2.5"
-          style={{
-            backdropFilter: "blur(20px) saturate(1.8)",
-            background: "rgba(255,255,255,0.06)",
-            border: "1px solid rgba(255,255,255,0.1)",
-            borderRadius: 9,
-            padding: "7px 14px 7px 7px",
-          }}
-        >
-          <span
-            className="inline-flex items-center gap-1"
-            style={{ background: "#1B2B4B", borderRadius: 5, padding: "4px 10px 4px 7px" }}
-          >
-            <span className="font-mono text-[9px] font-semibold uppercase tracking-[0.14em] text-[#E8670A]">NEW</span>
-          </span>
-          <span className="font-space text-[13px] font-light text-[#C5CDE0]/80">
-            Longentis telehealth now live in all 50 states →
-          </span>
-        </span>
-      </motion.div>
+    {/* Subtle overlay for text legibility */}
+    <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent z-[1]" />
+  </Link>
+);
 
-      {/* H1 */}
+const Hero = () => (
+  <section className="relative w-full overflow-hidden pt-24 lg:pt-28 pb-0" style={{ background: "#FAFAF7" }}>
+    {/* Headline */}
+    <div className="mx-auto max-w-7xl px-4 lg:px-8 mb-8 lg:mb-12">
       <motion.h1
-        variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
-        className="font-sans font-semibold leading-[1.05] tracking-[-0.032em] text-[#FAFAF7] text-[32px] lg:text-[clamp(42px,5vw,72px)]"
-        style={{ textShadow: "0 2px 30px rgba(0,0,0,0.4)" }}
+        className="font-sans font-semibold leading-[1.08] tracking-[-0.032em] text-navy-deepest text-[28px] lg:text-[clamp(42px,4.5vw,64px)] max-w-3xl"
       >
         Private wellness, for the{" "}
-        <em className="font-lora italic text-[#E8670A] not-italic" style={{ fontStyle: "italic" }}>discerning gent.</em>
+        <em className="font-lora italic text-cta not-italic" style={{ fontStyle: "italic" }}>discerning gent.</em>
       </motion.h1>
-
-      {/* Subtitle — shortened on mobile */}
       <motion.p
-        variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
-        transition={{ duration: 0.7 }}
-        className="hidden lg:block font-space font-light text-[14px] lg:text-[17px] leading-[1.6] lg:leading-[1.7] tracking-[0.01em] max-w-[600px]"
-        style={{ color: "rgba(197,205,224,0.65)" }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="font-space text-navy-primary/60 text-sm lg:text-base mt-3 max-w-lg"
       >
-        <span className="hidden lg:inline">TRT, ED treatment & weight loss — 10,000+ patients. Now via telehealth in all 50 states.</span>
-        <span className="lg:hidden">TRT, ED & weight loss — telehealth in all 50 states.</span>
+        TRT, ED treatment & weight loss — 10,000+ patients. Now via telehealth in all 50 states.
       </motion.p>
+    </div>
 
-      {/* CTA */}
-      <motion.div
-        variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
-        transition={{ duration: 0.7 }}
-      >
-        <Link
-          to="/get-started"
-          className="inline-flex items-center gap-2.5 font-sans text-[11.5px] font-bold uppercase tracking-[0.09em] text-[#FAFAF7] active:scale-[0.98] transition-all hover:brightness-110"
-          style={{
-            borderRadius: 10,
-            padding: "14px 18px 14px 24px",
-            background: "linear-gradient(135deg, #E8670A 0%, #D45A00 100%)",
-            border: "1px solid rgba(255,255,255,0.18)",
-            boxShadow: "inset 0 1px rgba(255,255,255,0.22), inset 0 -1px rgba(0,0,0,0.15), 0 0 0 1px rgba(232,103,10,0.50), 0 4px 14px rgba(232,103,10,0.35), 0 12px 40px rgba(0,0,0,0.30)",
-          }}
-        >
-          Start Your Free Visit
-          <span className="flex items-center justify-center w-[26px] h-[26px] rounded-[6px] bg-white/20">
-            <ArrowRight className="h-3.5 w-3.5 text-white" />
-          </span>
-        </Link>
-      </motion.div>
-    </motion.div>
-
-    {/* Metrics — hidden on mobile, right column on desktop */}
+    {/* Card grid */}
     <motion.div
-      className="metrics-stack absolute hidden lg:flex flex-col z-20 lg:top-[45%] lg:-translate-y-1/2 lg:right-[clamp(56px,13vw,200px)] lg:w-[168px]"
+      className="mx-auto max-w-7xl px-4 lg:px-8"
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, delay: 0.8 }}
+      transition={{ duration: 0.7, delay: 0.3 }}
     >
-      {[
-        ["10,000+", "Patients Treated"],
-        ["2015", "Since"],
-        ["3", "VA Centers"],
-        ["50", "States"],
-      ].map(([val, label], i) => (
-        <div
-          key={label}
-          className={`flex flex-col items-end py-5 ${i > 0 ? "border-t border-white/[0.15]" : ""}`}
-        >
-          <p
-            className="font-sans font-extrabold leading-none tracking-[-0.03em] text-[clamp(28px,2.8vw,40px)]"
-            style={{
-              background: "linear-gradient(160deg, rgba(210,218,238,0.92) 0%, #1B2B4B 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
-            {val}
-          </p>
-          <p className="font-mono text-[9.5px] uppercase tracking-[0.13em] text-right mt-1" style={{ color: "rgba(255,255,255,0.5)" }}>
-            {label}
-          </p>
-        </div>
-      ))}
+      {/* Desktop grid */}
+      <div className="hidden lg:grid grid-cols-2 gap-3 mb-3">
+        <HeroCard {...heroCards[0]} className="h-[360px]" />
+        <HeroCard {...heroCards[1]} className="h-[360px]" />
+      </div>
+      <div className="hidden lg:grid grid-cols-3 gap-3">
+        <HeroCard {...heroCards[2]} className="h-[240px]" />
+        <HeroCard {...heroCards[3]} className="h-[240px]" />
+        <HeroCard {...heroCards[4]} className="h-[240px]" />
+      </div>
+
+      {/* Mobile stack */}
+      <div className="flex flex-col gap-3 lg:hidden">
+        {heroCards.map((card) => (
+          <HeroCard key={card.title} {...card} className="h-[200px]" />
+        ))}
+      </div>
     </motion.div>
 
-    {/* Partners row — very bottom */}
-    <div className="absolute bottom-0 left-0 right-0 bg-[#FAFAF7] py-4 px-6" style={{ zIndex: 20 }}>
+    {/* Partners row */}
+    <div className="bg-[#FAFAF7] py-4 px-6 mt-6">
       <div className="mx-auto max-w-[1600px] flex items-center justify-center gap-10 flex-wrap">
         {["LegitScript", "HIPAA", "State Licensed", "FSA/HSA"].map((name) => (
-          <span key={name} className="font-mono text-[9px] tracking-[0.18em] uppercase text-[#0A1029]/35">
+          <span key={name} className="font-mono text-[9px] tracking-[0.18em] uppercase text-navy-deepest/35">
             {name}
           </span>
         ))}
