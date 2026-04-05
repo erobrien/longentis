@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import ScrollReveal from "@/components/ScrollReveal";
+import Diamond from "@/components/Diamond";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const categories = [
@@ -91,14 +92,14 @@ const FAQ = () => {
                 Questions?{" "}
                 <em className="font-lora italic text-cta" style={{ fontStyle: "italic" }}>Answered.</em>
               </h1>
-              <p className="font-space mt-4 max-w-2xl text-[16px] leading-[1.7] text-navy-700/60">
+              <p className="font-space mt-4 max-w-2xl text-[16px] leading-[1.7] text-navy-700/75">
                 Everything you need to know about Longentis, from getting started to treatment details and billing.
               </p>
             </motion.div>
 
             {/* Search */}
             <div className="mt-8 relative max-w-lg">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-navy-700/30" />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-navy-700/40" />
               <input
                 type="text"
                 placeholder="Search questions..."
@@ -120,12 +121,13 @@ const FAQ = () => {
                     <button
                       key={cat.id}
                       onClick={() => setActiveCategory(cat.id)}
-                      className={`whitespace-nowrap rounded-lg px-4 py-2.5 font-sans text-[13px] font-medium transition-all text-left ${
+                      className={`whitespace-nowrap rounded-lg px-4 py-2.5 font-sans text-[13px] font-medium transition-all text-left inline-flex items-center gap-2 ${
                         activeCategory === cat.id
                           ? "bg-navy-950 text-cream-100"
-                          : "bg-navy-900/[0.04] text-navy-700/60 hover:bg-navy-900/[0.08]"
+                          : "bg-navy-900/[0.04] text-navy-700/70 hover:bg-navy-900/[0.08]"
                       }`}
                     >
+                      <Diamond size="xs" className={activeCategory === cat.id ? "text-cta" : "text-cta/50"} />
                       {cat.label}
                     </button>
                   ))}
@@ -149,7 +151,7 @@ const FAQ = () => {
                           <AccordionTrigger className="font-sans text-[15px] font-semibold text-navy-900 hover:no-underline py-5">
                             {faq.q}
                           </AccordionTrigger>
-                          <AccordionContent className="font-space text-[14px] leading-[1.7] text-navy-700/60">
+                          <AccordionContent className="font-space text-[14px] leading-[1.7] text-navy-700/70">
                             {faq.a}
                           </AccordionContent>
                         </AccordionItem>
@@ -158,7 +160,7 @@ const FAQ = () => {
                   </div>
                 ))}
                 {filteredCategories.length === 0 && (
-                  <p className="font-space text-[15px] text-navy-700/50 py-8">No questions match your search. Try a different term.</p>
+                  <p className="font-space text-[15px] text-navy-700/60 py-8">No questions match your search. Try a different term.</p>
                 )}
               </div>
             </div>
@@ -169,7 +171,7 @@ const FAQ = () => {
         <section className="bg-navy-950 py-16 noise-overlay">
           <div className="mx-auto max-w-3xl px-6 lg:px-8 text-center">
             <h2 className="font-sans font-bold text-2xl text-cream-200">Still have questions?</h2>
-            <p className="font-space mt-3 text-[15px] text-cream-200/50">
+            <p className="font-space mt-3 text-[15px] text-cream-200/60">
               Start your free assessment and speak directly with a licensed men's health provider.
             </p>
             <Link

@@ -8,6 +8,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import StatCounter from "@/components/StatCounter";
 import USMap from "@/components/USMap";
 import SectionHeader from "@/components/SectionHeader";
+import Diamond from "@/components/Diamond";
 
 import consultation from "@/assets/iStock-2187145642-1-5.jpg";
 import trackSitting from "@/assets/iStock-864444970-1-7.jpg";
@@ -46,7 +47,7 @@ const Coverage = () => {
               <em className="font-lora italic text-cta" style={{ fontStyle: "italic" }}>Centers in Virginia.</em>
             </motion.h1>
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-              className="font-space mt-6 max-w-2xl text-[15px] leading-[1.7] text-navy-700/55">
+              className="font-space mt-6 max-w-2xl text-[15px] leading-[1.7] text-navy-700/70">
               Our telehealth platform serves men nationwide. Our Virginia centers offer same-day, in-person care.
             </motion.p>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} className="mt-8 flex flex-wrap gap-3">
@@ -62,10 +63,9 @@ const Coverage = () => {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <SectionHeader badge="Coverage Map" title={<>Explore our <em className="font-lora italic text-cta" style={{ fontStyle: "italic" }}>coverage.</em></>} />
 
-            {/* State search */}
             <ScrollReveal>
               <div className="mt-8 max-w-sm relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-navy-700/30" />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-navy-700/40" />
                 <input
                   type="text"
                   placeholder="Search by state (e.g. CA, Texas)..."
@@ -83,34 +83,36 @@ const Coverage = () => {
                     key={s}
                     onClick={() => { setSelectedState(s); setSearch(""); }}
                     className={`rounded-lg px-3 py-1.5 font-mono text-[11px] tracking-[0.1em] uppercase transition-colors ${
-                      s === "VA" ? "bg-cta/10 text-cta border border-cta/20" : "bg-navy-900/[0.04] text-navy-700/50 border border-navy-900/[0.06] hover:border-navy-900/[0.12]"
+                      s === "VA" ? "bg-cta/10 text-cta border border-cta/20" : "bg-navy-900/[0.04] text-navy-700/60 border border-navy-900/[0.06] hover:border-navy-900/[0.12]"
                     }`}
                   >
                     {s} {s === "VA" && "· In-Person"}
                   </button>
                 ))}
-                {filteredStates.length === 0 && <p className="font-space text-[13px] text-navy-700/40">No states found.</p>}
+                {filteredStates.length === 0 && <p className="font-space text-[13px] text-navy-700/50">No states found.</p>}
               </div>
             )}
 
             <div className="mt-8 grid gap-12 lg:grid-cols-[1fr_2fr]">
-              {/* Sidebar — differentiate telehealth vs in-person */}
               <div className="space-y-4">
                 <div className="rounded-2xl p-5 bg-cta/[0.06] border border-cta/[0.12]">
-                  <p className="font-mono text-[10px] tracking-[0.16em] uppercase text-cta mb-2">In-Person Care</p>
-                  <p className="font-space text-[13px] text-navy-700/55">Available at our 3 Virginia centers. Same-day labs, walk-ins welcome.</p>
+                  <p className="font-mono text-[10px] tracking-[0.16em] uppercase text-cta mb-2 inline-flex items-center gap-1.5">
+                    <Diamond size="xs" /> In-Person Care
+                  </p>
+                  <p className="font-space text-[13px] text-navy-700/70">Available at our 3 Virginia centers. Same-day labs, walk-ins welcome.</p>
                 </div>
                 <div className="rounded-2xl p-5 bg-navy-900/[0.04] border border-navy-900/[0.06]">
-                  <p className="font-mono text-[10px] tracking-[0.16em] uppercase text-navy-600 mb-2">Telehealth</p>
-                  <p className="font-space text-[13px] text-navy-700/55">Available in all 50 states. Video visits with your dedicated provider. Labs via at-home kit or Quest/Labcorp.</p>
+                  <p className="font-mono text-[10px] tracking-[0.16em] uppercase text-navy-600 mb-2 inline-flex items-center gap-1.5">
+                    <Diamond size="xs" /> Telehealth
+                  </p>
+                  <p className="font-space text-[13px] text-navy-700/70">Available in all 50 states. Video visits with your dedicated provider. Labs via at-home kit or Quest/Labcorp.</p>
                 </div>
 
-                {/* Selected state info */}
                 {selectedState && (
                   <div className="rounded-2xl p-5 bg-white border border-navy-900/[0.06]">
                     <p className="font-mono text-[10px] tracking-[0.16em] uppercase text-navy-600 mb-1">Selected</p>
                     <h3 className="font-sans font-semibold text-[16px] text-navy-900">{selectedState}</h3>
-                    <p className="font-space text-[13px] text-navy-700/50 mt-1">
+                    <p className="font-space text-[13px] text-navy-700/65 mt-1">
                       {isVA ? "In-person & telehealth available" : "Telehealth available"}
                     </p>
                     <Link to="/get-started" className="mt-3 inline-flex items-center gap-1 font-sans text-[13px] font-semibold text-cta hover:underline">
@@ -123,7 +125,6 @@ const Coverage = () => {
               <USMap selectedState={selectedState} onStateSelect={setSelectedState} />
             </div>
 
-            {/* Stats */}
             <div className="mt-16 flex flex-wrap justify-center gap-12 rounded-2xl px-10 py-8 mx-auto max-w-2xl bg-white border border-navy-900/[0.06]">
               <StatCounter end={50} label="States" />
               <StatCounter end={3} label="VA Centers" />
@@ -132,7 +133,7 @@ const Coverage = () => {
           </div>
         </section>
 
-        {/* Virginia Centers with photos */}
+        {/* Virginia Centers */}
         <section className="bg-cream-200 py-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <SectionHeader badge="Virginia Centers" title={<>Same-day care. <em className="font-lora italic text-cta" style={{ fontStyle: "italic" }}>Walk-ins welcome.</em></>} />
@@ -144,12 +145,12 @@ const Coverage = () => {
                       <img src={c.img} alt={c.name} className="absolute inset-0 w-full h-full object-cover" />
                     </div>
                     <div className="p-6 flex-1 flex flex-col">
-                      <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-navy-600">{`0${i + 1}`}</span>
-                      <h3 className="font-sans mt-2 text-[16px] font-semibold text-navy-900">Men's Wellness Centers — {c.name}</h3>
-                      <p className="font-space mt-2 text-[13px] text-navy-700/50 flex-1">{c.desc}</p>
+                      <Diamond size="sm" className="text-cta/60 mb-2" />
+                      <h3 className="font-sans text-[16px] font-semibold text-navy-900">Men's Wellness Centers — {c.name}</h3>
+                      <p className="font-space mt-2 text-[13px] text-navy-700/65 flex-1">{c.desc}</p>
                       <div className="mt-4 space-y-2">
-                        <p className="font-space flex items-center gap-2 text-[13px] text-navy-700/50"><MapPin className="h-3.5 w-3.5 shrink-0" />{c.address}</p>
-                        <a href={`tel:${c.phone.replace(/\D/g, "")}`} className="font-space flex items-center gap-2 text-[13px] text-navy-700/50 hover:text-cta transition-colors"><Phone className="h-3.5 w-3.5 shrink-0" />{c.phone}</a>
+                        <p className="font-space flex items-center gap-2 text-[13px] text-navy-700/65"><MapPin className="h-3.5 w-3.5 shrink-0" />{c.address}</p>
+                        <a href={`tel:${c.phone.replace(/\D/g, "")}`} className="font-space flex items-center gap-2 text-[13px] text-navy-700/65 hover:text-cta transition-colors"><Phone className="h-3.5 w-3.5 shrink-0" />{c.phone}</a>
                       </div>
                       <Link to="/get-started" className="mt-4 inline-flex items-center gap-1 font-sans text-sm font-semibold text-cta hover:underline">
                         Visit Center <ArrowRight className="h-4 w-4" />

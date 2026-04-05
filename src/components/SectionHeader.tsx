@@ -1,4 +1,5 @@
 import ScrollReveal from "@/components/ScrollReveal";
+import Diamond from "@/components/Diamond";
 import type { ReactNode } from "react";
 
 interface SectionHeaderProps {
@@ -10,15 +11,6 @@ interface SectionHeaderProps {
   align?: "left" | "center";
 }
 
-/**
- * Standardized section header with badge + heading + description.
- * Usage:
- *   <SectionHeader
- *     badge="Our Approach"
- *     title={<>The full stack behind <em className="font-lora italic text-cta">every patient.</em></>}
- *     description="..."
- *   />
- */
 const SectionHeader = ({
   badge,
   badgeVariant = "light",
@@ -36,21 +28,10 @@ const SectionHeader = ({
           : "bg-navy-900/[0.06] border border-navy-900/[0.12]"
       }`}
     >
-      <span className="relative flex h-[7px] w-[7px]">
-        <span
-          className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-60 ${
-            badgeVariant === "dark" ? "bg-cta" : "bg-navy-600"
-          }`}
-        />
-        <span
-          className={`relative inline-flex rounded-full h-[7px] w-[7px] ${
-            badgeVariant === "dark" ? "bg-cta" : "bg-navy-600"
-          }`}
-        />
-      </span>
+      <Diamond size="xs" className={badgeVariant === "dark" ? "text-cta" : "text-cta"} />
       <span
         className={`text-caption ${
-          badgeVariant === "dark" ? "text-white/50" : "text-navy-600"
+          badgeVariant === "dark" ? "text-white/60" : "text-navy-600"
         }`}
       >
         {badge}

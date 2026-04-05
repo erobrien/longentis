@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, Shield } from "lucide-react";
+import { ArrowRight, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import ScrollReveal from "@/components/ScrollReveal";
+import Diamond from "@/components/Diamond";
 
 const plans = [
   {
@@ -80,12 +81,12 @@ const Pricing = () => (
               Transparent pricing.{" "}
               <em className="font-lora italic text-cta" style={{ fontStyle: "italic" }}>No surprises.</em>
             </h1>
-            <p className="font-space mt-4 max-w-2xl text-[16px] leading-[1.7] text-navy-700/60">
+            <p className="font-space mt-4 max-w-2xl text-[16px] leading-[1.7] text-navy-700/75">
               Every plan includes labs, provider consultations, medication, and shipping. One monthly price. No hidden fees. Cancel anytime.
             </p>
             <div className="mt-6 inline-flex items-center gap-2 rounded-lg px-4 py-2.5 bg-navy-900/[0.06] border border-navy-900/[0.10]">
-              <Shield className="h-4 w-4 text-cta" />
-              <span className="font-mono text-[11px] tracking-[0.12em] uppercase text-navy-700/60">FSA / HSA Accepted</span>
+              <Diamond size="sm" />
+              <span className="font-mono text-[11px] tracking-[0.12em] uppercase text-navy-700/70">FSA / HSA Accepted</span>
             </div>
           </motion.div>
         </div>
@@ -114,18 +115,18 @@ const Pricing = () => (
                     <span className={`font-sans font-extrabold text-[42px] leading-none tracking-[-0.03em] ${plan.popular ? "text-cta" : "text-navy-900"}`}>
                       {plan.price}
                     </span>
-                    <span className={`font-space text-[14px] ${plan.popular ? "text-cream-200/50" : "text-navy-700/50"}`}>
+                    <span className={`font-space text-[14px] ${plan.popular ? "text-cream-200/60" : "text-navy-700/60"}`}>
                       {plan.period}
                     </span>
                   </div>
-                  <p className={`font-space text-[13px] leading-[1.6] mt-3 ${plan.popular ? "text-cream-200/50" : "text-navy-700/50"}`}>
+                  <p className={`font-space text-[13px] leading-[1.6] mt-3 ${plan.popular ? "text-cream-200/60" : "text-navy-700/65"}`}>
                     {plan.description}
                   </p>
                   <div className="mt-6 space-y-3 flex-1">
                     {plan.includes.map((item) => (
                       <div key={item} className="flex items-start gap-2.5">
-                        <CheckCircle2 className={`h-4 w-4 shrink-0 mt-0.5 ${plan.popular ? "text-cta" : "text-cta"}`} />
-                        <span className={`font-space text-[13px] ${plan.popular ? "text-cream-200/70" : "text-navy-700/60"}`}>
+                        <Diamond size="xs" className="mt-1 shrink-0" />
+                        <span className={`font-space text-[13px] ${plan.popular ? "text-cream-200/75" : "text-navy-700/70"}`}>
                           {item}
                         </span>
                       </div>
@@ -156,21 +157,21 @@ const Pricing = () => (
               Longentis vs.{" "}
               <em className="font-lora italic text-cta" style={{ fontStyle: "italic" }}>in-office visits.</em>
             </h2>
-            <p className="font-space mt-3 text-[15px] text-cream-200/50 text-center max-w-xl mx-auto">
+            <p className="font-space mt-3 text-[15px] text-cream-200/60 text-center max-w-xl mx-auto">
               Traditional men's health care adds up. Longentis includes everything in one monthly price.
             </p>
           </ScrollReveal>
           <div className="mt-12 rounded-2xl overflow-hidden border border-white/[0.08]">
             <div className="grid grid-cols-3 bg-white/[0.04] px-6 py-4 border-b border-white/[0.06]">
-              <span className="font-mono text-[10px] tracking-[0.18em] uppercase text-white/30" />
+              <span className="font-mono text-[10px] tracking-[0.18em] uppercase text-white/40" />
               <span className="font-mono text-[10px] tracking-[0.18em] uppercase text-cta text-center">Longentis</span>
-              <span className="font-mono text-[10px] tracking-[0.18em] uppercase text-white/30 text-center">In-Office</span>
+              <span className="font-mono text-[10px] tracking-[0.18em] uppercase text-white/40 text-center">In-Office</span>
             </div>
             {comparisons.map((row, i) => (
               <div key={row.item} className={`grid grid-cols-3 px-6 py-4 ${i < comparisons.length - 1 ? "border-b border-white/[0.04]" : ""}`}>
-                <span className="font-space text-[14px] text-cream-200/60">{row.item}</span>
+                <span className="font-space text-[14px] text-cream-200/70">{row.item}</span>
                 <span className="font-sans font-semibold text-[14px] text-cta text-center">{row.longentis}</span>
-                <span className="font-space text-[14px] text-cream-200/35 text-center">{row.office}</span>
+                <span className="font-space text-[14px] text-cream-200/50 text-center">{row.office}</span>
               </div>
             ))}
           </div>
@@ -182,7 +183,7 @@ const Pricing = () => (
         <div className="mx-auto max-w-3xl px-6 lg:px-8 text-center">
           <ScrollReveal>
             <h2 className="font-sans font-bold text-2xl text-navy-900">No hidden fees. No contracts. Cancel anytime.</h2>
-            <p className="font-space mt-3 text-[15px] text-navy-700/50">
+            <p className="font-space mt-3 text-[15px] text-navy-700/65">
               Your subscription includes everything: medication, labs, consultations, and shipping. FSA and HSA cards accepted for all plans.
             </p>
             <Link
