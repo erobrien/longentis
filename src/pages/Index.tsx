@@ -30,11 +30,13 @@ const Hero = () => (
   <section className="hero-section relative w-full overflow-hidden" style={{ height: "100dvh", minHeight: 640, background: "#FAFAF7" }}>
     {/* Video frame with rounded corners — image fills the frame */}
     <div className="video-frame absolute overflow-hidden" style={{ zIndex: 1, borderRadius: 16, inset: "16px 0 80px" }}>
-      <img
-        src={heroImg}
-        alt="Man stretching at sunset"
+      <video
+        src="/mwc_hero_montage.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
         className="absolute inset-0 w-full h-full object-cover"
-        loading="eager"
       />
       {/* Left gradient overlay */}
       <div
