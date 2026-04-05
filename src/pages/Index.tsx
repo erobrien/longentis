@@ -153,7 +153,7 @@ const Hero = () => (
         </div>
         <div className="flex items-center gap-3">
           <span className="font-sans font-bold text-navy-900 text-[15px]">10,000+</span>
-          <span className="font-mono text-[10px] tracking-[0.12em] uppercase text-navy-400">patients since 2015</span>
+          <span className="font-sans text-[11px] font-medium tracking-wide uppercase text-navy-400">patients since 2015</span>
         </div>
       </div>
     </div>
