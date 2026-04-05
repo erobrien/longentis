@@ -145,13 +145,22 @@ const Hero = () => (
       </div>
     </motion.div>
 
-    {/* Trust bar */}
-    <div className="bg-cream-100 py-5 px-6 mt-6">
-      <div className="mx-auto max-w-7xl flex items-center justify-center gap-10 flex-wrap">
-        {["LegitScript Certified", "HIPAA Compliant", "State Licensed", "FSA/HSA Eligible"].map((name) => (
-          <span key={name} className="font-mono text-[9px] tracking-[0.18em] uppercase text-navy-900/30">
-            {name}
-          </span>
+    {/* Trust bar — redesigned */}
+    <div className="bg-cream-100 py-6 px-6 mt-6">
+      <div className="mx-auto max-w-7xl flex items-center justify-center gap-6 lg:gap-10 flex-wrap">
+        {[
+          { label: "LegitScript Certified", icon: Shield },
+          { label: "HIPAA Compliant", icon: Shield, tooltip: "Your data is encrypted end-to-end" },
+          { label: "Physician-Led · 12+ Providers", icon: CheckCircle2 },
+          { label: "4.9★ Google Rating", icon: Star },
+          { label: "FSA/HSA Accepted", icon: CheckCircle2 },
+        ].map((badge) => (
+          <div key={badge.label} className="inline-flex items-center gap-2 rounded-lg px-3.5 py-2 bg-navy-900/[0.05] border border-navy-900/[0.08]" title={badge.tooltip}>
+            <badge.icon className="h-3.5 w-3.5 text-cta" />
+            <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-navy-700/60 font-medium">
+              {badge.label}
+            </span>
+          </div>
         ))}
       </div>
     </div>
