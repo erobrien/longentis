@@ -8,6 +8,8 @@ import ScrollReveal from "@/components/ScrollReveal";
 import StatCounter from "@/components/StatCounter";
 import USMap from "@/components/USMap";
 import SectionHeader from "@/components/SectionHeader";
+import SEOHead from "@/components/SEOHead";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 import consultation from "@/assets/iStock-2187145642-1-5.jpg";
 import trackSitting from "@/assets/iStock-864444970-1-7.jpg";

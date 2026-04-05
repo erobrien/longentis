@@ -8,6 +8,8 @@ import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import StatCounter from "@/components/StatCounter";
 import SectionHeader from "@/components/SectionHeader";
+import SEOHead from "@/components/SEOHead";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 import consultation from "@/assets/iStock-2187145642-1-5.jpg";
 import fitMan from "@/assets/iStock-518621045.jpg";
