@@ -14,10 +14,13 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter Tight", "sans-serif"],
-        display: ["Outfit", "sans-serif"],
-        mono: ["JetBrains Mono", "monospace"],
-        body: ["Inter", "sans-serif"],
+        sans: ["Plus Jakarta Sans", "sans-serif"],
+        display: ["Plus Jakarta Sans", "sans-serif"],
+        lora: ["Lora", "serif"],
+        mono: ["IBM Plex Mono", "monospace"],
+        space: ["Space Grotesk", "sans-serif"],
+        body: ["Space Grotesk", "sans-serif"],
+        logo: ["Bebas Neue", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
