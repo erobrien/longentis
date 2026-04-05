@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, ClipboardCheck, TestTube, Video, Truck, Star, Shield, Heart, Scale, Activity, ChevronRight } from "lucide-react";
+import { ArrowRight, ClipboardCheck, TestTube, Video, Truck, Star, Shield, Heart, Scale, Activity, ChevronRight, Stethoscope, Globe, UserCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -27,14 +27,14 @@ const Hero = () => (
   <section className="relative bg-cream-100 pt-36 lg:pt-44 pb-0 overflow-hidden">
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       {/* Headline row */}
-      <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-end">
+      <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 items-end">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="font-sans font-bold text-navy-900 text-[clamp(40px,5.5vw,72px)] leading-[1.02] tracking-[-0.035em]">
-            Men's<br />Longevity,<br />
+          <h1 className="font-sans font-bold text-navy-900 text-[clamp(44px,5.8vw,76px)] leading-[1.02] tracking-[-0.035em]">
+            Men's Longevity,{" "}
             <span className="text-navy-400">Delivered.</span>
           </h1>
         </motion.div>
@@ -42,18 +42,20 @@ const Hero = () => (
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.15 }}
-          className="pb-2"
+          className="pb-3"
         >
-          <ul className="space-y-2.5">
-            {[
-              "Physician-supervised TRT, ED, and weight loss",
-              "Telehealth in all 50 states",
-              "20+ biomarker lab panels, not questionnaires",
-              "Same provider every visit",
-            ].map((item) => (
-              <li key={item} className="flex items-start gap-2.5">
-                <CheckCircle2 className="h-4 w-4 text-cta mt-0.5 shrink-0" strokeWidth={2} />
-                <span className="font-space text-[14px] text-navy-700 leading-snug">{item}</span>
+          <ul className="space-y-3">
+            {([
+              { icon: Stethoscope, text: "Physician-supervised TRT, ED & weight loss" },
+              { icon: Globe, text: "Telehealth in all 50 states" },
+              { icon: TestTube, text: "20+ biomarker lab panels, not questionnaires" },
+              { icon: UserCheck, text: "Same provider every visit" },
+            ] as const).map((item) => (
+              <li key={item.text} className="flex items-center gap-3">
+                <div className="size-8 rounded-lg bg-navy-950 flex items-center justify-center shrink-0">
+                  <item.icon className="h-4 w-4 text-cta" strokeWidth={1.5} />
+                </div>
+                <span className="font-space text-[14px] text-navy-700 leading-snug">{item.text}</span>
               </li>
             ))}
           </ul>
