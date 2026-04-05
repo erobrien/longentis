@@ -570,7 +570,7 @@ const PressSection = () => {
                   width: 280,
                   height: activeIndex === i ? 420 : 260,
                   background: "linear-gradient(145deg, #111938 0%, #06081a 100%)",
-                  opacity: activeIndex === i ? 1 : 0.5,
+                  opacity: activeIndex === i ? 1 : 0.25,
                 }}
                 onMouseEnter={() => setActiveIndex(i)}
               >
