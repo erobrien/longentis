@@ -39,11 +39,11 @@ const Header = () => {
             }`}
           >
             <Link to="/" className="flex flex-col">
-              <span className={`font-logo text-[26px] font-extrabold tracking-[-0.03em] leading-none transition-colors duration-500 ${scrolled ? "text-[#0B1029]" : "text-[#FAFAF7]"}`}>
+              <span className={`font-logo text-[32px] font-normal uppercase tracking-[0.08em] leading-none transition-colors duration-500 ${scrolled ? "text-[#0B1029]" : "text-[#FAFAF7]"}`}>
                 Longentis
               </span>
-              <span className={`font-mono text-[8px] tracking-[0.16em] uppercase transition-colors duration-500 mt-0.5 ${scrolled ? "text-[#1B2B4B]/35" : "text-[#FAFAF7]/35"}`}>
-                by Men's Wellness Centers
+              <span className={`font-mono text-[7px] tracking-[0.2em] uppercase transition-colors duration-500 mt-0.5 ${scrolled ? "text-[#1B2B4B]/30" : "text-[#FAFAF7]/30"}`}>
+                Men's Wellness Centers
               </span>
             </Link>
 
@@ -90,8 +90,8 @@ const Header = () => {
           >
             <div className="flex items-center justify-between px-6 py-4">
               <Link to="/" className="flex flex-col">
-                <span className="font-logo text-[26px] font-extrabold tracking-[-0.03em] text-[#E8E2D9]">Longentis</span>
-                <span className="font-mono text-[8px] uppercase tracking-[0.16em] text-[#E8E2D9]/35">
+                <span className="font-logo text-[32px] font-normal uppercase tracking-[0.08em] text-[#E8E2D9]">Longentis</span>
+                <span className="font-mono text-[7px] uppercase tracking-[0.2em] text-[#E8E2D9]/30">
                   by Men's Wellness Centers
                 </span>
               </Link>

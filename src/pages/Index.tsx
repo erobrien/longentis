@@ -202,7 +202,9 @@ const assessmentCards = [
 ];
 
 const HealthAssessment = () => (
-  <section className="bg-[#FAFAF7] py-24">
+  <section className="bg-[#FAFAF7] py-24 relative">
+    {/* Subtle navy gradient bleed from hero */}
+    <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#06081a]/[0.03] to-transparent pointer-events-none" />
     <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
       <ScrollReveal>
         <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5" style={{ background: "rgba(27,43,75,0.10)", border: "1px solid rgba(27,43,75,0.20)", backdropFilter: "blur(12px)" }}>
@@ -222,8 +224,8 @@ const HealthAssessment = () => (
       <div className="mt-12 grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-3 lg:grid-cols-3 lg:gap-4">
         {assessmentCards.map((card, i) => (
           <ScrollReveal key={card.title} delay={i * 0.04}>
-            <div className="flex w-full flex-row items-center rounded-2xl border border-gray-100 bg-white py-2 pr-4 pl-2 shadow-sm hover:-translate-y-0.5 transition-transform">
-              <div className="relative size-10 shrink-0 overflow-hidden rounded-lg bg-gray-50 md:size-12 flex items-center justify-center">
+            <div className="flex w-full flex-row items-center rounded-2xl border border-[#1B2B4B]/[0.08] bg-white py-2 pr-4 pl-2 shadow-[0_2px_12px_rgba(11,16,41,0.04)] hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(11,16,41,0.08)] transition-all">
+              <div className="relative size-10 shrink-0 overflow-hidden rounded-lg bg-[#0B1029]/[0.04] md:size-12 flex items-center justify-center">
                 <card.icon className="h-5 w-5 text-[#1B2B4B]" strokeWidth={1.5} />
               </div>
               <div className="ml-3">
@@ -240,7 +242,7 @@ const HealthAssessment = () => (
 
 /* ─── EDITORIAL COLLAGE ─── */
 const EditorialStatement = () => (
-  <section className="bg-[#FAFAF7] py-24 overflow-hidden">
+  <section className="bg-[#F5F1EB] py-24 overflow-hidden">
     <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
       {/* Desktop: 8-col grid */}
       <div className="hidden lg:grid grid-cols-8 gap-3 pt-[100px] pb-0" style={{ gridTemplateRows: "repeat(5, 148px)" }}>
@@ -331,17 +333,17 @@ const tabsData = [
 ];
 
 const OurApproach = () => (
-  <section className="bg-[#FAFAF7] py-24">
+  <section className="bg-[#06081a] py-24 noise-overlay relative">
     <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
       <ScrollReveal>
-        <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5" style={{ background: "rgba(27,43,75,0.10)", border: "1px solid rgba(27,43,75,0.20)" }}>
+        <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5" style={{ background: "rgba(197,205,224,0.06)", border: "1px solid rgba(197,205,224,0.12)" }}>
           <span className="relative flex h-[7px] w-[7px]">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#243656] opacity-60" />
-            <span className="relative inline-flex rounded-full h-[7px] w-[7px] bg-[#243656]" />
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E8670A] opacity-60" />
+            <span className="relative inline-flex rounded-full h-[7px] w-[7px] bg-[#E8670A]" />
           </span>
-          <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#243656]">Our Approach</span>
+          <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#C5CDE0]/70">Our Approach</span>
         </div>
-        <h2 className="font-lora mt-6 text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-[#0B1029]">
+        <h2 className="font-lora mt-6 text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-[#E8E2D9]">
           The full stack behind every patient.
         </h2>
       </ScrollReveal>
@@ -350,9 +352,9 @@ const OurApproach = () => (
         {/* Card with diagonal stripe borders */}
         <div className="relative rounded-2xl overflow-hidden" style={{ background: "#E8EDF5" }}>
           {/* Left stripe border */}
-          <div className="absolute left-0 top-0 bottom-0 w-2" style={{ background: "rgba(27,43,75,0.13)" }} />
+          <div className="absolute left-0 top-0 bottom-0 w-3 lg:w-5" style={{ backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(27,43,75,0.13) 5px, rgba(27,43,75,0.13) 6px)" }} />
           {/* Right stripe border */}
-          <div className="absolute right-0 top-0 bottom-0 w-2" style={{ background: "rgba(27,43,75,0.13)" }} />
+          <div className="absolute right-0 top-0 bottom-0 w-3 lg:w-5" style={{ backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(27,43,75,0.13) 5px, rgba(27,43,75,0.13) 6px)" }} />
 
           <Tabs defaultValue="providers" className="relative z-10 px-6 py-6 lg:px-16 lg:py-10">
             <TabsList className="bg-transparent border-0 p-0 h-auto flex flex-wrap gap-2 mb-8">
@@ -452,7 +454,7 @@ const CoverageMap = () => (
           { name: "Virginia Beach, VA", phone: "(757) 215-3006", desc: "Virginia Beach location for same-day care." },
         ].map((c, i) => (
           <ScrollReveal key={c.name} delay={i * 0.1}>
-            <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
+            <div className="rounded-2xl border border-[#1B2B4B]/[0.08] bg-white p-6 shadow-[0_2px_16px_rgba(11,16,41,0.05)] hover:shadow-[0_6px_24px_rgba(11,16,41,0.10)] transition-shadow">
               <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#243656]">{`0${i + 1}`}</span>
               <h3 className="font-sans mt-2 text-lg font-semibold text-[#0B1029]">Men's Wellness Centers — {c.name}</h3>
               <p className="font-space mt-2 text-[13px] text-[#555] font-light">{c.desc}</p>
@@ -470,7 +472,7 @@ const CoverageMap = () => (
 
 /* ─── TESTIMONIALS — BENTO GRID ─── */
 const Testimonials = () => (
-  <section className="bg-[#FAFAF7] py-24">
+  <section className="bg-[#F0EDE8] py-24">
     <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
       <ScrollReveal>
         <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5" style={{ background: "rgba(27,43,75,0.10)", border: "1px solid rgba(27,43,75,0.20)" }}>
