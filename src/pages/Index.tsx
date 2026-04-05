@@ -15,9 +15,15 @@ import USMap from "@/components/USMap";
 /* ─── HERO ─── */
 const Hero = () => (
   <section className="hero-section relative w-full overflow-hidden" style={{ height: "100dvh", minHeight: 640, background: "#FAFAF7" }}>
-    {/* Video frame with rounded corners */}
+    {/* Video frame with rounded corners — image fills the frame */}
     <div className="video-frame absolute overflow-hidden" style={{ zIndex: 1, borderRadius: 16, inset: "16px 0 80px" }}>
-      <div className="absolute inset-0 bg-[#06081a]" />
+      <img
+        src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1920&q=80&auto=format&fit=crop"
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover"
+        loading="eager"
+      />
+      <div className="absolute inset-0 bg-[#06081a]/40" />
       {/* Left gradient overlay */}
       <div
         className="absolute inset-0"
@@ -119,10 +125,9 @@ const Hero = () => (
       </motion.div>
     </motion.div>
 
-    {/* Metrics — bottom right */}
+    {/* Metrics — bottom right on desktop, bottom horizontal on mobile */}
     <motion.div
-      className="absolute hidden lg:flex flex-col gap-6"
-      style={{ zIndex: 20, bottom: "clamp(120px, 18vh, 180px)", right: "clamp(24px, 4vw, 64px)" }}
+      className="metrics-stack absolute flex flex-row lg:flex-col z-20 bottom-[24px] left-6 right-6 lg:bottom-[clamp(120px,18vh,180px)] lg:right-[clamp(24px,4vw,64px)] lg:left-auto lg:w-[168px]"
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, delay: 0.8 }}
@@ -132,12 +137,14 @@ const Hero = () => (
         ["2015", "Since"],
         ["3", "VA Centers"],
         ["50", "States"],
-      ].map(([val, label]) => (
-        <div key={label} className="text-right">
+      ].map(([val, label], i) => (
+        <div
+          key={label}
+          className={`flex-1 lg:flex-none flex flex-col items-center lg:items-end px-2 lg:px-0 py-2 lg:py-5 ${i > 0 ? "border-l lg:border-l-0 lg:border-t border-white/[0.15]" : ""}`}
+        >
           <p
-            className="font-sans font-extrabold leading-none tracking-[-0.03em]"
+            className="font-sans font-extrabold leading-none tracking-[-0.03em] text-[20px] lg:text-[clamp(28px,2.8vw,40px)]"
             style={{
-              fontSize: "clamp(28px, 2.8vw, 40px)",
               background: "linear-gradient(160deg, rgba(210,218,238,0.92) 0%, #1B2B4B 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
@@ -145,7 +152,7 @@ const Hero = () => (
           >
             {val}
           </p>
-          <p className="font-mono text-[9.5px] uppercase tracking-[0.13em]" style={{ color: "rgba(255,255,255,0.5)" }}>
+          <p className="font-mono text-[8px] lg:text-[9.5px] uppercase tracking-[0.13em] text-center lg:text-right mt-1" style={{ color: "rgba(255,255,255,0.5)" }}>
             {label}
           </p>
         </div>
@@ -221,9 +228,15 @@ const EditorialStatement = () => (
     <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
       {/* Desktop: 8-col grid */}
       <div className="hidden lg:grid grid-cols-8 gap-3 pt-[100px] pb-0" style={{ gridTemplateRows: "repeat(5, 148px)" }}>
-        <div className="rounded-lg overflow-hidden relative bg-[#1B2B4B]" style={{ gridColumn: "1/3", gridRow: "1/3" }} />
-        <div className="rounded-lg overflow-hidden relative bg-[#243656]" style={{ gridColumn: "1/2", gridRow: "3/5" }} />
-        <div className="rounded-lg overflow-hidden relative bg-[#111938]" style={{ gridColumn: "2/3", gridRow: "3/4" }} />
+        <div className="rounded-lg overflow-hidden relative" style={{ gridColumn: "1/3", gridRow: "1/3" }}>
+          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=75&auto=format&fit=crop" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        </div>
+        <div className="rounded-lg overflow-hidden relative" style={{ gridColumn: "1/2", gridRow: "3/5" }}>
+          <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400&q=75&auto=format&fit=crop" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        </div>
+        <div className="rounded-lg overflow-hidden relative" style={{ gridColumn: "2/3", gridRow: "3/4" }}>
+          <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=400&q=75&auto=format&fit=crop" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        </div>
         {/* Center text overlay */}
         <div className="flex flex-col justify-center px-8" style={{ gridColumn: "3/7", gridRow: "2/5" }}>
           <ScrollReveal>
@@ -238,15 +251,28 @@ const EditorialStatement = () => (
             </Link>
           </ScrollReveal>
         </div>
-        <div className="rounded-lg overflow-hidden relative bg-[#1B2B4B]" style={{ gridColumn: "7/9", gridRow: "1/3" }} />
-        <div className="rounded-lg overflow-hidden relative bg-[#243656]" style={{ gridColumn: "7/8", gridRow: "3/5" }} />
-        <div className="rounded-lg overflow-hidden relative bg-[#111938]" style={{ gridColumn: "8/9", gridRow: "3/6" }} />
+        <div className="rounded-lg overflow-hidden relative" style={{ gridColumn: "7/9", gridRow: "1/3" }}>
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=75&auto=format&fit=crop" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        </div>
+        <div className="rounded-lg overflow-hidden relative" style={{ gridColumn: "7/8", gridRow: "3/5" }}>
+          <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&q=75&auto=format&fit=crop" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        </div>
+        <div className="rounded-lg overflow-hidden relative" style={{ gridColumn: "8/9", gridRow: "3/6" }}>
+          <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400&q=75&auto=format&fit=crop" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        </div>
       </div>
       {/* Mobile fallback */}
       <div className="lg:hidden">
         <div className="grid grid-cols-4 gap-2 mb-8">
-          {[1,2,3,4].map(i => (
-            <div key={i} className="rounded-lg bg-[#1B2B4B] h-24" />
+          {[
+            "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=300&q=75&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&q=75&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=300&q=75&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=300&q=75&auto=format&fit=crop",
+          ].map((src, i) => (
+            <div key={i} className="rounded-lg overflow-hidden h-24 relative">
+              <img src={src} alt="" className="absolute inset-0 w-full h-full object-cover" />
+            </div>
           ))}
         </div>
         <ScrollReveal>
@@ -457,7 +483,12 @@ const Testimonials = () => (
 
         {/* Main quote card — spans 2 rows */}
         <div className="rounded-3xl overflow-hidden relative row-span-2" style={{ background: "#06081a" }}>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#06081a] via-[#06081a]/30 to-transparent" />
+          <img
+            src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=75&auto=format&fit=crop"
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#06081a] via-[#06081a]/50 to-transparent" />
           <div className="relative z-10 h-full flex flex-col justify-end p-8">
             <p className="font-lora text-[17px] italic leading-[1.55] text-[#E8E2D9]/90">
               "I want to express my appreciation. Their support and commitment have been outstanding — they've empowered us to take things to the next level."

@@ -32,17 +32,17 @@ const Header = () => {
       >
         <div className="mx-auto w-full max-w-[1600px] justify-center max-md:px-0 px-4 sm:px-5 lg:px-8 flex flex-col items-center">
           <div
-            className={`max-w-[1240px] relative flex w-full items-center justify-between rounded-[14px] border px-4 py-2 lg:px-5 transition-all duration-300 ${
+            className={`max-w-[1240px] relative flex w-full items-center justify-between rounded-[14px] border px-4 py-2 lg:px-5 transition-all duration-500 ${
               scrolled
                 ? "border-[rgba(255,255,255,0.35)] bg-[rgba(255,255,255,0.55)] backdrop-blur-[28px] backdrop-saturate-[1.4] shadow-[0_12px_32px_rgba(0,0,0,0.12)]"
-                : "border-[rgba(255,255,255,0.35)] bg-[rgba(255,255,255,0.55)] backdrop-blur-[28px] backdrop-saturate-[1.4] shadow-[0_12px_32px_rgba(0,0,0,0.12)]"
+                : "border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.04)] backdrop-blur-[4px] shadow-none"
             }`}
           >
             <Link to="/" className="flex flex-col">
-              <span className="font-sans text-xl font-bold tracking-tight text-[#0B1029]">
+              <span className={`font-sans text-xl font-bold tracking-tight transition-colors duration-500 ${scrolled ? "text-[#0B1029]" : "text-[#FAFAF7]"}`}>
                 Longentis
               </span>
-              <span className="font-mono text-[9px] tracking-[0.14em] uppercase text-[#1B2B4B]/40">
+              <span className={`font-mono text-[9px] tracking-[0.14em] uppercase transition-colors duration-500 ${scrolled ? "text-[#1B2B4B]/40" : "text-[#FAFAF7]/40"}`}>
                 by Men's Wellness Centers
               </span>
             </Link>
@@ -52,9 +52,9 @@ const Header = () => {
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`relative text-[13.5px] font-semibold font-sans text-[#1B2B4B] transition-colors duration-200 after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-[#E8670A] after:transition-[width] after:duration-200 after:w-0 hover:after:w-full ${
+                  className={`relative text-[13.5px] font-semibold font-sans transition-colors duration-500 after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-[#E8670A] after:transition-[width] after:duration-200 after:w-0 hover:after:w-full ${
                     location.pathname === link.href ? "after:w-full" : ""
-                  }`}
+                  } ${scrolled ? "text-[#1B2B4B]" : "text-[#FAFAF7]"}`}
                 >
                   {link.label}
                 </Link>
@@ -70,7 +70,7 @@ const Header = () => {
               </Link>
               <button
                 onClick={() => setMobileOpen(true)}
-                className="md:hidden text-[#0B1029]"
+                className={`md:hidden transition-colors duration-500 ${scrolled ? "text-[#0B1029]" : "text-[#FAFAF7]"}`}
                 aria-label="Open menu"
               >
                 <Menu className="h-6 w-6" />
