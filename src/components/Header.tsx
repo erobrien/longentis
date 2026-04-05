@@ -29,10 +29,10 @@ const Header = () => {
   return (
     <>
       <motion.header
-        className={`fixed inset-x-0 top-0 z-[310] transition-all duration-300 ${
+        className={`fixed inset-x-0 top-0 z-[310] transition-all duration-300 bg-navy-800/60 backdrop-blur-xl border-b border-white/[0.08] ${
           scrolled
-            ? "bg-[#06081a]/95 backdrop-blur-md shadow-[0_1px_0_rgba(255,255,255,0.06)]"
-            : "bg-transparent"
+            ? "shadow-[0_4px_30px_rgba(0,0,0,0.3)]"
+            : ""
         }`}
       >
         <div className="mx-auto max-w-[1400px] flex items-center justify-between px-6 lg:px-10 h-[64px]">
