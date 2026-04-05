@@ -432,7 +432,7 @@ const PressSection = () => (
   <section className="bg-cream-100 py-16 lg:py-20">
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       <ScrollReveal>
-        <p className="font-space text-[13px] text-navy-400 mb-6">As seen in</p>
+        <p className="font-space text-[14px] text-navy-400 mb-6">As seen in</p>
         <div className="space-y-0 divide-y divide-navy-900/[0.06]">
           {pressArticles.map((a) => (
             <div key={a.title} className="py-4 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 sm:gap-4 group cursor-pointer">
