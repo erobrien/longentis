@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState, useCallback } from "react";
-import { motion, useInView, useReducedMotion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 
 interface StatCounterProps {
   end: number;
@@ -11,8 +11,8 @@ interface StatCounterProps {
 }
 
 /**
- * Animated stat counter — triggers count-up on scroll into view.
- * Respects prefers-reduced-motion.
+ * Animated stat counter — triggers count-up animation on scroll into view.
+ * Shows the final value (not "0") before animation via a hidden placeholder.
  */
 const StatCounter = ({
   end,
@@ -24,47 +24,40 @@ const StatCounter = ({
 }: StatCounterProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
-  const shouldReduceMotion = useReducedMotion();
   const [count, setCount] = useState<number | null>(null);
 
   useEffect(() => {
     if (!isInView) return;
 
-    // Skip animation if user prefers reduced motion
-    if (shouldReduceMotion) {
-      setCount(end);
-      return;
-    }
-
     setCount(0);
+    let start = 0;
     const totalFrames = duration * 60;
     const step = end / totalFrames;
     let frame = 0;
-    let current = 0;
 
     const timer = setInterval(() => {
       frame++;
-      current += step;
+      start += step;
       if (frame >= totalFrames) {
         setCount(end);
         clearInterval(timer);
       } else {
-        setCount(Math.floor(current));
+        setCount(Math.floor(start));
       }
     }, 1000 / 60);
 
     return () => clearInterval(timer);
-  }, [isInView, end, duration, shouldReduceMotion]);
+  }, [isInView, end, duration]);
 
   const displayValue = count !== null ? count : end;
 
   return (
-    <div ref={ref} className={`text-center ${className}`} role="figure" aria-label={`${prefix}${end.toLocaleString()}${suffix} ${label}`}>
+    <div ref={ref} className={`text-center ${className}`}>
       <motion.p
         className="font-sans text-4xl font-extrabold lg:text-5xl tracking-[-0.03em]"
-        initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 8 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: shouldReduceMotion ? 0 : 8 }}
-        transition={{ duration: shouldReduceMotion ? 0 : 0.5, ease: [0.21, 0.47, 0.32, 0.98] }}
+        initial={{ opacity: 0, y: 8 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 8 }}
+        transition={{ duration: 0.5, ease: [0.21, 0.47, 0.32, 0.98] }}
       >
         {prefix}
         {displayValue.toLocaleString()}

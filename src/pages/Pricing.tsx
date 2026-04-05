@@ -5,8 +5,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import ScrollReveal from "@/components/ScrollReveal";
-import SEOHead from "@/components/SEOHead";
-import Breadcrumbs from "@/components/Breadcrumbs";
 
 const plans = [
   {
@@ -72,10 +70,8 @@ const comparisons = [
 
 const Pricing = () => (
   <>
-    <SEOHead title="Pricing" description="Transparent pricing for TRT, ED treatment, and weight loss. Labs, consultations, medication, and shipping included. FSA/HSA accepted." path="/pricing" />
     <Header />
-    <Breadcrumbs />
-    <main id="main-content">
+    <main>
       {/* Hero */}
       <section className="relative w-full pt-32 lg:pt-40 pb-16 bg-cream-100">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">

@@ -266,36 +266,4 @@
     pointer-events: none;
     z-index: 1;
   }
-
-  /* ─── REDUCED MOTION ─── */
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
-  }
-
-  /* ─── SMOOTH SCROLL ─── */
-  html {
-    scroll-behavior: smooth;
-  }
-
-  /* ─── FOCUS VISIBLE ─── */
-  *:focus-visible {
-    outline: 2px solid hsl(var(--ring));
-    outline-offset: 2px;
-    border-radius: var(--radius);
-  }
-
-  /* ─── SKIP LINK (sr-only until focused) ─── */
-  .sr-only:focus:not(:focus-within) {
-    position: fixed;
-    clip: auto;
-    width: auto;
-    height: auto;
-    overflow: visible;
-    white-space: nowrap;
-  }
 }
