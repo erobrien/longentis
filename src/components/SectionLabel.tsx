@@ -6,7 +6,7 @@ interface SectionLabelProps {
 }
 
 const SectionLabel = ({ text, className = "" }: SectionLabelProps) => (
-  <p className={`inline-flex items-center gap-1.5 font-mono text-xs font-medium uppercase tracking-[0.15em] text-cta ${className}`}>
+  <p className={`inline-flex items-center gap-1.5 font-sans text-[12px] font-semibold uppercase tracking-wide text-cta ${className}`}>
     <Diamond size="xs" />
     {text}
   </p>

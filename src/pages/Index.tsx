@@ -69,9 +69,9 @@ const Hero = () => (
             <img src={fitMan} alt="Testosterone therapy" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-70 group-hover:scale-[1.02] transition-all duration-500" />
             <div className="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/30 to-transparent" />
             <div className="relative z-10 h-full flex flex-col justify-end p-6 lg:p-8">
-              <span className="font-mono text-[10px] tracking-[0.18em] uppercase text-cta mb-2">Most popular</span>
+              <span className="font-sans text-[11px] font-semibold tracking-wide uppercase text-cta mb-2">Most popular</span>
               <h2 className="font-sans font-bold text-[22px] lg:text-[28px] text-white leading-tight">Testosterone<br/>Therapy</h2>
-              <p className="font-space text-[13px] text-white/60 mt-2 max-w-[280px] hidden lg:block">Comprehensive hormone panel, personalized protocol, quarterly monitoring.</p>
+              <p className="font-space text-[14px] text-white/65 mt-2 max-w-[280px] hidden lg:block">Comprehensive hormone panel, personalized protocol, quarterly monitoring.</p>
               <span className="inline-flex items-center gap-1.5 mt-4 font-sans text-[13px] font-semibold text-cta group-hover:gap-2.5 transition-all">
                 Start now <ArrowRight className="h-3.5 w-3.5" />
               </span>
@@ -147,13 +147,13 @@ const Hero = () => (
           ].map((label) => (
             <div key={label} className="flex items-center gap-2">
               <Diamond size="xs" className="text-cta" />
-              <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-navy-500">{label}</span>
+              <span className="font-sans text-[11px] font-medium tracking-wide uppercase text-navy-500">{label}</span>
             </div>
           ))}
         </div>
         <div className="flex items-center gap-3">
           <span className="font-sans font-bold text-navy-900 text-[15px]">10,000+</span>
-          <span className="font-mono text-[10px] tracking-[0.12em] uppercase text-navy-400">patients since 2015</span>
+          <span className="font-sans text-[11px] font-medium tracking-wide uppercase text-navy-400">patients since 2015</span>
         </div>
       </div>
     </div>
@@ -185,7 +185,7 @@ const HowItWorks = () => (
             <div className={`py-6 lg:py-0 lg:pr-8 ${i > 0 ? "border-t lg:border-t-0 lg:border-l border-navy-900/[0.06] lg:pl-8" : ""}`}>
               <Diamond size="md" className="text-cta/80" />
               <h3 className="font-sans font-semibold text-[15px] text-navy-900 mt-3">{step.title}</h3>
-              <p className="font-space text-[13px] leading-[1.65] text-navy-500 mt-2">{step.desc}</p>
+              <p className="font-space text-[14px] leading-[1.65] text-navy-500 mt-2">{step.desc}</p>
             </div>
           </ScrollReveal>
         ))}
@@ -236,7 +236,7 @@ const WhyLongentis = () => (
               <Diamond size="sm" className="text-cta" />
               {item.title}
             </h3>
-            <p className="font-space text-[14px] leading-[1.65] text-navy-500 mt-3 max-w-md">
+            <p className="font-space text-[15px] leading-[1.65] text-navy-600 mt-3 max-w-md">
               {item.desc}
             </p>
           </ScrollReveal>
@@ -298,7 +298,7 @@ const SocialProof = () => (
             <div className="mt-8 flex items-end justify-between flex-wrap gap-4">
               <div>
                 <p className="font-sans font-semibold text-[14px] text-white">{testimonials[2].name}</p>
-                <p className="font-space text-[12px] text-white/40 mt-0.5">{testimonials[2].location}</p>
+                <p className="font-space text-[12px] text-white/50 mt-0.5">{testimonials[2].location}</p>
               </div>
               <p className="font-mono text-[22px] font-bold text-cta tracking-tight">{testimonials[2].metric}</p>
             </div>
@@ -311,10 +311,10 @@ const SocialProof = () => (
             <ScrollReveal key={t.name} delay={i * 0.06}>
               <div className="rounded-2xl p-6 bg-white/[0.03] border border-white/[0.05] h-full">
                 <Diamond size="sm" className="text-cta/30 mb-2 block" />
-                <p className="font-space text-[14px] leading-[1.6] text-white/60">{t.quote}</p>
+                <p className="font-space text-[14px] leading-[1.6] text-white/65">{t.quote}</p>
                 <div className="mt-5 flex items-center justify-between">
                   <p className="font-sans font-medium text-[13px] text-white/70">{t.name} · {t.location}</p>
-                  <span className="font-mono text-[10px] text-cta/80">{t.treatment}</span>
+                  <span className="font-sans text-[11px] font-medium text-cta/90">{t.treatment}</span>
                 </div>
               </div>
             </ScrollReveal>
@@ -326,8 +326,8 @@ const SocialProof = () => (
           <ScrollReveal key={t.name} delay={i * 0.04}>
             <div className="rounded-xl p-5 bg-white/[0.02] border border-white/[0.04]">
               <Diamond size="xs" className="text-cta/30 mb-1.5 block" />
-              <p className="font-space text-[13px] leading-[1.6] text-white/50">{t.quote}</p>
-              <p className="font-sans font-medium text-[12px] text-white/60 mt-4">{t.name} · <span className="text-white/35">{t.location}</span></p>
+              <p className="font-space text-[14px] leading-[1.6] text-white/55">{t.quote}</p>
+              <p className="font-sans font-medium text-[13px] text-white/65 mt-4">{t.name} · <span className="text-white/45">{t.location}</span></p>
             </div>
           </ScrollReveal>
         ))}
@@ -394,9 +394,9 @@ const CoverageSection = () => (
                 <div className="flex items-baseline justify-between py-3 border-b border-navy-900/[0.05]">
                   <div>
                     <span className="font-sans font-semibold text-[15px] text-navy-900">{loc.name}, VA</span>
-                    <span className="font-space text-[13px] text-navy-400 ml-3">{loc.desc}</span>
+                    <span className="font-space text-[14px] text-navy-500 ml-3">{loc.desc}</span>
                   </div>
-                  <span className="font-mono text-[12px] text-navy-400">{loc.phone}</span>
+                  <span className="font-space text-[13px] text-navy-400">{loc.phone}</span>
                 </div>
               </ScrollReveal>
             ))}
@@ -432,12 +432,12 @@ const PressSection = () => (
   <section className="bg-cream-100 py-16 lg:py-20">
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       <ScrollReveal>
-        <p className="font-space text-[13px] text-navy-400 mb-6">As seen in</p>
+        <p className="font-space text-[14px] text-navy-400 mb-6">As seen in</p>
         <div className="space-y-0 divide-y divide-navy-900/[0.06]">
           {pressArticles.map((a) => (
             <div key={a.title} className="py-4 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 sm:gap-4 group cursor-pointer">
               <div className="flex items-baseline gap-4">
-                <span className="font-sans font-bold text-[11px] text-navy-400 uppercase tracking-[0.06em] shrink-0 sm:w-[180px]">{a.source}</span>
+                <span className="font-sans font-bold text-[12px] text-navy-400 uppercase tracking-wide shrink-0 sm:w-[180px]">{a.source}</span>
                 <span className="font-sans font-semibold text-[15px] text-navy-900 group-hover:text-cta transition-colors">{a.title}</span>
               </div>
               <ArrowRight className="h-3.5 w-3.5 text-navy-300 group-hover:text-cta transition-colors shrink-0" />
@@ -460,7 +460,7 @@ const FinalCTA = () => (
           <h2 className="font-sans font-bold text-white text-[clamp(30px,4vw,48px)] leading-[1.08] tracking-[-0.03em]">
             Your health<br/>shouldn't wait.
           </h2>
-          <p className="font-space text-[15px] text-white/50 mt-4 max-w-md">
+          <p className="font-space text-[15px] text-white/55 mt-4 max-w-md">
             Start with a free assessment. Your dedicated provider is ready.
           </p>
           <Link
@@ -473,7 +473,7 @@ const FinalCTA = () => (
         <ScrollReveal delay={0.1}>
           <div className="hidden lg:flex flex-col items-end text-right">
             <Diamond size="xl" className="text-white/[0.15]" />
-            <p className="font-mono text-[11px] text-white/35 mt-3 tracking-[0.1em] uppercase">Est. 2015 · Virginia</p>
+            <p className="font-sans text-[12px] text-white/40 mt-3 tracking-wide uppercase">Est. 2015 · Virginia</p>
           </div>
         </ScrollReveal>
       </div>

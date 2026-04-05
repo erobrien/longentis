@@ -39,7 +39,7 @@ const GetStarted = () => {
             <div className="mt-12">
               <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 mb-6 bg-white/[0.06] border border-white/[0.1]">
                 <Diamond size="xs" />
-                <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-cream-200/70">What to expect</span>
+                <span className="font-sans text-[11px] font-semibold tracking-wide uppercase text-cream-200/70">What to expect</span>
               </div>
               {[
                 "Free consultation — zero obligation",
@@ -48,7 +48,7 @@ const GetStarted = () => {
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 mb-4">
                   <Diamond size="sm" className="text-cta/80 mt-0.5 shrink-0" />
-                  <p className="font-space text-[15px] text-cream-200/70">{step}</p>
+                  <p className="font-space text-[15px] text-cream-200/75">{step}</p>
                 </div>
               ))}
             </div>
@@ -58,11 +58,11 @@ const GetStarted = () => {
               <div className="flex gap-1 mb-3">
                 {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-cta text-cta" />)}
               </div>
-              <p className="font-lora text-[15px] italic text-cream-200/80 leading-[1.55]">"They answered all my questions, even the stupid ones."</p>
-              <p className="font-sans mt-3 text-sm font-semibold text-cream-200">Adam C. <span className="font-mono text-[9px] tracking-[0.14em] uppercase text-white/50">— Google Review</span></p>
+              <p className="font-lora text-[15px] italic text-cream-200/85 leading-[1.55]">"They answered all my questions, even the stupid ones."</p>
+              <p className="font-sans mt-3 text-sm font-semibold text-cream-200">Adam C. <span className="font-sans text-[11px] text-white/55">— Google Review</span></p>
             </div>
 
-            <a href="tel:8663444955" className="mt-8 inline-flex items-center gap-2 text-cream-200/60 hover:text-cream-200 transition-colors">
+            <a href="tel:8663444955" className="mt-8 inline-flex items-center gap-2 text-cream-200/65 hover:text-cream-200 transition-colors">
               <Phone className="h-4 w-4" />
               <span className="font-space text-sm">(866) 344-4955</span>
             </a>
@@ -85,7 +85,7 @@ const GetStarted = () => {
                 { name: "phone" as const, label: "Phone", type: "tel" },
               ].map(({ name, label, type }) => (
                 <div key={name}>
-                  <label className="font-sans text-[13px] font-semibold text-navy-900">{label} *</label>
+                  <label className="font-sans text-[14px] font-semibold text-navy-900">{label} *</label>
                   <input
                     type={type}
                     required
@@ -97,7 +97,7 @@ const GetStarted = () => {
               ))}
 
               <div>
-                <label className="font-sans text-[13px] font-semibold text-navy-900">State *</label>
+                <label className="font-sans text-[14px] font-semibold text-navy-900">State *</label>
                 <select
                   required
                   value={formData.state}
@@ -110,7 +110,7 @@ const GetStarted = () => {
               </div>
 
               <div>
-                <label className="font-sans text-[13px] font-semibold text-navy-900">What brings you in? *</label>
+                <label className="font-sans text-[14px] font-semibold text-navy-900">What brings you in? *</label>
                 <select
                   required
                   value={formData.concern}
@@ -123,7 +123,7 @@ const GetStarted = () => {
               </div>
 
               <div>
-                <label className="font-sans text-[13px] font-semibold text-navy-900">Message <span className="text-navy-500">(optional)</span></label>
+                <label className="font-sans text-[14px] font-semibold text-navy-900">Message <span className="text-navy-500">(optional)</span></label>
                 <textarea
                   rows={4}
                   value={formData.message}

@@ -28,10 +28,10 @@ const SectionHeader = ({
           : "bg-navy-900/[0.06] border border-navy-900/[0.12]"
       }`}
     >
-      <Diamond size="xs" className={badgeVariant === "dark" ? "text-cta" : "text-cta"} />
+      <Diamond size="xs" />
       <span
-        className={`text-caption ${
-          badgeVariant === "dark" ? "text-white/60" : "text-navy-600"
+        className={`font-sans text-[11px] font-semibold tracking-wide uppercase ${
+          badgeVariant === "dark" ? "text-white/65" : "text-navy-600"
         }`}
       >
         {badge}
@@ -50,8 +50,8 @@ const SectionHeader = ({
     {/* Description */}
     {description && (
       <p
-        className={`font-space text-body mt-4 max-w-2xl ${
-          badgeVariant === "dark" ? "text-navy-300" : "text-navy-500"
+        className={`font-space text-[15px] leading-[1.7] mt-4 max-w-2xl ${
+          badgeVariant === "dark" ? "text-cream-200/65" : "text-navy-600"
         } ${align === "center" ? "text-center mx-auto" : ""}`}
       >
         {description}

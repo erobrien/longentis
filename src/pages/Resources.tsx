@@ -37,7 +37,7 @@ const Resources = () => {
                 Men's health,{" "}
                 <em className="font-lora italic text-cta" style={{ fontStyle: "italic" }}>explained.</em>
               </h1>
-              <p className="font-space mt-4 max-w-2xl text-[16px] leading-[1.7] text-navy-700/75">
+              <p className="font-space mt-4 max-w-2xl text-[16px] leading-[1.7] text-navy-700/80">
                 Lab guides, treatment explainers, and clinical insights from Longentis providers. No fluff. No clickbait.
               </p>
             </motion.div>
@@ -48,10 +48,10 @@ const Resources = () => {
                 <button
                   key={f}
                   onClick={() => setActiveFilter(f)}
-                  className={`rounded-lg px-4 py-2.5 font-mono text-[10px] tracking-[0.12em] uppercase transition-all inline-flex items-center gap-1.5 ${
+                  className={`rounded-lg px-4 py-2.5 font-sans text-[12px] font-medium tracking-wide uppercase transition-all inline-flex items-center gap-1.5 ${
                     activeFilter === f
                       ? "bg-navy-950 text-cream-100"
-                      : "bg-navy-900/[0.04] border border-navy-900/[0.08] text-navy-700/70 hover:bg-navy-900/[0.08]"
+                      : "bg-navy-900/[0.04] border border-navy-900/[0.08] text-navy-600 hover:bg-navy-900/[0.08]"
                   }`}
                 >
                   <Diamond size="xs" className={activeFilter === f ? "text-cta" : "text-cta/40"} />
@@ -69,18 +69,18 @@ const Resources = () => {
                 <ScrollReveal key={article.title} delay={i * 0.04}>
                   <div className="group rounded-2xl p-6 h-full flex flex-col bg-white border border-navy-900/[0.06] hover:border-navy-900/[0.15] hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(11,16,41,0.08)] transition-all duration-300">
                     <div className="flex items-center gap-3 mb-4">
-                      <span className="rounded-md px-2.5 py-1 bg-navy-900/[0.06] font-mono text-[9px] tracking-[0.16em] uppercase text-navy-600 inline-flex items-center gap-1">
+                      <span className="rounded-md px-2.5 py-1 bg-navy-900/[0.06] font-sans text-[11px] font-medium tracking-wide uppercase text-navy-600 inline-flex items-center gap-1">
                         <Diamond size="xs" className="text-cta/60" />
                         {article.category}
                       </span>
-                      <span className="flex items-center gap-1 font-mono text-[9px] tracking-[0.12em] uppercase text-navy-700/50">
+                      <span className="flex items-center gap-1 font-space text-[12px] text-navy-500">
                         <Clock className="h-3 w-3" /> {article.readTime}
                       </span>
                     </div>
                     <h3 className="font-sans font-semibold text-[17px] leading-[1.35] text-navy-900 group-hover:text-cta transition-colors">
                       {article.title}
                     </h3>
-                    <p className="font-space text-[13px] leading-[1.6] text-navy-700/65 mt-2 flex-1">
+                    <p className="font-space text-[14px] leading-[1.6] text-navy-700/70 mt-2 flex-1">
                       {article.excerpt}
                     </p>
                     <Link
@@ -100,7 +100,7 @@ const Resources = () => {
         <section className="bg-navy-950 py-16 noise-overlay">
           <div className="mx-auto max-w-3xl px-6 lg:px-8 text-center">
             <h2 className="font-sans font-bold text-2xl text-cream-200">Ready to take the next step?</h2>
-            <p className="font-space mt-3 text-[15px] text-cream-200/60">
+            <p className="font-space mt-3 text-[15px] text-cream-200/65">
               Free online assessment. No commitment. Your dedicated provider reviews your health profile and orders labs.
             </p>
             <Link

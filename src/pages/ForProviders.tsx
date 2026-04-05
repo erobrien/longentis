@@ -55,7 +55,7 @@ const ForProviders = () => (
               Apply Now <ArrowRight className="h-4 w-4" />
             </Link>
             {["Established panels", "Clinical autonomy", "Full support"].map((s) => (
-              <span key={s} className="rounded-lg border border-navy-900/[0.08] px-4 py-2 font-mono text-[10px] tracking-[0.14em] uppercase text-navy-700">{s}</span>
+              <span key={s} className="rounded-lg border border-navy-900/[0.08] px-4 py-2 font-sans text-[12px] font-medium tracking-wide uppercase text-navy-600">{s}</span>
             ))}
           </motion.div>
         </div>
@@ -77,7 +77,7 @@ const ForProviders = () => (
           <ScrollReveal>
             <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 bg-navy-900/[0.06] border border-navy-900/[0.12]">
               <Diamond size="xs" />
-              <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-navy-700">Why Longentis</span>
+              <span className="font-sans text-[11px] font-semibold tracking-wide uppercase text-navy-600">Why Longentis</span>
             </div>
             <h2 className="font-lora mt-6 text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-navy-900">Why providers choose us</h2>
           </ScrollReveal>
@@ -86,8 +86,8 @@ const ForProviders = () => (
               <ScrollReveal key={item.title} delay={i * 0.1}>
                 <div className="rounded-2xl border border-navy-900/[0.06] bg-white p-6">
                   <Diamond size="sm" className="text-cta/60 mb-2" />
-                  <h3 className="font-sans text-[15px] font-semibold text-navy-900">{item.title}</h3>
-                  <p className="font-space mt-2 text-[13px] text-navy-600">{item.desc}</p>
+                  <h3 className="font-sans text-[16px] font-semibold text-navy-900">{item.title}</h3>
+                  <p className="font-space mt-2 text-[14px] leading-[1.6] text-navy-600">{item.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -100,7 +100,7 @@ const ForProviders = () => (
           <ScrollReveal>
             <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 bg-white/[0.06] border border-white/[0.1]">
               <Diamond size="xs" />
-              <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-cream-200/70">Platform Scale</span>
+              <span className="font-sans text-[11px] font-semibold tracking-wide uppercase text-cream-200/70">Platform Scale</span>
             </div>
             <h2 className="font-lora mt-6 text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-cream-200">Built for national scale</h2>
           </ScrollReveal>
@@ -109,8 +109,8 @@ const ForProviders = () => (
               <ScrollReveal key={c.title} delay={i * 0.1}>
                 <div className="rounded-2xl p-6 h-full bg-white/[0.04] border border-white/[0.08]">
                   <Diamond size="sm" className="text-cta/60 mb-3" />
-                  <h3 className="font-sans text-[15px] font-semibold text-cream-200">{c.title}</h3>
-                  <p className="font-space mt-2 text-[13px] text-cream-200/60">{c.desc}</p>
+                  <h3 className="font-sans text-[16px] font-semibold text-cream-200">{c.title}</h3>
+                  <p className="font-space mt-2 text-[14px] leading-[1.6] text-cream-200/65">{c.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -123,7 +123,7 @@ const ForProviders = () => (
           <ScrollReveal>
             <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 bg-navy-900/[0.06] border border-navy-900/[0.12]">
               <Diamond size="xs" />
-              <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-navy-700">Coverage</span>
+              <span className="font-sans text-[11px] font-semibold tracking-wide uppercase text-navy-600">Coverage</span>
             </div>
             <h2 className="font-lora mt-6 text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-navy-900">National reach</h2>
           </ScrollReveal>
@@ -143,8 +143,8 @@ const ForProviders = () => (
               <ScrollReveal key={b.title} delay={i * 0.1}>
                 <div className="rounded-2xl border border-navy-900/[0.06] bg-white p-6 text-center h-full">
                   <Diamond size="md" className="text-cta/50 mb-3 mx-auto" />
-                  <h3 className="font-sans text-[15px] font-semibold text-navy-900">{b.title}</h3>
-                  <p className="font-space mt-2 text-[13px] text-navy-600">{b.desc}</p>
+                  <h3 className="font-sans text-[16px] font-semibold text-navy-900">{b.title}</h3>
+                  <p className="font-space mt-2 text-[14px] leading-[1.6] text-navy-600">{b.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -157,7 +157,7 @@ const ForProviders = () => (
           <ScrollReveal>
             <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 bg-navy-900/[0.06] border border-navy-900/[0.12]">
               <Diamond size="xs" />
-              <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-navy-700">Growth Roadmap</span>
+              <span className="font-sans text-[11px] font-semibold tracking-wide uppercase text-navy-600">Growth Roadmap</span>
             </div>
             <h2 className="font-lora mt-6 text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-navy-900">Where we're headed</h2>
           </ScrollReveal>
@@ -166,11 +166,11 @@ const ForProviders = () => (
               <ScrollReveal key={r.phase} delay={i * 0.15}>
                 <div className="relative pl-8 border-l-2 border-navy-400/40">
                   <div className="absolute left-[-5px] top-0 h-2.5 w-2.5 rounded-full bg-navy-950" />
-                  <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-navy-700 inline-flex items-center gap-1.5">
+                  <span className="font-sans text-[12px] font-semibold tracking-wide uppercase text-navy-600 inline-flex items-center gap-1.5">
                     <Diamond size="xs" />{`Phase ${i + 1}`}
                   </span>
-                  <h3 className="font-sans mt-2 text-[15px] font-semibold text-navy-900">{r.phase}</h3>
-                  <p className="font-space mt-2 text-[13px] text-navy-600">{r.desc}</p>
+                  <h3 className="font-sans mt-2 text-[16px] font-semibold text-navy-900">{r.phase}</h3>
+                  <p className="font-space mt-2 text-[14px] leading-[1.6] text-navy-600">{r.desc}</p>
                 </div>
               </ScrollReveal>
             ))}

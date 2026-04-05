@@ -52,7 +52,7 @@ const Coverage = () => {
             </motion.p>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} className="mt-8 flex flex-wrap gap-3">
               {["50 States", "3 VA Centers", "10,000+ Patients"].map((s) => (
-                <span key={s} className="rounded-lg border border-navy-900/[0.08] bg-navy-900/[0.04] px-4 py-2 font-mono text-[10px] tracking-[0.14em] uppercase text-navy-600">{s}</span>
+                <span key={s} className="rounded-lg border border-navy-900/[0.08] bg-navy-900/[0.04] px-4 py-2 font-sans text-[12px] font-medium tracking-wide uppercase text-navy-600">{s}</span>
               ))}
             </motion.div>
           </div>
@@ -96,23 +96,23 @@ const Coverage = () => {
             <div className="mt-8 grid gap-12 lg:grid-cols-[1fr_2fr]">
               <div className="space-y-4">
                 <div className="rounded-2xl p-5 bg-cta/[0.06] border border-cta/[0.12]">
-                  <p className="font-mono text-[10px] tracking-[0.16em] uppercase text-cta mb-2 inline-flex items-center gap-1.5">
+                  <p className="font-sans text-[11px] font-semibold tracking-wide uppercase text-cta mb-2 inline-flex items-center gap-1.5">
                     <Diamond size="xs" /> In-Person Care
                   </p>
-                  <p className="font-space text-[13px] text-navy-700/70">Available at our 3 Virginia centers. Same-day labs, walk-ins welcome.</p>
+                  <p className="font-space text-[14px] text-navy-700/75">Available at our 3 Virginia centers. Same-day labs, walk-ins welcome.</p>
                 </div>
                 <div className="rounded-2xl p-5 bg-navy-900/[0.04] border border-navy-900/[0.06]">
-                  <p className="font-mono text-[10px] tracking-[0.16em] uppercase text-navy-600 mb-2 inline-flex items-center gap-1.5">
+                  <p className="font-sans text-[11px] font-semibold tracking-wide uppercase text-navy-600 mb-2 inline-flex items-center gap-1.5">
                     <Diamond size="xs" /> Telehealth
                   </p>
-                  <p className="font-space text-[13px] text-navy-700/70">Available in all 50 states. Video visits with your dedicated provider. Labs via at-home kit or Quest/Labcorp.</p>
+                  <p className="font-space text-[14px] text-navy-700/75">Available in all 50 states. Video visits with your dedicated provider. Labs via at-home kit or Quest/Labcorp.</p>
                 </div>
 
                 {selectedState && (
                   <div className="rounded-2xl p-5 bg-white border border-navy-900/[0.06]">
-                    <p className="font-mono text-[10px] tracking-[0.16em] uppercase text-navy-600 mb-1">Selected</p>
+                    <p className="font-sans text-[11px] font-medium tracking-wide uppercase text-navy-600 mb-1">Selected</p>
                     <h3 className="font-sans font-semibold text-[16px] text-navy-900">{selectedState}</h3>
-                    <p className="font-space text-[13px] text-navy-700/65 mt-1">
+                    <p className="font-space text-[14px] text-navy-700/70 mt-1">
                       {isVA ? "In-person & telehealth available" : "Telehealth available"}
                     </p>
                     <Link to="/get-started" className="mt-3 inline-flex items-center gap-1 font-sans text-[13px] font-semibold text-cta hover:underline">
@@ -147,10 +147,10 @@ const Coverage = () => {
                     <div className="p-6 flex-1 flex flex-col">
                       <Diamond size="sm" className="text-cta/60 mb-2" />
                       <h3 className="font-sans text-[16px] font-semibold text-navy-900">Men's Wellness Centers — {c.name}</h3>
-                      <p className="font-space mt-2 text-[13px] text-navy-700/65 flex-1">{c.desc}</p>
+                      <p className="font-space mt-2 text-[14px] text-navy-700/70 flex-1">{c.desc}</p>
                       <div className="mt-4 space-y-2">
-                        <p className="font-space flex items-center gap-2 text-[13px] text-navy-700/65"><MapPin className="h-3.5 w-3.5 shrink-0" />{c.address}</p>
-                        <a href={`tel:${c.phone.replace(/\D/g, "")}`} className="font-space flex items-center gap-2 text-[13px] text-navy-700/65 hover:text-cta transition-colors"><Phone className="h-3.5 w-3.5 shrink-0" />{c.phone}</a>
+                        <p className="font-space flex items-center gap-2 text-[14px] text-navy-700/70"><MapPin className="h-3.5 w-3.5 shrink-0" />{c.address}</p>
+                        <a href={`tel:${c.phone.replace(/\D/g, "")}`} className="font-space flex items-center gap-2 text-[14px] text-navy-700/70 hover:text-cta transition-colors"><Phone className="h-3.5 w-3.5 shrink-0" />{c.phone}</a>
                       </div>
                       <Link to="/get-started" className="mt-4 inline-flex items-center gap-1 font-sans text-sm font-semibold text-cta hover:underline">
                         Visit Center <ArrowRight className="h-4 w-4" />
