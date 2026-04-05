@@ -69,7 +69,7 @@ const Hero = () => (
             <img src={fitMan} alt="Testosterone therapy" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-70 group-hover:scale-[1.02] transition-all duration-500" />
             <div className="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/30 to-transparent" />
             <div className="relative z-10 h-full flex flex-col justify-end p-6 lg:p-8">
-              <span className="font-mono text-[10px] tracking-[0.18em] uppercase text-cta mb-2">Most popular</span>
+              <span className="font-sans text-[11px] font-semibold tracking-wide uppercase text-cta mb-2">Most popular</span>
               <h2 className="font-sans font-bold text-[22px] lg:text-[28px] text-white leading-tight">Testosterone<br/>Therapy</h2>
               <p className="font-space text-[13px] text-white/60 mt-2 max-w-[280px] hidden lg:block">Comprehensive hormone panel, personalized protocol, quarterly monitoring.</p>
               <span className="inline-flex items-center gap-1.5 mt-4 font-sans text-[13px] font-semibold text-cta group-hover:gap-2.5 transition-all">
