@@ -31,7 +31,7 @@ const Header = () => {
       <motion.header
         className="fixed inset-x-0 top-0 z-[310] px-4 pt-3"
       >
-        <div className={`mx-auto max-w-[1400px] flex items-center justify-between px-6 lg:px-10 h-[73px] rounded-2xl bg-[#06081a]/90 backdrop-blur-xl border border-white/[0.08] transition-shadow duration-300 ${
+        <div className={`mx-auto max-w-[1400px] flex items-center justify-between px-6 lg:px-10 h-[88px] rounded-2xl bg-[#06081a]/90 backdrop-blur-xl border border-white/[0.08] transition-shadow duration-300 ${
           scrolled ? "shadow-[0_4px_30px_rgba(0,0,0,0.4)]" : ""
         }`}>
           {/* Logo */}
