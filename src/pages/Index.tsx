@@ -576,7 +576,7 @@ const PressSection = () => {
         <div
           ref={emblaRef}
           className="mt-12 overflow-hidden"
-          style={{ maskImage: "linear-gradient(90deg, transparent 0%, black 14%, black 86%, transparent 100%)" }}
+          style={{}}
         >
           <div className="flex gap-4">
             {pressArticles.map((a, i) => (
