@@ -58,7 +58,7 @@ const Treatments = () => (
                   <div className="relative z-10 h-full flex flex-col justify-end p-6 lg:p-8">
                     <Diamond size="md" className="text-cta/60 mb-4" />
                     <h3 className="font-sans font-bold text-[22px] text-cream-100 mb-2">{t.title}</h3>
-                    <p className="font-space text-[14px] leading-[1.6] text-cream-200/60 mb-5">{t.desc}</p>
+                    <p className="font-space text-[14px] leading-[1.6] text-cream-200/65 mb-5">{t.desc}</p>
                     <span className="inline-flex items-center gap-2 rounded-full bg-cta px-6 py-3 font-sans text-[13px] font-semibold text-white w-fit group-hover:bg-cta/90 transition-colors">
                       Learn More <ArrowRight className="h-4 w-4" />
                     </span>
