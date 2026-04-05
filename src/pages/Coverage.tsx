@@ -96,10 +96,10 @@ const Coverage = () => {
             <div className="mt-8 grid gap-12 lg:grid-cols-[1fr_2fr]">
               <div className="space-y-4">
                 <div className="rounded-2xl p-5 bg-cta/[0.06] border border-cta/[0.12]">
-                  <p className="font-mono text-[10px] tracking-[0.16em] uppercase text-cta mb-2 inline-flex items-center gap-1.5">
+                  <p className="font-sans text-[11px] font-semibold tracking-wide uppercase text-cta mb-2 inline-flex items-center gap-1.5">
                     <Diamond size="xs" /> In-Person Care
                   </p>
-                  <p className="font-space text-[13px] text-navy-700/70">Available at our 3 Virginia centers. Same-day labs, walk-ins welcome.</p>
+                  <p className="font-space text-[14px] text-navy-700/75">Available at our 3 Virginia centers. Same-day labs, walk-ins welcome.</p>
                 </div>
                 <div className="rounded-2xl p-5 bg-navy-900/[0.04] border border-navy-900/[0.06]">
                   <p className="font-mono text-[10px] tracking-[0.16em] uppercase text-navy-600 mb-2 inline-flex items-center gap-1.5">
