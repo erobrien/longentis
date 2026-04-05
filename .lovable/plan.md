@@ -1,39 +1,44 @@
 
 
-## Problem
+## Updated Block Menu Grid — Rounded Cards, Varied Backgrounds, Foreground Photos
 
-On mobile (390×844), the hero CTA ("Start Your Free Visit") is below the fold. The content is positioned at `bottom: 72px` inside a frame that ends at `52px` from the bottom, pushing the CTA out of the initial viewport. For a high-end telehealth brand targeting aging men, the CTA must be immediately visible — no scrolling required.
+Replace the current video hero with a block menu grid. Cards use **rounded corners** (`rounded-2xl`, matching site-wide `border-radius: 16px`), **varied solid background colors** from the brand palette, and **foreground-positioned photos** (not background images).
 
-## Audience Context
+### Layout
 
-This is a premium men's health telehealth service for aging men. The hero needs to feel:
-- **Authoritative and calm** — not cluttered or startup-y
-- **Immediately actionable** — CTA above the fold, no question
-- **Confident** — short, punchy copy; let the video do the heavy lifting
+```text
+┌──────────────────────────────────┬──────────────────────────────────┐
+│  TRT                             │  Erectile Dysfunction            │
+│  bg: #0B1029                     │  bg: #1B2B4B                     │
+│  [photo bottom-right]  [Start →] │  [photo bottom-right]  [Start →] │
+│  rounded-2xl, ~360px tall        │  rounded-2xl, ~360px tall        │
+├────────────────────┬─────────────┴──────────┬───────────────────────┤
+│  Peptides          │  Weight Loss           │  Get Started          │
+│  bg: #243656       │  bg: #06081a           │  bg: #E8670A          │
+│  rounded-2xl       │  rounded-2xl           │  rounded-2xl          │
+│  ~240px tall       │  ~240px tall           │  ~240px tall          │
+└────────────────────┴────────────────────────┴───────────────────────┘
+```
 
-## Plan
+### Card Design
+- **Rounded**: `rounded-2xl` (16px) on all cards
+- **Backgrounds**: Solid navy variants — `#0B1029`, `#1B2B4B`, `#243656`, `#06081a`; Get Started uses `#E8670A`
+- **Photos**: Positioned as foreground `<img>` elements (bottom-right or right-aligned, with `object-contain` or natural sizing), not as CSS backgrounds
+- **Title**: White sans-serif, top-left corner
+- **Button**: Black pill with white text + arrow icon, bottom-left — ro.co style
+- **Mobile**: Cards stack vertically, full-width, shorter heights (~200px)
 
-### 1. Restructure mobile hero content positioning
+### Above the Grid
+- Headline "Private wellness, for the *discerning gent.*" on cream `#FAFAF7` background
+- Trust badges row stays at bottom
 
-Move the hero content from absolute bottom positioning to a vertically centered layout on mobile. Use `top: 50%; transform: translateY(-50%)` instead of `bottom: 72px` so the headline + CTA sit mid-frame regardless of device height.
+### Image Assignments
+- **TRT**: `fitMan` (older fit man)
+- **ED**: `coupleJog` (couple jogging)
+- **Peptides**: `oceanRunner` (man running by ocean)
+- **Weight Loss**: `trackCrouch` (man crouching)
+- **Get Started**: `heroImg` (man at railing)
 
-### 2. Trim mobile copy further
-
-- Keep only the H1: "Clinic-grade men's health, *delivered.*"
-- Remove the subtitle entirely on mobile (it's already shortened but still adds visual weight)
-- Keep just the CTA button
-
-This gives: **Logo → Video → H1 → CTA** — clean, premium, above the fold.
-
-### 3. Keep the partners bar
-
-The bottom credential bar (LegitScript, HIPAA, etc.) stays — it builds trust and sits outside the video frame.
-
-### 4. Desktop unchanged
-
-All desktop layout (announcement pill, full subtitle, metrics column) remains exactly as-is.
-
-### Files Changed
-
-- `src/pages/Index.tsx` — Update mobile positioning of `.hero-content-pos` from `bottom: 72px` to vertically centered, hide subtitle on mobile (`hidden lg:block` on the subtitle paragraph).
+### File Changes
+- **`src/pages/Index.tsx`**: Replace entire `Hero` component. Remove video element and overlay code. Build new grid with 5 card components using the layout above. Keep existing asset imports.
 
