@@ -52,9 +52,7 @@ const Hero = () => (
               { icon: UserCheck, text: "Same provider every visit" },
             ] as const).map((item) => (
               <li key={item.text} className="flex items-center gap-3">
-                <div className="size-8 rounded-lg bg-navy-950 flex items-center justify-center shrink-0">
-                  <item.icon className="h-4 w-4 text-cta" strokeWidth={1.5} />
-                </div>
+                <item.icon className="h-4.5 w-4.5 text-cta shrink-0" strokeWidth={1.5} />
                 <span className="font-space text-[14px] text-navy-700 leading-snug">{item.text}</span>
               </li>
             ))}
