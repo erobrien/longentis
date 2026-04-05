@@ -65,12 +65,12 @@ const Hero = () => (
     {/* Hero content */}
     <motion.div
       className="hero-content-pos absolute flex flex-col items-start gap-3 lg:gap-5 px-5 lg:px-0 max-w-[740px]"
-      style={{ zIndex: 20, bottom: "72px", left: "20px", right: "20px" }}
+      style={{ zIndex: 20, top: "50%", transform: "translateY(-50%)", left: "20px", right: "20px" }}
       initial="hidden"
       animate="visible"
       variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.2 } } }}
     >
-      <style>{`@media (min-width: 1024px) { .hero-content-pos { top: 55% !important; transform: translateY(-50%) !important; bottom: auto !important; left: clamp(56px, 13vw, 200px) !important; right: auto !important; } }`}</style>
+      <style>{`@media (min-width: 1024px) { .hero-content-pos { top: 55% !important; left: clamp(56px, 13vw, 200px) !important; right: auto !important; } }`}</style>
 
       {/* Announcement pill — hidden on mobile */}
       <motion.div
@@ -115,7 +115,7 @@ const Hero = () => (
       <motion.p
         variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
         transition={{ duration: 0.7 }}
-        className="font-space font-light text-[14px] lg:text-[17px] leading-[1.6] lg:leading-[1.7] tracking-[0.01em] max-w-[600px]"
+        className="hidden lg:block font-space font-light text-[14px] lg:text-[17px] leading-[1.6] lg:leading-[1.7] tracking-[0.01em] max-w-[600px]"
         style={{ color: "rgba(197,205,224,0.65)" }}
       >
         <span className="hidden lg:inline">TRT, ED treatment, and physician-supervised weight loss — backed by 10,000+ patients and a decade of Men's Wellness Centers clinical experience. Now via telehealth in all 50 states.</span>
