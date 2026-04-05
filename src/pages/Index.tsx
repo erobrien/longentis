@@ -738,6 +738,7 @@ const Index = () => (
       <HealthAssessment />
       <EditorialStatement />
       <OurApproach />
+      <HowItWorks />
       <CoverageMap />
       <Testimonials />
       <PressSection />
