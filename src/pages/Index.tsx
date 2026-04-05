@@ -314,7 +314,7 @@ const SocialProof = () => (
                 <p className="font-space text-[14px] leading-[1.6] text-white/65">{t.quote}</p>
                 <div className="mt-5 flex items-center justify-between">
                   <p className="font-sans font-medium text-[13px] text-white/70">{t.name} · {t.location}</p>
-                  <span className="font-mono text-[10px] text-cta/80">{t.treatment}</span>
+                  <span className="font-sans text-[11px] font-medium text-cta/90">{t.treatment}</span>
                 </div>
               </div>
             </ScrollReveal>
