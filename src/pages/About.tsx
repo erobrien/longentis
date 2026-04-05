@@ -56,7 +56,7 @@ const About = () => (
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 mb-6 bg-white/[0.06] border border-white/[0.1]">
             <Diamond size="xs" />
-            <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-cream-200/60">Our Story</span>
+            <span className="font-sans text-[11px] font-semibold tracking-wide uppercase text-cream-200/65">Our Story</span>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.7 }}
