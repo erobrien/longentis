@@ -34,8 +34,8 @@ const Hero = () => (
           transition={{ duration: 0.5 }}
         >
           <h1 className="font-sans font-bold text-navy-900 text-[clamp(40px,5.5vw,72px)] leading-[1.02] tracking-[-0.035em]">
-            Clinic-grade<br />men's health,<br />
-            <span className="text-navy-400">delivered.</span>
+            Men's<br />Longevity,<br />
+            <span className="text-navy-400">Delivered.</span>
           </h1>
         </motion.div>
         <motion.div
