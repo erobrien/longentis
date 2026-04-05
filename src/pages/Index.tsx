@@ -32,10 +32,12 @@ const Hero = () => (
     <div className="video-frame absolute overflow-hidden" style={{ zIndex: 1, borderRadius: 16, inset: "16px 0 80px" }}>
       <video
         src="/mwc_hero_montage.mp4"
+        poster={heroImg}
         autoPlay
         muted
         loop
         playsInline
+        preload="metadata"
         className="absolute inset-0 w-full h-full object-cover"
       />
       {/* Left gradient overlay */}
