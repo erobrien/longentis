@@ -14,10 +14,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Plus Jakarta Sans", "sans-serif"],
-        lora: ["Lora", "serif"],
-        mono: ["IBM Plex Mono", "monospace"],
-        space: ["Space Grotesk", "sans-serif"],
+        sans: ["Inter Tight", "sans-serif"],
+        display: ["Outfit", "sans-serif"],
+        mono: ["JetBrains Mono", "monospace"],
+        body: ["Inter", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
