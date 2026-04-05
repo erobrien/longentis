@@ -37,7 +37,7 @@ const Coverage = () => {
       <Header />
       <main>
         {/* Hero */}
-        <section className="bg-cream-100 pt-36 pb-20">
+        <section className="bg-cream-50 pt-36 pb-20">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <motion.h1
               initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
@@ -52,7 +52,7 @@ const Coverage = () => {
             </motion.p>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} className="mt-8 flex flex-wrap gap-3">
               {["50 States", "3 VA Centers", "10,000+ Patients"].map((s) => (
-                <span key={s} className="rounded-lg border border-navy-900/[0.08] bg-navy-900/[0.04] px-4 py-2 font-sans text-[12px] font-medium tracking-wide uppercase text-navy-600">{s}</span>
+                <span key={s} className="rounded-lg border border-navy-900/[0.10] bg-white px-4 py-2 font-sans text-[12px] font-medium tracking-wide uppercase text-navy-600 shadow-card">{s}</span>
               ))}
             </motion.div>
           </div>
@@ -71,7 +71,7 @@ const Coverage = () => {
                   placeholder="Search by state (e.g. CA, Texas)..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  className="w-full rounded-xl border border-navy-900/[0.08] bg-white pl-10 pr-4 py-3 font-space text-[14px] text-navy-900 placeholder:text-navy-700/30 focus:outline-none focus:border-cta/40 transition-colors"
+                  className="w-full rounded-xl border border-navy-900/[0.10] bg-white pl-10 pr-4 py-3 font-space text-[14px] text-navy-900 placeholder:text-navy-700/30 focus:outline-none focus:border-cta/40 transition-colors shadow-card"
                 />
               </div>
             </ScrollReveal>
@@ -83,7 +83,7 @@ const Coverage = () => {
                     key={s}
                     onClick={() => { setSelectedState(s); setSearch(""); }}
                     className={`rounded-lg px-3 py-1.5 font-mono text-[11px] tracking-[0.1em] uppercase transition-colors ${
-                      s === "VA" ? "bg-cta/10 text-cta border border-cta/20" : "bg-navy-900/[0.04] text-navy-700/60 border border-navy-900/[0.06] hover:border-navy-900/[0.12]"
+                      s === "VA" ? "bg-cta/10 text-cta border border-cta/20" : "bg-white text-navy-700/60 border border-navy-900/[0.10] hover:border-navy-900/[0.15]"
                     }`}
                   >
                     {s} {s === "VA" && "· In-Person"}
@@ -95,13 +95,13 @@ const Coverage = () => {
 
             <div className="mt-8 grid gap-12 lg:grid-cols-[1fr_2fr]">
               <div className="space-y-4">
-                <div className="rounded-2xl p-5 bg-cta/[0.06] border border-cta/[0.12]">
+                <div className="rounded-2xl p-5 bg-white border border-cta/[0.15] shadow-card">
                   <p className="font-sans text-[11px] font-semibold tracking-wide uppercase text-cta mb-2 inline-flex items-center gap-1.5">
                     <Diamond size="xs" /> In-Person Care
                   </p>
                   <p className="font-space text-[14px] text-navy-700/75">Available at our 3 Virginia centers. Same-day labs, walk-ins welcome.</p>
                 </div>
-                <div className="rounded-2xl p-5 bg-navy-900/[0.04] border border-navy-900/[0.06]">
+                <div className="rounded-2xl p-5 bg-white border border-navy-900/[0.10] shadow-card">
                   <p className="font-sans text-[11px] font-semibold tracking-wide uppercase text-navy-600 mb-2 inline-flex items-center gap-1.5">
                     <Diamond size="xs" /> Telehealth
                   </p>
@@ -109,7 +109,7 @@ const Coverage = () => {
                 </div>
 
                 {selectedState && (
-                  <div className="rounded-2xl p-5 bg-white border border-navy-900/[0.06]">
+                  <div className="rounded-2xl p-5 bg-white border border-navy-900/[0.10] shadow-card">
                     <p className="font-sans text-[11px] font-medium tracking-wide uppercase text-navy-600 mb-1">Selected</p>
                     <h3 className="font-sans font-semibold text-[16px] text-navy-900">{selectedState}</h3>
                     <p className="font-space text-[14px] text-navy-700/70 mt-1">
@@ -125,7 +125,7 @@ const Coverage = () => {
               <USMap selectedState={selectedState} onStateSelect={setSelectedState} />
             </div>
 
-            <div className="mt-16 flex flex-wrap justify-center gap-12 rounded-2xl px-10 py-8 mx-auto max-w-2xl bg-white border border-navy-900/[0.06]">
+            <div className="mt-16 flex flex-wrap justify-center gap-12 rounded-2xl px-10 py-8 mx-auto max-w-2xl bg-white border border-navy-900/[0.10] shadow-card">
               <StatCounter end={50} label="States" />
               <StatCounter end={3} label="VA Centers" />
               <StatCounter end={10000} suffix="+" label="Patients" />
@@ -134,13 +134,13 @@ const Coverage = () => {
         </section>
 
         {/* Virginia Centers */}
-        <section className="bg-cream-200 py-24">
+        <section className="bg-cream-50 py-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <SectionHeader badge="Virginia Centers" title={<>Same-day care. <em className="font-lora italic text-cta" style={{ fontStyle: "italic" }}>Walk-ins welcome.</em></>} />
             <div className="mt-12 grid gap-5 md:grid-cols-3">
               {clinics.map((c, i) => (
                 <ScrollReveal key={c.name} delay={i * 0.1}>
-                  <div className="rounded-2xl border border-navy-900/[0.06] bg-white overflow-hidden h-full flex flex-col">
+                  <div className="rounded-2xl border border-navy-900/[0.10] bg-white shadow-card overflow-hidden h-full flex flex-col">
                     <div className="h-48 relative">
                       <img src={c.img} alt={c.name} className="absolute inset-0 w-full h-full object-cover" />
                     </div>

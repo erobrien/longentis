@@ -85,7 +85,7 @@ const FAQ = () => {
     <>
       <Header />
       <main>
-        <section className="relative w-full pt-32 lg:pt-40 pb-16 bg-cream-100">
+        <section className="relative w-full pt-32 lg:pt-40 pb-16 bg-cream-50">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               <h1 className="font-sans font-bold text-[clamp(32px,5vw,64px)] leading-[1.08] tracking-[-0.03em] text-navy-900">
@@ -105,13 +105,13 @@ const FAQ = () => {
                 placeholder="Search questions..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full rounded-xl border border-navy-900/[0.10] bg-white pl-11 pr-4 py-3.5 font-space text-[14px] text-navy-900 placeholder:text-navy-700/30 focus:outline-none focus:ring-2 focus:ring-cta/30 focus:border-cta/40 transition-all"
+                className="w-full rounded-xl border border-navy-900/[0.12] bg-white pl-11 pr-4 py-3.5 font-space text-[14px] text-navy-900 placeholder:text-navy-700/30 focus:outline-none focus:ring-2 focus:ring-cta/30 focus:border-cta/40 transition-all shadow-card"
               />
             </div>
           </div>
         </section>
 
-        <section className="bg-cream-100 pb-24">
+        <section className="bg-cream-100 pb-24 pt-12">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="grid lg:grid-cols-[240px_1fr] gap-10">
               {/* Category nav */}
@@ -124,7 +124,7 @@ const FAQ = () => {
                       className={`whitespace-nowrap rounded-lg px-4 py-2.5 font-sans text-[13px] font-medium transition-all text-left inline-flex items-center gap-2 ${
                         activeCategory === cat.id
                           ? "bg-navy-950 text-cream-100"
-                          : "bg-navy-900/[0.04] text-navy-700/70 hover:bg-navy-900/[0.08]"
+                          : "bg-white text-navy-700/70 border border-navy-900/[0.10] hover:bg-white/80"
                       }`}
                     >
                       <Diamond size="xs" className={activeCategory === cat.id ? "text-cta" : "text-cta/50"} />
@@ -146,7 +146,7 @@ const FAQ = () => {
                         <AccordionItem
                           key={i}
                           value={`${cat.id}-${i}`}
-                          className="rounded-xl border border-navy-900/[0.08] bg-white/80 px-5 overflow-hidden"
+                          className="rounded-xl border border-navy-900/[0.10] bg-white px-5 overflow-hidden shadow-card"
                         >
                           <AccordionTrigger className="font-sans text-[15px] font-semibold text-navy-900 hover:no-underline py-5">
                             {faq.q}
@@ -171,7 +171,7 @@ const FAQ = () => {
         <section className="bg-navy-950 py-16 noise-overlay">
           <div className="mx-auto max-w-3xl px-6 lg:px-8 text-center">
             <h2 className="font-sans font-bold text-2xl text-cream-200">Still have questions?</h2>
-            <p className="font-space mt-3 text-[15px] text-cream-200/60">
+            <p className="font-space mt-3 text-[15px] text-cream-200/65">
               Start your free assessment and speak directly with a licensed men's health provider.
             </p>
             <Link

@@ -44,7 +44,7 @@ const Careers = () => (
         </div>
       </section>
 
-      <section className="bg-cream-200 py-24">
+      <section className="bg-cream-100 py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 grid gap-12 lg:grid-cols-2 items-center">
           <ScrollReveal>
             <div className="rounded-2xl bg-navy-700 h-80" />
@@ -64,7 +64,7 @@ const Careers = () => (
       <section className="bg-navy-950 noise-overlay py-24">
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
           <ScrollReveal>
-            <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 bg-white/[0.06] border border-white/[0.1]">
+            <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5 bg-white/[0.06] border border-white/[0.12]">
               <Diamond size="xs" />
               <span className="font-sans text-[11px] font-semibold tracking-wide uppercase text-cream-200/70">Why Longentis</span>
             </div>
@@ -73,10 +73,10 @@ const Careers = () => (
           <div className="mt-12 grid gap-4 sm:grid-cols-2">
             {expectCards.map((c, i) => (
               <ScrollReveal key={c.title} delay={i * 0.1}>
-                <div className="rounded-2xl p-6 h-full bg-white/[0.04] border border-white/[0.08]">
+                <div className="rounded-2xl p-6 h-full bg-white/[0.06] border border-white/[0.12]">
                   <Diamond size="sm" className="text-cta/60 mb-3" />
                   <h3 className="font-sans text-[16px] font-semibold text-cream-200">{c.title}</h3>
-                  <p className="font-space mt-2 text-[14px] leading-[1.6] text-cream-200/65">{c.desc}</p>
+                  <p className="font-space mt-2 text-[14px] leading-[1.6] text-cream-200/70">{c.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -95,12 +95,12 @@ const Careers = () => (
           </ScrollReveal>
           <Accordion type="single" collapsible className="mt-12 max-w-3xl">
             {departments.map((d, i) => (
-              <AccordionItem key={i} value={`dept-${i}`} className="border-b border-navy-900/[0.08]">
+              <AccordionItem key={i} value={`dept-${i}`} className="border-b border-navy-900/[0.10]">
                 <AccordionTrigger className="font-sans text-lg font-semibold text-navy-900">{d.name}</AccordionTrigger>
                 <AccordionContent>
                   <ul className="space-y-3">
                     {d.roles.map((r) => (
-                      <li key={r} className="flex items-center justify-between rounded-2xl border border-navy-900/[0.06] bg-white p-4">
+                      <li key={r} className="flex items-center justify-between rounded-2xl border border-navy-900/[0.10] bg-white shadow-card p-4">
                         <span className="font-space text-[14px] text-navy-900">{r}</span>
                         <span className="font-sans text-[14px] font-semibold text-cta cursor-pointer hover:underline">Apply →</span>
                       </li>
