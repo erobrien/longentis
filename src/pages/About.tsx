@@ -67,7 +67,7 @@ const About = () => (
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-            className="font-space text-cream-200/60 text-[16px] max-w-2xl mx-auto mt-5 leading-relaxed"
+            className="font-space text-cream-200/65 text-[16px] max-w-2xl mx-auto mt-5 leading-relaxed"
           >
             What started as a single Virginia clinic is now a nationwide men's health platform — same providers, same protocols, higher standard.
           </motion.p>
