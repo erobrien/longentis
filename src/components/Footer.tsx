@@ -54,7 +54,7 @@ const Footer = () => (
       <div
         className="mx-auto max-w-[1600px] px-6 lg:px-12 pt-16 pb-8 relative z-10"
         style={{
-          backgroundImage: "repeating-linear-gradient(to right, rgba(255,255,255,0.12) 0px, rgba(255,255,255,0.12) 4px, transparent 4px, transparent 10px)",
+          backgroundImage: "none",
           backgroundSize: "100% 1px",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "top",
