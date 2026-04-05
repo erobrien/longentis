@@ -185,7 +185,7 @@ const HowItWorks = () => (
             <div className={`py-6 lg:py-0 lg:pr-8 ${i > 0 ? "border-t lg:border-t-0 lg:border-l border-navy-900/[0.06] lg:pl-8" : ""}`}>
               <Diamond size="md" className="text-cta/80" />
               <h3 className="font-sans font-semibold text-[15px] text-navy-900 mt-3">{step.title}</h3>
-              <p className="font-space text-[13px] leading-[1.65] text-navy-500 mt-2">{step.desc}</p>
+              <p className="font-space text-[14px] leading-[1.65] text-navy-500 mt-2">{step.desc}</p>
             </div>
           </ScrollReveal>
         ))}
