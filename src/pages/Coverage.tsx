@@ -25,17 +25,17 @@ const Coverage = () => {
           <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
             <motion.h1
               initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
-              className="font-display text-[clamp(32px,4vw,64px)] leading-[1.1] tracking-[-0.02em] text-[#0B1029] max-w-3xl"
+              className="font-lora text-[clamp(32px,4vw,64px)] leading-[1.1] tracking-[-0.02em] text-[#0B1029] max-w-3xl"
             >
               Telehealth in every state. <em className="italic text-[#E8670A]">Centers in Virginia.</em>
             </motion.h1>
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-              className="font-body mt-6 max-w-2xl text-[15px] leading-[1.7] text-[#555] font-light">
+              className="font-space mt-6 max-w-2xl text-[15px] leading-[1.7] text-[#555] font-light">
               Our telehealth platform serves men nationwide. Our Virginia centers offer same-day, in-person care.
             </motion.p>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} className="mt-8 flex flex-wrap gap-3">
               {["50 States", "3 VA Centers", "10,000+ Patients"].map((s) => (
-                <span key={s} className="rounded-lg border border-gray-200 px-4 py-2 font-mono-label text-[10px] tracking-[0.14em] uppercase text-[#243656]">{s}</span>
+                <span key={s} className="rounded-lg border border-gray-200 px-4 py-2 font-mono text-[10px] tracking-[0.14em] uppercase text-[#243656]">{s}</span>
               ))}
             </motion.div>
           </div>
@@ -45,9 +45,9 @@ const Coverage = () => {
           <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
             <ScrollReveal>
               <div className="inline-flex items-center gap-2.5 rounded-lg px-3.5 py-1.5" style={{ background: "rgba(27,43,75,0.10)", border: "1px solid rgba(27,43,75,0.20)" }}>
-                <span className="font-mono-label text-[10px] tracking-[0.22em] uppercase text-[#243656]">Coverage Map</span>
+                <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#243656]">Coverage Map</span>
               </div>
-              <h2 className="font-display mt-6 text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-[#0B1029]">Explore our coverage</h2>
+              <h2 className="font-lora mt-6 text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-[#0B1029]">Explore our coverage</h2>
             </ScrollReveal>
             <div className="mt-12 grid gap-12 lg:grid-cols-[1fr_2fr]">
               <div className="space-y-3 max-h-96 overflow-y-auto pr-4">
@@ -57,9 +57,9 @@ const Coverage = () => {
                     onClick={() => setSelectedState("VA")}
                     className="w-full text-left rounded-2xl border border-gray-100 bg-white p-4 shadow-sm hover:shadow-md transition-all"
                   >
-                    <span className="font-mono-label text-[10px] tracking-[0.22em] uppercase text-[#243656]">{`0${i + 1}`}</span>
-                    <h3 className="font-heading text-[15px] font-semibold text-[#0B1029] mt-1">{c.name}</h3>
-                    <p className="font-body text-[11px] text-[#555] font-light mt-1">{c.desc}</p>
+                    <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#243656]">{`0${i + 1}`}</span>
+                    <h3 className="font-sans text-[15px] font-semibold text-[#0B1029] mt-1">{c.name}</h3>
+                    <p className="font-space text-[11px] text-[#555] font-light mt-1">{c.desc}</p>
                   </button>
                 ))}
               </div>
@@ -76,14 +76,14 @@ const Coverage = () => {
               {clinics.map((c, i) => (
                 <ScrollReveal key={c.name} delay={i * 0.1}>
                   <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm h-full">
-                    <span className="font-mono-label text-[10px] tracking-[0.22em] uppercase text-[#243656]">{`0${i + 1}`}</span>
-                    <h3 className="font-heading mt-2 text-[15px] font-semibold text-[#0B1029]">Men's Wellness Centers — {c.name}</h3>
-                    <p className="font-body mt-2 text-[13px] text-[#555] font-light">{c.desc}</p>
+                    <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#243656]">{`0${i + 1}`}</span>
+                    <h3 className="font-sans mt-2 text-[15px] font-semibold text-[#0B1029]">Men's Wellness Centers — {c.name}</h3>
+                    <p className="font-space mt-2 text-[13px] text-[#555] font-light">{c.desc}</p>
                     <div className="mt-4 space-y-2">
-                      <p className="font-body flex items-center gap-2 text-[13px] text-[#555] font-light"><MapPin className="h-3.5 w-3.5" />{c.address}</p>
-                      <a href={`tel:${c.phone.replace(/\D/g, "")}`} className="font-body flex items-center gap-2 text-[13px] text-[#555] font-light hover:text-[#E8670A] transition-colors"><Phone className="h-3.5 w-3.5" />{c.phone}</a>
+                      <p className="font-space flex items-center gap-2 text-[13px] text-[#555] font-light"><MapPin className="h-3.5 w-3.5" />{c.address}</p>
+                      <a href={`tel:${c.phone.replace(/\D/g, "")}`} className="font-space flex items-center gap-2 text-[13px] text-[#555] font-light hover:text-[#E8670A] transition-colors"><Phone className="h-3.5 w-3.5" />{c.phone}</a>
                     </div>
-                    <Link to="/get-started" className="mt-4 inline-flex items-center gap-1 font-heading text-sm font-semibold text-[#E8670A] hover:underline">
+                    <Link to="/get-started" className="mt-4 inline-flex items-center gap-1 font-sans text-sm font-semibold text-[#E8670A] hover:underline">
                       Visit Center <ArrowRight className="h-4 w-4" />
                     </Link>
                   </div>
@@ -95,10 +95,10 @@ const Coverage = () => {
 
         <section className="bg-[#06081a] noise-overlay py-16">
           <div className="relative z-10 mx-auto max-w-[1600px] px-6 lg:px-12 text-center">
-            <h2 className="font-display text-[clamp(24px,3vw,40px)] leading-[1.15] tracking-[-0.02em] text-[#E8E2D9]">
+            <h2 className="font-lora text-[clamp(24px,3vw,40px)] leading-[1.15] tracking-[-0.02em] text-[#E8E2D9]">
               Not near a Virginia center? Start a telehealth visit from anywhere in the US.
             </h2>
-            <Link to="/get-started" className="mt-8 inline-flex items-center gap-2.5 rounded-lg bg-[#1B2B4B] px-6 py-3 font-heading text-[11.5px] font-bold uppercase tracking-[0.09em] text-[#FAFAF7] border border-white/[0.11] hover:bg-[#162340] active:scale-[0.98] transition-all">
+            <Link to="/get-started" className="mt-8 inline-flex items-center gap-2.5 rounded-lg bg-[#1B2B4B] px-6 py-3 font-sans text-[11.5px] font-bold uppercase tracking-[0.09em] text-[#FAFAF7] border border-white/[0.11] hover:bg-[#162340] active:scale-[0.98] transition-all">
               Start Telehealth Visit <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

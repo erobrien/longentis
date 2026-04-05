@@ -22,7 +22,7 @@ const MobileBottomBar = () => {
         >
           <Link
             to="/get-started"
-            className="block w-full rounded-xl bg-cta py-3 text-center font-heading text-sm font-semibold text-cta-foreground"
+            className="block w-full rounded-xl bg-cta py-3 text-center font-sans text-sm font-semibold text-cta-foreground"
           >
             Start Free Visit
           </Link>

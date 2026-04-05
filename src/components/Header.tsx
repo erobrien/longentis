@@ -39,10 +39,10 @@ const Header = () => {
             }`}
           >
             <Link to="/" className="flex flex-col">
-              <span className="font-heading text-xl font-bold tracking-tight text-[#0B1029]">
+              <span className="font-sans text-xl font-bold tracking-tight text-[#0B1029]">
                 Longentis
               </span>
-              <span className="font-mono-label text-[9px] tracking-[0.14em] uppercase text-[#1B2B4B]/40">
+              <span className="font-mono text-[9px] tracking-[0.14em] uppercase text-[#1B2B4B]/40">
                 by Men's Wellness Centers
               </span>
             </Link>
@@ -52,7 +52,7 @@ const Header = () => {
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`relative text-[13.5px] font-semibold font-heading text-[#1B2B4B] transition-colors duration-200 after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-[#E8670A] after:transition-[width] after:duration-200 after:w-0 hover:after:w-full ${
+                  className={`relative text-[13.5px] font-semibold font-sans text-[#1B2B4B] transition-colors duration-200 after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-[#E8670A] after:transition-[width] after:duration-200 after:w-0 hover:after:w-full ${
                     location.pathname === link.href ? "after:w-full" : ""
                   }`}
                 >
@@ -64,7 +64,7 @@ const Header = () => {
             <div className="flex items-center gap-4">
               <Link
                 to="/get-started"
-                className="hidden md:inline-flex items-center rounded-xl border border-white/[0.11] bg-[#1B2B4B] px-[18px] py-[10px] text-[11px] font-bold uppercase tracking-[0.09em] text-[#FAFAF7] shadow-[inset_0_1px_0_rgba(255,255,255,0.11),inset_0_-1px_0_rgba(0,0,0,0.22),0_0_0_1px_rgba(27,43,75,0.55),0_4px_14px_rgba(27,43,75,0.38)] hover:bg-[#162340] transition-all duration-200 active:scale-[0.98] font-heading"
+                className="hidden md:inline-flex items-center rounded-xl border border-white/[0.11] bg-[#1B2B4B] px-[18px] py-[10px] text-[11px] font-bold uppercase tracking-[0.09em] text-[#FAFAF7] shadow-[inset_0_1px_0_rgba(255,255,255,0.11),inset_0_-1px_0_rgba(0,0,0,0.22),0_0_0_1px_rgba(27,43,75,0.55),0_4px_14px_rgba(27,43,75,0.38)] hover:bg-[#162340] transition-all duration-200 active:scale-[0.98] font-sans"
               >
                 Get Started
               </Link>
@@ -90,8 +90,8 @@ const Header = () => {
           >
             <div className="flex items-center justify-between px-6 py-4">
               <Link to="/" className="flex flex-col">
-                <span className="font-heading text-xl font-bold text-[#E8E2D9]">Longentis</span>
-                <span className="font-mono-label text-[9px] uppercase tracking-[0.14em] text-[#E8E2D9]/40">
+                <span className="font-sans text-xl font-bold text-[#E8E2D9]">Longentis</span>
+                <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-[#E8E2D9]/40">
                   by Men's Wellness Centers
                 </span>
               </Link>
@@ -109,7 +109,7 @@ const Header = () => {
                 >
                   <Link
                     to={link.href}
-                    className="font-heading text-2xl font-semibold text-[#E8E2D9] hover:text-[#E8670A] transition-colors"
+                    className="font-sans text-2xl font-semibold text-[#E8E2D9] hover:text-[#E8670A] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -118,7 +118,7 @@ const Header = () => {
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
                 <Link
                   to="/get-started"
-                  className="mt-4 rounded-xl bg-[#1B2B4B] px-8 py-3 font-heading text-lg font-semibold text-[#FAFAF7]"
+                  className="mt-4 rounded-xl bg-[#1B2B4B] px-8 py-3 font-sans text-lg font-semibold text-[#FAFAF7]"
                 >
                   Get Started
                 </Link>

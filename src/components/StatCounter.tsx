@@ -33,14 +33,14 @@ const StatCounter = ({ end, suffix = "", prefix = "", label, duration = 2 }: Sta
   return (
     <div ref={ref} className="text-center">
       <motion.p
-        className="font-heading text-4xl font-bold lg:text-5xl"
+        className="font-sans text-4xl font-bold lg:text-5xl"
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5 }}
       >
         {prefix}{count.toLocaleString()}{suffix}
       </motion.p>
-      <p className="font-mono-label mt-1 text-[11px] font-medium uppercase tracking-[0.15em] opacity-70">
+      <p className="font-mono mt-1 text-[11px] font-medium uppercase tracking-[0.15em] opacity-70">
         {label}
       </p>
     </div>
