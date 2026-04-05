@@ -6,6 +6,12 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Treatments from "./pages/Treatments";
+import TreatmentTRT from "./pages/TreatmentTRT";
+import TreatmentED from "./pages/TreatmentED";
+import TreatmentWeightLoss from "./pages/TreatmentWeightLoss";
+import Pricing from "./pages/Pricing";
+import FAQ from "./pages/FAQ";
+import Resources from "./pages/Resources";
 import Careers from "./pages/Careers";
 import GetStarted from "./pages/GetStarted";
 import Press from "./pages/Press";
@@ -39,6 +45,12 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/treatments" element={<Treatments />} />
+          <Route path="/treatments/trt" element={<TreatmentTRT />} />
+          <Route path="/treatments/ed" element={<TreatmentED />} />
+          <Route path="/treatments/weight-loss" element={<TreatmentWeightLoss />} />
+          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/resources" element={<Resources />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/get-started" element={<GetStarted />} />
           <Route path="/press" element={<Press />} />
