@@ -89,27 +89,38 @@ const HeroCard = ({ title, img, bgColor, href, className, isAccent }: { title: s
   </Link>
 );
 
+const valueProps = [
+  "Trusted by 10,000+ patients nationwide",
+  "Real providers, FDA-approved protocols",
+  "Concierge care, from $99/month",
+  "Get started 100% online",
+];
+
 const Hero = () => (
   <section className="relative w-full overflow-hidden pt-24 lg:pt-28 pb-0" style={{ background: "#FAFAF7" }}>
-    {/* Headline */}
+    {/* Ro-style static title + value props */}
     <div className="mx-auto max-w-7xl px-4 lg:px-8 mb-8 lg:mb-12">
-      <motion.h1
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        className="font-sans font-semibold leading-[1.08] tracking-[-0.032em] text-navy-deepest text-[28px] lg:text-[clamp(42px,4.5vw,64px)] max-w-3xl"
-      >
-        Private wellness, for the{" "}
-        <em className="font-lora italic text-cta not-italic" style={{ fontStyle: "italic" }}>discerning gent.</em>
-      </motion.h1>
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="font-space text-navy-primary/60 text-sm lg:text-base mt-3 max-w-lg"
+        transition={{ duration: 0.6 }}
+        className="font-sans font-bold text-foreground text-[clamp(36px,5vw,72px)] leading-[1.05] tracking-[-0.03em] mb-4"
       >
-        TRT, ED treatment & weight loss — 10,000+ patients. Now via telehealth in all 50 states.
+        Healthier with Longentis
       </motion.p>
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.15 }}
+        className="flex flex-wrap items-center gap-x-6 gap-y-2"
+      >
+        {valueProps.map((prop) => (
+          <span key={prop} className="inline-flex items-center gap-1.5 text-foreground/70 font-space text-[13px] lg:text-[14px]">
+            <CheckCircle2 className="h-4 w-4 text-cta shrink-0" />
+            {prop}
+          </span>
+        ))}
+      </motion.div>
     </div>
 
     {/* Card grid */}
