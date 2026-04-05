@@ -25,15 +25,15 @@ const Treatments = () => (
         <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
           <motion.h1
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
-            className="font-display text-[clamp(32px,4vw,64px)] leading-[1.1] tracking-[-0.02em] text-[#0B1029] max-w-3xl"
+            className="font-lora text-[clamp(32px,4vw,64px)] leading-[1.1] tracking-[-0.02em] text-[#0B1029] max-w-3xl"
           >
             Three conditions. One dedicated practice.
           </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="font-body mt-6 max-w-2xl text-[15px] leading-[1.7] text-[#555] font-light">
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="font-space mt-6 max-w-2xl text-[15px] leading-[1.7] text-[#555] font-light">
             From first assessment through every follow-up, Longentis delivers a coordinated clinical program — real labs, evidence-based protocols, and physician-led oversight across TRT, ED, and weight loss.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
-            <Link to="/get-started" className="mt-8 inline-flex items-center gap-2.5 rounded-lg bg-[#1B2B4B] px-6 py-3 font-heading text-[11.5px] font-bold uppercase tracking-[0.09em] text-[#FAFAF7] border border-white/[0.11] hover:bg-[#162340] active:scale-[0.98] transition-all">
+            <Link to="/get-started" className="mt-8 inline-flex items-center gap-2.5 rounded-lg bg-[#1B2B4B] px-6 py-3 font-sans text-[11.5px] font-bold uppercase tracking-[0.09em] text-[#FAFAF7] border border-white/[0.11] hover:bg-[#162340] active:scale-[0.98] transition-all">
               Get Started <ArrowRight className="h-4 w-4" />
             </Link>
           </motion.div>
@@ -48,10 +48,10 @@ const Treatments = () => (
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#243656] opacity-60" />
                 <span className="relative inline-flex rounded-full h-[7px] w-[7px] bg-[#243656]" />
               </span>
-              <span className="font-mono-label text-[10px] tracking-[0.22em] uppercase text-[#243656]">Services</span>
+              <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#243656]">Services</span>
             </div>
-            <h2 className="font-display mt-6 text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-[#0B1029]">Focused expertise. One coordinated standard of care.</h2>
-            <p className="font-body mt-4 max-w-2xl text-[15px] leading-[1.7] text-[#555] font-light">
+            <h2 className="font-lora mt-6 text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-[#0B1029]">Focused expertise. One coordinated standard of care.</h2>
+            <p className="font-space mt-4 max-w-2xl text-[15px] leading-[1.7] text-[#555] font-light">
               Each treatment is delivered with the same clinical discipline — real lab panels, dedicated providers, and ongoing monitoring you can trust.
             </p>
           </ScrollReveal>
@@ -63,8 +63,8 @@ const Treatments = () => (
                     <s.icon className="h-5 w-5 text-[#1B2B4B]" strokeWidth={1.5} />
                   </div>
                   <div className="ml-3">
-                    <h3 className="font-heading text-sm leading-none font-semibold text-gray-900 md:text-[15px]">{s.title}</h3>
-                    <p className="font-heading text-xs leading-snug text-gray-500 md:text-[13px] mt-1">{s.desc}</p>
+                    <h3 className="font-sans text-sm leading-none font-semibold text-gray-900 md:text-[15px]">{s.title}</h3>
+                    <p className="font-sans text-xs leading-snug text-gray-500 md:text-[13px] mt-1">{s.desc}</p>
                   </div>
                 </div>
               </ScrollReveal>

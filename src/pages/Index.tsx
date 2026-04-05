@@ -66,9 +66,9 @@ const Hero = () => (
             className="inline-flex items-center gap-1"
             style={{ background: "#1B2B4B", borderRadius: 5, padding: "4px 10px 4px 7px" }}
           >
-            <span className="font-mono-label text-[9px] font-semibold uppercase tracking-[0.14em] text-[#E8670A]">NEW</span>
+            <span className="font-mono text-[9px] font-semibold uppercase tracking-[0.14em] text-[#E8670A]">NEW</span>
           </span>
-          <span className="font-body text-[13px] font-light text-[#C5CDE0]/80">
+          <span className="font-space text-[13px] font-light text-[#C5CDE0]/80">
             Longentis telehealth now live in all 50 states →
           </span>
         </span>
@@ -78,18 +78,18 @@ const Hero = () => (
       <motion.h1
         variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
         transition={{ duration: 0.7 }}
-        className="font-heading font-semibold leading-[1.05] tracking-[-0.032em] text-[#FAFAF7]"
+        className="font-sans font-semibold leading-[1.05] tracking-[-0.032em] text-[#FAFAF7]"
         style={{ fontSize: "clamp(42px, 5vw, 72px)", textShadow: "0 2px 30px rgba(0,0,0,0.4)" }}
       >
         Clinic-grade men's health,{" "}
-        <em className="font-display italic text-[#E8670A] not-italic" style={{ fontStyle: "italic" }}>delivered.</em>
+        <em className="font-lora italic text-[#E8670A] not-italic" style={{ fontStyle: "italic" }}>delivered.</em>
       </motion.h1>
 
       {/* Subtitle */}
       <motion.p
         variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
         transition={{ duration: 0.7 }}
-        className="font-body font-light text-[17px] leading-[1.7] tracking-[0.01em] max-w-[600px]"
+        className="font-space font-light text-[17px] leading-[1.7] tracking-[0.01em] max-w-[600px]"
         style={{ color: "rgba(197,205,224,0.65)" }}
       >
         TRT, ED treatment, and physician-supervised weight loss — backed by 10,000+ patients and a decade of Men's Wellness Centers clinical experience. Now via telehealth in all 50 states.
@@ -102,7 +102,7 @@ const Hero = () => (
       >
         <Link
           to="/get-started"
-          className="inline-flex items-center gap-2.5 font-heading text-[11.5px] font-bold uppercase tracking-[0.09em] text-[#FAFAF7] active:scale-[0.98] transition-all"
+          className="inline-flex items-center gap-2.5 font-sans text-[11.5px] font-bold uppercase tracking-[0.09em] text-[#FAFAF7] active:scale-[0.98] transition-all"
           style={{
             borderRadius: 8,
             padding: "13px 16px 13px 22px",
@@ -135,7 +135,7 @@ const Hero = () => (
       ].map(([val, label]) => (
         <div key={label} className="text-right">
           <p
-            className="font-heading font-extrabold leading-none tracking-[-0.03em]"
+            className="font-sans font-extrabold leading-none tracking-[-0.03em]"
             style={{
               fontSize: "clamp(28px, 2.8vw, 40px)",
               background: "linear-gradient(160deg, rgba(210,218,238,0.92) 0%, #1B2B4B 100%)",
@@ -145,7 +145,7 @@ const Hero = () => (
           >
             {val}
           </p>
-          <p className="font-mono-label text-[9.5px] uppercase tracking-[0.13em]" style={{ color: "rgba(255,255,255,0.5)" }}>
+          <p className="font-mono text-[9.5px] uppercase tracking-[0.13em]" style={{ color: "rgba(255,255,255,0.5)" }}>
             {label}
           </p>
         </div>
@@ -156,7 +156,7 @@ const Hero = () => (
     <div className="absolute bottom-0 left-0 right-0 bg-[#FAFAF7] py-4 px-6" style={{ zIndex: 20 }}>
       <div className="mx-auto max-w-[1600px] flex items-center justify-center gap-10 flex-wrap">
         {["LegitScript", "HIPAA", "State Licensed", "FSA/HSA"].map((name) => (
-          <span key={name} className="font-mono-label text-[9px] tracking-[0.18em] uppercase text-[#0A1029]/35">
+          <span key={name} className="font-mono text-[9px] tracking-[0.18em] uppercase text-[#0A1029]/35">
             {name}
           </span>
         ))}
@@ -187,12 +187,12 @@ const HealthAssessment = () => (
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#243656] opacity-60" />
             <span className="relative inline-flex rounded-full h-[7px] w-[7px] bg-[#243656]" />
           </span>
-          <span className="font-mono-label text-[10px] tracking-[0.22em] uppercase text-[#243656]">Your Health Snapshot</span>
+          <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#243656]">Your Health Snapshot</span>
         </div>
-        <h2 className="font-display mt-6 text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-[#0B1029]">
+        <h2 className="font-lora mt-6 text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-[#0B1029]">
           Know your numbers. Own your health.
         </h2>
-        <p className="font-body mt-4 max-w-2xl text-[15px] leading-[1.7] text-[#555] font-light">
+        <p className="font-space mt-4 max-w-2xl text-[15px] leading-[1.7] text-[#555] font-light">
           Your comprehensive lab panel covers 20+ biomarkers across hormones, metabolism, cardiovascular risk, and nutrient levels — giving your provider the full picture, not a guess.
         </p>
       </ScrollReveal>
@@ -204,8 +204,8 @@ const HealthAssessment = () => (
                 <card.icon className="h-5 w-5 text-[#1B2B4B]" strokeWidth={1.5} />
               </div>
               <div className="ml-3">
-                <h3 className="font-heading text-sm leading-none font-semibold text-gray-900 md:text-[15px]">{card.title}</h3>
-                <p className="font-heading text-xs leading-snug text-gray-500 md:text-[13px] mt-1">{card.desc}</p>
+                <h3 className="font-sans text-sm leading-none font-semibold text-gray-900 md:text-[15px]">{card.title}</h3>
+                <p className="font-sans text-xs leading-snug text-gray-500 md:text-[13px] mt-1">{card.desc}</p>
               </div>
             </div>
           </ScrollReveal>
@@ -227,13 +227,13 @@ const EditorialStatement = () => (
         {/* Center text overlay */}
         <div className="flex flex-col justify-center px-8" style={{ gridColumn: "3/7", gridRow: "2/5" }}>
           <ScrollReveal>
-            <h2 className="font-display text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-[#0B1029]">
+            <h2 className="font-lora text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-[#0B1029]">
               Extending what's possible in men's health.
             </h2>
-            <p className="font-body mt-6 text-[15px] leading-[1.7] text-[#555] font-light max-w-lg">
+            <p className="font-space mt-6 text-[15px] leading-[1.7] text-[#555] font-light max-w-lg">
               The gap between how men feel and what their doctor calls 'normal' is where we operate. Longentis connects you with dedicated men's health providers, real lab panels, and treatment protocols built on a decade of clinical data — not a questionnaire and a subscription.
             </p>
-            <Link to="/about" className="mt-6 inline-flex items-center gap-1 font-heading text-sm font-semibold text-[#E8670A] hover:underline">
+            <Link to="/about" className="mt-6 inline-flex items-center gap-1 font-sans text-sm font-semibold text-[#E8670A] hover:underline">
               About Longentis <ArrowRight className="h-4 w-4" />
             </Link>
           </ScrollReveal>
@@ -250,13 +250,13 @@ const EditorialStatement = () => (
           ))}
         </div>
         <ScrollReveal>
-          <h2 className="font-display text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-[#0B1029]">
+          <h2 className="font-lora text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-[#0B1029]">
             Extending what's possible in men's health.
           </h2>
-          <p className="font-body mt-4 text-[15px] leading-[1.7] text-[#555] font-light">
+          <p className="font-space mt-4 text-[15px] leading-[1.7] text-[#555] font-light">
             The gap between how men feel and what their doctor calls 'normal' is where we operate. Longentis connects you with dedicated men's health providers, real lab panels, and treatment protocols built on a decade of clinical data.
           </p>
-          <Link to="/about" className="mt-6 inline-flex items-center gap-1 font-heading text-sm font-semibold text-[#E8670A] hover:underline">
+          <Link to="/about" className="mt-6 inline-flex items-center gap-1 font-sans text-sm font-semibold text-[#E8670A] hover:underline">
             About Longentis <ArrowRight className="h-4 w-4" />
           </Link>
         </ScrollReveal>
@@ -302,9 +302,9 @@ const OurApproach = () => (
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#243656] opacity-60" />
             <span className="relative inline-flex rounded-full h-[7px] w-[7px] bg-[#243656]" />
           </span>
-          <span className="font-mono-label text-[10px] tracking-[0.22em] uppercase text-[#243656]">Our Approach</span>
+          <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#243656]">Our Approach</span>
         </div>
-        <h2 className="font-display mt-6 text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-[#0B1029]">
+        <h2 className="font-lora mt-6 text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-[#0B1029]">
           The full stack behind every patient.
         </h2>
       </ScrollReveal>
@@ -323,7 +323,7 @@ const OurApproach = () => (
                 <TabsTrigger
                   key={t.id}
                   value={t.id}
-                  className="font-mono-label text-[10px] tracking-[0.1em] uppercase px-4 py-2.5 rounded-md transition-all data-[state=active]:bg-white/70 data-[state=active]:backdrop-blur-[10px] data-[state=active]:border data-[state=active]:border-[rgba(27,43,75,0.25)] data-[state=active]:shadow-[0_1px_6px_rgba(27,43,75,0.10),inset_0_1px_0_rgba(255,255,255,0.8)] data-[state=inactive]:bg-white/30 data-[state=inactive]:border data-[state=inactive]:border-[rgba(27,43,75,0.15)]"
+                  className="font-mono text-[10px] tracking-[0.1em] uppercase px-4 py-2.5 rounded-md transition-all data-[state=active]:bg-white/70 data-[state=active]:backdrop-blur-[10px] data-[state=active]:border data-[state=active]:border-[rgba(27,43,75,0.25)] data-[state=active]:shadow-[0_1px_6px_rgba(27,43,75,0.10),inset_0_1px_0_rgba(255,255,255,0.8)] data-[state=inactive]:bg-white/30 data-[state=inactive]:border data-[state=inactive]:border-[rgba(27,43,75,0.15)]"
                 >
                   {t.label}
                 </TabsTrigger>
@@ -339,17 +339,17 @@ const OurApproach = () => (
                   className="grid gap-8 lg:grid-cols-2"
                 >
                   <div>
-                    <span className="font-mono-label text-[10px] bg-white/70 px-2 py-1 rounded text-[#243656] border border-[#C5CDE0]/60">{t.num}</span>
-                    <h3 className="font-heading mt-4 text-2xl font-semibold text-[#0B1029] md:text-3xl">{t.h3}</h3>
-                    <p className="font-body mt-4 text-[15px] leading-[1.7] text-[#555] font-light">{t.body}</p>
-                    <Link to="/treatments" className="mt-6 inline-flex items-center gap-1 font-heading text-sm font-semibold text-[#E8670A] hover:underline">
+                    <span className="font-mono text-[10px] bg-white/70 px-2 py-1 rounded text-[#243656] border border-[#C5CDE0]/60">{t.num}</span>
+                    <h3 className="font-sans mt-4 text-2xl font-semibold text-[#0B1029] md:text-3xl">{t.h3}</h3>
+                    <p className="font-space mt-4 text-[15px] leading-[1.7] text-[#555] font-light">{t.body}</p>
+                    <Link to="/treatments" className="mt-6 inline-flex items-center gap-1 font-sans text-sm font-semibold text-[#E8670A] hover:underline">
                       Learn more <ArrowRight className="h-4 w-4" />
                     </Link>
                     <div className="mt-8 flex gap-12">
                       {t.stats.map(([label, val]) => (
                         <div key={label}>
-                          <p className="font-heading text-2xl font-bold text-[#0B1029]">{val}</p>
-                          <p className="font-mono-label text-[11px] font-medium uppercase tracking-[0.15em] text-[#555]/60">{label}</p>
+                          <p className="font-sans text-2xl font-bold text-[#0B1029]">{val}</p>
+                          <p className="font-mono text-[11px] font-medium uppercase tracking-[0.15em] text-[#555]/60">{label}</p>
                         </div>
                       ))}
                     </div>
@@ -365,8 +365,8 @@ const OurApproach = () => (
                         boxShadow: "0 8px 28px rgba(0,0,0,0.22)",
                       }}
                     >
-                      <p className="font-mono-label text-[9px] tracking-[0.18em] uppercase" style={{ color: "rgba(197,205,224,0.85)" }}>{t.stats[0][0]}</p>
-                      <p className="font-heading font-bold text-[22px] leading-none tracking-[-0.03em] text-white">{t.stats[0][1]}</p>
+                      <p className="font-mono text-[9px] tracking-[0.18em] uppercase" style={{ color: "rgba(197,205,224,0.85)" }}>{t.stats[0][0]}</p>
+                      <p className="font-sans font-bold text-[22px] leading-none tracking-[-0.03em] text-white">{t.stats[0][1]}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -389,12 +389,12 @@ const CoverageMap = () => (
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#243656] opacity-60" />
             <span className="relative inline-flex rounded-full h-[7px] w-[7px] bg-[#243656]" />
           </span>
-          <span className="font-mono-label text-[10px] tracking-[0.22em] uppercase text-[#243656]">Coverage</span>
+          <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#243656]">Coverage</span>
         </div>
-        <h2 className="font-display mt-6 text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-[#0B1029]">
+        <h2 className="font-lora mt-6 text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-[#0B1029]">
           Men's health care, <em className="italic text-[#E8670A]">nationwide.</em>
         </h2>
-        <p className="font-body mt-4 max-w-xl text-[15px] leading-[1.7] text-[#555] font-light">
+        <p className="font-space mt-4 max-w-xl text-[15px] leading-[1.7] text-[#555] font-light">
           Telehealth in all 50 states. In-person at 3 Virginia centers. Same providers. Same protocols.
         </p>
       </ScrollReveal>
@@ -415,11 +415,11 @@ const CoverageMap = () => (
         ].map((c, i) => (
           <ScrollReveal key={c.name} delay={i * 0.1}>
             <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
-              <span className="font-mono-label text-[10px] tracking-[0.22em] uppercase text-[#243656]">{`0${i + 1}`}</span>
-              <h3 className="font-heading mt-2 text-lg font-semibold text-[#0B1029]">Men's Wellness Centers — {c.name}</h3>
-              <p className="font-body mt-2 text-[13px] text-[#555] font-light">{c.desc}</p>
-              <p className="font-body mt-2 text-[13px] text-[#555] font-light">{c.phone}</p>
-              <Link to="/coverage" className="mt-4 inline-flex items-center gap-1 font-heading text-sm font-semibold text-[#E8670A] hover:underline">
+              <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#243656]">{`0${i + 1}`}</span>
+              <h3 className="font-sans mt-2 text-lg font-semibold text-[#0B1029]">Men's Wellness Centers — {c.name}</h3>
+              <p className="font-space mt-2 text-[13px] text-[#555] font-light">{c.desc}</p>
+              <p className="font-space mt-2 text-[13px] text-[#555] font-light">{c.phone}</p>
+              <Link to="/coverage" className="mt-4 inline-flex items-center gap-1 font-sans text-sm font-semibold text-[#E8670A] hover:underline">
                 Visit Center <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -440,9 +440,9 @@ const Testimonials = () => (
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#243656] opacity-60" />
             <span className="relative inline-flex rounded-full h-[7px] w-[7px] bg-[#243656]" />
           </span>
-          <span className="font-mono-label text-[10px] tracking-[0.22em] uppercase text-[#243656]">Real Results</span>
+          <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#243656]">Real Results</span>
         </div>
-        <h2 className="font-display mt-6 text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-[#0B1029]">
+        <h2 className="font-lora mt-6 text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-[#0B1029]">
           What patients say <em className="italic text-[#E8670A]">after starting.</em>
         </h2>
       </ScrollReveal>
@@ -451,38 +451,38 @@ const Testimonials = () => (
       <div className="mt-12 hidden lg:grid gap-4" style={{ gridTemplateColumns: "1fr 1.3fr 1fr", gridTemplateRows: "190px 280px 200px" }}>
         {/* Stat card 1 */}
         <div className="rounded-3xl p-6 flex flex-col justify-between" style={{ background: "#ffffff", border: "1px solid rgba(27,43,75,0.12)", boxShadow: "0 2px 24px rgba(27,43,75,0.06)" }}>
-          <p className="font-heading font-extrabold text-[clamp(40px,3.5vw,52px)] leading-none tracking-[-0.04em] text-[#06081a]">10,000+</p>
-          <p className="font-mono-label text-[10px] tracking-[0.22em] uppercase text-[#243656]">Patients Treated</p>
+          <p className="font-sans font-extrabold text-[clamp(40px,3.5vw,52px)] leading-none tracking-[-0.04em] text-[#06081a]">10,000+</p>
+          <p className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#243656]">Patients Treated</p>
         </div>
 
         {/* Main quote card — spans 2 rows */}
         <div className="rounded-3xl overflow-hidden relative row-span-2" style={{ background: "#06081a" }}>
           <div className="absolute inset-0 bg-gradient-to-t from-[#06081a] via-[#06081a]/30 to-transparent" />
           <div className="relative z-10 h-full flex flex-col justify-end p-8">
-            <p className="font-display text-[17px] italic leading-[1.55] text-[#E8E2D9]/90">
+            <p className="font-lora text-[17px] italic leading-[1.55] text-[#E8E2D9]/90">
               "I want to express my appreciation. Their support and commitment have been outstanding — they've empowered us to take things to the next level."
             </p>
             <div className="mt-4">
-              <p className="font-heading font-semibold text-base text-[#E8E2D9]">Kevin M.</p>
-              <p className="font-mono-label text-xs uppercase tracking-[0.1em] text-white/35">Virginia · Google Review</p>
+              <p className="font-sans font-semibold text-base text-[#E8E2D9]">Kevin M.</p>
+              <p className="font-mono text-xs uppercase tracking-[0.1em] text-white/35">Virginia · Google Review</p>
             </div>
           </div>
         </div>
 
         {/* Stat card 2 */}
         <div className="rounded-3xl p-6 flex flex-col justify-between" style={{ background: "#ffffff", border: "1px solid rgba(27,43,75,0.12)", boxShadow: "0 2px 24px rgba(27,43,75,0.06)" }}>
-          <p className="font-heading font-extrabold text-[clamp(40px,3.5vw,52px)] leading-none tracking-[-0.04em] text-[#06081a]">4.9</p>
-          <p className="font-mono-label text-[10px] tracking-[0.22em] uppercase text-[#243656]">Google Rating</p>
+          <p className="font-sans font-extrabold text-[clamp(40px,3.5vw,52px)] leading-none tracking-[-0.04em] text-[#06081a]">4.9</p>
+          <p className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#243656]">Google Rating</p>
         </div>
 
         {/* Quote card 2 */}
         <div className="rounded-3xl overflow-hidden relative" style={{ background: "#111938" }}>
           <div className="absolute inset-0 bg-gradient-to-t from-[#06081a] via-transparent to-transparent" />
           <div className="relative z-10 h-full flex flex-col justify-end p-6">
-            <p className="font-display text-[15px] italic leading-[1.55] text-[#E8E2D9]/90">
+            <p className="font-lora text-[15px] italic leading-[1.55] text-[#E8E2D9]/90">
               "Great experience. They answered all my questions, even the stupid ones."
             </p>
-            <p className="font-heading font-semibold text-sm text-[#E8E2D9] mt-3">Adam C.</p>
+            <p className="font-sans font-semibold text-sm text-[#E8E2D9] mt-3">Adam C.</p>
           </div>
         </div>
 
@@ -490,17 +490,17 @@ const Testimonials = () => (
         <div className="rounded-3xl overflow-hidden relative" style={{ background: "#111938" }}>
           <div className="absolute inset-0 bg-gradient-to-t from-[#06081a] via-transparent to-transparent" />
           <div className="relative z-10 h-full flex flex-col justify-end p-6">
-            <p className="font-display text-[15px] italic leading-[1.55] text-[#E8E2D9]/90">
+            <p className="font-lora text-[15px] italic leading-[1.55] text-[#E8E2D9]/90">
               "Very attentive and professional, more flexible with scheduling than any medical office."
             </p>
-            <p className="font-heading font-semibold text-sm text-[#E8E2D9] mt-3">Phoenix M.</p>
+            <p className="font-sans font-semibold text-sm text-[#E8E2D9] mt-3">Phoenix M.</p>
           </div>
         </div>
 
         {/* Stat card 3 */}
         <div className="rounded-3xl p-6 flex flex-col justify-between" style={{ background: "#ffffff", border: "1px solid rgba(27,43,75,0.12)", boxShadow: "0 2px 24px rgba(27,43,75,0.06)" }}>
-          <p className="font-heading font-extrabold text-[clamp(40px,3.5vw,52px)] leading-none tracking-[-0.04em] text-[#06081a]">2015</p>
-          <p className="font-mono-label text-[10px] tracking-[0.22em] uppercase text-[#243656]">Established</p>
+          <p className="font-sans font-extrabold text-[clamp(40px,3.5vw,52px)] leading-none tracking-[-0.04em] text-[#06081a]">2015</p>
+          <p className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#243656]">Established</p>
         </div>
       </div>
 
@@ -512,10 +512,10 @@ const Testimonials = () => (
           { stat: "2015", label: "Established", quote: "Very attentive and professional.", name: "Phoenix M." },
         ].map((t, i) => (
           <div key={i} className="rounded-2xl p-6" style={{ background: "#06081a" }}>
-            <p className="font-heading font-extrabold text-3xl text-[#E8E2D9]">{t.stat}</p>
-            <p className="font-mono-label text-[9px] tracking-[0.18em] uppercase text-white/35 mt-1">{t.label}</p>
-            <p className="font-display text-[15px] italic leading-[1.55] text-[#E8E2D9]/80 mt-4">"{t.quote}"</p>
-            <p className="font-heading font-semibold text-sm text-[#E8E2D9] mt-3">{t.name}</p>
+            <p className="font-sans font-extrabold text-3xl text-[#E8E2D9]">{t.stat}</p>
+            <p className="font-mono text-[9px] tracking-[0.18em] uppercase text-white/35 mt-1">{t.label}</p>
+            <p className="font-lora text-[15px] italic leading-[1.55] text-[#E8E2D9]/80 mt-4">"{t.quote}"</p>
+            <p className="font-sans font-semibold text-sm text-[#E8E2D9] mt-3">{t.name}</p>
           </div>
         ))}
       </div>
@@ -546,12 +546,12 @@ const PressSection = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#243656] opacity-60" />
               <span className="relative inline-flex rounded-full h-[7px] w-[7px] bg-[#243656]" />
             </span>
-            <span className="font-mono-label text-[10px] tracking-[0.22em] uppercase text-[#243656]">In the News</span>
+            <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#243656]">In the News</span>
           </div>
-          <h2 className="font-display mt-6 text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-[#0B1029]">
+          <h2 className="font-lora mt-6 text-[clamp(28px,3.8vw,56px)] leading-[1.15] tracking-[-0.02em] text-[#0B1029]">
             What they're saying <em className="italic text-[#E8670A]">about Longentis.</em>
           </h2>
-          <p className="font-body mt-4 max-w-xl text-[15px] leading-[1.7] text-[#555] font-light">
+          <p className="font-space mt-4 max-w-xl text-[15px] leading-[1.7] text-[#555] font-light">
             From industry outlets to local press — the word is getting out about what we're building in men's health.
           </p>
         </ScrollReveal>
@@ -570,15 +570,15 @@ const PressSection = () => {
                   width: 280,
                   height: activeIndex === i ? 420 : 260,
                   background: "linear-gradient(145deg, #111938 0%, #06081a 100%)",
-                  opacity: activeIndex === i ? 1 : 0.5,
+                  opacity: activeIndex === i ? 1 : 0.25,
                 }}
                 onMouseEnter={() => setActiveIndex(i)}
               >
-                <p className="font-mono-label text-[8px] tracking-[0.16em] uppercase text-[#C5CDE0]/50">
+                <p className="font-mono text-[8px] tracking-[0.16em] uppercase text-[#C5CDE0]/50">
                   {a.source} · {a.year}
                 </p>
-                <h3 className="font-heading font-semibold text-[13px] leading-[1.45] text-[#E8E2D9]/90 line-clamp-3 mt-2">{a.title}</h3>
-                <span className="mt-3 inline-flex items-center gap-1 font-mono-label text-[8px] tracking-[0.16em] uppercase text-[#243656]">
+                <h3 className="font-sans font-semibold text-[13px] leading-[1.45] text-[#E8E2D9]/90 line-clamp-3 mt-2">{a.title}</h3>
+                <span className="mt-3 inline-flex items-center gap-1 font-mono text-[8px] tracking-[0.16em] uppercase text-[#243656]">
                   Read Article <ArrowRight className="h-2.5 w-2.5" />
                 </span>
               </div>
