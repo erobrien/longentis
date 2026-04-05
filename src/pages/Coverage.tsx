@@ -52,7 +52,7 @@ const Coverage = () => {
             </motion.p>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} className="mt-8 flex flex-wrap gap-3">
               {["50 States", "3 VA Centers", "10,000+ Patients"].map((s) => (
-                <span key={s} className="rounded-lg border border-navy-900/[0.08] bg-navy-900/[0.04] px-4 py-2 font-mono text-[10px] tracking-[0.14em] uppercase text-navy-600">{s}</span>
+                <span key={s} className="rounded-lg border border-navy-900/[0.08] bg-navy-900/[0.04] px-4 py-2 font-sans text-[12px] font-medium tracking-wide uppercase text-navy-600">{s}</span>
               ))}
             </motion.div>
           </div>
