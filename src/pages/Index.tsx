@@ -143,7 +143,7 @@ const Hero = () => (
 
     {/* Metrics — bottom right on desktop, bottom horizontal on mobile */}
     <motion.div
-      className="metrics-stack absolute flex flex-row lg:flex-col z-20 bottom-[24px] left-6 right-6 lg:top-1/2 lg:-translate-y-1/2 lg:bottom-auto lg:right-[clamp(56px,13vw,200px)] lg:left-auto lg:w-[168px]"
+      className="metrics-stack absolute flex flex-row lg:flex-col z-20 bottom-[24px] left-6 right-6 lg:top-[45%] lg:-translate-y-1/2 lg:bottom-auto lg:right-[clamp(56px,13vw,200px)] lg:left-auto lg:w-[168px]"
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, delay: 0.8 }}
