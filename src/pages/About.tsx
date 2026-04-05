@@ -111,9 +111,9 @@ const About = () => (
                       <span className="font-sans text-[11px] font-bold tracking-wide text-cta">{t.year.slice(2)}</span>
                     </div>
                     <div className="rounded-2xl p-5 bg-white border border-navy-900/[0.06] flex-1">
-                      <p className="font-mono text-[10px] tracking-[0.16em] uppercase text-navy-700/50 mb-1">{t.year}</p>
+                      <p className="font-sans text-[11px] font-medium tracking-wide uppercase text-navy-500 mb-1">{t.year}</p>
                       <h3 className="font-sans font-semibold text-[16px] text-navy-900">{t.title}</h3>
-                      <p className="font-space text-[13px] leading-[1.6] text-navy-700/65 mt-1">{t.desc}</p>
+                      <p className="font-space text-[14px] leading-[1.6] text-navy-700/70 mt-1">{t.desc}</p>
                     </div>
                   </div>
                 </ScrollReveal>
