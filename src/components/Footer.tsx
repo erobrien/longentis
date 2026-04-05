@@ -7,22 +7,17 @@ const Footer = () => (
     {/* Pre-footer CTA */}
     <section
       className="relative overflow-hidden"
-      style={{ background: "linear-gradient(180deg, rgba(27,43,75,0.18) 0%, #0B1029 14%, #06081a 35%)" }}
+      style={{ background: "#0B1029" }}
     >
       <div className="mx-auto max-w-[1600px] px-6 lg:px-12 py-24">
         <ScrollReveal>
           <div
             className="rounded-2xl px-8 py-16 sm:px-12 sm:py-20 flex flex-col items-center text-center overflow-hidden relative"
             style={{
-              background: "linear-gradient(180deg, rgba(27,43,75,0.10) 0%, rgba(27,43,75,0.03) 100%)",
+              background: "rgba(27,43,75,0.07)",
               border: "1px solid rgba(27,43,75,0.18)",
             }}
           >
-            {/* Radial glow */}
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{ background: "radial-gradient(ellipse at center top, rgba(27,43,75,0.14) 0%, transparent 70%)" }}
-            />
             <div className="relative z-10 flex flex-col items-center">
               <h2 className="font-sans font-extrabold text-[clamp(28px,3.5vw,48px)] leading-[1.1] tracking-[-0.03em] text-[#E8E2D9]">
                 Ready to see what telehealth<br />looks like for you?
@@ -59,7 +54,7 @@ const Footer = () => (
       <div
         className="mx-auto max-w-[1600px] px-6 lg:px-12 pt-16 pb-8 relative z-10"
         style={{
-          backgroundImage: "repeating-linear-gradient(to right, rgba(255,255,255,0.12) 0px, rgba(255,255,255,0.12) 4px, transparent 4px, transparent 10px)",
+          backgroundImage: "none",
           backgroundSize: "100% 1px",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "top",
@@ -104,7 +99,7 @@ const Footer = () => (
         </div>
 
         <div className="mt-12 pt-6 flex flex-wrap items-center justify-between gap-4" style={{
-          backgroundImage: "repeating-linear-gradient(to right, rgba(255,255,255,0.12) 0px, rgba(255,255,255,0.12) 4px, transparent 4px, transparent 10px)",
+          backgroundImage: "none",
           backgroundSize: "100% 1px",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "top",

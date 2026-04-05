@@ -24,21 +24,12 @@ const Hero = () => (
         loading="eager"
       />
       <div className="absolute inset-0 bg-[#06081a]/40" />
-      {/* Left gradient overlay */}
+      {/* Left overlay */}
       <div
         className="absolute inset-0"
         style={{
           zIndex: 2,
-          background: "linear-gradient(90deg, #06081ae6 0%, #06081a73 35%, #06081a26 55%, #06081a1a 100%)",
-        }}
-      />
-      {/* Bottom gradient overlay */}
-      <div
-        className="absolute bottom-0 left-0 right-0"
-        style={{
-          zIndex: 2,
-          height: "30%",
-          background: "linear-gradient(transparent 0%, #06081ab3 100%)",
+          background: "rgba(6,8,26,0.55)",
         }}
       />
       {/* Noise texture */}
@@ -143,12 +134,7 @@ const Hero = () => (
           className={`flex-1 lg:flex-none flex flex-col items-center lg:items-end px-2 lg:px-0 py-2 lg:py-5 ${i > 0 ? "border-l lg:border-l-0 lg:border-t border-white/[0.15]" : ""}`}
         >
           <p
-            className="font-sans font-extrabold leading-none tracking-[-0.03em] text-[20px] lg:text-[clamp(28px,2.8vw,40px)]"
-            style={{
-              background: "linear-gradient(160deg, rgba(210,218,238,0.92) 0%, #1B2B4B 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
+            className="font-sans font-extrabold leading-none tracking-[-0.03em] text-[20px] lg:text-[clamp(28px,2.8vw,40px)] text-[#D2DAEE]"
           >
             {val}
           </p>
@@ -339,9 +325,9 @@ const OurApproach = () => (
         {/* Card with diagonal stripe borders */}
         <div className="relative rounded-2xl overflow-hidden" style={{ background: "#E8EDF5" }}>
           {/* Left stripe border */}
-          <div className="absolute left-0 top-0 bottom-0 w-2" style={{ backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(27,43,75,0.13) 5px, rgba(27,43,75,0.13) 6px)" }} />
+          <div className="absolute left-0 top-0 bottom-0 w-2" style={{ background: "rgba(27,43,75,0.13)" }} />
           {/* Right stripe border */}
-          <div className="absolute right-0 top-0 bottom-0 w-2" style={{ backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(27,43,75,0.13) 5px, rgba(27,43,75,0.13) 6px)" }} />
+          <div className="absolute right-0 top-0 bottom-0 w-2" style={{ background: "rgba(27,43,75,0.13)" }} />
 
           <Tabs defaultValue="providers" className="relative z-10 px-6 py-6 lg:px-16 lg:py-10">
             <TabsList className="bg-transparent border-0 p-0 h-auto flex flex-wrap gap-2 mb-8">
@@ -488,7 +474,7 @@ const Testimonials = () => (
             alt=""
             className="absolute inset-0 w-full h-full object-cover opacity-40"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#06081a] via-[#06081a]/50 to-transparent" />
+          <div className="absolute inset-0 bg-[#06081a]/60" />
           <div className="relative z-10 h-full flex flex-col justify-end p-8">
             <p className="font-lora text-[17px] italic leading-[1.55] text-[#E8E2D9]/90">
               "I want to express my appreciation. Their support and commitment have been outstanding — they've empowered us to take things to the next level."
@@ -508,7 +494,7 @@ const Testimonials = () => (
 
         {/* Quote card 2 */}
         <div className="rounded-3xl overflow-hidden relative" style={{ background: "#111938" }}>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#06081a] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-[#06081a]/30" />
           <div className="relative z-10 h-full flex flex-col justify-end p-6">
             <p className="font-lora text-[15px] italic leading-[1.55] text-[#E8E2D9]/90">
               "Great experience. They answered all my questions, even the stupid ones."
@@ -519,7 +505,7 @@ const Testimonials = () => (
 
         {/* Quote card 3 */}
         <div className="rounded-3xl overflow-hidden relative" style={{ background: "#111938" }}>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#06081a] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-[#06081a]/30" />
           <div className="relative z-10 h-full flex flex-col justify-end p-6">
             <p className="font-lora text-[15px] italic leading-[1.55] text-[#E8E2D9]/90">
               "Very attentive and professional, more flexible with scheduling than any medical office."
@@ -590,7 +576,7 @@ const PressSection = () => {
         <div
           ref={emblaRef}
           className="mt-12 overflow-hidden"
-          style={{ maskImage: "linear-gradient(90deg, transparent 0%, black 14%, black 86%, transparent 100%)" }}
+          style={{}}
         >
           <div className="flex gap-4">
             {pressArticles.map((a, i) => (
@@ -600,7 +586,7 @@ const PressSection = () => {
                 style={{
                   width: 280,
                   height: activeIndex === i ? 420 : 260,
-                  background: "linear-gradient(145deg, #111938 0%, #06081a 100%)",
+                  background: "#111938",
                   opacity: activeIndex === i ? 1 : 0.25,
                 }}
                 onMouseEnter={() => setActiveIndex(i)}
