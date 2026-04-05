@@ -139,14 +139,15 @@ const Hero = () => (
       </div>
     </div>
 
-    {/* Trust strip */}
+    {/* Trust strip — simple text, no repeated icons */}
     <div className="mt-10 border-t border-navy-900/[0.06] bg-cream-50">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 py-5 flex items-center justify-between flex-wrap gap-y-3 gap-x-6">
         <div className="flex items-center gap-6 flex-wrap">
           {[
-            { icon: Shield, label: "LegitScript Certified" },
-            { icon: Shield, label: "HIPAA Compliant" },
+            { icon: BadgeCheck, label: "LegitScript Certified" },
+            { icon: Lock, label: "HIPAA Compliant" },
             { icon: Star, label: "4.9★ Google (200+ reviews)" },
+            { icon: CreditCard, label: "FSA / HSA Accepted" },
           ].map((b) => (
             <div key={b.label} className="flex items-center gap-2">
               <b.icon className="h-3.5 w-3.5 text-navy-400" strokeWidth={1.5} />
@@ -154,9 +155,9 @@ const Hero = () => (
             </div>
           ))}
         </div>
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-3">
           <span className="font-sans font-bold text-navy-900 text-[15px]">10,000+</span>
-          <span className="font-mono text-[10px] tracking-[0.12em] uppercase text-navy-400">patients treated since 2015</span>
+          <span className="font-mono text-[10px] tracking-[0.12em] uppercase text-navy-400">patients since 2015</span>
         </div>
       </div>
     </div>
@@ -165,47 +166,38 @@ const Hero = () => (
 
 /* ═══════════════════════════════════════════
    SECTION 2 — HOW IT WORKS
-   Clean 4-step with numbers, no timeline gimmick
+   Minimal numbered list. No cards, no badges.
    ═══════════════════════════════════════════ */
 const steps = [
-  { num: "01", icon: ClipboardCheck, title: "Online Assessment", desc: "5-minute health questionnaire reviewed by a licensed men's health provider.", time: "5 min" },
-  { num: "02", icon: TestTube, title: "Comprehensive Labs", desc: "At-home lab kit or Quest/Labcorp visit. 20+ biomarkers — hormones, metabolic, cardiovascular.", time: "2–5 days" },
-  { num: "03", icon: Video, title: "Provider Visit", desc: "Video consultation with your dedicated specialist. Labs reviewed line by line.", time: "30 min" },
-  { num: "04", icon: Truck, title: "Treatment Shipped", desc: "Medication shipped discreetly. Ongoing monitoring, repeat labs, and follow-ups included.", time: "48 hrs" },
+  { title: "Complete a 5-minute assessment", desc: "Medical history, symptoms, and goals — reviewed by a licensed provider." },
+  { title: "Get comprehensive labs", desc: "At-home kit or Quest/Labcorp visit. 20+ biomarkers, not a questionnaire." },
+  { title: "Meet your provider", desc: "Video consultation. Your labs reviewed line by line, protocol built together." },
+  { title: "Treatment ships to you", desc: "Discreet delivery. Ongoing monitoring, repeat labs, and follow-ups included." },
 ];
 
 const HowItWorks = () => (
   <section className="bg-white py-20 lg:py-24">
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       <ScrollReveal>
-        <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-navy-400 mb-4">How it works</p>
-        <h2 className="font-sans font-bold text-navy-900 text-[clamp(28px,3.5vw,44px)] leading-[1.1] tracking-[-0.02em] max-w-xl">
+        <h2 className="font-sans font-bold text-navy-900 text-[clamp(26px,3vw,38px)] leading-[1.12] tracking-[-0.02em] max-w-lg">
           From assessment to treatment in as little as 7 days.
         </h2>
       </ScrollReveal>
 
-      <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-14 grid gap-0 lg:grid-cols-4">
         {steps.map((step, i) => (
-          <ScrollReveal key={step.num} delay={i * 0.08}>
-            <div className="group relative rounded-2xl p-6 bg-cream-50 border border-navy-900/[0.04] hover:border-navy-900/[0.1] hover:shadow-card transition-all duration-300 h-full">
-              <div className="flex items-center justify-between mb-6">
-                <div className="size-10 rounded-xl bg-navy-950 flex items-center justify-center">
-                  <step.icon className="h-4.5 w-4.5 text-cta" strokeWidth={1.5} />
-                </div>
-                <span className="font-mono text-[32px] font-bold text-navy-900/[0.06] leading-none">{step.num}</span>
-              </div>
-              <h3 className="font-sans font-semibold text-[16px] text-navy-900 mb-2">{step.title}</h3>
-              <p className="font-space text-[13px] leading-[1.65] text-navy-500">{step.desc}</p>
-              <div className="mt-4 inline-flex items-center rounded-md px-2.5 py-1 bg-navy-900/[0.03] border border-navy-900/[0.06]">
-                <span className="font-mono text-[9px] tracking-[0.14em] uppercase text-navy-400">{step.time}</span>
-              </div>
+          <ScrollReveal key={step.title} delay={i * 0.06}>
+            <div className={`py-6 lg:py-0 lg:pr-8 ${i > 0 ? "border-t lg:border-t-0 lg:border-l border-navy-900/[0.06] lg:pl-8" : ""}`}>
+              <span className="font-sans font-bold text-[48px] leading-none text-navy-900/[0.05]">{i + 1}</span>
+              <h3 className="font-sans font-semibold text-[15px] text-navy-900 mt-3">{step.title}</h3>
+              <p className="font-space text-[13px] leading-[1.65] text-navy-500 mt-2">{step.desc}</p>
             </div>
           </ScrollReveal>
         ))}
       </div>
 
-      <ScrollReveal delay={0.35}>
-        <div className="mt-10 text-center">
+      <ScrollReveal delay={0.3}>
+        <div className="mt-12">
           <Link
             to="/get-started"
             className="inline-flex items-center gap-2 rounded-full bg-navy-950 px-7 py-3.5 text-[14px] font-semibold text-white font-sans hover:bg-navy-900 transition-colors active:scale-[0.98]"
@@ -220,46 +212,50 @@ const HowItWorks = () => (
 
 /* ═══════════════════════════════════════════
    SECTION 3 — WHY LONGENTIS
-   Editorial split layout
+   Asymmetric layout: lead with a pull-quote,
+   then compact differentiators. No stock photo.
    ═══════════════════════════════════════════ */
-const differentiators = [
-  { title: "Same provider, every visit", desc: "A licensed men's health specialist who knows your name, labs, and goals. Not a chatbot." },
-  { title: "Real labs, not questionnaires", desc: "20+ biomarker panels analyzed with your provider — not auto-generated by an algorithm." },
-  { title: "A decade of clinical data", desc: "Born from Men's Wellness Centers, treating men in Virginia since 2015. Same ownership, same protocols." },
-  { title: "LegitScript certified", desc: "One of the few men's telehealth platforms with LegitScript certification for pharmacy and healthcare compliance." },
-];
-
 const WhyLongentis = () => (
   <section className="bg-cream-100 py-20 lg:py-24">
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
-      <div className="grid gap-12 lg:grid-cols-2 items-center">
-        {/* Image */}
-        <ScrollReveal>
-          <div className="rounded-2xl overflow-hidden aspect-[4/5] lg:aspect-[3/4] relative">
-            <img src={consultation} alt="Provider reviewing labs with patient" className="absolute inset-0 w-full h-full object-cover" />
-          </div>
-        </ScrollReveal>
-
-        {/* Copy */}
-        <div>
-          <ScrollReveal>
-            <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-navy-400 mb-4">Why Longentis</p>
-            <h2 className="font-sans font-bold text-navy-900 text-[clamp(28px,3.5vw,44px)] leading-[1.1] tracking-[-0.02em]">
-              The practice that actually knows you.
-            </h2>
-          </ScrollReveal>
-
-          <div className="mt-10 space-y-8">
-            {differentiators.map((d, i) => (
-              <ScrollReveal key={d.title} delay={i * 0.06}>
-                <div className="border-l-2 border-navy-900/10 pl-5">
-                  <h3 className="font-sans font-semibold text-[15px] text-navy-900">{d.title}</h3>
-                  <p className="font-space text-[13px] leading-[1.65] text-navy-500 mt-1.5">{d.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+      {/* Pull-quote lead */}
+      <ScrollReveal>
+        <div className="max-w-3xl">
+          <p className="font-lora italic text-navy-900 text-[clamp(22px,2.8vw,32px)] leading-[1.4] tracking-[-0.01em]">
+            "We started treating men in Virginia in 2015. Same ownership, same protocols, same obsession with labs. Longentis is just how we scale that to 50 states."
+          </p>
+          <p className="font-sans font-semibold text-[14px] text-navy-600 mt-5">
+            — Medical Advisory Team
+          </p>
         </div>
+      </ScrollReveal>
+
+      {/* Compact differentiators — 2-col asymmetric */}
+      <div className="mt-16 grid gap-x-16 gap-y-10 lg:grid-cols-[1fr_1fr]">
+        <ScrollReveal delay={0.05}>
+          <h3 className="font-sans font-bold text-[20px] text-navy-900 leading-tight">Same provider, every visit.</h3>
+          <p className="font-space text-[14px] leading-[1.65] text-navy-500 mt-3 max-w-md">
+            A licensed men's health specialist who knows your name, your labs, and your goals. Not a rotating roster. Not a chatbot.
+          </p>
+        </ScrollReveal>
+        <ScrollReveal delay={0.1}>
+          <h3 className="font-sans font-bold text-[20px] text-navy-900 leading-tight">Real labs, not questionnaires.</h3>
+          <p className="font-space text-[14px] leading-[1.65] text-navy-500 mt-3 max-w-md">
+            20+ biomarker panels analyzed with your provider — hormones, metabolic, cardiovascular. Not auto-generated by an algorithm.
+          </p>
+        </ScrollReveal>
+        <ScrollReveal delay={0.15}>
+          <h3 className="font-sans font-bold text-[20px] text-navy-900 leading-tight">A decade of clinical data.</h3>
+          <p className="font-space text-[14px] leading-[1.65] text-navy-500 mt-3 max-w-md">
+            Born from Men's Wellness Centers in Virginia. 10,000+ patients. The protocols are proven, not experimental.
+          </p>
+        </ScrollReveal>
+        <ScrollReveal delay={0.2}>
+          <h3 className="font-sans font-bold text-[20px] text-navy-900 leading-tight">LegitScript certified.</h3>
+          <p className="font-space text-[14px] leading-[1.65] text-navy-500 mt-3 max-w-md">
+            One of the few men's telehealth platforms with LegitScript certification for pharmacy and healthcare compliance.
+          </p>
+        </ScrollReveal>
       </div>
     </div>
   </section>
@@ -267,7 +263,8 @@ const WhyLongentis = () => (
 
 /* ═══════════════════════════════════════════
    SECTION 4 — SOCIAL PROOF
-   Featured quote + grid, light background
+   Staggered layout. No avatar circles.
+   One large featured, rest varied.
    ═══════════════════════════════════════════ */
 const testimonials = [
   { quote: "I want to express my appreciation. Their support and commitment have been outstanding — they've empowered us to take things to the next level.", name: "Kevin M.", location: "Virginia", treatment: "TRT", metric: "Energy restored in 8 weeks" },
@@ -281,11 +278,11 @@ const testimonials = [
 const SocialProof = () => (
   <section className="bg-navy-950 py-20 lg:py-24 relative overflow-hidden">
     <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
-      <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+      {/* Header — no mono label, just a question */}
+      <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
         <ScrollReveal>
-          <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-cta mb-4">Patient outcomes</p>
-          <h2 className="font-sans font-bold text-white text-[clamp(28px,3.5vw,44px)] leading-[1.1] tracking-[-0.02em]">
-            Results that speak<br/>for themselves.
+          <h2 className="font-sans font-bold text-white text-[clamp(26px,3vw,38px)] leading-[1.12] tracking-[-0.02em] max-w-md">
+            What changes when the labs are real.
           </h2>
         </ScrollReveal>
         <a
@@ -296,55 +293,55 @@ const SocialProof = () => (
         >
           <div className="flex gap-0.5">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className="h-4 w-4 text-cta fill-cta" />
+              <Star key={i} className="h-3.5 w-3.5 text-cta fill-cta" />
             ))}
           </div>
-          <span className="font-sans font-bold text-white text-[15px]">4.9</span>
-          <span className="font-mono text-[10px] tracking-[0.1em] uppercase text-white/30">on Google</span>
+          <span className="font-sans font-semibold text-white text-[14px]">4.9</span>
+          <span className="font-space text-[12px] text-white/30">on Google</span>
         </a>
       </div>
 
-      {/* Featured */}
-      <ScrollReveal>
-        <div className="mt-12 rounded-2xl p-8 lg:p-10 bg-white/[0.04] border border-white/[0.06]">
-          <p className="font-lora text-[clamp(18px,2.2vw,26px)] italic leading-[1.45] text-white/75">
-            "{testimonials[1].quote}"
-          </p>
-          <div className="mt-6 flex items-center justify-between flex-wrap gap-4">
-            <div className="flex items-center gap-3">
-              <div className="size-9 rounded-full bg-cta/20 flex items-center justify-center">
-                <span className="font-sans font-bold text-cta text-[13px]">{testimonials[1].name[0]}</span>
-              </div>
-              <div>
-                <p className="font-sans font-semibold text-[14px] text-white">{testimonials[1].name}</p>
-                <p className="font-mono text-[10px] tracking-[0.1em] uppercase text-white/30">{testimonials[1].location} · {testimonials[1].treatment}</p>
-              </div>
+      {/* Staggered masonry-ish layout */}
+      <div className="grid gap-4 lg:grid-cols-3">
+        {/* Featured — spans 2 cols */}
+        <ScrollReveal className="lg:col-span-2">
+          <div className="rounded-2xl p-8 lg:p-10 bg-white/[0.04] border border-white/[0.06] h-full flex flex-col justify-between">
+            <div>
+              <p className="font-lora italic text-[clamp(18px,2.2vw,24px)] leading-[1.45] text-white/70">
+                "{testimonials[2].quote}"
+              </p>
             </div>
-            <div className="rounded-lg px-3 py-1.5 bg-cta/[0.1] border border-cta/[0.2]">
-              <p className="font-mono text-[10px] tracking-[0.1em] uppercase text-cta">{testimonials[1].metric}</p>
+            <div className="mt-8 flex items-end justify-between flex-wrap gap-4">
+              <div>
+                <p className="font-sans font-semibold text-[14px] text-white">{testimonials[2].name}</p>
+                <p className="font-space text-[12px] text-white/25 mt-0.5">{testimonials[2].location}</p>
+              </div>
+              <p className="font-mono text-[22px] font-bold text-cta tracking-tight">{testimonials[2].metric}</p>
             </div>
           </div>
-        </div>
-      </ScrollReveal>
+        </ScrollReveal>
 
-      {/* Grid */}
-      <div className="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {testimonials.filter((_, i) => i !== 1).map((t, i) => (
-          <ScrollReveal key={t.name} delay={i * 0.04}>
-            <div className="rounded-2xl p-6 h-full flex flex-col bg-white/[0.03] border border-white/[0.05] hover:border-white/[0.1] transition-colors duration-300">
-              <p className="font-space text-[14px] leading-[1.6] text-white/55 flex-1">"{t.quote}"</p>
-              <div className="mt-5 flex items-center justify-between">
-                <div className="flex items-center gap-2.5">
-                  <div className="size-7 rounded-full bg-white/[0.06] flex items-center justify-center">
-                    <span className="font-sans font-semibold text-white/60 text-[11px]">{t.name[0]}</span>
-                  </div>
-                  <div>
-                    <p className="font-sans font-medium text-[13px] text-white/80">{t.name}</p>
-                    <p className="font-mono text-[9px] tracking-[0.1em] uppercase text-white/20">{t.location}</p>
-                  </div>
+        {/* Side stack — 2 cards */}
+        <div className="flex flex-col gap-4">
+          {[testimonials[1], testimonials[4]].map((t, i) => (
+            <ScrollReveal key={t.name} delay={i * 0.06}>
+              <div className="rounded-2xl p-6 bg-white/[0.03] border border-white/[0.05] h-full">
+                <p className="font-space text-[14px] leading-[1.6] text-white/50">"{t.quote}"</p>
+                <div className="mt-5 flex items-center justify-between">
+                  <p className="font-sans font-medium text-[13px] text-white/70">{t.name} · {t.location}</p>
+                  <span className="font-mono text-[10px] text-cta/50">{t.treatment}</span>
                 </div>
-                <span className="font-mono text-[9px] tracking-[0.1em] uppercase text-cta/60">{t.treatment}</span>
               </div>
+            </ScrollReveal>
+          ))}
+        </div>
+
+        {/* Bottom row — 3 compact */}
+        {[testimonials[0], testimonials[3], testimonials[5]].map((t, i) => (
+          <ScrollReveal key={t.name} delay={i * 0.04}>
+            <div className="rounded-xl p-5 bg-white/[0.02] border border-white/[0.04]">
+              <p className="font-space text-[13px] leading-[1.6] text-white/40">"{t.quote}"</p>
+              <p className="font-sans font-medium text-[12px] text-white/50 mt-4">{t.name} · <span className="text-white/25">{t.location}</span></p>
             </div>
           </ScrollReveal>
         ))}
@@ -354,19 +351,26 @@ const SocialProof = () => (
 );
 
 /* ═══════════════════════════════════════════
-   SECTION 5 — EDITORIAL IMAGE BREAK
-   Full-width lifestyle image with overlaid stat
+   SECTION 5 — EDITORIAL BREAK
+   Split layout: image + stat. Not centered text.
    ═══════════════════════════════════════════ */
 const EditorialBreak = () => (
-  <section className="relative h-[50vh] min-h-[400px] overflow-hidden">
-    <img src={boardwalkJog} alt="Men's health and wellness" className="absolute inset-0 w-full h-full object-cover" />
-    <div className="absolute inset-0 bg-navy-950/40" />
-    <div className="relative z-10 h-full flex items-center justify-center text-center px-6">
-      <div>
-        <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-white/50 mb-3">Nationwide coverage</p>
-        <h2 className="font-sans font-bold text-white text-[clamp(32px,5vw,56px)] leading-[1.05] tracking-[-0.03em]">
-          Telehealth everywhere.<br/>In-person in Virginia.
-        </h2>
+  <section className="relative overflow-hidden bg-cream-100">
+    <div className="grid lg:grid-cols-2">
+      <div className="relative h-[300px] lg:h-auto lg:min-h-[420px]">
+        <img src={boardwalkJog} alt="Active lifestyle" className="absolute inset-0 w-full h-full object-cover" />
+      </div>
+      <div className="flex items-center px-8 lg:px-16 py-14 lg:py-20">
+        <div>
+          <p className="font-sans font-bold text-navy-900 text-[clamp(48px,6vw,72px)] leading-none tracking-tight">50</p>
+          <p className="font-sans font-semibold text-navy-900 text-[18px] mt-2">states by telehealth.</p>
+          <p className="font-space text-[14px] text-navy-500 mt-3 max-w-sm">
+            Licensed in every state. Three in-person clinics in Virginia for same-day labs and treatment.
+          </p>
+          <Link to="/coverage" className="inline-flex items-center gap-1.5 mt-6 font-sans text-[14px] font-semibold text-cta hover:underline">
+            View coverage <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
+        </div>
       </div>
     </div>
   </section>
@@ -376,20 +380,19 @@ const EditorialBreak = () => (
    SECTION 6 — COVERAGE + LOCATIONS
    ═══════════════════════════════════════════ */
 const locations = [
-  { name: "Richmond", phone: "(804) 303-4200", address: "Same-day labs and treatment." },
-  { name: "Newport News", phone: "(757) 215-3005", address: "Hampton Roads men's health." },
-  { name: "Virginia Beach", phone: "(757) 215-3006", address: "Virginia Beach same-day care." },
+  { name: "Richmond", phone: "(804) 303-4200", desc: "Same-day labs and treatment." },
+  { name: "Newport News", phone: "(757) 215-3005", desc: "Hampton Roads men's health." },
+  { name: "Virginia Beach", phone: "(757) 215-3006", desc: "Virginia Beach same-day care." },
 ];
 
-const Coverage = () => (
+const CoverageSection = () => (
   <section className="bg-white py-20 lg:py-24">
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 items-start">
         <div>
           <ScrollReveal>
-            <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-navy-400 mb-4">Coverage</p>
-            <h2 className="font-sans font-bold text-navy-900 text-[clamp(28px,3.5vw,40px)] leading-[1.1] tracking-[-0.02em]">
-              50 states by telehealth.<br/>3 Virginia clinics.
+            <h2 className="font-sans font-bold text-navy-900 text-[clamp(26px,3vw,38px)] leading-[1.12] tracking-[-0.02em]">
+              3 Virginia clinics.<br/>Telehealth everywhere else.
             </h2>
           </ScrollReveal>
 
@@ -399,26 +402,23 @@ const Coverage = () => (
             <StatCounter end={10000} suffix="+" label="Patients" />
           </div>
 
-          <div className="mt-10 space-y-4">
-            {locations.map((loc, i) => (
-              <ScrollReveal key={loc.name} delay={i * 0.06}>
-                <div className="flex items-start gap-4 rounded-xl p-4 bg-cream-50 border border-navy-900/[0.04]">
-                  <div className="size-10 rounded-lg bg-navy-950 flex items-center justify-center shrink-0">
-                    <span className="font-mono text-[11px] text-cta font-bold">{String(i + 1).padStart(2, '0')}</span>
-                  </div>
+          <div className="mt-10 space-y-3">
+            {locations.map((loc) => (
+              <ScrollReveal key={loc.name}>
+                <div className="flex items-baseline justify-between py-3 border-b border-navy-900/[0.05]">
                   <div>
-                    <h3 className="font-sans font-semibold text-[15px] text-navy-900">{loc.name}, VA</h3>
-                    <p className="font-space text-[13px] text-navy-500 mt-0.5">{loc.address}</p>
-                    <p className="font-mono text-[12px] text-navy-400 mt-1">{loc.phone}</p>
+                    <span className="font-sans font-semibold text-[15px] text-navy-900">{loc.name}, VA</span>
+                    <span className="font-space text-[13px] text-navy-400 ml-3">{loc.desc}</span>
                   </div>
+                  <span className="font-mono text-[12px] text-navy-400">{loc.phone}</span>
                 </div>
               </ScrollReveal>
             ))}
           </div>
 
-          <ScrollReveal delay={0.2}>
+          <ScrollReveal delay={0.15}>
             <Link to="/coverage" className="inline-flex items-center gap-1.5 mt-6 font-sans text-[14px] font-semibold text-cta hover:underline">
-              View all coverage <ArrowRight className="h-3.5 w-3.5" />
+              Full coverage details <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </ScrollReveal>
         </div>
@@ -435,78 +435,67 @@ const Coverage = () => (
 
 /* ═══════════════════════════════════════════
    SECTION 7 — PRESS
-   Minimal logo bar + article cards
+   Simple text links. No logo bar, no boxed cards.
    ═══════════════════════════════════════════ */
-const pressOutlets = ["Healthcare Business Today", "Authority Magazine", "Business Wire", "MSN", "Richmond Times"];
 const pressArticles = [
   { source: "Healthcare Business Today", title: "The Rise of Physician-Led Telehealth in Men's Health" },
   { source: "Authority Magazine", title: "How One Virginia Practice Is Going National" },
   { source: "Business Wire", title: "Longentis Launches Nationwide Telehealth" },
 ];
 
-const Press = () => (
-  <section className="bg-cream-100 py-20 lg:py-24">
+const PressSection = () => (
+  <section className="bg-cream-100 py-16 lg:py-20">
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       <ScrollReveal>
-        <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-navy-400 mb-4">Press</p>
-        <h2 className="font-sans font-bold text-navy-900 text-[clamp(24px,3vw,36px)] leading-[1.1] tracking-[-0.02em]">
-          In the news.
-        </h2>
-      </ScrollReveal>
-
-      {/* Logo bar */}
-      <ScrollReveal>
-        <div className="mt-10 flex flex-wrap items-center gap-x-10 gap-y-3 py-5 border-y border-navy-900/[0.06]">
-          {pressOutlets.map((name) => (
-            <span key={name} className="font-sans font-bold text-[13px] text-navy-900/15 uppercase tracking-[0.04em]">{name}</span>
+        <p className="font-space text-[13px] text-navy-400 mb-6">As seen in</p>
+        <div className="space-y-0 divide-y divide-navy-900/[0.06]">
+          {pressArticles.map((a) => (
+            <div key={a.title} className="py-4 flex items-baseline justify-between gap-4 group cursor-pointer">
+              <div className="flex items-baseline gap-4">
+                <span className="font-sans font-bold text-[11px] text-navy-400 uppercase tracking-[0.06em] shrink-0 w-[180px]">{a.source}</span>
+                <span className="font-sans font-semibold text-[15px] text-navy-900 group-hover:text-cta transition-colors">{a.title}</span>
+              </div>
+              <ArrowRight className="h-3.5 w-3.5 text-navy-300 group-hover:text-cta transition-colors shrink-0" />
+            </div>
           ))}
         </div>
       </ScrollReveal>
-
-      <div className="mt-8 grid gap-4 md:grid-cols-3">
-        {pressArticles.map((a, i) => (
-          <ScrollReveal key={i} delay={i * 0.06}>
-            <div className="rounded-xl p-5 bg-white border border-navy-900/[0.04] hover:border-navy-900/[0.1] hover:shadow-card transition-all duration-300 h-full flex flex-col">
-              <span className="font-mono text-[9px] tracking-[0.16em] uppercase text-navy-400">{a.source}</span>
-              <h3 className="font-sans font-semibold text-[15px] leading-[1.4] text-navy-900 mt-2 flex-1">{a.title}</h3>
-              <span className="mt-4 inline-flex items-center gap-1 font-sans text-[13px] font-semibold text-cta">
-                Read <ArrowRight className="h-3 w-3" />
-              </span>
-            </div>
-          </ScrollReveal>
-        ))}
-      </div>
     </div>
   </section>
 );
 
 /* ═══════════════════════════════════════════
    SECTION 8 — FINAL CTA
+   Asymmetric split, not centered dark block.
    ═══════════════════════════════════════════ */
 const FinalCTA = () => (
   <section className="bg-navy-950 py-20 lg:py-28">
-    <div className="mx-auto max-w-3xl px-6 lg:px-8 text-center">
-      <ScrollReveal>
-        <h2 className="font-sans font-bold text-white text-[clamp(32px,4.5vw,52px)] leading-[1.08] tracking-[-0.03em]">
-          Your health shouldn't wait.
-        </h2>
-        <p className="font-space text-[15px] text-white/40 mt-4 max-w-md mx-auto">
-          Start with a free assessment. Your dedicated provider is ready.
-        </p>
-        <Link
-          to="/get-started"
-          className="inline-flex items-center gap-2 mt-8 rounded-full bg-cta px-8 py-4 text-[15px] font-semibold text-white font-sans hover:bg-cta-hover transition-colors active:scale-[0.98] shadow-cta hover:shadow-cta-hover"
-        >
-          Start Your Free Visit <ArrowRight className="h-4 w-4" />
-        </Link>
-      </ScrollReveal>
+    <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="grid lg:grid-cols-[1.4fr_0.6fr] gap-10 items-end">
+        <ScrollReveal>
+          <h2 className="font-sans font-bold text-white text-[clamp(30px,4vw,48px)] leading-[1.08] tracking-[-0.03em]">
+            Your health<br/>shouldn't wait.
+          </h2>
+          <p className="font-space text-[15px] text-white/35 mt-4 max-w-md">
+            Start with a free assessment. Your dedicated provider is ready.
+          </p>
+          <Link
+            to="/get-started"
+            className="inline-flex items-center gap-2 mt-8 rounded-full bg-cta px-8 py-4 text-[15px] font-semibold text-white font-sans hover:bg-cta-hover transition-colors active:scale-[0.98] shadow-cta hover:shadow-cta-hover"
+          >
+            Start Your Free Visit <ArrowRight className="h-4 w-4" />
+          </Link>
+        </ScrollReveal>
+        <ScrollReveal delay={0.1}>
+          <div className="hidden lg:flex flex-col items-end text-right">
+            <p className="font-sans font-bold text-[56px] text-white/[0.06] leading-none">◆</p>
+            <p className="font-mono text-[11px] text-white/20 mt-3 tracking-[0.1em] uppercase">Est. 2015 · Virginia</p>
+          </div>
+        </ScrollReveal>
+      </div>
     </div>
   </section>
 );
-
-/* ═══════════════════════════════════════════
-   PAGE COMPOSITION
-   ═══════════════════════════════════════════ */
 const Index = () => (
   <>
     <Header />
