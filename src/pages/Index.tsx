@@ -298,7 +298,7 @@ const SocialProof = () => (
             <div className="mt-8 flex items-end justify-between flex-wrap gap-4">
               <div>
                 <p className="font-sans font-semibold text-[14px] text-white">{testimonials[2].name}</p>
-                <p className="font-space text-[12px] text-white/40 mt-0.5">{testimonials[2].location}</p>
+                <p className="font-space text-[12px] text-white/50 mt-0.5">{testimonials[2].location}</p>
               </div>
               <p className="font-mono text-[22px] font-bold text-cta tracking-tight">{testimonials[2].metric}</p>
             </div>
