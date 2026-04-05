@@ -14,10 +14,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Lora", "serif"],
-        heading: ["Plus Jakarta Sans", "sans-serif"],
-        "mono-label": ["IBM Plex Mono", "monospace"],
-        body: ["Space Grotesk", "sans-serif"],
+        sans: ["Plus Jakarta Sans", "sans-serif"],
+        lora: ["Lora", "serif"],
+        mono: ["IBM Plex Mono", "monospace"],
+        space: ["Space Grotesk", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
